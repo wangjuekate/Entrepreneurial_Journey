@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SkillSimm — Simulation Manager UI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:   #FAF8F4;
+  --ink:     #111111;
+  --mid:     #666560;
+  --border:  #E5E1D8;
+  --indigo:  #6366f1;
+  --indigo-d:#4f46e5;
+  --indigo-l:#eeecf8;
+  --green:   #059669;
+  --green-l: #ecfdf5;
+  --amber:   #d97706;
+  --amber-l: #fef3c7;
+  --red:     #dc2626;
+  --red-l:   #fef2f2;
+  --blue:    #0284c7;
+  --blue-l:  #e0f2fe;
+  --font:    'DM Sans', 'Helvetica Neue', Helvetica, sans-serif;
+  --serif:   'DM Serif Display', Georgia, serif;
+}
+
+body {
+  background: var(--cream);
+  font-family: var(--font);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* ===== PAGE LAYOUT ===== */
+.page-header {
+  text-align: center;
+  padding: 56px 20px 20px;
+}
+.page-header h1 {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.page-header .sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--mid);
+  margin-top: 8px;
+}
+
+.screen-section {
+  max-width: 1100px;
+  margin: 0 auto 64px;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--indigo);
+  margin-bottom: 8px;
+}
+
+.rule {
+  width: 40px;
+  height: 3px;
+  background: var(--indigo);
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.screen-title {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+}
+
+.screen-divider {
+  max-width: 1100px;
+  margin: 0 auto 48px;
+  padding: 0 24px;
+}
+.screen-divider hr {
+  border: none;
+  border-top: 1.5px solid var(--border);
+}
+
+/* ===== APP FRAME ===== */
+.app-frame {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+}
+
+/* Top bar */
+.topbar {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+}
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.topbar-logo {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--cream);
+  letter-spacing: -0.01em;
+}
+.topbar-sep {
+  color: rgba(250,248,244,0.2);
+}
+.topbar-context {
+  color: rgba(250,248,244,0.5);
+  font-size: 12px;
+}
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: rgba(250,248,244,0.5);
+  font-size: 12px;
+}
+.topbar-btn {
+  padding: 5px 12px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(250,248,244,0.7);
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--indigo);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: #fff;
+}
+
+/* ===== TAB BAR ===== */
+.tab-bar {
+  display: flex;
+  border-bottom: 1.5px solid var(--border);
+  padding: 0 24px;
+  background: var(--cream);
+}
+.tab {
+  padding: 14px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--mid);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tab.active {
+  color: var(--indigo-d);
+  font-weight: 600;
+  border-bottom-color: var(--indigo);
+}
+.tab-count {
+  font-size: 10px;
+  background: var(--indigo-l);
+  color: var(--indigo-d);
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+/* ===== CONTENT PANELS ===== */
+.panel { padding: 28px 24px; }
+
+/* ===== BADGE PILLS ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.badge.running  { background: var(--green-l); color: var(--green); }
+.badge.filling  { background: var(--blue-l); color: var(--blue); }
+.badge.full     { background: var(--amber-l); color: var(--amber); }
+.badge.completed{ background: var(--indigo-l); color: var(--indigo-d); }
+.badge.ready    { background: var(--blue-l); color: var(--blue); }
+.badge.sim      { background: var(--blue-l); color: var(--blue); }
+.badge.prod     { background: var(--green-l); color: var(--green); }
+.badge-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+}
+.badge.running .badge-dot  { background: var(--green); }
+.badge.filling .badge-dot  { background: var(--blue); }
+.badge.completed .badge-dot{ background: var(--indigo); }
+
+/* ===== RECRUIT TAB ===== */
+.recruit-center { max-width: 400px; margin: 0 auto; }
+
+.qr-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.qr-placeholder {
+  width: 180px; height: 180px;
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  color: var(--border);
+}
+.join-code {
+  text-align: center;
+}
+.join-code .label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mid);
+  margin-bottom: 4px;
+}
+.join-code .code {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  color: var(--ink);
+}
+.join-url {
+  font-size: 12px;
+  color: var(--indigo);
+  text-align: center;
+}
+
+.participant-summary {
+  background: var(--cream);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.participant-summary .ps-label {
+  font-size: 11px;
+  color: var(--mid);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.participant-summary .ps-count {
+  font-size: 16px;
+  font-weight: 600;
+}
+.participant-summary .ps-detail {
+  font-size: 11px;
+  color: var(--mid);
+  margin-top: 2px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font);
+  cursor: pointer;
+  letter-spacing: -0.01em;
+}
+.action-btn.start { background: var(--green); color: #fff; }
+.action-btn.end   { background: var(--red); color: #fff; }
+.action-btn.reset { background: var(--ink); color: var(--cream); }
+
+.poll-note {
+  text-align: center;
+  font-size: 10px;
+  color: var(--mid);
+  margin-top: 12px;
+}
+
+/* ===== GROUPS TAB ===== */
+.groups-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.group-card {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+.group-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.group-card-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+.group-card-title .count {
+  font-weight: 400;
+  color: var(--mid);
+  font-size: 12px;
+  margin-left: 4px;
+}
+.slot-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+.slot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+.slot .slot-num {
+  font-family: monospace;
+  font-size: 10px;
+  color: var(--mid);
+  width: 16px;
+}
+.slot.filled { color: var(--ink); }
+.slot.empty  { color: rgba(102,101,96,0.35); font-style: italic; font-size: 11px; }
+.slot.filled .name { font-weight: 500; }
+
+.group-card-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--mid);
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+/* ===== PERFORMANCE TAB ===== */
+.perf-section { margin-bottom: 32px; }
+.perf-section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.perf-section-header h3 {
+  font-size: 14px;
+  font-weight: 600;
+}
+.perf-section-header .icon { font-size: 16px; }
+
+/* Leaderboard */
+.leaderboard {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.leaderboard th {
+  text-align: left;
+  padding: 10px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--mid);
+  background: var(--cream);
+  border-bottom: 1.5px solid var(--border);
+}
+.leaderboard td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.leaderboard tr.rank1 { background: #fffdf5; }
+.rank-medal {
+  font-size: 14px;
+  font-weight: 700;
+}
+.rank-medal.gold   { color: #eab308; }
+.rank-medal.silver { color: #94a3b8; }
+.rank-medal.bronze { color: #f97316; }
+
+.score-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.score-bar-track {
+  flex: 1;
+  height: 5px;
+  background: #f1f0ec;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.score-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--indigo);
+}
+.score-bar-val {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink);
+  width: 28px;
+  text-align: right;
+}
+.total-score {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--indigo-d);
+}
+
+/* Metrics table */
+.metrics-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.metrics-table th {
+  padding: 10px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--mid);
+  background: var(--cream);
+  border-bottom: 1.5px solid var(--border);
+  text-align: center;
+}
+.metrics-table th:first-child { text-align: left; width: 140px; }
+.metrics-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  font-weight: 600;
+}
+.metrics-table td:first-child {
+  text-align: left;
+  font-weight: 500;
+  color: var(--mid);
+  font-size: 11px;
+}
+
+.csv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--mid);
+  font-family: var(--font);
+  cursor: pointer;
+}
+
+/* Token chart placeholder */
+.chart-placeholder {
+  background: var(--cream);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+.chart-stats {
+  display: flex;
+  gap: 20px;
+  font-size: 12px;
+  color: var(--mid);
+  margin-bottom: 16px;
+}
+.chart-stats strong { color: var(--ink); }
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  height: 120px;
+  padding-top: 8px;
+}
+.bar-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.bar-stack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.bar {
+  width: 60%;
+  border-radius: 4px 4px 0 0;
+  min-height: 4px;
+}
+.bar.req { background: var(--indigo); }
+.bar.res { background: #a5b4fc; }
+.bar-label {
+  font-size: 9px;
+  color: var(--mid);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.chart-legend {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 12px;
+  font-size: 10px;
+  color: var(--mid);
+}
+.chart-legend-dot {
+  width: 8px; height: 8px; border-radius: 2px;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+/* Decision search */
+.search-box {
+  display: flex;
+  gap: 8px;
+}
+.search-input {
+  flex: 1;
+  padding: 10px 14px 10px 32px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 12px;
+  font-family: var(--font);
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23666560' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E") 12px center no-repeat;
+  color: var(--ink);
+}
+.search-input::placeholder { color: rgba(102,101,96,0.5); }
+.search-btn {
+  padding: 10px 18px;
+  background: var(--indigo);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ===== SIGNALS TAB ===== */
+.signal-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.signal-filter {
+  padding: 5px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--mid);
+  background: #fff;
+  cursor: pointer;
+  font-family: var(--font);
+}
+.signal-filter.active {
+  background: var(--indigo);
+  color: #fff;
+  border-color: var(--indigo);
+  font-weight: 600;
+}
+
+.export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--indigo);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font);
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.signals-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+.signals-table th {
+  text-align: left;
+  padding: 8px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--mid);
+  background: var(--cream);
+  border-bottom: 1.5px solid var(--border);
+}
+.signals-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--mid);
+}
+.signals-table .type-badge {
+  display: inline-block;
+  background: var(--indigo-l);
+  color: var(--indigo-d);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+}
+.signals-table .time { font-family: monospace; font-size: 10px; white-space: nowrap; }
+.signals-table .payload { font-family: monospace; font-size: 9px; max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ===== DASHBOARD (run list) ===== */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.stat-card {
+  border: 1.5px solid;
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.stat-card .stat-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+.stat-card .stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.stat-card.active  { background: var(--green-l); border-color: #a7f3d0; }
+.stat-card.active .stat-label { color: var(--green); }
+.stat-card.active .stat-value { color: var(--green); }
+.stat-card.prep    { background: var(--amber-l); border-color: #fde68a; }
+.stat-card.prep .stat-label { color: var(--amber); }
+.stat-card.prep .stat-value { color: var(--amber); }
+.stat-card.done    { background: var(--indigo-l); border-color: #c7c9f5; }
+.stat-card.done .stat-label { color: var(--indigo-d); }
+.stat-card.done .stat-value { color: var(--indigo-d); }
+
+.runs-section-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.runs-section-label h3 {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--mid);
+}
+.runs-section-label .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+}
+
+.run-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.run-card:hover { border-color: var(--indigo); }
+.run-card .bar-indicator {
+  width: 3px;
+  align-self: stretch;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.run-card .bar-indicator.running  { background: var(--green); }
+.run-card .bar-indicator.ready    { background: var(--blue); }
+.run-card .bar-indicator.completed{ background: var(--indigo); }
+.run-card .rc-body { flex: 1; min-width: 0; }
+.run-card .rc-title {
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.run-card .rc-meta {
+  font-size: 10px;
+  color: var(--mid);
+  display: flex;
+  gap: 14px;
+}
+.run-card .rc-arrow {
+  color: var(--border);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.run-card:hover .rc-arrow { color: var(--indigo); }
+
+.new-run-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: var(--indigo);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font);
+  cursor: pointer;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.header-row h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ===== RUN DETAIL HEADER ===== */
+.run-header {
+  padding: 20px 24px 0;
+}
+.run-header .back {
+  font-size: 11px;
+  color: var(--mid);
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.run-header .back:hover { color: var(--ink); }
+.run-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.run-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.run-header .meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+.run-header .meta-text {
+  font-size: 10px;
+  color: var(--mid);
+}
+.materials-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 10px;
+  color: var(--mid);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.footer-note {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 11px;
+  color: var(--mid);
+}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Simulation Manager UI</h1>
+  <div class="sub">Redesigned 4-tab layout: Recruit, Groups, Performance, Signals</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     SCREEN 1: ADMIN DASHBOARD (Run List)
+══════════════════════════════════════════════════════════════ -->
+<div class="screen-section">
+  <div class="eyebrow">Screen 1</div>
+  <div class="rule"></div>
+  <div class="screen-title">Admin Dashboard — Run List</div>
+
+  <div class="app-frame">
+    <div class="topbar">
+      <div class="topbar-left">
+        <span class="topbar-logo">TaskFlow</span>
+        <span class="topbar-context">Admin</span>
+      </div>
+      <div class="topbar-right">
+        <span class="topbar-btn">Model Config</span>
+        <span class="topbar-btn" style="color:#fca5a5; border-color:rgba(252,165,165,0.3);">Logout</span>
+      </div>
+    </div>
+    <div class="panel">
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-card active">
+          <div class="stat-label">Active</div>
+          <div class="stat-value">1</div>
+        </div>
+        <div class="stat-card prep">
+          <div class="stat-label">In Preparation</div>
+          <div class="stat-value">2</div>
+        </div>
+        <div class="stat-card done">
+          <div class="stat-label">Completed</div>
+          <div class="stat-value">3</div>
+        </div>
+      </div>
+
+      <div class="header-row">
+        <h2>Simulation Runs</h2>
+        <div style="display:flex; gap:8px; align-items:center;">
+          <span class="topbar-btn" style="color:var(--mid); background:var(--cream); border-color:var(--border);">Refresh</span>
+          <button class="new-run-btn">+ New Run</button>
+        </div>
+      </div>
+
+      <!-- Active -->
+      <div class="runs-section-label">
+        <span class="dot" style="background:var(--green);"></span>
+        <h3>Active (1)</h3>
+      </div>
+      <div class="run-card">
+        <div class="bar-indicator running"></div>
+        <div class="rc-body">
+          <div class="rc-title">
+            Insurance Claim Adjuster — Batch A
+            <span class="badge running"><span class="badge-dot"></span> Running</span>
+            <span class="badge sim">Simulation</span>
+          </div>
+          <div class="rc-meta">
+            <span>May 6, 2026</span>
+            <span>4 groups</span>
+            <span>3 HITL steps</span>
+          </div>
+        </div>
+        <span class="rc-arrow">›</span>
+      </div>
+
+      <!-- In Preparation -->
+      <div class="runs-section-label" style="margin-top:20px;">
+        <h3>In Preparation (2)</h3>
+      </div>
+      <div class="run-card">
+        <div class="bar-indicator ready"></div>
+        <div class="rc-body">
+          <div class="rc-title">
+            Loan Underwriting Q2
+            <span class="badge ready"><span class="badge-dot"></span> Ready</span>
+          </div>
+          <div class="rc-meta">
+            <span>May 5, 2026</span>
+            <span>6 groups</span>
+            <span>5 HITL steps</span>
+          </div>
+        </div>
+        <span class="rc-arrow">›</span>
+      </div>
+      <div class="run-card">
+        <div class="bar-indicator" style="background:var(--border);"></div>
+        <div class="rc-body">
+          <div class="rc-title">
+            Fraud Detection Pilot
+            <span class="badge" style="background:#f3f4f6; color:var(--mid);">Draft</span>
+          </div>
+          <div class="rc-meta">
+            <span>May 4, 2026</span>
+            <span>4 groups</span>
+            <span>4 HITL steps</span>
+          </div>
+        </div>
+        <span class="rc-arrow">›</span>
+      </div>
+
+      <!-- Completed -->
+      <div class="runs-section-label" style="margin-top:20px;">
+        <h3>Completed (3)</h3>
+      </div>
+      <div class="run-card">
+        <div class="bar-indicator completed"></div>
+        <div class="rc-body">
+          <div class="rc-title">
+            Escalation Handling — Training v3
+            <span class="badge completed"><span class="badge-dot"></span> Completed</span>
+          </div>
+          <div class="rc-meta">
+            <span>Apr 29, 2026</span>
+            <span>4 groups</span>
+            <span>3 HITL steps</span>
+          </div>
+        </div>
+        <span class="rc-arrow">›</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="screen-divider"><hr></div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     SCREEN 2: RUN DETAIL — RECRUIT TAB
+══════════════════════════════════════════════════════════════ -->
+<div class="screen-section">
+  <div class="eyebrow">Screen 2 — Tab 1</div>
+  <div class="rule"></div>
+  <div class="screen-title">Run Detail: Recruit</div>
+
+  <div class="app-frame">
+    <div class="topbar">
+      <div class="topbar-left">
+        <span class="topbar-logo">TaskFlow</span>
+        <span class="topbar-sep">|</span>
+        <span class="topbar-context">Insurance Claim Adjuster — Batch A</span>
+      </div>
+      <div class="topbar-right">
+        <span>⏱ Running</span>
+        <div class="avatar">YO</div>
+      </div>
+    </div>
+
+    <!-- Run header -->
+    <div class="run-header">
+      <div class="back">← Admin</div>
+      <div class="run-header-row">
+        <div>
+          <h2>Insurance Claim Adjuster — Batch A</h2>
+          <div class="meta">
+            <span class="badge running"><span class="badge-dot"></span> Running</span>
+            <span class="badge sim">🔵 Simulation</span>
+            <span class="meta-text">claim_adjuster_v2</span>
+            <span class="meta-text">12 participants · team size 5</span>
+          </div>
+        </div>
+        <span class="materials-link">📖 Materials</span>
+      </div>
+    </div>
+
+    <!-- Tab bar -->
+    <div class="tab-bar">
+      <div class="tab active">👥 Recruit</div>
+      <div class="tab">📋 Groups <span class="tab-count">3</span></div>
+      <div class="tab">📊 Performance</div>
+      <div class="tab">⚡ Signals</div>
+    </div>
+
+    <!-- Recruit content -->
+    <div class="panel">
+      <div class="recruit-center">
+        <div class="qr-box">
+          <div class="qr-placeholder">
+            <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+              <rect x="10" y="10" width="30" height="30" rx="4" fill="var(--ink)"/>
+              <rect x="80" y="10" width="30" height="30" rx="4" fill="var(--ink)"/>
+              <rect x="10" y="80" width="30" height="30" rx="4" fill="var(--ink)"/>
+              <rect x="16" y="16" width="18" height="18" rx="2" fill="var(--cream)"/>
+              <rect x="86" y="16" width="18" height="18" rx="2" fill="var(--cream)"/>
+              <rect x="16" y="86" width="18" height="18" rx="2" fill="var(--cream)"/>
+              <rect x="21" y="21" width="8" height="8" rx="1" fill="var(--ink)"/>
+              <rect x="91" y="21" width="8" height="8" rx="1" fill="var(--ink)"/>
+              <rect x="21" y="91" width="8" height="8" rx="1" fill="var(--ink)"/>
+              <rect x="50" y="10" width="8" height="8" rx="1" fill="var(--ink)"/>
+              <rect x="62" y="10" width="8" height="8" rx="1" fill="var(--ink)"/>
+              <rect x="50" y="24" width="8" height="8" rx="1" fill="var(--ink)"/>
+              <rect x="50" y="50" width="8" height="8" rx="1" fill="var(--ink)"/>
+              <rect x="62" y="38" width="8" height="8" rx="1" fill="var(--ink)"/>
+              <rect x="80" y="50" width="8" height="8" rx="1" fill="var(--ink)"/>
+              <rect x="94" y="62" width="8" height="8" rx="1" fill="var(--ink)"/>
+              <rect x="50" y="80" width="8" height="8" rx="1" fill="var(--ink)"/>
+              <rect x="62" y="94" width="8" height="8" rx="1" fill="var(--ink)"/>
+              <rect x="80" y="80" width="8" height="8" rx="1" fill="var(--ink)"/>
+              <rect x="94" y="80" width="8" height="8" rx="1" fill="var(--ink)"/>
+              <rect x="102" y="94" width="8" height="8" rx="1" fill="var(--ink)"/>
+            </svg>
+          </div>
+          <div class="join-code">
+            <div class="label">Join Code</div>
+            <div class="code">XK47M2</div>
+          </div>
+          <div class="join-url">sim.skillsimm.com/join/XK47M2</div>
+        </div>
+
+        <div class="participant-summary">
+          <div class="ps-label">👥 Participants</div>
+          <div class="ps-count">12 joined → 2 full groups + 1 filling (2/5)</div>
+          <div class="ps-detail">Team size: 5 per group</div>
+        </div>
+
+        <button class="action-btn end">■ End Run</button>
+        <div class="poll-note">Participant count updates every 5s while running</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="screen-divider"><hr></div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     SCREEN 3: RUN DETAIL — GROUPS TAB
+══════════════════════════════════════════════════════════════ -->
+<div class="screen-section">
+  <div class="eyebrow">Screen 2 — Tab 2</div>
+  <div class="rule"></div>
+  <div class="screen-title">Run Detail: Groups</div>
+
+  <div class="app-frame">
+    <div class="topbar">
+      <div class="topbar-left">
+        <span class="topbar-logo">TaskFlow</span>
+        <span class="topbar-sep">|</span>
+        <span class="topbar-context">Insurance Claim Adjuster — Batch A</span>
+      </div>
+      <div class="topbar-right">
+        <div class="avatar">YO</div>
+      </div>
+    </div>
+    <div class="run-header" style="padding-bottom:0;">
+      <div class="back">← Admin</div>
+      <h2 style="font-size:16px;margin-bottom:4px;">Insurance Claim Adjuster — Batch A</h2>
+    </div>
+    <div class="tab-bar">
+      <div class="tab">👥 Recruit</div>
+      <div class="tab active">📋 Groups <span class="tab-count">3</span></div>
+      <div class="tab">📊 Performance</div>
+      <div class="tab">⚡ Signals</div>
+    </div>
+    <div class="panel">
+      <div class="groups-grid">
+        <!-- Group 1 -->
+        <div class="group-card">
+          <div class="group-card-header">
+            <div class="group-card-title">Group 1 <span class="count">(5/5)</span></div>
+            <span class="badge running"><span class="badge-dot"></span> Running</span>
+          </div>
+          <div class="slot-list">
+            <div class="slot filled"><span class="slot-num">1.</span><span class="name">Alice Chen</span></div>
+            <div class="slot filled"><span class="slot-num">2.</span><span class="name">Bob Martinez</span></div>
+            <div class="slot filled"><span class="slot-num">3.</span><span class="name">Carol Singh</span></div>
+            <div class="slot filled"><span class="slot-num">4.</span><span class="name">Dave Kim</span></div>
+            <div class="slot filled"><span class="slot-num">5.</span><span class="name">Eve Johnson</span></div>
+          </div>
+          <div class="group-card-footer">
+            <span>8,420 tokens</span>
+            <span>Score: 82.4</span>
+          </div>
+        </div>
+        <!-- Group 2 -->
+        <div class="group-card">
+          <div class="group-card-header">
+            <div class="group-card-title">Group 2 <span class="count">(5/5)</span></div>
+            <span class="badge full">Full</span>
+          </div>
+          <div class="slot-list">
+            <div class="slot filled"><span class="slot-num">1.</span><span class="name">Frank Lee</span></div>
+            <div class="slot filled"><span class="slot-num">2.</span><span class="name">Grace Wu</span></div>
+            <div class="slot filled"><span class="slot-num">3.</span><span class="name">Henry Park</span></div>
+            <div class="slot filled"><span class="slot-num">4.</span><span class="name">Iris Tanaka</span></div>
+            <div class="slot filled"><span class="slot-num">5.</span><span class="name">Jack Rivera</span></div>
+          </div>
+          <div class="group-card-footer">
+            <span>6,210 tokens</span>
+            <span>Score: —</span>
+          </div>
+        </div>
+        <!-- Group 3 -->
+        <div class="group-card">
+          <div class="group-card-header">
+            <div class="group-card-title">Group 3 <span class="count">(2/5)</span></div>
+            <span class="badge filling"><span class="badge-dot"></span> Filling</span>
+          </div>
+          <div class="slot-list">
+            <div class="slot filled"><span class="slot-num">1.</span><span class="name">Kate Wang</span></div>
+            <div class="slot filled"><span class="slot-num">2.</span><span class="name">Leo Adams</span></div>
+            <div class="slot empty"><span class="slot-num">3.</span>(open)</div>
+            <div class="slot empty"><span class="slot-num">4.</span>(open)</div>
+            <div class="slot empty"><span class="slot-num">5.</span>(open)</div>
+          </div>
+          <div class="group-card-footer">
+            <span>0 tokens</span>
+            <span>Score: —</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="screen-divider"><hr></div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     SCREEN 4: RUN DETAIL — PERFORMANCE TAB
+══════════════════════════════════════════════════════════════ -->
+<div class="screen-section">
+  <div class="eyebrow">Screen 2 — Tab 3</div>
+  <div class="rule"></div>
+  <div class="screen-title">Run Detail: Performance (consolidated)</div>
+
+  <div class="app-frame">
+    <div class="topbar">
+      <div class="topbar-left">
+        <span class="topbar-logo">TaskFlow</span>
+        <span class="topbar-sep">|</span>
+        <span class="topbar-context">Insurance Claim Adjuster — Batch A</span>
+      </div>
+      <div class="topbar-right"><div class="avatar">YO</div></div>
+    </div>
+    <div class="run-header" style="padding-bottom:0;">
+      <div class="back">← Admin</div>
+      <h2 style="font-size:16px;margin-bottom:4px;">Insurance Claim Adjuster — Batch A</h2>
+    </div>
+    <div class="tab-bar">
+      <div class="tab">👥 Recruit</div>
+      <div class="tab">📋 Groups <span class="tab-count">3</span></div>
+      <div class="tab active">📊 Performance</div>
+      <div class="tab">⚡ Signals</div>
+    </div>
+    <div class="panel">
+
+      <!-- Section A: Leaderboard -->
+      <div class="perf-section">
+        <div class="perf-section-header">
+          <span class="icon">🏆</span>
+          <h3>Leaderboard</h3>
+        </div>
+        <table class="leaderboard">
+          <thead>
+            <tr>
+              <th style="width:60px">Rank</th>
+              <th>Group</th>
+              <th style="text-align:right;width:80px">Score</th>
+              <th style="min-width:130px">Decision Quality</th>
+              <th style="min-width:130px">Time Efficiency</th>
+              <th style="min-width:130px">Cost Efficiency</th>
+              <th style="min-width:130px">Collaboration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="rank1">
+              <td><span class="rank-medal gold">1st</span></td>
+              <td>
+                <div style="font-weight:600;">Group 1</div>
+                <div style="font-size:9px;color:var(--mid);font-family:monospace;">XK47M2-G1</div>
+              </td>
+              <td style="text-align:right"><span class="total-score">82.4</span></td>
+              <td><div class="score-bar-wrap"><div class="score-bar-track"><div class="score-bar-fill" style="width:88%"></div></div><span class="score-bar-val">0.88</span></div></td>
+              <td><div class="score-bar-wrap"><div class="score-bar-track"><div class="score-bar-fill" style="width:79%"></div></div><span class="score-bar-val">0.79</span></div></td>
+              <td><div class="score-bar-wrap"><div class="score-bar-track"><div class="score-bar-fill" style="width:82%"></div></div><span class="score-bar-val">0.82</span></div></td>
+              <td><div class="score-bar-wrap"><div class="score-bar-track"><div class="score-bar-fill" style="width:74%"></div></div><span class="score-bar-val">0.74</span></div></td>
+            </tr>
+            <tr>
+              <td><span class="rank-medal silver">2nd</span></td>
+              <td>
+                <div style="font-weight:600;">Group 2</div>
+                <div style="font-size:9px;color:var(--mid);font-family:monospace;">XK47M2-G2</div>
+              </td>
+              <td style="text-align:right"><span class="total-score" style="color:var(--mid);">71.8</span></td>
+              <td><div class="score-bar-wrap"><div class="score-bar-track"><div class="score-bar-fill" style="width:72%"></div></div><span class="score-bar-val">0.72</span></div></td>
+              <td><div class="score-bar-wrap"><div class="score-bar-track"><div class="score-bar-fill" style="width:68%"></div></div><span class="score-bar-val">0.68</span></div></td>
+              <td><div class="score-bar-wrap"><div class="score-bar-track"><div class="score-bar-fill" style="width:75%"></div></div><span class="score-bar-val">0.75</span></div></td>
+              <td><div class="score-bar-wrap"><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-bar-val">0.70</span></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Section B: Metrics Table -->
+      <div class="perf-section">
+        <div class="perf-section-header" style="justify-content:space-between;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="icon">📋</span>
+            <h3>Metrics Comparison</h3>
+          </div>
+          <button class="csv-btn">⬇ Download CSV</button>
+        </div>
+        <table class="metrics-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Group 1</th>
+              <th>Group 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Time to finish</td><td>8m 42s</td><td>11m 15s</td></tr>
+            <tr><td>Accuracy score</td><td>87.2</td><td>74.6</td></tr>
+            <tr><td>Total tokens</td><td>8,420</td><td>6,210</td></tr>
+            <tr><td>HITL decisions</td><td>3/3</td><td>2/3</td></tr>
+            <tr><td>Steps completed</td><td>12/12</td><td>10/12</td></tr>
+            <tr><td>Decision quality</td><td>0.88</td><td>0.72</td></tr>
+            <tr><td>Time efficiency</td><td>0.79</td><td>0.68</td></tr>
+            <tr><td>Overall score</td><td style="font-weight:700;color:var(--indigo-d);">82.4</td><td>71.8</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Section C: Token Usage -->
+      <div class="perf-section">
+        <div class="perf-section-header">
+          <span class="icon">📊</span>
+          <h3>Token Usage by Model</h3>
+        </div>
+        <div class="chart-placeholder">
+          <div class="chart-stats">
+            <span>Total tokens: <strong>14,630</strong></span>
+            <span>Estimated cost: <strong>$0.0847</strong></span>
+          </div>
+          <div class="bar-chart">
+            <div class="bar-group">
+              <div class="bar-stack">
+                <div class="bar res" style="height:35px;"></div>
+                <div class="bar req" style="height:65px;"></div>
+              </div>
+              <div class="bar-label">claude-sonnet</div>
+            </div>
+            <div class="bar-group">
+              <div class="bar-stack">
+                <div class="bar res" style="height:20px;"></div>
+                <div class="bar req" style="height:40px;"></div>
+              </div>
+              <div class="bar-label">claude-haiku</div>
+            </div>
+            <div class="bar-group">
+              <div class="bar-stack">
+                <div class="bar res" style="height:10px;"></div>
+                <div class="bar req" style="height:18px;"></div>
+              </div>
+              <div class="bar-label">gpt-4o-mini</div>
+            </div>
+          </div>
+          <div class="chart-legend">
+            <span><span class="chart-legend-dot" style="background:var(--indigo);"></span>Request Tokens</span>
+            <span><span class="chart-legend-dot" style="background:#a5b4fc;"></span>Response Tokens</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section D: Decision Search -->
+      <div class="perf-section">
+        <div class="perf-section-header">
+          <span class="icon">🔍</span>
+          <h3>Decision Search</h3>
+          <span style="font-size:10px;color:var(--mid);margin-left:4px;">Semantic search across all decisions</span>
+        </div>
+        <div class="search-box">
+          <input class="search-input" placeholder="Search past decisions by keyword or description..." />
+          <button class="search-btn">🔍 Search</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="screen-divider"><hr></div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     SCREEN 5: RUN DETAIL — SIGNALS TAB
+══════════════════════════════════════════════════════════════ -->
+<div class="screen-section">
+  <div class="eyebrow">Screen 2 — Tab 4</div>
+  <div class="rule"></div>
+  <div class="screen-title">Run Detail: Signals</div>
+
+  <div class="app-frame">
+    <div class="topbar">
+      <div class="topbar-left">
+        <span class="topbar-logo">TaskFlow</span>
+        <span class="topbar-sep">|</span>
+        <span class="topbar-context">Insurance Claim Adjuster — Batch A</span>
+      </div>
+      <div class="topbar-right"><div class="avatar">YO</div></div>
+    </div>
+    <div class="run-header" style="padding-bottom:0;">
+      <div class="back">← Admin</div>
+      <h2 style="font-size:16px;margin-bottom:4px;">Insurance Claim Adjuster — Batch A</h2>
+    </div>
+    <div class="tab-bar">
+      <div class="tab">👥 Recruit</div>
+      <div class="tab">📋 Groups <span class="tab-count">3</span></div>
+      <div class="tab">📊 Performance</div>
+      <div class="tab active">⚡ Signals</div>
+    </div>
+    <div class="panel">
+      <!-- Filters -->
+      <div class="signal-filters">
+        <button class="signal-filter active">step completion (4)</button>
+        <button class="signal-filter">hitl decision (3)</button>
+        <button class="signal-filter">chat exchange (8)</button>
+        <button class="signal-filter">time metric (2)</button>
+        <button class="signal-filter">accuracy metric (2)</button>
+        <button class="signal-filter">token metric (2)</button>
+      </div>
+
+      <button class="export-btn">⚡ Export to Progress DB</button>
+
+      <table class="signals-table">
+        <thead>
+          <tr>
+            <th style="width:90px;">Time</th>
+            <th style="width:120px;">Type</th>
+            <th style="width:80px;">Group</th>
+            <th>Payload</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="time">10:42:18</td>
+            <td><span class="type-badge">step completion</span></td>
+            <td style="font-family:monospace;font-size:10px;">a3f8c2d1</td>
+            <td class="payload">{"step_index":4,"name":"Fraud Check","status":"completed","duration_s":145}</td>
+          </tr>
+          <tr>
+            <td class="time">10:41:55</td>
+            <td><span class="type-badge">hitl decision</span></td>
+            <td style="font-family:monospace;font-size:10px;">a3f8c2d1</td>
+            <td class="payload">{"step":"Fraud Check","decision":"proceed_normally","confidence":"high"}</td>
+          </tr>
+          <tr>
+            <td class="time">10:40:12</td>
+            <td><span class="type-badge">chat exchange</span></td>
+            <td style="font-family:monospace;font-size:10px;">a3f8c2d1</td>
+            <td class="payload">{"step":"Fraud Check","user_msg":"What are the red flags?","tokens":342}</td>
+          </tr>
+          <tr>
+            <td class="time">10:38:44</td>
+            <td><span class="type-badge">step completion</span></td>
+            <td style="font-family:monospace;font-size:10px;">b7e1f9a0</td>
+            <td class="payload">{"step_index":3,"name":"Coverage Verify","status":"completed","duration_s":98}</td>
+          </tr>
+          <tr>
+            <td class="time">10:37:01</td>
+            <td><span class="type-badge">step completion</span></td>
+            <td style="font-family:monospace;font-size:10px;">a3f8c2d1</td>
+            <td class="payload">{"step_index":3,"name":"Damage Assessment","status":"completed","duration_s":112}</td>
+          </tr>
+          <tr>
+            <td class="time">10:35:22</td>
+            <td><span class="type-badge">token metric</span></td>
+            <td style="font-family:monospace;font-size:10px;">a3f8c2d1</td>
+            <td class="payload">{"model":"claude-sonnet","request_tokens":1240,"response_tokens":680}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="footer-note">
+  SkillSimm — Simulation Manager UI Mockup · Redesigned 4-tab layout per SimulationManagerUI_Plan.md
+</div>
+
+</body>
+</html>

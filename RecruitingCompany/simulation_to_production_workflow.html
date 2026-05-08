@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSimm — Simulation → Production Workflow</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            padding: 40px 20px;
+        }
+        .page { max-width: 1200px; margin: 0 auto; }
+        h1 { text-align: center; font-size: 26px; font-weight: 700; margin-bottom: 6px; }
+        .subtitle { text-align: center; font-size: 13px; color: #64748b; margin-bottom: 48px; }
+
+        /* ===== MODE TOGGLE BANNER ===== */
+        .mode-banner {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+        .mode-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 28px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            border: 2px solid;
+            position: relative;
+        }
+        .mode-card.sim {
+            background: #eff6ff;
+            border-color: #3b82f6;
+            color: #1e40af;
+        }
+        .mode-card.prod {
+            background: #f0fdf4;
+            border-color: #22c55e;
+            color: #166534;
+        }
+        .mode-dot {
+            width: 12px; height: 12px; border-radius: 50%;
+        }
+        .mode-card.sim .mode-dot { background: #3b82f6; }
+        .mode-card.prod .mode-dot { background: #22c55e; }
+        .mode-arrow {
+            display: flex; align-items: center; font-size: 28px; color: #94a3b8;
+        }
+
+        /* ===== SECTION HEADERS ===== */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .section-header h2 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #334155;
+        }
+        .section-header .line {
+            flex: 1;
+            height: 1px;
+            background: #e2e8f0;
+        }
+        .section-tag {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+        .section-tag.sim { background: #dbeafe; color: #1e40af; }
+        .section-tag.shared { background: #f3e8ff; color: #6b21a8; }
+        .section-tag.prod { background: #dcfce7; color: #166534; }
+        .section-tag.new { background: #fef3c7; color: #92400e; }
+
+        /* ===== FLOW CONTAINER ===== */
+        .flow-section { margin-bottom: 56px; }
+
+        /* ===== SIMULATION FLOW (top) ===== */
+        .sim-flow {
+            display: flex;
+            align-items: flex-start;
+            gap: 0;
+            position: relative;
+        }
+        .flow-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            padding: 0 8px;
+        }
+        .flow-step .box {
+            border-radius: 10px;
+            padding: 14px 10px;
+            font-size: 12px;
+            font-weight: 600;
+            min-height: 72px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            position: relative;
+            border: 2px solid;
+        }
+        .flow-step .box .icon { font-size: 20px; margin-bottom: 2px; }
+        .flow-step .box .label { font-size: 11px; font-weight: 400; color: #64748b; margin-top: 2px; }
+
+        .box.blue { background: #eff6ff; border-color: #93c5fd; color: #1e40af; }
+        .box.indigo { background: #eef2ff; border-color: #a5b4fc; color: #3730a3; }
+        .box.purple { background: #f5f3ff; border-color: #c4b5fd; color: #5b21b6; }
+        .box.amber { background: #fffbeb; border-color: #fcd34d; color: #92400e; }
+        .box.green { background: #f0fdf4; border-color: #86efac; color: #166534; }
+        .box.gray { background: #f8fafc; border-color: #cbd5e1; color: #475569; }
+
+        /* Arrows between steps */
+        .flow-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -8px;
+            top: 36px;
+            font-size: 18px;
+            color: #94a3b8;
+            z-index: 1;
+        }
+
+        /* ===== SHARED CORE (middle) ===== */
+        .shared-core {
+            background: linear-gradient(135deg, #faf5ff 0%, #eef2ff 50%, #f0fdf4 100%);
+            border: 2px dashed #c4b5fd;
+            border-radius: 14px;
+            padding: 24px;
+            position: relative;
+        }
+        .shared-core-label {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #7c3aed;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 14px;
+            border-radius: 12px;
+            letter-spacing: 0.5px;
+        }
+        .shared-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 8px;
+        }
+        .shared-item {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: #475569;
+        }
+        .shared-item .s-icon { font-size: 20px; margin-bottom: 4px; }
+        .shared-item .s-file { font-size: 10px; color: #94a3b8; font-weight: 400; margin-top: 2px; }
+
+        /* ===== PRODUCTION FLOW (bottom) ===== */
+        .prod-flow {
+            display: flex;
+            align-items: flex-start;
+            gap: 0;
+        }
+
+        /* ===== SWITCH DIAGRAM (center) ===== */
+        .switch-section {
+            margin-bottom: 56px;
+        }
+        .switch-container {
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            gap: 0;
+            align-items: stretch;
+        }
+        .switch-col {
+            padding: 20px;
+            border-radius: 12px;
+        }
+        .switch-col.left {
+            background: #eff6ff;
+            border: 2px solid #93c5fd;
+        }
+        .switch-col.right {
+            background: #f0fdf4;
+            border: 2px solid #86efac;
+        }
+        .switch-col h3 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .switch-col.left h3 { color: #1e40af; }
+        .switch-col.right h3 { color: #166534; }
+
+        .switch-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+        .switch-col.left .switch-row { background: #dbeafe; color: #1e40af; }
+        .switch-col.right .switch-row { background: #dcfce7; color: #166534; }
+
+        .switch-row .sw-icon { font-size: 14px; flex-shrink: 0; }
+        .switch-row .sw-label { font-weight: 600; }
+        .switch-row .sw-desc { font-weight: 400; font-size: 11px; color: #64748b; }
+
+        .switch-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .switch-arrow-line {
+            width: 2px;
+            flex: 1;
+            background: linear-gradient(180deg, #3b82f6 0%, #7c3aed 50%, #22c55e 100%);
+            min-height: 30px;
+        }
+        .switch-badge {
+            background: #7c3aed;
+            color: #fff;
+            font-size: 9px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        /* ===== INTAKE PIPELINE DETAIL ===== */
+        .intake-diagram {
+            display: grid;
+            grid-template-columns: 200px 40px 240px 40px 200px 40px 240px;
+            align-items: center;
+            gap: 0;
+        }
+        .intake-sources {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .intake-source {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            background: #fff;
+            border: 2px solid #fcd34d;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #92400e;
+        }
+        .intake-source .is-icon { font-size: 16px; }
+
+        .intake-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 20px;
+        }
+
+        .intake-process {
+            background: #fff;
+            border: 2px solid #c4b5fd;
+            border-radius: 10px;
+            padding: 16px;
+        }
+        .intake-process h4 {
+            font-size: 12px;
+            font-weight: 700;
+            color: #5b21b6;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .intake-process-items {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .intake-process-item {
+            font-size: 11px;
+            color: #475569;
+            padding: 4px 8px;
+            background: #f5f3ff;
+            border-radius: 4px;
+        }
+
+        .intake-harness {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .intake-harness-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            background: #f0fdf4;
+            border: 2px solid #86efac;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #166534;
+        }
+
+        /* ===== PHASE TIMELINE ===== */
+        .timeline {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+        }
+        .phase-card {
+            min-width: 170px;
+            flex: 1;
+            border-radius: 10px;
+            padding: 16px;
+            border: 2px solid;
+            position: relative;
+        }
+        .phase-card .phase-num {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .phase-card .phase-title {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .phase-card .phase-time {
+            font-size: 10px;
+            color: #94a3b8;
+            margin-bottom: 8px;
+        }
+        .phase-card .phase-items {
+            font-size: 11px;
+            color: #475569;
+            line-height: 1.6;
+        }
+        .phase-card.p1 { background: #eff6ff; border-color: #93c5fd; }
+        .phase-card.p1 .phase-num { color: #3b82f6; }
+        .phase-card.p1 .phase-title { color: #1e40af; }
+        .phase-card.p2 { background: #f5f3ff; border-color: #c4b5fd; }
+        .phase-card.p2 .phase-num { color: #7c3aed; }
+        .phase-card.p2 .phase-title { color: #5b21b6; }
+        .phase-card.p3 { background: #fefce8; border-color: #fde047; }
+        .phase-card.p3 .phase-num { color: #ca8a04; }
+        .phase-card.p3 .phase-title { color: #854d0e; }
+        .phase-card.p4 { background: #fef2f2; border-color: #fca5a5; }
+        .phase-card.p4 .phase-num { color: #ef4444; }
+        .phase-card.p4 .phase-title { color: #991b1b; }
+        .phase-card.p5 { background: #f0fdf4; border-color: #86efac; }
+        .phase-card.p5 .phase-num { color: #22c55e; }
+        .phase-card.p5 .phase-title { color: #166534; }
+        .phase-card.p6 { background: #fdf4ff; border-color: #e879f9; }
+        .phase-card.p6 .phase-num { color: #c026d3; }
+        .phase-card.p6 .phase-title { color: #86198f; }
+
+        /* connector dots between phases */
+        .timeline .phase-card:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -9px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: #94a3b8;
+            z-index: 1;
+        }
+
+        /* ===== ARCHITECTURE DECISION BOX ===== */
+        .arch-box {
+            background: linear-gradient(135deg, #1e1b4b, #312e81);
+            border-radius: 14px;
+            padding: 28px 32px;
+            color: #fff;
+        }
+        .arch-box h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #c7d2fe;
+        }
+        .arch-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        .arch-cell {
+            padding: 14px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .arch-cell.head {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .arch-cell.dim { background: rgba(255,255,255,0.05); color: #a5b4fc; font-size: 12px; font-weight: 600; }
+        .arch-cell.sim-val { background: rgba(59,130,246,0.15); color: #93c5fd; font-size: 12px; }
+        .arch-cell.prod-val { background: rgba(34,197,94,0.15); color: #86efac; font-size: 12px; }
+        .arch-cell.same { background: rgba(168,85,247,0.15); color: #d8b4fe; font-size: 12px; font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding: 32px;
+            font-size: 11px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+<h1>Simulation → Production Workflow</h1>
+<div class="subtitle">One codebase, two modes. The intake pipeline is the only net-new system.</div>
+
+<!-- ===== MODE BANNER ===== -->
+<div class="mode-banner">
+    <div class="mode-card sim">
+        <span class="mode-dot"></span>
+        Simulation Mode (Training)
+    </div>
+    <div class="mode-arrow">⟶</div>
+    <div class="mode-card prod">
+        <span class="mode-dot"></span>
+        Production Mode (Enterprise)
+    </div>
+</div>
+
+<!-- ===== SECTION 1: SIMULATION WORKFLOW ===== -->
+<div class="flow-section">
+    <div class="section-header">
+        <span class="section-tag sim">Simulation</span>
+        <h2>Simulation Workflow</h2>
+        <span class="line"></span>
+    </div>
+    <div class="sim-flow">
+        <div class="flow-step">
+            <div class="box blue">
+                <span class="icon">📋</span>
+                Create Run
+                <span class="label">Select template</span>
+            </div>
+        </div>
+        <div class="flow-step">
+            <div class="box blue">
+                <span class="icon">⚙️</span>
+                Decompose
+                <span class="label">AI generates step DAG</span>
+            </div>
+        </div>
+        <div class="flow-step">
+            <div class="box blue">
+                <span class="icon">📱</span>
+                Recruit
+                <span class="label">QR code + join code</span>
+            </div>
+        </div>
+        <div class="flow-step">
+            <div class="box indigo">
+                <span class="icon">👥</span>
+                Groups Form
+                <span class="label">Auto-assignment</span>
+            </div>
+        </div>
+        <div class="flow-step">
+            <div class="box purple">
+                <span class="icon">🤖</span>
+                Orchestrate
+                <span class="label">AI + HITL steps</span>
+            </div>
+        </div>
+        <div class="flow-step">
+            <div class="box purple">
+                <span class="icon">💬</span>
+                Work + Decide
+                <span class="label">Chat, review, submit</span>
+            </div>
+        </div>
+        <div class="flow-step">
+            <div class="box amber">
+                <span class="icon">🏆</span>
+                Evaluate
+                <span class="label">Score + rank groups</span>
+            </div>
+        </div>
+        <div class="flow-step">
+            <div class="box green">
+                <span class="icon">📊</span>
+                Leaderboard
+                <span class="label">Summary + signals</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 2: SHARED RUNTIME CORE ===== -->
+<div class="flow-section">
+    <div class="section-header">
+        <span class="section-tag shared">Shared Core</span>
+        <h2>Components That Stay Identical in Both Modes</h2>
+        <span class="line"></span>
+    </div>
+    <div class="shared-core">
+        <div class="shared-core-label">SHARED RUNTIME — NO CHANGES NEEDED</div>
+        <div class="shared-grid">
+            <div class="shared-item">
+                <div class="s-icon">🧠</div>
+                LLM Provider + Fallback
+                <div class="s-file">llm_provider.py</div>
+            </div>
+            <div class="shared-item">
+                <div class="s-icon">⚡</div>
+                Orchestrator Engine
+                <div class="s-file">orchestrator.py</div>
+            </div>
+            <div class="shared-item">
+                <div class="s-icon">👤</div>
+                HITL Checkpoints
+                <div class="s-file">hitl_selector.py</div>
+            </div>
+            <div class="shared-item">
+                <div class="s-icon">💬</div>
+                AI Chat Assistant
+                <div class="s-file">ParticipantStep.tsx</div>
+            </div>
+            <div class="shared-item">
+                <div class="s-icon">📡</div>
+                Signal Recording
+                <div class="s-file">signal_recorder.py</div>
+            </div>
+            <div class="shared-item">
+                <div class="s-icon">🔍</div>
+                Vector Store (RAG)
+                <div class="s-file">vector_store.py</div>
+            </div>
+            <div class="shared-item">
+                <div class="s-icon">📤</div>
+                SSE Streaming
+                <div class="s-file">sse.py</div>
+            </div>
+            <div class="shared-item">
+                <div class="s-icon">🔐</div>
+                Auth + JWT
+                <div class="s-file">auth.py</div>
+            </div>
+            <div class="shared-item">
+                <div class="s-icon">📎</div>
+                File Upload / Serve
+                <div class="s-file">main.py endpoints</div>
+            </div>
+            <div class="shared-item">
+                <div class="s-icon">🖥️</div>
+                Worker UI
+                <div class="s-file">ParticipantDashboard.tsx</div>
+            </div>
+            <div class="shared-item">
+                <div class="s-icon">🗄️</div>
+                Database + Migrations
+                <div class="s-file">database.py, models.py</div>
+            </div>
+            <div class="shared-item">
+                <div class="s-icon">✅</div>
+                Evaluator
+                <div class="s-file">evaluator.py</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 3: MODE SWITCH COMPARISON ===== -->
+<div class="switch-section">
+    <div class="section-header">
+        <span class="section-tag shared">Mode Switch</span>
+        <h2>What Changes Between Simulation and Production</h2>
+        <span class="line"></span>
+    </div>
+    <div class="switch-container">
+        <!-- Left: Simulation -->
+        <div class="switch-col left">
+            <h3><span style="font-size:16px">🔵</span> Simulation Mode</h3>
+            <div class="switch-row">
+                <span class="sw-icon">📋</span>
+                <div>
+                    <div class="sw-label">Template-Generated Tasks</div>
+                    <div class="sw-desc">Synthetic scenarios from YAML templates</div>
+                </div>
+            </div>
+            <div class="switch-row">
+                <span class="sw-icon">📱</span>
+                <div>
+                    <div class="sw-label">QR Code Recruiting</div>
+                    <div class="sw-desc">Join code + QR for ad-hoc participants</div>
+                </div>
+            </div>
+            <div class="switch-row">
+                <span class="sw-icon">🏆</span>
+                <div>
+                    <div class="sw-label">Competitive Scoring</div>
+                    <div class="sw-desc">Leaderboard, ranking, group competition</div>
+                </div>
+            </div>
+            <div class="switch-row">
+                <span class="sw-icon">🧪</span>
+                <div>
+                    <div class="sw-label">Experiment Framing</div>
+                    <div class="sw-desc">Friction signals, optimization hints</div>
+                </div>
+            </div>
+            <div class="switch-row">
+                <span class="sw-icon">📊</span>
+                <div>
+                    <div class="sw-label">Training Analytics</div>
+                    <div class="sw-desc">Learning recommendations, A/B analysis</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Center: Toggle -->
+        <div class="switch-center">
+            <div class="switch-arrow-line"></div>
+            <div class="switch-badge">run.mode</div>
+            <div class="switch-arrow-line"></div>
+        </div>
+
+        <!-- Right: Production -->
+        <div class="switch-col right">
+            <h3><span style="font-size:16px">🟢</span> Production Mode</h3>
+            <div class="switch-row">
+                <span class="sw-icon">📥</span>
+                <div>
+                    <div class="sw-label">Intake Pipeline Tasks</div>
+                    <div class="sw-desc">Voice, email, docs, API webhooks → real cases</div>
+                </div>
+            </div>
+            <div class="switch-row">
+                <span class="sw-icon">👥</span>
+                <div>
+                    <div class="sw-label">Team Assignment</div>
+                    <div class="sw-desc">Workers assigned to workflows by ops manager</div>
+                </div>
+            </div>
+            <div class="switch-row">
+                <span class="sw-icon">✅</span>
+                <div>
+                    <div class="sw-label">Quality Auditing</div>
+                    <div class="sw-desc">Compliance checks, SLA tracking, error rate</div>
+                </div>
+            </div>
+            <div class="switch-row">
+                <span class="sw-icon">⏱️</span>
+                <div>
+                    <div class="sw-label">Operational Framing</div>
+                    <div class="sw-desc">SLA timers, priority badges, escalation paths</div>
+                </div>
+            </div>
+            <div class="switch-row">
+                <span class="sw-icon">📈</span>
+                <div>
+                    <div class="sw-label">Ops Metrics + Audit Log</div>
+                    <div class="sw-desc">Throughput, cost/task, compliance, full audit trail</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 4: PRODUCTION WORKFLOW ===== -->
+<div class="flow-section">
+    <div class="section-header">
+        <span class="section-tag prod">Production</span>
+        <h2>Production Workflow</h2>
+        <span class="line"></span>
+    </div>
+    <div class="sim-flow">
+        <div class="flow-step">
+            <div class="box amber">
+                <span class="icon">📥</span>
+                Intake
+                <span class="label">Voice, email, docs, API</span>
+            </div>
+        </div>
+        <div class="flow-step">
+            <div class="box amber">
+                <span class="icon">🔄</span>
+                Normalize
+                <span class="label">Extract + structure</span>
+            </div>
+        </div>
+        <div class="flow-step">
+            <div class="box green">
+                <span class="icon">📋</span>
+                Create Task
+                <span class="label">Steps from template</span>
+            </div>
+        </div>
+        <div class="flow-step">
+            <div class="box green">
+                <span class="icon">👥</span>
+                Assign Team
+                <span class="label">Ops assigns workers</span>
+            </div>
+        </div>
+        <div class="flow-step">
+            <div class="box purple">
+                <span class="icon">🤖</span>
+                Orchestrate
+                <span class="label">AI + HITL steps</span>
+            </div>
+        </div>
+        <div class="flow-step">
+            <div class="box purple">
+                <span class="icon">💬</span>
+                Work + Decide
+                <span class="label">Chat, review, submit</span>
+            </div>
+        </div>
+        <div class="flow-step">
+            <div class="box green">
+                <span class="icon">✅</span>
+                QA Audit
+                <span class="label">Compliance check</span>
+            </div>
+        </div>
+        <div class="flow-step">
+            <div class="box green">
+                <span class="icon">📈</span>
+                Ops Metrics
+                <span class="label">SLA, throughput, cost</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 5: INTAKE PIPELINE DETAIL ===== -->
+<div class="flow-section">
+    <div class="section-header">
+        <span class="section-tag new">New Build</span>
+        <h2>Intake Pipeline — The Only Net-New System</h2>
+        <span class="line"></span>
+    </div>
+    <div class="intake-diagram">
+        <!-- Sources -->
+        <div class="intake-sources">
+            <div class="intake-source"><span class="is-icon">🎙️</span> Voice Calls<br><span style="font-size:10px;font-weight:400;color:#b45309">Whisper / Deepgram → transcript</span></div>
+            <div class="intake-source"><span class="is-icon">📧</span> Email / Text<br><span style="font-size:10px;font-weight:400;color:#b45309">IMAP / webhook → parsed</span></div>
+            <div class="intake-source"><span class="is-icon">📄</span> Documents<br><span style="font-size:10px;font-weight:400;color:#b45309">PDF, image, DOCX → OCR</span></div>
+            <div class="intake-source"><span class="is-icon">🔗</span> API Webhooks<br><span style="font-size:10px;font-weight:400;color:#b45309">CRM, ERP, ticketing</span></div>
+        </div>
+
+        <div class="intake-arrow">→</div>
+
+        <!-- Process -->
+        <div class="intake-process">
+            <h4>Intake Pipeline</h4>
+            <div class="intake-process-items">
+                <div class="intake-process-item">1. Connector ingests raw input</div>
+                <div class="intake-process-item">2. Extract text + files</div>
+                <div class="intake-process-item">3. Claude extracts structured fields</div>
+                <div class="intake-process-item">4. Normalizer → NormalizedTask</div>
+                <div class="intake-process-item">5. Chunk + embed into ChromaDB</div>
+            </div>
+        </div>
+
+        <div class="intake-arrow">→</div>
+
+        <!-- Task Creator -->
+        <div class="intake-process" style="border-color: #86efac;">
+            <h4 style="color: #166534;">Task Creator</h4>
+            <div class="intake-process-items">
+                <div class="intake-process-item" style="background:#dcfce7">Create group (case)</div>
+                <div class="intake-process-item" style="background:#dcfce7">Store files as RunMaterials</div>
+                <div class="intake-process-item" style="background:#dcfce7">Inject context into steps</div>
+                <div class="intake-process-item" style="background:#dcfce7">Start orchestration engine</div>
+            </div>
+        </div>
+
+        <div class="intake-arrow">→</div>
+
+        <!-- Harness -->
+        <div class="intake-harness">
+            <div class="intake-harness-item">🤖 Orchestrator runs step DAG</div>
+            <div class="intake-harness-item">👤 Workers claim HITL steps</div>
+            <div class="intake-harness-item">💬 AI assistant provides context</div>
+            <div class="intake-harness-item">📡 Signals record everything</div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 6: IMPLEMENTATION PHASES ===== -->
+<div class="flow-section">
+    <div class="section-header">
+        <span class="section-tag new">Phases</span>
+        <h2>Implementation Timeline</h2>
+        <span class="line"></span>
+    </div>
+    <div class="timeline">
+        <div class="phase-card p1">
+            <div class="phase-num">Phase 1</div>
+            <div class="phase-title">Mode Toggle</div>
+            <div class="phase-time">1–2 days</div>
+            <div class="phase-items">
+                Conditional UI rendering<br>
+                Hide leaderboard/scoring<br>
+                Show SLA + priority<br>
+                Rename labels
+            </div>
+        </div>
+        <div class="phase-card p2">
+            <div class="phase-num">Phase 2</div>
+            <div class="phase-title">Doc Intake</div>
+            <div class="phase-time">3–5 days</div>
+            <div class="phase-items">
+                PDF, DOCX, image OCR<br>
+                Normalizer schema<br>
+                Task creator pipeline<br>
+                Admin upload UI
+            </div>
+        </div>
+        <div class="phase-card p3">
+            <div class="phase-num">Phase 3</div>
+            <div class="phase-title">API Webhooks</div>
+            <div class="phase-time">2–3 days</div>
+            <div class="phase-items">
+                Webhook endpoint<br>
+                Connector factory<br>
+                IntakeSource model<br>
+                Monitoring dashboard
+            </div>
+        </div>
+        <div class="phase-card p4">
+            <div class="phase-num">Phase 4</div>
+            <div class="phase-title">Voice Pipeline</div>
+            <div class="phase-time">3–5 days</div>
+            <div class="phase-items">
+                Whisper/Deepgram<br>
+                Audio handling<br>
+                Claude extraction<br>
+                Audio playback UI
+            </div>
+        </div>
+        <div class="phase-card p5">
+            <div class="phase-num">Phase 5</div>
+            <div class="phase-title">Email Pipeline</div>
+            <div class="phase-time">2–3 days</div>
+            <div class="phase-items">
+                IMAP polling<br>
+                Email parser<br>
+                Attachment routing<br>
+                Thread detection
+            </div>
+        </div>
+        <div class="phase-card p6">
+            <div class="phase-num">Phase 6</div>
+            <div class="phase-title">Notifications</div>
+            <div class="phase-time">3–5 days</div>
+            <div class="phase-items">
+                Slack Bolt app<br>
+                HITL push notifications<br>
+                Deep-link to web UI<br>
+                Teams Adaptive Cards
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 7: ARCHITECTURE DECISION ===== -->
+<div class="flow-section">
+    <div class="section-header">
+        <h2>Architecture Decision: One Codebase, Two Modes</h2>
+        <span class="line"></span>
+    </div>
+    <div class="arch-box">
+        <h3>Do NOT fork the codebase. The difference is mode, not code.</h3>
+        <div class="arch-grid">
+            <div class="arch-cell head" style="color:#a5b4fc;">Dimension</div>
+            <div class="arch-cell head" style="color:#93c5fd;">🔵 Simulation</div>
+            <div class="arch-cell head" style="color:#86efac;">🟢 Production</div>
+
+            <div class="arch-cell dim">Task Source</div>
+            <div class="arch-cell sim-val">Template-generated</div>
+            <div class="arch-cell prod-val">Intake pipeline</div>
+
+            <div class="arch-cell dim">User Framing</div>
+            <div class="arch-cell sim-val">Training exercise</div>
+            <div class="arch-cell prod-val">Real case work</div>
+
+            <div class="arch-cell dim">Scoring</div>
+            <div class="arch-cell sim-val">Competitive leaderboard</div>
+            <div class="arch-cell prod-val">QA / compliance audit</div>
+
+            <div class="arch-cell dim">Teams</div>
+            <div class="arch-cell sim-val">Ad-hoc via join code</div>
+            <div class="arch-cell prod-val">Assigned by ops manager</div>
+
+            <div class="arch-cell dim">Data</div>
+            <div class="arch-cell sim-val">Synthetic / training</div>
+            <div class="arch-cell prod-val">Real customer data</div>
+
+            <div class="arch-cell dim">Worker UI</div>
+            <div class="arch-cell same">Identical</div>
+            <div class="arch-cell same">Identical</div>
+
+            <div class="arch-cell dim">AI Assistant</div>
+            <div class="arch-cell same">Identical</div>
+            <div class="arch-cell same">Identical</div>
+
+            <div class="arch-cell dim">Orchestrator</div>
+            <div class="arch-cell same">Identical</div>
+            <div class="arch-cell same">Identical</div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    SkillSimm — Simulation → Enterprise Implementation Architecture · Based on Implementation.md
+</div>
+
+</div>
+</body>
+</html>

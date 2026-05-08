@@ -84,7 +84,7 @@ Practice your business mindset through a structured process:
 
 ## Simulation Platform
 
-*   **[SkillSimm Simulation Platform](https://bcs.statherian.com)**
+*   **[SkillSimm Simulation Platform](https://skillsimm.com)**
 
 ---
 

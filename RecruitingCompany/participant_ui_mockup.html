@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SkillSimm — Participant UI Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:   #FAF8F4;
+  --ink:     #111111;
+  --mid:     #666560;
+  --border:  #E5E1D8;
+  --indigo:  #6366f1;
+  --indigo-d:#4f46e5;
+  --indigo-l:#eeecf8;
+  --green:   #059669;
+  --green-l: #ecfdf5;
+  --amber:   #d97706;
+  --amber-l: #fef3c7;
+  --red:     #dc2626;
+  --red-l:   #fef2f2;
+  --blue:    #0284c7;
+  --blue-l:  #e0f2fe;
+  --font:    'DM Sans', 'Helvetica Neue', Helvetica, sans-serif;
+  --serif:   'DM Serif Display', Georgia, serif;
+}
+
+body {
+  background: var(--cream);
+  font-family: var(--font);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* ===== PAGE LAYOUT ===== */
+.page-header {
+  text-align: center;
+  padding: 56px 20px 20px;
+}
+.page-header h1 {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.page-header .sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--mid);
+  margin-top: 8px;
+}
+
+.screen-section {
+  max-width: 1100px;
+  margin: 0 auto 64px;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--indigo);
+  margin-bottom: 8px;
+}
+
+.rule {
+  width: 40px;
+  height: 3px;
+  background: var(--indigo);
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.screen-title {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+}
+
+.screen-divider {
+  max-width: 1100px;
+  margin: 0 auto 48px;
+  padding: 0 24px;
+}
+.screen-divider hr {
+  border: none;
+  border-top: 1.5px solid var(--border);
+}
+
+/* ===== APP FRAME ===== */
+.app-frame {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+}
+
+/* Top bar */
+.topbar {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+}
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.topbar-logo {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--cream);
+  letter-spacing: -0.01em;
+}
+.topbar-sep {
+  color: rgba(250,248,244,0.2);
+}
+.topbar-context {
+  color: rgba(250,248,244,0.5);
+  font-size: 12px;
+}
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: rgba(250,248,244,0.5);
+  font-size: 12px;
+}
+.avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--indigo);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: #fff;
+}
+
+/* ===== APP BODY (sidebar + main) ===== */
+.app-body {
+  display: flex;
+  min-height: 520px;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 260px;
+  background: var(--cream);
+  border-right: 1.5px solid var(--border);
+  padding: 16px 0;
+  flex-shrink: 0;
+}
+.sidebar-section {
+  margin-bottom: 20px;
+}
+.sidebar-section-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mid);
+  padding: 0 16px;
+  margin-bottom: 6px;
+}
+.sidebar-item {
+  padding: 8px 16px;
+  font-size: 12px;
+  color: var(--mid);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.12s;
+}
+.sidebar-item:hover {
+  background: var(--indigo-l);
+}
+.sidebar-item.active {
+  background: var(--indigo-l);
+  color: var(--indigo-d);
+  font-weight: 600;
+}
+.sidebar-badge {
+  margin-left: auto;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.sidebar-badge.indigo {
+  background: var(--indigo);
+  color: #fff;
+}
+.sidebar-badge.green {
+  background: var(--green);
+  color: #fff;
+}
+.sidebar-progress {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--mid);
+  font-weight: 600;
+}
+.status-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.status-dot.green  { background: var(--green); }
+.status-dot.yellow { background: var(--amber); }
+.status-dot.gray   { background: var(--border); }
+
+/* ===== MAIN PANEL ===== */
+.main-panel {
+  flex: 1;
+  padding: 28px 24px;
+  overflow-y: auto;
+}
+.main-panel h2 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+.main-panel .subtitle {
+  font-size: 12px;
+  color: var(--mid);
+  margin-bottom: 20px;
+}
+
+/* Progress bar */
+.progress-bar-container {
+  margin-bottom: 24px;
+}
+.progress-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--mid);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.progress-bar-track {
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  background: var(--indigo);
+  border-radius: 3px;
+}
+
+/* ===== KANBAN ===== */
+.kanban {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.kanban-col {
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 14px;
+  border: 1.5px solid var(--border);
+}
+.kanban-col-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  color: var(--mid);
+}
+.kanban-card {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  transition: border-color 0.12s;
+  cursor: pointer;
+}
+.kanban-card:hover { border-color: var(--indigo); }
+
+/* Tags */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.badge.claim   { background: var(--amber-l); color: var(--amber); }
+.badge.review  { background: var(--blue-l); color: var(--blue); }
+.badge.done    { background: var(--green-l); color: var(--green); }
+
+.kanban-btn {
+  width: 100%;
+  padding: 8px;
+  border: 1.5px dashed var(--border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--indigo);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 4px;
+  font-family: var(--font);
+  transition: background 0.12s, border-color 0.12s;
+}
+.kanban-btn:hover {
+  background: var(--indigo-l);
+  border-color: var(--indigo);
+}
+
+/* Activity log */
+.activity-log {
+  border-top: 1.5px solid var(--border);
+  padding-top: 16px;
+}
+.activity-log-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--mid);
+  margin-bottom: 10px;
+}
+.activity-item {
+  font-size: 11px;
+  color: var(--mid);
+  padding: 4px 0;
+  display: flex;
+  gap: 8px;
+}
+.activity-time {
+  font-family: monospace;
+  font-size: 10px;
+  color: rgba(102,101,96,0.5);
+  flex-shrink: 0;
+}
+
+/* ===== TASK WORKSPACE ===== */
+.workspace-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.workspace-panel {
+  background: var(--cream);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+}
+.workspace-panel h3 {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mid);
+  margin-bottom: 14px;
+}
+
+.form-field {
+  margin-bottom: 14px;
+}
+.form-field label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 4px;
+}
+.form-field input, .form-field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 12px;
+  font-family: var(--font);
+  background: #fff;
+  color: var(--ink);
+  transition: border-color 0.12s;
+}
+.form-field input:focus, .form-field textarea:focus {
+  outline: none;
+  border-color: var(--indigo);
+}
+.form-field textarea {
+  height: 68px;
+  resize: none;
+}
+
+.form-field input::placeholder, .form-field textarea::placeholder {
+  color: rgba(102,101,96,0.4);
+}
+
+/* AI assistant panel */
+.ai-message {
+  background: var(--indigo-l);
+  border: 1.5px solid #c7c9f5;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 12px;
+  color: var(--indigo-d);
+  margin-bottom: 12px;
+  line-height: 1.55;
+}
+.ai-message .ai-label {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--indigo);
+  margin-bottom: 6px;
+}
+.ai-input {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.ai-input input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 12px;
+  font-family: var(--font);
+  background: #fff;
+  color: var(--ink);
+}
+.ai-input input:focus { outline: none; border-color: var(--indigo); }
+.ai-input input::placeholder { color: rgba(102,101,96,0.4); }
+.ai-input button {
+  padding: 10px 16px;
+  background: var(--indigo);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font);
+  transition: background 0.12s;
+}
+.ai-input button:hover { background: var(--indigo-d); }
+
+.context-sources {
+  font-size: 11px;
+  color: var(--mid);
+  line-height: 1.7;
+}
+.context-sources .cs-title {
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 2px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Task meta bar */
+.task-meta {
+  display: flex;
+  gap: 20px;
+  font-size: 11px;
+  color: var(--mid);
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1.5px solid var(--border);
+}
+.task-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.task-meta strong { color: var(--ink); font-weight: 600; }
+
+/* Action bar */
+.action-bar {
+  display: flex;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1.5px solid var(--border);
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-family: var(--font);
+  transition: background 0.12s, border-color 0.12s;
+}
+.btn-primary {
+  background: var(--indigo);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--indigo-d); }
+.btn-secondary {
+  background: var(--border);
+  color: var(--ink);
+}
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--mid);
+}
+.btn-outline:hover { border-color: var(--indigo); color: var(--indigo-d); }
+
+/* ===== CONTEXT BRIEF ===== */
+.context-brief {
+  background: var(--indigo-l);
+  border: 1.5px solid #c7c9f5;
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.context-brief-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--indigo-d);
+  margin-bottom: 16px;
+}
+.context-brief-section {
+  margin-bottom: 14px;
+}
+.context-brief-section h4 {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--indigo);
+  margin-bottom: 6px;
+}
+.context-brief-section li {
+  font-size: 12px;
+  color: var(--ink);
+  opacity: 0.75;
+  padding: 2px 0 2px 16px;
+  position: relative;
+  list-style: none;
+}
+.context-brief-section ul { padding-left: 0; }
+.context-brief-section li::before {
+  content: "•";
+  position: absolute;
+  left: 4px;
+  color: var(--indigo);
+}
+
+/* ===== REVIEW MODE ===== */
+.review-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.change-item {
+  font-size: 12px;
+  padding: 6px 0;
+  color: var(--mid);
+  border-bottom: 1px solid rgba(229,225,216,0.5);
+}
+.change-item:last-child { border-bottom: none; }
+.change-item .field {
+  font-weight: 600;
+  color: var(--ink);
+}
+.commit-list {
+  font-size: 12px;
+}
+.commit-item {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--mid);
+}
+.commit-item:last-child { border-bottom: none; }
+.commit-label {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.commit-label.ai    { background: var(--blue-l); color: var(--blue); }
+.commit-label.human { background: var(--amber-l); color: var(--amber); }
+
+.review-actions {
+  display: flex;
+  gap: 10px;
+}
+.btn-approve {
+  background: var(--green);
+  color: #fff;
+}
+.btn-approve:hover { background: #047857; }
+.btn-reject {
+  background: var(--red);
+  color: #fff;
+}
+.btn-reject:hover { background: #b91c1c; }
+
+.file-attach {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--indigo-d);
+  padding: 6px 12px;
+  background: var(--indigo-l);
+  border: 1.5px solid #c7c9f5;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* ===== SUGGESTED ACTIONS ===== */
+.suggestion-card {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 20px;
+}
+.suggestion-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s;
+}
+.suggestion-item:hover {
+  border-color: var(--indigo);
+  background: var(--indigo-l);
+}
+.suggestion-num {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--indigo-l);
+  color: var(--indigo-d);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.suggestion-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.suggestion-time {
+  margin-left: auto;
+  font-size: 10px;
+  color: var(--mid);
+}
+.ai-tip {
+  background: var(--indigo-l);
+  border: 1.5px solid #c7c9f5;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 11px;
+  color: var(--indigo-d);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.footer-note {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 11px;
+  color: var(--mid);
+}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Participant UI Design</h1>
+  <div class="sub">Multi-project task simulation platform — Project, Tasks, Work, Review</div>
+</div>
+
+<!-- ======================== SCREEN 1: PROJECT DETAIL VIEW ======================== -->
+<div class="screen-section">
+  <div class="eyebrow">Screen 1</div>
+  <div class="rule"></div>
+  <div class="screen-title">Main View: Project Detail with Sidebar</div>
+
+  <div class="app-frame">
+    <div class="topbar">
+      <div class="topbar-left">
+        <span class="topbar-logo">TaskFlow</span>
+        <span class="topbar-sep">|</span>
+        <span class="topbar-context">Insurance Batch A</span>
+      </div>
+      <div class="topbar-right">
+        <span>🔔 2 reviews pending</span>
+        <div class="avatar">YO</div>
+      </div>
+    </div>
+    <div class="app-body">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">My Active Tasks</div>
+          <div class="sidebar-item active">
+            <span class="status-dot green"></span>
+            #42 — Calculation
+            <span class="sidebar-badge indigo">In Progress</span>
+          </div>
+          <div class="sidebar-item">
+            <span class="status-dot yellow"></span>
+            #87 — Initial Review
+            <span class="sidebar-badge indigo">In Progress</span>
+          </div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Review Queue</div>
+          <div class="sidebar-item">
+            <span class="status-dot"></span>
+            #31 — by Alice
+            <span class="sidebar-badge green">Review</span>
+          </div>
+          <div class="sidebar-item">
+            <span class="status-dot"></span>
+            #55 — by Dave
+            <span class="sidebar-badge green">Review</span>
+          </div>
+          <div class="sidebar-item">
+            <span class="status-dot"></span>
+            #12 — by Eve
+            <span class="sidebar-badge green">Review</span>
+          </div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Projects</div>
+          <div class="sidebar-item active">
+            Insurance Batch A
+            <span class="sidebar-progress">67%</span>
+          </div>
+          <div class="sidebar-item">
+            Insurance Batch B
+            <span class="sidebar-progress">12%</span>
+          </div>
+          <div class="sidebar-item">
+            Loan Review Q2
+            <span class="sidebar-progress">41%</span>
+          </div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Teammates</div>
+          <div class="sidebar-item">
+            <span class="status-dot green"></span>
+            Alice (working on #58)
+          </div>
+          <div class="sidebar-item">
+            <span class="status-dot green"></span>
+            Bob (reviewing #31)
+          </div>
+          <div class="sidebar-item">
+            <span class="status-dot gray"></span>
+            Carol (idle)
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Panel -->
+      <div class="main-panel">
+        <h2>Insurance Batch A — Claim Adjuster Escalation</h2>
+        <div class="subtitle">8 of 12 stages complete</div>
+
+        <div class="progress-bar-container">
+          <div class="progress-bar-label">
+            <span>Progress</span>
+            <span>67%</span>
+          </div>
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" style="width: 67%"></div>
+          </div>
+        </div>
+
+        <div class="kanban">
+          <div class="kanban-col">
+            <div class="kanban-col-title">⚡ Claimable Tasks</div>
+            <div class="kanban-card"><span class="badge claim">Claim</span> #42 Calculation</div>
+            <div class="kanban-card"><span class="badge claim">Claim</span> #87 Init Review</div>
+            <div class="kanban-card"><span class="badge claim">Claim</span> #93 Documentation</div>
+            <button class="kanban-btn">+ Claim a Task</button>
+          </div>
+          <div class="kanban-col">
+            <div class="kanban-col-title">🔍 In Review</div>
+            <div class="kanban-card"><span class="badge review">Review</span> #31 Triage ✓</div>
+            <div class="kanban-card"><span class="badge review">Review</span> #55 Fraud ✓</div>
+            <button class="kanban-btn">Review Next →</button>
+          </div>
+          <div class="kanban-col">
+            <div class="kanban-col-title">✅ Done</div>
+            <div class="kanban-card"><span class="badge done">Done</span> #01 Intake</div>
+            <div class="kanban-card"><span class="badge done">Done</span> #02 Triage</div>
+            <div class="kanban-card"><span class="badge done">Done</span> #03 Coverage</div>
+          </div>
+        </div>
+
+        <div class="activity-log">
+          <div class="activity-log-title">Activity Log</div>
+          <div class="activity-item"><span class="activity-time">10:32</span> Alice submitted #31 for review</div>
+          <div class="activity-item"><span class="activity-time">10:28</span> Bob signed off #22 → stage complete</div>
+          <div class="activity-item"><span class="activity-time">10:15</span> AI generated output for #42 — needs human review</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="screen-divider"><hr></div>
+
+<!-- ======================== SCREEN 2: TASK WORKSPACE ======================== -->
+<div class="screen-section">
+  <div class="eyebrow">Screen 2</div>
+  <div class="rule"></div>
+  <div class="screen-title">Task Workspace: Claim #42 (Reserve Calculation)</div>
+
+  <div class="app-frame">
+    <div class="topbar">
+      <div class="topbar-left">
+        <span class="topbar-logo">TaskFlow</span>
+        <span class="topbar-sep">|</span>
+        <span class="topbar-context">← Back to Project</span>
+        <span style="color:var(--cream); font-weight:600; margin-left:4px;">Claim #42 — Reserve Calculation</span>
+      </div>
+      <div class="topbar-right">
+        <span>⏱ 4m 22s</span>
+        <div class="avatar">YO</div>
+      </div>
+    </div>
+    <div style="padding: 28px 24px;">
+      <div class="task-meta">
+        <span><strong>Stage:</strong> Calculation</span>
+        <span><strong>Claimed by:</strong> You</span>
+        <span><strong>Status:</strong> In Progress</span>
+      </div>
+
+      <!-- Context Brief -->
+      <div class="context-brief">
+        <div class="context-brief-header">🤖 Context Brief — Claim #42 (you left 8 minutes ago)</div>
+        <div class="context-brief-section">
+          <h4>What happened since you left:</h4>
+          <ul>
+            <li>Bob signed off your stage 2 submission ✓</li>
+            <li>Stage 3 (Calculation) is now unblocked</li>
+          </ul>
+        </div>
+        <div class="context-brief-section">
+          <h4>Where you are:</h4>
+          <ul>
+            <li>Stage 3: Reserve Calculation</li>
+            <li>You need to: set adjustment amount + rationale</li>
+            <li>Key facts: $23K loss claimed, policy limit $50K, deductible $2K, no prior claims</li>
+          </ul>
+        </div>
+        <div class="context-brief-section">
+          <h4>Relevant context from your other work:</h4>
+          <ul>
+            <li>You just processed similar claim #87 ($18K, same policy type) — reserve was $14.5K</li>
+          </ul>
+        </div>
+        <div style="display:flex; gap:10px; margin-top:16px;">
+          <button class="btn btn-primary">Start Working</button>
+          <button class="btn btn-outline">Show Full History</button>
+        </div>
+      </div>
+
+      <div class="workspace-layout">
+        <!-- Left: Task Content -->
+        <div class="workspace-panel">
+          <h3>Task Content</h3>
+          <div class="form-field">
+            <label>Adjustment Amount ($)</label>
+            <input type="text" placeholder="Enter reserve amount...">
+          </div>
+          <div class="form-field">
+            <label>Rationale</label>
+            <textarea placeholder="Explain your calculation basis..."></textarea>
+          </div>
+          <div class="form-field">
+            <label>Supporting Documents</label>
+            <button class="btn btn-outline" style="font-size:11px; padding:6px 12px;">+ Upload File</button>
+          </div>
+        </div>
+
+        <!-- Right: AI Assistant -->
+        <div class="workspace-panel">
+          <h3>AI Assistant</h3>
+          <div class="ai-message">
+            <div class="ai-label">🤖 AI Suggestion</div>
+            Based on similar claims, the reserve should be ~$14,500. Similar case: #2847 ($13,800 — same policy type, comparable loss).
+          </div>
+          <div class="ai-input">
+            <input type="text" placeholder="Ask AI a question...">
+            <button>Ask</button>
+          </div>
+          <div class="context-sources">
+            <div class="cs-title">Context loaded from:</div>
+            <div>• Policy doc (page 3, §4.2)</div>
+            <div>• Prior stage output</div>
+            <div>• Your last action on #87</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-bar">
+        <button class="btn btn-primary">Submit for Review</button>
+        <button class="btn btn-secondary">Save Draft</button>
+        <button class="btn btn-outline">Upload File</button>
+        <button class="btn btn-outline">Rollback</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="screen-divider"><hr></div>
+
+<!-- ======================== SCREEN 3: REVIEW MODE ======================== -->
+<div class="screen-section">
+  <div class="eyebrow">Screen 3</div>
+  <div class="rule"></div>
+  <div class="screen-title">Review Mode: Claim #31 (submitted by Alice)</div>
+
+  <div class="app-frame">
+    <div class="topbar">
+      <div class="topbar-left">
+        <span class="topbar-logo">TaskFlow</span>
+        <span class="topbar-sep">|</span>
+        <span class="topbar-context">← Back</span>
+        <span style="color:var(--cream); font-weight:600; margin-left:4px;">REVIEWING: Claim #31 — Triage (by Alice)</span>
+      </div>
+      <div class="topbar-right">
+        <div class="avatar">YO</div>
+      </div>
+    </div>
+    <div style="padding: 28px 24px;">
+      <div class="review-layout">
+        <!-- Left: What they did -->
+        <div class="workspace-panel">
+          <h3>What Alice Did</h3>
+          <div class="change-item"><span class="field">Severity:</span> low → <strong>high</strong></div>
+          <div class="change-item"><span class="field">Category:</span> general → <strong>fraud</strong></div>
+          <div class="change-item"><span class="field">Note:</span> "Multiple claims same address pattern detected"</div>
+          <div class="file-attach">📎 address_map.pdf</div>
+        </div>
+
+        <!-- Right: Modification History -->
+        <div class="workspace-panel">
+          <h3>Modification History</h3>
+          <div class="commit-list">
+            <div class="commit-item">
+              <span class="commit-label ai">AI</span>
+              Generated initial triage classification
+            </div>
+            <div class="commit-item">
+              <span class="commit-label human">Alice</span>
+              Changed severity low→high, added fraud note
+            </div>
+            <div class="commit-item">
+              <span class="commit-label human">Alice</span>
+              Uploaded address_map.pdf
+            </div>
+          </div>
+          <div style="display:flex; gap:8px; margin-top:14px;">
+            <button class="btn btn-outline" style="font-size:11px; padding:6px 12px;">View Diff</button>
+            <button class="btn btn-outline" style="font-size:11px; padding:6px 12px;">View Full State</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-actions">
+        <button class="btn btn-approve">✓ Approve & Sign Off</button>
+        <button class="btn btn-reject">✗ Reject — Send Back</button>
+        <button class="btn btn-outline">Comment</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="screen-divider"><hr></div>
+
+<!-- ======================== SCREEN 4: SUGGESTED NEXT ACTIONS ======================== -->
+<div class="screen-section">
+  <div class="eyebrow">Screen 4</div>
+  <div class="rule"></div>
+  <div class="screen-title">Post-Submission: Suggested Next Actions</div>
+
+  <div class="app-frame">
+    <div class="topbar">
+      <div class="topbar-left">
+        <span class="topbar-logo">TaskFlow</span>
+        <span class="topbar-sep">|</span>
+        <span class="topbar-context">Claim #42 submitted ✓</span>
+      </div>
+      <div class="topbar-right">
+        <div class="avatar">YO</div>
+      </div>
+    </div>
+    <div style="padding: 28px 24px; max-width:600px; margin:0 auto;">
+      <div style="text-align:center; margin-bottom:24px;">
+        <div style="font-size:36px; margin-bottom:8px;">✅</div>
+        <h2 style="font-size:18px; font-weight:600; letter-spacing:-0.01em;">Submitted for Review</h2>
+        <p style="font-size:12px; color:var(--mid); margin-top:4px;">Claim #42 (Reserve Calculation) has been sent to the review queue.</p>
+      </div>
+
+      <div class="suggestion-card">
+        <h3>Suggested Next Actions</h3>
+        <div class="suggestion-item">
+          <span class="suggestion-num">1</span>
+          <span class="suggestion-text">Review Claim #31 (Project A) — Triage</span>
+          <span class="suggestion-time">~2 min</span>
+        </div>
+        <div class="suggestion-item">
+          <span class="suggestion-num">2</span>
+          <span class="suggestion-text">Claim #87 Initial Review (Project A)</span>
+          <span class="suggestion-time">~8 min</span>
+        </div>
+        <div class="suggestion-item">
+          <span class="suggestion-num">3</span>
+          <span class="suggestion-text">Claim #201 Triage (Project B)</span>
+          <span class="suggestion-time">~5 min</span>
+        </div>
+        <div class="ai-tip">
+          🤖 AI says: "#201 is similar to what you just finished — you'll be fast on this one"
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-note">
+  SkillSimm — Participant UI Design Mockup · Based on 0507_UIDesign.md · Thick Stages Model
+</div>
+
+</body>
+</html>
