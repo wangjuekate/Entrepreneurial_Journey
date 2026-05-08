@@ -91,4 +91,4 @@ Practice your business mindset through a structured process:
 ## Partner With Us
 
 We recruit startups for real-world case studies. Interested companies can learn more at:
-*   **[Partner Program](../RecruitingCompany/Recruiting.html)**
+*   **[Partner Program](./RecruitingCompany/Recruiting.html)**
