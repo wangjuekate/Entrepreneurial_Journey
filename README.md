@@ -42,7 +42,7 @@
 ### Week 6-7: Mid-term 
 
 - [Mid-term instructor evaluation]()
-- [Mid-term pitch video review]()
+- [Mid-term pitch video review](./10_slides_Pitchvideo_review/Mid-termreview.html)
 
 ### Week 8: Creative Thinking
 
