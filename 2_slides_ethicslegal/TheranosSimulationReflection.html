@@ -3,74 +3,196 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Simulation Reflection: Theranos</title>
+    <title>Simulation Reflection: Theranos in 2014</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; }
+      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; --warn: #b45309; }
       .reveal { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: #fff; }
       .reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; letter-spacing: 0; }
-      .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.45em; }
-      .reveal h3 { font-size: 0.72em; color: var(--accent); margin-bottom: 0.45em; }
-      .reveal h4 { font-size: 0.58em; color: var(--muted); margin-bottom: 0.4em; }
-      .reveal p, .reveal li { font-size: 0.48em; line-height: 1.45; color: var(--ink); }
-      .reveal ul { margin: 0.35em 0 0 1.1em; }
+      .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.4em; }
+      .reveal h3 { font-size: 0.7em; color: var(--accent); margin-bottom: 0.3em; }
+      .reveal h4 { font-size: 0.55em; color: var(--muted); margin-bottom: 0.4em; }
+      .reveal p, .reveal li { font-size: 0.46em; line-height: 1.45; color: var(--ink); }
+      .reveal ul { margin: 0.3em 0 0 1.1em; }
       .reveal li { margin-bottom: 0.35em; }
-      .title-slide h2 { font-size: 1.35em; }
-      .subtitle { color: var(--muted); text-align: center; }
-      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; text-align: left; }
-      .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 18px 22px; text-align: left; }
-      .question-slide li { list-style: none; margin-left: -1em; }
-      .small { font-size: 0.42em; color: var(--muted); }
+      .title-slide h2 { font-size: 1.3em; }
+      .subtitle { color: var(--muted); text-align: center; font-size: 0.5em; }
+      .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 16px 20px; text-align: left; }
+      .small { font-size: 0.4em; color: var(--muted); }
+      /* role question slides */
+      .role-h { display: flex; align-items: center; gap: 12px; margin-bottom: 0.3em; }
+      .role-h .emoji { font-size: 1.1em; }
+      .role-h h2 { margin: 0; text-align: left; }
+      .q { font-weight: 600; text-align: left; margin-bottom: 0.4em; }
+      .reveal .options { list-style: none; margin: 0 0 0 0.2em; text-align: left; }
+      .reveal .options li { padding-left: 1.9em; text-indent: -1.9em; }
+      .reveal .role-h ~ p { text-align: left; }
+      .options li { margin-bottom: 0.35em; }
+      .options .k { display: inline-block; min-width: 1.7em; font-weight: 700; color: var(--accent); }
+      .reflect { background: #ecfdf5; border-left: 5px solid var(--accent); padding: 14px 18px; text-align: left; }
+      .reflect .tag { font-size: 0.4em; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
+      .reflect li { font-size: 0.44em; }
+      .quote { font-size: 0.6em; font-weight: 600; line-height: 1.3; }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
+
+        <!-- Title -->
         <section class="title-slide">
-          <h2>Simulation Reflection: Theranos</h2>
-          <p class="subtitle">Week 3: Thursday, September 17</p>
+          <h2>Theranos in 2014: Legal, Ethical, Neither</h2>
         </section>
+
+        <!-- The scenario / source -->
         <section>
-          <h2>Case Setup</h2>
-          <p>Theranos promised to transform blood testing, but the technology and claims did not match reality.</p>
-          <p>Your role is to decide how leaders, employees, board members, and partners should respond when evidence and ambition conflict.</p>
+          <h2>The case</h2>
+          <div class="box"><p>All figures are quoted from the SEC complaints filed 14 March 2018. These are <strong>allegations</strong> &mdash; Theranos and Holmes settled without admitting or denying them. Say &ldquo;the complaint alleges.&rdquo;</p></div>
         </section>
-        <section class="question-slide">
-          <h2>Decision 1: Product Claims</h2>
-          <ul>
-            <li>A: Keep marketing the broad vision while technical issues are solved.</li>
-            <li>B: Limit claims to what has been independently validated.</li>
-          </ul>
-        </section>
-        <section class="question-slide">
-          <h2>Decision 2: Internal Dissent</h2>
-          <ul>
-            <li>A: Treat employee concerns as disloyalty that slows execution.</li>
-            <li>B: Create protected channels for technical and ethical concerns.</li>
-          </ul>
-        </section>
-        <section class="question-slide">
-          <h2>Decision 3: Board Oversight</h2>
-          <ul>
-            <li>A: Trust founder confidence and external prestige.</li>
-            <li>B: Require domain expertise, direct evidence, and regular risk review.</li>
-          </ul>
-        </section>
+
+        <!-- Group Discussion: draw the week's mental model -->
         <section>
-          <h2>Reflection Questions</h2>
-          <ul>
-            <li>What ethical warning sign appeared first?</li>
-            <li>Which stakeholder faced the highest risk?</li>
-            <li>What governance mechanism could have changed the outcome?</li>
+          <h2>Group Discussion</h2>
+          <div class="reflect">
+            <ul>
+              <li>Form groups with classmates who had the same role.</li>
+              <li>Before any discussion of answers, draw the <strong>Legal &times; Ethical 2&times;2</strong> and place your decision in a box.</li>
+              <li>Answer the legal question and the ethical question <em>separately</em> &mdash; they are not the same question.</li>
+              <li>Select one representative to present your group's placement and draw it on the board.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <div class="role-h"><span class="emoji">&#128176;</span><h2>Financial Lead</h2></div>
+          <p class="q">Actual 2014 revenue is <strong>a little over $100,000</strong>. The investor binder shows <strong>over $100 million</strong> for 2014 and about <strong>$1 billion</strong> for 2015. You are raising money right now. What goes in the binder?</p>
+          <ul class="options">
+            <li><span class="k">A</span> The real number &mdash; $100,000 &mdash; with projections shown separately and clearly labelled.</li>
+            <li><span class="k">B</span> Projections only for lines with signed contracts behind them; leave the rest out.</li>
+            <li><span class="k">C</span> No historical figures at all; forward projections with assumptions written beside them.</li>
+            <li><span class="k">D</span> Present the $100 million as 2014 revenue &mdash; we'll get there, and the round closes now.</li>
           </ul>
         </section>
         <section>
-          <h2>Takeaway</h2>
-          <div class="box"><p>Entrepreneurial ambition needs evidence, transparency, and accountability. Ethics is a venture capability.</p></div>
+          <div class="role-h"><span class="emoji">&#128176;</span><h2>Financial Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li><strong>Tense is the tell.</strong> &ldquo;We will make $100 million&rdquo; is a projection. &ldquo;We made $108 million&rdquo; is a statement about a finished year. The first is legal optimism; the second is the charge.</li>
+              <li>(A) takes full credit because optimism about the future is permitted and misdescribing the past is not. (C) is honest in form but evasive &mdash; omitting a fact an investor would want is a weaker version of misstating it.</li>
+              <li><strong>(D) is the trap.</strong> A hundredfold overstatement of a completed year is a material misstatement, and &ldquo;we'll get there&rdquo; is not a defence.</li>
+            </ul>
+          </div>
         </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128227;</span><h2>Marketing Lead</h2></div>
+          <p class="q">Your materials list <em>&ldquo;current and past clients&rdquo;</em> including <strong>U.S. government and military</strong> organisations. What you actually have is a set of <strong>discussions</strong>. What may you say?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Only relationships we can show a contract for; cut the military language entirely.</li>
+            <li><span class="k">B</span> &ldquo;In discussions with&rdquo; government and military groups; name no deployment.</li>
+            <li><span class="k">C</span> Keep the aspirational language, add a disclaimer at the front of the binder.</li>
+            <li><span class="k">D</span> Say the technology is deployed in the battlefield and on medevac helicopters.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128227;</span><h2>Marketing Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Substantiation is the standard: if you cannot produce the contract, you cannot make the claim. Treat a customer claim as a claim of fact, not of ambition.</li>
+              <li>A disclaimer at the front of a binder does not cure a specific false statement inside it. That is the fine-print manoeuvre, and it scores 5 rather than 10.</li>
+              <li><strong>(D) is the trap.</strong> A fabricated customer relationship that moves an investment decision sits in the bottom-left box &mdash; neither legal nor ethical.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#9881;&#65039;</span><h2>Operation Lead</h2></div>
+          <p class="q">You are expanding into a national pharmacy chain's stores where <strong>real patients</strong> give blood. The partner believes samples run on your device; <strong>most will run on modified machines bought from someone else</strong>, and they have not been told. What do you do before you expand?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Tell the partner exactly which tests run on whose machine, before a single new store opens.</li>
+            <li><span class="k">B</span> Slow the rollout to only the tests your own device is validated to perform.</li>
+            <li><span class="k">C</span> Keep expanding, but disclose the machine mix to the partner and on the consent form.</li>
+            <li><span class="k">D</span> Expand on schedule; the machine mix is a trade secret and the results are what matter.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#9881;&#65039;</span><h2>Operation Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Sequencing is the whole answer &mdash; <em>before</em> the next store opens. The person at risk here is a patient, not an investor.</li>
+              <li>(C) is honest and still scores only 7: it keeps scaling a service whose accuracy is unresolved. Disclosure is not a substitute for validation.</li>
+              <li><strong>(D) is the trap.</strong> The partner is contractually entitled to know and the patient bears the risk. This is where a disclosure problem becomes a safety problem.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128187;</span><h2>Tech Lead</h2></div>
+          <p class="q">Engineers were asked to <strong>modify commercially available analyzers</strong> to run finger-stick samples the manufacturer never designed them for. Those machines are producing <strong>results returned to patients</strong>. What do you do?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Validate the modification, document it, disclose the modified use to the regulator and partner.</li>
+            <li><span class="k">B</span> Stop using them for finger-stick; run finger-stick only on validated in-house tests.</li>
+            <li><span class="k">C</span> Keep the modified machines in research only, out of the path of any patient result.</li>
+            <li><span class="k">D</span> Keep them running and keep them quiet &mdash; the other companies' logos would end the story.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128187;</span><h2>Tech Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Modifying a cleared device changes what it legally <em>is</em>. Modification is not automatically wrong; undisclosed, unvalidated modification is.</li>
+              <li>The proprietary analyzer performed about <strong>12</strong> of the <strong>200-plus</strong> published tests, and roughly 50 to 60 ran on modified third-party machines. The menu and the device were never the same product.</li>
+              <li><strong>(D) is the trap.</strong> &ldquo;The logos would end the story&rdquo; is a reason the deception exists, not a justification for it.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128274;</span><h2>Security Lead</h2></div>
+          <p class="q">The lab is producing <strong>accuracy failures</strong> on some tests. You hold patient health data. Legal is using <strong>trade-secret protection</strong> to limit what outside reviewers can see about the analyzers. Where do you set the bar?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Every failure that reached a patient is a reportable incident; rank by harm, take to the board.</li>
+            <li><span class="k">B</span> Independent lab audit now, with full access under NDA &mdash; trade secrets included.</li>
+            <li><span class="k">C</span> Fix the failures internally, document properly, keep it in the company for now.</li>
+            <li><span class="k">D</span> Use trade-secret protection to keep reviewers away until the technology catches up.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128274;</span><h2>Security Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Separate <em>protecting a design</em> from <em>preventing verification</em>. Both reach for the same legal instrument; only one use of it is legitimate.</li>
+              <li>(A) edges (B) because an audit is a one-off and an escalation process is permanent &mdash; it treats a wrong patient result as an incident with a severity rather than an embarrassment.</li>
+              <li><strong>(D) is the trap.</strong> Legal form, unethical function &mdash; and it is what let everything else continue.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#129517;</span><h2>Account Manager</h2></div>
+          <p>You do <strong>not</strong> answer a functional question. After all five leads present their selection and a one-sentence defence:</p>
+          <ul class="options">
+            <li><span class="k">1</span> <strong>Rank</strong> the five problems 1&ndash;5, each used once, with one sentence justifying #1 that contains a figure from the packet.</li>
+            <li><span class="k">2</span> <strong>Weight</strong> them &mdash; 100 points across the five, in blocks of 10, totalling exactly 100.</li>
+          </ul>
+          <p class="q" style="margin-top:0.5em;"><strong>Part 3 &mdash; Name the line.</strong> Of the five, <strong>which is already illegal rather than merely uncomfortable?</strong> Say it out loud and say why.</p>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#129517;</span><h2>Account Manager &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Ranking is order; weighting is magnitude. A flat 20/20/20/20/20 scores <strong>2 of 6</strong> &mdash; the designed penalty for refusing to choose.</li>
+              <li>Full credit for rank #1 names the <strong>$108 million against a little over $100,000</strong>, and identifies it as a statement about a completed year rather than a forecast.</li>
+              <li>Two sets of numbers to two audiences &mdash; investors shown $108M while the valuation firm got the real figure &mdash; is the most damning fact in the packet, and most teams miss it.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Key takeaway -->
+        <section>
+          <h2>Key takeaway</h2>
+          <div class="box"><p>Answer the legal question and the ethical question separately. Some of these decisions are genuinely legal-but-ugly, and saying which is which <em>is</em> the exercise &mdash; a team that puts all five in the &ldquo;neither&rdquo; box has not used the model.</p></div>
+          <p class="quote" style="margin-top: 20px;">Tense is the tell. &ldquo;We will&rdquo; is a forecast. &ldquo;We did&rdquo; is a charge.</p>
+        </section>
+
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>

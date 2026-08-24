@@ -20,22 +20,16 @@
       .reveal li { margin-bottom: 0.35em; }
       .title-slide h2 { font-size: 1.3em; }
       .subtitle { color: var(--muted); text-align: center; font-size: 0.5em; }
-      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; text-align: left; align-items: center; }
       .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 16px 20px; text-align: left; }
       .small { font-size: 0.4em; color: var(--muted); }
-      /* figure placeholder */
-      .fig { border: 2px dashed var(--line); border-radius: 12px; background: var(--soft);
-             display: flex; flex-direction: column; align-items: center; justify-content: center;
-             gap: 8px; padding: 20px; min-height: 280px; text-align: center; }
-      .fig .fig-icon { font-size: 1.4em; color: var(--accent); }
-      .fig .fig-label { font-size: 0.38em; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
-      .fig .fig-desc { font-size: 0.38em; max-width: 40ch; line-height: 1.4; color: var(--muted); }
       /* role question slides */
       .role-h { display: flex; align-items: center; gap: 12px; margin-bottom: 0.3em; }
       .role-h .emoji { font-size: 1.1em; }
-      .role-h h2 { margin: 0; }
+      .role-h h2 { margin: 0; text-align: left; }
       .q { font-weight: 600; text-align: left; margin-bottom: 0.4em; }
-      .options { list-style: none; margin: 0; text-align: left; }
+      .reveal .options { list-style: none; margin: 0 0 0 0.2em; text-align: left; }
+      .reveal .options li { padding-left: 1.9em; text-indent: -1.9em; }
+      .reveal .role-h ~ p { text-align: left; }
       .options li { margin-bottom: 0.35em; }
       .options .k { display: inline-block; min-width: 1.7em; font-weight: 700; color: var(--accent); }
       .reflect { background: #ecfdf5; border-left: 5px solid var(--accent); padding: 14px 18px; text-align: left; }
@@ -56,13 +50,13 @@
 
         <!-- ============ Discussion Time ============ -->
 <section class="title-slide">
-  <h2>Group Discussion</h2>
+          <h2>The panel</h2>
 
   <div class="reflect">
     <ul>
-      <li>Form groups with classmates who have the same role.</li>
-      <li>As a group, draw the risk–benefit S-curve that represents your decision.</li>
-      <li>Select one representative to present and draw your group's S-curve on the board.</li>
+      <li>Join with classmates who have the same role.</li>
+      <li>As a group of the same role, discuss about your decisions and reasons.</li>
+      <li>Select one representative to come and sit on the front for a interview about what we have learned.</li>
     </ul>
   </div>
 </section>
@@ -80,21 +74,13 @@
           </ul>
         </section>
         <section>
-          <div class="role-h"><span class="emoji">💰</span><h2>Financial Lead — reflect</h2></div>
-          <div class="two-col">
-            <div class="reflect">
-              <span class="tag">Sit with your case</span>
-              <ul>
-                <li>Occupancy rose 46%→65% — but at 120% opex, what does each <em>additional</em> filled building do to the loss?</li>
-                <li>Does the next dollar buy scale, or buy more of the same loss?</li>
-                <li>Which single figure would flip your choice?</li>
-              </ul>
-            </div>
-            <div class="fig">
-              <div class="fig-icon"><i class="fa-solid fa-chart-column"></i></div>
-              <div class="fig-label">Figure — the unit-economics gap</div>
-              <div class="fig-desc">Revenue vs. location operating expense (120% of revenue). Every desk filled at a loss scales the loss.</div>
-            </div>
+          <div class="role-h"><span class="emoji">💰</span><h2>Financial Lead — Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>At 120% opex, every <em>additional</em> filled building deepens the loss — occupancy rising 46%→65% improved the ratio, not the outcome.</li>
+              <li>Scale only fixes unit economics if the <em>marginal</em> location clears break-even; otherwise the next dollar buys more of the same loss.</li>
+              <li>The decisive number is contribution margin per location — not total revenue, not headline occupancy.</li>
+            </ul>
           </div>
         </section>
 
@@ -110,21 +96,13 @@
           </ul>
         </section>
         <section>
-          <div class="role-h"><span class="emoji">📣</span><h2>Marketing Lead — reflect</h2></div>
-          <div class="two-col">
-            <div class="reflect">
-              <span class="tag">Sit with your case</span>
-              <ul>
-                <li>+254% is a percentage on a small base; −18% is a small percentage on a large one. Which one moves revenue more?</li>
-                <li>With churn rising, is a new member worth more than a kept one?</li>
-                <li>What do you give up by chasing the fastest-growing line?</li>
-              </ul>
-            </div>
-            <div class="fig">
-              <div class="fig-icon"><i class="fa-solid fa-arrow-trend-down"></i></div>
-              <div class="fig-label">Figure — rate vs. base</div>
-              <div class="fig-desc">The tiny-but-fast All Access line beside the large physical base that is shrinking. Growth rate ≠ magnitude.</div>
-            </div>
+          <div class="role-h"><span class="emoji">📣</span><h2>Marketing Lead — Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Growth rates mislead: +254% on 13K adds ~33K members, while −18% on 505K loses ~89K. The base matters more than the rate.</li>
+              <li>When churn drives the decline, a retained member is cheaper than an acquired one.</li>
+              <li>Every focus has a cost — funding the fastest-growing line defunds the revenue base.</li>
+            </ul>
           </div>
         </section>
 
@@ -140,21 +118,13 @@
           </ul>
         </section>
         <section>
-          <div class="role-h"><span class="emoji">⚙️</span><h2>Operation Lead — reflect</h2></div>
-          <div class="two-col">
-            <div class="reflect">
-              <span class="tag">Sit with your case</span>
-              <ul>
-                <li>You owe rent to 2034; members commit for one year and the commitment is halving. Who absorbs that gap?</li>
-                <li>Exit, consolidate, or convert — what does each option cost you that the others don't?</li>
-                <li>Which markets can you afford to be wrong about?</li>
-              </ul>
-            </div>
-            <div class="fig">
-              <div class="fig-icon"><i class="fa-solid fa-timeline"></i></div>
-              <div class="fig-label">Figure — duration mismatch</div>
-              <div class="fig-desc">Two timelines: lease obligations stretching to 2034 vs. member commitments halving by 2023.</div>
-            </div>
+          <div class="role-h"><span class="emoji">⚙️</span><h2>Operation Lead — Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>The commitment is asymmetric: obligations run to 2034, member commitments run one year and are halving — WeWork absorbs the gap.</li>
+              <li>Exit, consolidate, and convert each pay a different price: cash and market presence, member experience, or revenue certainty.</li>
+              <li>Sequence by where being wrong is survivable — weakest markets first, anchor markets last.</li>
+            </ul>
           </div>
         </section>
 
@@ -170,21 +140,13 @@
           </ul>
         </section>
         <section>
-          <div class="role-h"><span class="emoji">💻</span><h2>Tech Lead — reflect</h2></div>
-          <div class="two-col">
-            <div class="reflect">
-              <span class="tag">Sit with your case</span>
-              <ul>
-                <li>Which part of the platform actually <em>differentiates</em> WeWork — and which part is a commodity anyone can rent?</li>
-                <li>What is cheap today but expensive later through vendor lock-in?</li>
-                <li>When is "freeze" a false economy?</li>
-              </ul>
-            </div>
-            <div class="fig">
-              <div class="fig-icon"><i class="fa-solid fa-code-branch"></i></div>
-              <div class="fig-label">Figure — build vs. buy</div>
-              <div class="fig-desc">Split the stack: differentiating member-facing tech vs. commodity back-office — where each dollar earns its keep.</div>
-            </div>
+          <div class="role-h"><span class="emoji">💻</span><h2>Tech Lead — Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Only the member-facing experience <em>differentiates</em>; the back office is a commodity anyone can rent.</li>
+              <li>Cheapest today can be dearest later — vendor lock-in defers cost, it does not remove it.</li>
+              <li>Freezing platform spend is a false economy when the platform is what makes flexible / All Access sellable.</li>
+            </ul>
           </div>
         </section>
 
@@ -200,21 +162,13 @@
           </ul>
         </section>
         <section>
-          <div class="role-h"><span class="emoji">🔒</span><h2>Security Lead — reflect</h2></div>
-          <div class="two-col">
-            <div class="reflect">
-              <span class="tag">Sit with your case</span>
-              <ul>
-                <li>What would a breach of member data cost a company already fighting to survive?</li>
-                <li>With every budget cut, how do you rank what to protect <em>first</em>?</li>
-                <li>Does shifting risk to a vendor remove the risk — or just move the blame?</li>
-              </ul>
-            </div>
-            <div class="fig">
-              <div class="fig-icon"><i class="fa-solid fa-shield-halved"></i></div>
-              <div class="fig-label">Figure — severity map</div>
-              <div class="fig-desc">Controls plotted by likelihood × impact — what to fund first when you cannot fund everything.</div>
-            </div>
+          <div class="role-h"><span class="emoji">🔒</span><h2>Security Lead — Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>A member-data breach is not a line item — it ends the turnaround the other four decisions are trying to fund.</li>
+              <li>Under a hard budget, protection is ranked rather than uniform: member and payment data <em>first</em>.</li>
+              <li>Contracts and SLAs move liability, not risk — the reputational loss stays with WeWork.</li>
+            </ul>
           </div>
         </section>
 
@@ -225,21 +179,13 @@
           <p>After all five leads present their selection + one-sentence defense, <strong>rank the five decisions 1–5</strong> by which WeWork must resolve <em>first</em> to survive — and give the <strong>single sentence</strong> that justifies rank #1.</p>
         </section>
         <section>
-          <div class="role-h"><span class="emoji">🧭</span><h2>Account Manager — reflect</h2></div>
-          <div class="two-col">
-            <div class="reflect">
-              <span class="tag">Sit with your case</span>
-              <ul>
-                <li>Are you ranking by survival impact — or by whoever argued loudest?</li>
-                <li>Could each lead defend their choice with a number? If not, can it be #1?</li>
-                <li>If all five leads chose to "expand," what does that agreement tell you?</li>
-              </ul>
-            </div>
-            <div class="fig">
-              <div class="fig-icon"><i class="fa-solid fa-list-ol"></i></div>
-              <div class="fig-label">Figure — priority stack</div>
-              <div class="fig-desc">The five decisions ranked 1–5 by survival urgency, with the one sentence defending #1.</div>
-            </div>
+          <div class="role-h"><span class="emoji">🧭</span><h2>Account Manager — Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Rank by survival impact and evidence — not by whoever argued loudest.</li>
+              <li>A decision no one can defend with a number cannot credibly be #1.</li>
+              <li>Unanimity among the five leads is a warning, not a confirmation — shared optimism is how the overexpansion happened.</li>
+            </ul>
           </div>
         </section>
 

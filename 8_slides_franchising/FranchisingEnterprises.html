@@ -9,82 +9,353 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; }
+      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; --warn: #b45309; --bad: #b91c1c; }
       .reveal { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: #fff; }
       .reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; letter-spacing: 0; }
       .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.45em; }
-      .reveal h3 { font-size: 0.72em; color: var(--accent); margin-bottom: 0.45em; }
+      .reveal h3 { font-size: 0.72em; color: var(--accent); margin-bottom: 0.35em; }
       .reveal h4 { font-size: 0.58em; color: var(--muted); margin-bottom: 0.4em; }
       .reveal p, .reveal li { font-size: 0.48em; line-height: 1.45; color: var(--ink); }
       .reveal ul { margin: 0.35em 0 0 1.1em; }
       .reveal li { margin-bottom: 0.35em; }
       .title-slide h2 { font-size: 1.35em; }
-      .subtitle { color: var(--muted); text-align: center; }
-      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; text-align: left; }
+      .subtitle { color: var(--muted); text-align: center; font-size: 0.5em; }
+      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; text-align: left; align-items: center; }
+      .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; text-align: left; }
+      .four-col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; text-align: left; }
       .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 18px 22px; text-align: left; }
-      .question-slide li { list-style: none; margin-left: -1em; }
+      .box.warn { border-left-color: var(--warn); }
+      .box.bad { border-left-color: var(--bad); }
+      .card { background: var(--soft); border-top: 5px solid var(--accent); padding: 14px 16px; border-radius: 8px; text-align: left; }
+      .card p { font-size: 0.42em; }
+      .card.warn { border-top-color: var(--warn); }
+      .card.bad { border-top-color: var(--bad); }
       .small { font-size: 0.42em; color: var(--muted); }
+      /* Figures are inlined <svg> (not <img>) so their data-beat groups can be
+         animated. Sized in reveal's 960x700 slide coordinates: vh units do not
+         scale with the deck. Rebuild with build_figures.py + inline_figures.py. */
+      .fig-embed svg { display: block; margin: 0 auto; width: auto; height: auto; max-width: 100%; max-height: 450px; }
+      .fig-cap { font-size: 0.42em; color: var(--muted); margin-top: 0.55em; }
+      .quote { font-size: 0.72em; font-weight: 600; line-height: 1.3; }
+      .quote .em { color: var(--accent); }
+      /* Figure beats cross-fade in place. Deliberately NOT fade-up: a transform on an
+         SVG <g> would slide diagram parts out of register with the arrows pointing at
+         them. Scoped to .fig-embed so reveal's own transform transition still drives
+         fade-up on the prose. */
+      .fig-embed .fragment { transition: opacity 0.35s ease; }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
+
+        <!-- Title -->
         <section class="title-slide">
           <h2>Franchising Enterprises</h2>
-          <p class="subtitle">Week 11: Tuesday, November 10</p>
+          <p class="subtitle">MENT 2234 &middot; Module 8 &middot; Concept Lecture</p>
+          <p class="subtitle">Case: Shake Shack &middot; Mental model: the Standardization&ndash;Autonomy Dial</p>
+          <aside class="notes">Open with the hands-up bit, not with a definition. The gap between the great one and the hundredth one is the whole subject.</aside>
         </section>
+
+        <!-- Hook -->
         <section>
-          <h2>What Is Franchising?</h2>
-          <p>Franchising is a growth model where a franchisor grants independent operators the right to use a brand, system, and operating model.</p>
-          <p>It allows expansion through local ownership while requiring strong standards and support.</p>
-        </section>
-        <section>
-          <h2>Why Franchise?</h2>
+          <h2>Hands up</h2>
           <div class="two-col">
             <div>
-              <h3>Benefits</h3>
-              <p>Faster geographic growth.</p>
-              <p>Local operator motivation.</p>
-              <p>Shared investment burden.</p>
-              <p>Repeatable operating model.</p>
+              <ul>
+                <li class="fragment fade-up">Put your hand up if you have ever had a genuinely great meal somewhere and thought <em>&ldquo;someone should open a hundred of these.&rdquo;</em></li>
+                <li class="fragment fade-up">Now keep your hand up if you have ever been to the <strong>hundredth</strong> one.</li>
+                <li class="fragment fade-up">Yeah. It was not the same, was it.</li>
+              </ul>
             </div>
-            <div>
-              <h3>Risks</h3>
-              <p>Quality inconsistency.</p>
-              <p>Brand damage.</p>
-              <p>Franchisee conflict.</p>
-              <p>Weak training or monitoring.</p>
+            <div class="box fragment fade-up">
+              <h3>That gap has a name</h3>
+              <p>Between the one that was great and the hundredth one that was fine.</p>
+              <p>The name is <strong>franchising</strong>, and about half the retail economy you walk past every day is built on solving it.</p>
             </div>
           </div>
+          <aside class="notes">Actually wait for the hands. The laugh on "it wasn't the same, was it" buys you the next thirty minutes.</aside>
         </section>
+
+        <!-- What it is -->
         <section>
-          <h2>Franchise Readiness</h2>
-          <ul>
-            <li>A proven, repeatable model.</li>
-            <li>Clear unit economics.</li>
-            <li>Documented processes.</li>
-            <li>Training and support systems.</li>
-            <li>Brand standards and monitoring.</li>
-          </ul>
+          <h2>What franchising actually is</h2>
+          <p class="quote fragment fade-up">&ldquo;You pay me to be allowed to <span class="em">be me</span>, in a place I cannot be.&rdquo;</p>
+          <div class="two-col" style="margin-top: 22px;">
+            <div class="box fragment fade-up">
+              <h3>What the franchisor gets</h3>
+              <p><strong>Growth without capital.</strong> Somebody else buys the building, hires the staff and takes the risk. You collect a royalty on their sales.</p>
+            </div>
+            <div class="box fragment fade-up">
+              <h3>What the franchisee gets</h3>
+              <p><strong>A business that already works.</strong> No agonising about whether anyone wants this &mdash; people already queue for it somewhere else.</p>
+            </div>
+          </div>
+          <p class="small fragment fade-up">So everybody wins and we can all go home early. Except &mdash; what did the franchisee actually buy? Not a burger recipe; you can get one of those free. <strong>They bought a system:</strong> where to put the store, how to lay out the kitchen, what to pay staff, how long a queue may get, which supplier, what temperature, what the sign looks like.</p>
+          <p class="small fragment fade-up">Franchising is not selling a product. It is selling <strong>an entire operating manual for a business</strong> &mdash; and that only works if the business can be written down.</p>
+          <aside class="notes">Deliver "everybody wins, go home early" flat, then pause. The reversal is where the real content starts.</aside>
         </section>
+
+        <!-- The trade -->
         <section>
-          <h2>McDonald's Preview</h2>
-          <p>McDonald's illustrates the power of standardized systems, real estate strategy, operations discipline, and franchisee alignment.</p>
-          <p>The case asks how a company scales consistency while relying on local operators.</p>
+          <h2>The trade nobody names out loud</h2>
+          <p class="quote fragment fade-up">You sell <span class="em">control</span>. You buy <span class="em">capital</span> and <span class="em">speed</span>.</p>
+          <div class="two-col" style="margin-top: 22px;">
+            <div>
+              <ul>
+                <li class="fragment fade-up">Someone else's money builds your empire.</li>
+                <li class="fragment fade-up">And in exchange, a person you have never met is standing in a kitchen with <strong>your name over the door</strong> at eleven at night, deciding whether that chicken is still fine.</li>
+              </ul>
+            </div>
+            <div class="box fragment fade-up">
+              <h3>The trade is not automatically bad</h3>
+              <p>You cannot personally staff a restaurant in Kuwait. You cannot operate inside somebody else's baseball stadium &mdash; they own the stadium.</p>
+              <p>In those cases licensing is not a compromise. It is the only way the thing exists at all.</p>
+            </div>
+          </div>
+          <p class="small fragment fade-up">The mistake is never <em>that</em> companies license. The mistake is licensing <strong>before the thing being licensed is ready to be copied</strong>.</p>
+          <aside class="notes">Land the eleven-o'clock-at-night image slowly. It is the most concrete definition of "losing control" anyone in the room will get.</aside>
         </section>
+
+        <!-- Figure -->
         <section>
-          <h2>Discussion</h2>
-          <ul>
-            <li>What must be standardized?</li>
-            <li>What should be locally adapted?</li>
-            <li>How should franchisors balance control and franchisee autonomy?</li>
-          </ul>
+          <h2>The mental model &mdash; the Standardization&ndash;Autonomy Dial</h2>
+          <div class="fig-embed" role="img" aria-label="A dial from standardization to autonomy showing what transfers and what does not, the three gates a unit must pass before it can be copied, and the photocopier rule"><!--fig:Franchise_Dial-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="36.0 36.0 1158.0 782.0" width="1158" height="782" font-family="Segoe Print, Comic Sans MS, Bradley Hand, cursive">
+<defs><marker id="ah-Franchise_Dial" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1e1e1e"/></marker></defs>
+<g data-beat="1"><text x="230.00" y="80.50" font-size="20" fill="#0f766e" text-anchor="middle">STANDARDIZATION</text></g>
+<g data-beat="1"><text x="970.00" y="80.50" font-size="20" fill="#b45309" text-anchor="middle">AUTONOMY</text></g>
+<g data-beat="1"><path d="M 200.00,118.00 L 1000.00,118.00" fill="none" stroke="#4b5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-Franchise_Dial)"/></g>
+<g data-beat="1"><path d="M 1000.00,118.00 L 200.00,118.00" fill="none" stroke="#4b5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-Franchise_Dial)"/></g>
+<g data-beat="1"><ellipse cx="580.00" cy="118.00" rx="20.00" ry="18.00" fill="#ffffff" stroke="#4b5563" stroke-width="2"/></g>
+<g data-beat="1"><text x="230.00" y="157.68" font-size="17" fill="#4b5563" text-anchor="middle">company-operated</text></g>
+<g data-beat="1"><text x="970.00" y="157.68" font-size="17" fill="#4b5563" text-anchor="middle">licensed / franchised</text></g>
+<g data-beat="2"><text x="230.00" y="199.68" font-size="17" fill="#0f766e" text-anchor="middle">you control it</text></g>
+<g data-beat="2"><text x="970.00" y="199.68" font-size="17" fill="#b45309" text-anchor="middle">they control it</text></g>
+<g data-beat="2"><text x="230.00" y="233.68" font-size="17" fill="#0f766e" text-anchor="middle">your capital</text></g>
+<g data-beat="2"><text x="970.00" y="233.68" font-size="17" fill="#b45309" text-anchor="middle">their capital</text></g>
+<g data-beat="2"><text x="230.00" y="267.68" font-size="17" fill="#0f766e" text-anchor="middle">slower growth</text></g>
+<g data-beat="2"><text x="970.00" y="267.68" font-size="17" fill="#b45309" text-anchor="middle">fast growth</text></g>
+<g data-beat="2"><text x="230.00" y="301.68" font-size="17" fill="#0f766e" text-anchor="middle">your margin</text></g>
+<g data-beat="2"><text x="970.00" y="301.68" font-size="17" fill="#b45309" text-anchor="middle">a royalty</text></g>
+<g data-beat="2"><text x="230.00" y="335.68" font-size="17" fill="#c92a2a" text-anchor="middle">your problem</text></g>
+<g data-beat="2"><text x="970.00" y="335.68" font-size="17" fill="#c92a2a" text-anchor="middle">STILL your problem</text></g>
+<g data-beat="2"><rect x="420.00" y="306.00" width="360.00" height="52.00" rx="13.0" ry="13.0" fill="#fff5f5" stroke="#c92a2a" stroke-width="2"/></g>
+<g data-beat="2"><text x="600.00" y="325.35" font-size="19" fill="#1e1e1e" text-anchor="middle"><tspan x="600.00">Control transfers.</tspan><tspan x="600.00" dy="23.75">Reputation does not.</tspan></text></g>
+<g data-beat="3"><text x="60.00" y="412.20" font-size="18" fill="#0f766e">Before you turn that dial toward autonomy, the thing you are copying has to pass three tests.</text></g>
+<g data-beat="3"><rect x="60.00" y="436.00" width="350.00" height="130.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="3"><text x="235.00" y="473.80" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="235.00">GATE 1 — CODIFIABLE</tspan><tspan x="235.00" dy="21.25"></tspan><tspan x="235.00" dy="21.25">Can the whole thing be</tspan><tspan x="235.00" dy="21.25">written down?</tspan></text></g>
+<g data-beat="3"><text x="235.00" y="596.38" font-size="15" fill="#4b5563" text-anchor="middle"><tspan x="235.00">If not, you are not franchising</tspan><tspan x="235.00" dy="18.75">a system. You are franchising</tspan><tspan x="235.00" dy="18.75">a hope.</tspan></text></g>
+<g data-beat="4"><rect x="440.00" y="436.00" width="350.00" height="130.00" rx="16.0" ry="16.0" fill="#fff5f5" stroke="#c92a2a" stroke-width="2"/></g>
+<g data-beat="4"><text x="615.00" y="473.80" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="615.00">GATE 2 — UNIT-PROFITABLE</tspan><tspan x="615.00" dy="21.25"></tspan><tspan x="615.00" dy="21.25">Does ONE of them make money</tspan><tspan x="615.00" dy="21.25">BEFORE you copy it?</tspan></text></g>
+<g data-beat="4"><text x="615.00" y="596.38" font-size="15" fill="#4b5563" text-anchor="middle"><tspan x="615.00">The one people skip, and the one</tspan><tspan x="615.00" dy="18.75">that kills companies. If not, you are</tspan><tspan x="615.00" dy="18.75">about to mass-produce a loss.</tspan></text></g>
+<g data-beat="5"><rect x="820.00" y="436.00" width="350.00" height="130.00" rx="16.0" ry="16.0" fill="#fff4e6" stroke="#b45309" stroke-width="2"/></g>
+<g data-beat="5"><text x="995.00" y="473.80" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="995.00">GATE 3 — MONITORABLE</tspan><tspan x="995.00" dy="21.25"></tspan><tspan x="995.00" dy="21.25">Can you SEE it from a</tspan><tspan x="995.00" dy="21.25">distance?</tspan></text></g>
+<g data-beat="5"><text x="995.00" y="596.38" font-size="15" fill="#4b5563" text-anchor="middle"><tspan x="995.00">&quot;It&#x27;s in the agreement&quot; is not</tspan><tspan x="995.00" dy="18.75">seeing. An annual audit visit is a</tspan><tspan x="995.00" dy="18.75">photograph. You need a feed.</tspan></text></g>
+<g data-beat="6"><rect x="250.00" y="672.00" width="720.00" height="62.00" rx="15.5" ry="15.5" fill="#fff5f5" stroke="#c92a2a" stroke-width="2"/></g>
+<g data-beat="6"><text x="610.00" y="709.05" font-size="22" fill="#1e1e1e" text-anchor="middle">A photocopier does not improve the original.</text></g>
+<g data-beat="6"><text x="610.00" y="765.40" font-size="16" fill="#4b5563" text-anchor="middle"><tspan x="610.00">If the unit is weakening, copying it faster gives you more weak units — while your TOTAL numbers</tspan><tspan x="610.00" dy="20.00">keep going up, so the press release looks great as the business gets thinner every year.</tspan></text></g>
+</svg>
+<!--/fig:Franchise_Dial--></div>
+          <p class="fig-cap fragment fade-up" data-fragment-index="99">It is not a yes/no question. It is a <strong>dial</strong> &mdash; and you can set it differently in different places.</p>
+          <aside class="notes">Beat 2 is the row to stop on: control transfers, reputation does not. Beats 3-5 are the gates, and gate 2 is the one they will skip on Thursday if you rush it.</aside>
+        </section>
+
+        <!-- Control vs reputation -->
+        <section>
+          <h2>Read the last row again</h2>
+          <div class="two-col">
+            <div class="box fragment fade-up">
+              <h3>Turn the dial toward standardization</h3>
+              <p>Company-operated. You control it. Your capital. Slower growth. Your margin.</p>
+              <p><strong>Your problem.</strong></p>
+            </div>
+            <div class="box warn fragment fade-up">
+              <h3>Turn it toward autonomy</h3>
+              <p>Licensed or franchised. They control it. Their capital. Fast growth. A royalty.</p>
+              <p><strong>Still your problem.</strong></p>
+            </div>
+          </div>
+          <p class="quote fragment fade-up" style="margin-top: 22px;">Control transfers. <span class="em">Reputation does not.</span></p>
+          <aside class="notes">This is the line that makes franchising a strategy question rather than a legal one. Everything downstream &mdash; the gates, the Middle East supply chain &mdash; is a consequence of it.</aside>
+        </section>
+
+        <!-- The three gates -->
+        <section>
+          <h2>Three gates. Not two.</h2>
+          <div class="three-col">
+            <div class="card fragment fade-up">
+              <h3>1 &middot; Codifiable</h3>
+              <p>Can the whole thing be written down?</p>
+              <p class="small">If not, you are not franchising a system. You are franchising <strong>a hope</strong>.</p>
+            </div>
+            <div class="card bad fragment fade-up">
+              <h3>2 &middot; Unit-profitable</h3>
+              <p>Does <strong>one</strong> of them make money <strong>before</strong> you copy it?</p>
+              <p class="small">The one people skip, and the one that kills companies. If not, you are about to mass-produce a loss.</p>
+            </div>
+            <div class="card warn fragment fade-up">
+              <h3>3 &middot; Monitorable</h3>
+              <p>Can you <strong>see</strong> it from a distance?</p>
+              <p class="small">&ldquo;It's in the agreement&rdquo; is not seeing. An annual audit visit is a photograph. What you need is a feed.</p>
+            </div>
+          </div>
+          <p class="quote fragment fade-up" style="margin-top: 20px;">A photocopier does not <span class="em">improve</span> the original.</p>
+          <aside class="notes">Gate 3 is the one people think they have passed. Push on "through what do you observe it?" until someone says something other than the contract.</aside>
+        </section>
+
+        <!-- Shake Shack: the good table -->
+        <section>
+          <h2>Shake Shack, 2014 &mdash; the table that made the headlines</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">A company that started as a single hot dog cart in Madison Square Park, run by a restaurateur who genuinely cared about hospitality. It has just gone public.</li>
+                <li class="fragment fade-up">Shacks system-wide: <strong>21 &rarr; 40 &rarr; 63</strong></li>
+                <li class="fragment fade-up">System-wide sales: <strong>$81M &rarr; $140M &rarr; $217M</strong></li>
+                <li class="fragment fade-up">Total Shack-level profit: <strong>$14.2M &rarr; $20.4M &rarr; $26.9M</strong></li>
+              </ul>
+            </div>
+            <div class="box fragment fade-up">
+              <h3>Triumph, right?</h3>
+              <p>Tripled the estate. Nearly tripled sales. Profit almost doubled.</p>
+              <p class="small">Hold that thought for exactly one slide.</p>
+            </div>
+          </div>
+          <aside class="notes">Sell this table honestly. If the room is not impressed here, the next slide has nothing to reverse.</aside>
+        </section>
+
+        <!-- Shake Shack: the other table -->
+        <section>
+          <h2>Same company. Same three years. Same filing.</h2>
+          <div class="four-col">
+            <div class="card bad fragment fade-up" data-fragment-index="1"><h4>Average unit volume</h4><p>$5,367K &rarr; $5,017K &rarr; <strong>$4,611K</strong></p></div>
+            <div class="card bad fragment fade-up" data-fragment-index="1"><h4>Average weekly sales</h4><p>$102K &rarr; $96K &rarr; <strong>$89K</strong></p></div>
+            <div class="card bad fragment fade-up" data-fragment-index="2"><h4>Shack-level margin</h4><p>25.6% &rarr; 26.0% &rarr; <strong>24.0%</strong></p></div>
+            <div class="card bad fragment fade-up" data-fragment-index="2"><h4>Same-Shack sales growth</h4><p>7.1% &rarr; 5.9% &rarr; <strong>4.1%</strong></p></div>
+          </div>
+          <p class="quote fragment fade-up" data-fragment-index="3" style="margin-top: 20px;">The company is getting bigger and <span class="em">every individual Shack is getting weaker</span>.</p>
+          <p class="small fragment fade-up" data-fragment-index="4">Both tables are true. Both are in the same filing. Only one was in the headlines. And the honest part, in the company's own words: a lot of it is <em>mix</em> &mdash; the early Shacks were in Manhattan, and Manhattan is exceptional. The filing says plainly that as they expand <em>&ldquo;we may not be able to maintain our current average unit volumes.&rdquo;</em> True. <strong>Also not a plan.</strong></p>
+          <aside class="notes">Let them find the pattern before you say it. Then give the mix explanation fairly &mdash; and then point out that an explanation is not a remedy.</aside>
+        </section>
+
+        <!-- Where they set the dial -->
+        <section>
+          <h2>Where they set the dial &mdash; and where gate 3 failed anyway</h2>
+          <div class="two-col">
+            <div class="box fragment fade-up">
+              <h3>Operate at home, license abroad</h3>
+              <p>Domestic company-operated: <strong>31</strong><br>Domestic licensed: <strong>5</strong><br>International licensed: <strong>27</strong></p>
+              <p class="small">The five domestic licences: two baseball stadiums, a racetrack, and two gates at JFK. Every one is a place Shake Shack <strong>physically cannot operate</strong>. At the airport, the filing notes the Shacks are <em>&ldquo;licensed to a third party, though they are managed by Shake Shack employees.&rdquo;</em> That is a company being extremely careful with gate 3.</p>
+            </div>
+            <div class="box bad fragment fade-up">
+              <h3>And then, from the risk factors</h3>
+              <p><em>&ldquo;our international licensed Shacks in the Middle East carry <strong>one to three months of inventory</strong>&hellip; we have had <strong>past and ongoing issues</strong> ensuring that timely and adequate supplies reach&hellip; our licensee <strong>delegates the supply function to its own third-party logistics providers</strong>&hellip; with which we have <strong>limited and restricted communication, preventing us from exercising control or instruction</strong>.&rdquo;</em></p>
+              <p class="small">Perishable food. Up to three months of inventory. Logistics companies you cannot instruct. In a hot climate.</p>
+            </div>
+          </div>
+          <p class="small fragment fade-up">International licensed AUV over the same three years: <strong>$9,665K &rarr; $6,077K &rarr; $4,588K</strong>. The first ones were spectacular. <strong>Somebody else chose the newer sites.</strong></p>
+          <aside class="notes">The point is not that Shake Shack was careless &mdash; they were unusually careful. Gate 3 failed anyway. That is what makes it a gate rather than a checkbox.</aside>
+        </section>
+
+        <!-- The paradox -->
+        <section>
+          <h2>The paradox you cannot escape</h2>
+          <p class="quote fragment fade-up"><span class="em">Standardisation</span> is what makes replication possible. <span class="em">Distinctiveness</span> is what makes it worth doing.</p>
+          <div class="two-col" style="margin-top: 20px;">
+            <div>
+              <ul>
+                <li class="fragment fade-up">Their own filing: <em>&ldquo;although <strong>no two Shacks are alike</strong>, we believe that these brand identifiers are critical to the expression of the brand.&rdquo;</em></li>
+                <li class="fragment fade-up">Tables made from reclaimed bowling lanes. Each store designed for its own neighbourhood.</li>
+                <li class="fragment fade-up">That is beautiful, it is <strong>operationally inconvenient</strong>, and it is exactly why the company is worth more than the burger.</li>
+              </ul>
+            </div>
+            <div class="box warn fragment fade-up">
+              <h3>Nobody resolves this tension</h3>
+              <p>A chain that is identical everywhere is easy to expand and easy to ignore. A place that is different everywhere is loved and nearly impossible to scale.</p>
+              <p>You just choose, consciously, where on the line you stand &mdash; because <strong>if you do not choose, you will drift toward &ldquo;identical&rdquo; one completely reasonable decision at a time</strong>.</p>
+            </div>
+          </div>
+          <aside class="notes">Echo Module 7 deliberately: value destroyed by a series of reasonable decisions. Students should hear the rhyme.</aside>
+        </section>
+
+        <!-- The one question and the one line -->
+        <section>
+          <h2>The one line to carry in</h2>
+          <p class="quote fragment fade-up">Not &ldquo;how fast can we grow?&rdquo; &mdash; but <span class="em">what has to be true about ONE of them before I am allowed to make another?</span></p>
+          <div class="box fragment fade-up" style="margin-top: 22px;">
+            <p>Growth is the easy part. There is always someone willing to pay to be you.</p>
+            <p><strong>Codifiable. Profitable on its own. Visible from a distance.</strong> Three gates &mdash; and the second one is where companies die, because a photocopier does not improve the original.</p>
+            <p><strong>You are not scaling a brand. You are scaling whatever the unit currently is.</strong></p>
+          </div>
+          <aside class="notes">Last line is the takeaway. Then hand out the role pages.</aside>
+        </section>
+
+        <!-- Bridge -->
+        <section>
+          <h2>Next: the simulation</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">You will open <strong>Shake Shack's real books for 2014</strong> &mdash; the year the count tripled and the unit got weaker.</li>
+                <li class="fragment fade-up">Each of you gets one decision and four options.</li>
+                <li class="fragment fade-up">Before you choose, say <strong>which gate your decision depends on</strong>, and <strong>which way it turns the dial</strong>.</li>
+              </ul>
+            </div>
+            <div class="box fragment fade-up">
+              <h3>One rule</h3>
+              <p><strong>Every figure is in the filing. Defend your choice with one.</strong></p>
+            </div>
+          </div>
+          <aside class="notes">Hand out role packets. "Defend it with a number from the filing" is the participation bar for this simulation &mdash; state it explicitly.</aside>
         </section>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script><!--narration-->
+      window.NARRATION = {};
+      <!--/narration--></script>
     <script>
-      Reveal.initialize({ hash: true, slideNumber: true });
+      // Each inlined figure carries data-beat="N" groups written by
+      // build_figures.py. Turn them into reveal fragments so the drawing builds
+      // up one beat at a time, in step with the speaker. Captions sit at index
+      // 99 so they always land last.
+      document.querySelectorAll('.fig-embed [data-beat]').forEach(function (g) {
+        g.classList.add('fragment');
+        g.setAttribute('data-fragment-index', g.getAttribute('data-beat'));
+      });
+
+      // Rehearsal / screen-capture mode. ?auto walks the deck; with no
+      // Narration.md compiled in (window.NARRATION is empty) every beat gets the
+      // 4s default, and ?auto=3500 overrides it with a fixed millisecond
+      // interval. Any key press stops it. To pace it against a real script,
+      // write Narration.md and run Tools/Figure_Convert/build_narration.py.
+      var auto = new URLSearchParams(location.search).get('auto');
+      var fixed = parseInt(auto, 10);
+      var running = auto !== null;
+      document.addEventListener('keydown', function () { running = false; });
+
+      function dwell() {
+        var i = Reveal.getIndices();
+        var key = i.h + ':' + (typeof i.f === 'number' ? i.f : -1);
+        var secs = (window.NARRATION || {})[key];
+        return fixed || (secs ? secs * 1000 : 4000);
+      }
+
+      function tick() {
+        if (!running) return;
+        setTimeout(function () {
+          if (!running) return;
+          var before = JSON.stringify(Reveal.getIndices());
+          Reveal.next();
+          if (JSON.stringify(Reveal.getIndices()) === before) return;  // end of deck
+          tick();
+        }, dwell());
+      }
+
+      Reveal.initialize({ hash: true, slideNumber: true, plugins: [ RevealNotes ] })
+        .then(function () { if (running) tick(); });
     </script>
   </body>
 </html>

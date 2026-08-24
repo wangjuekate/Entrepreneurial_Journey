@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="16.0 22.0 1228.0 722.0" width="1228" height="722" font-family="Segoe Print, Comic Sans MS, Bradley Hand, cursive">
+<defs><marker id="ah-WhyEntrepreneurship" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1e1e1e"/></marker></defs>
+<g data-beat="1"><text x="40.00" y="64.00" font-size="20" fill="#b45309">DEPTH — AI goes as deep as you like inside one specialization.</text></g>
+<g data-beat="1"><rect x="340.00" y="110.00" width="140.00" height="210.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="1"><text x="410.00" y="157.68" font-size="17" fill="#1e1e1e" text-anchor="middle">Accounting</text></g>
+<g data-beat="1"><path d="M 410.00,200.00 L 410.00,306.00" fill="none" stroke="#1971c2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-WhyEntrepreneurship)"/></g>
+<g data-beat="1"><rect x="550.00" y="110.00" width="140.00" height="210.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="1"><text x="620.00" y="147.05" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="620.00">Financial</tspan><tspan x="620.00" dy="21.25">modeling</tspan></text></g>
+<g data-beat="1"><path d="M 620.00,200.00 L 620.00,306.00" fill="none" stroke="#1971c2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-WhyEntrepreneurship)"/></g>
+<g data-beat="1"><rect x="760.00" y="110.00" width="140.00" height="210.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="1"><text x="830.00" y="147.05" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="830.00">Document</tspan><tspan x="830.00" dy="21.25">drafting</tspan></text></g>
+<g data-beat="1"><path d="M 830.00,200.00 L 830.00,306.00" fill="none" stroke="#1971c2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-WhyEntrepreneurship)"/></g>
+<g data-beat="2"><text x="940.00" y="184.20" font-size="18" fill="#b45309"><tspan x="940.00">Deeper, faster and</tspan><tspan x="940.00" dy="22.50">cheaper than any</tspan><tspan x="940.00" dy="22.50">new graduate.</tspan></text></g>
+<g data-beat="3"><path d="M 40.00,362.00 L 1220.00,362.00" fill="none" stroke="#adb5bd" stroke-width="2" stroke-dasharray="8 6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g data-beat="3"><text x="40.00" y="402.00" font-size="20" fill="#0f766e">BREADTH — connecting across contexts is the part AI cannot assemble for you.</text></g>
+<g data-beat="3"><rect x="40.00" y="440.00" width="170.00" height="90.00" rx="16.0" ry="16.0" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="3"><text x="125.00" y="489.95" font-size="18" fill="#1e1e1e" text-anchor="middle">Customers</text></g>
+<g data-beat="4"><path d="M 212.00,485.00 L 248.00,485.00" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-WhyEntrepreneurship)"/></g>
+<g data-beat="3"><rect x="250.00" y="440.00" width="170.00" height="90.00" rx="16.0" ry="16.0" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="3"><text x="335.00" y="489.95" font-size="18" fill="#1e1e1e" text-anchor="middle">Technology</text></g>
+<g data-beat="4"><path d="M 422.00,485.00 L 458.00,485.00" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-WhyEntrepreneurship)"/></g>
+<g data-beat="3"><rect x="460.00" y="440.00" width="170.00" height="90.00" rx="16.0" ry="16.0" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="3"><text x="545.00" y="489.95" font-size="18" fill="#1e1e1e" text-anchor="middle">Regulation</text></g>
+<g data-beat="4"><path d="M 632.00,485.00 L 668.00,485.00" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-WhyEntrepreneurship)"/></g>
+<g data-beat="3"><rect x="670.00" y="440.00" width="170.00" height="90.00" rx="16.0" ry="16.0" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="3"><text x="755.00" y="489.95" font-size="18" fill="#1e1e1e" text-anchor="middle">Capital</text></g>
+<g data-beat="4"><path d="M 842.00,485.00 L 892.00,485.00" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-WhyEntrepreneurship)"/></g>
+<g data-beat="4"><ellipse cx="1040.00" cy="485.00" rx="140.00" ry="70.00" fill="#fff4e6" stroke="#b45309" stroke-width="2"/></g>
+<g data-beat="4"><text x="1040.00" y="477.30" font-size="22" fill="#1e1e1e" text-anchor="middle"><tspan x="1040.00">Innovative</tspan><tspan x="1040.00" dy="27.50">connection</tspan></text></g>
+<g data-beat="5"><rect x="330.00" y="630.00" width="580.00" height="90.00" rx="16.0" ry="16.0" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="5"><text x="620.00" y="667.30" font-size="22" fill="#1e1e1e" text-anchor="middle"><tspan x="620.00">So every one of you has to</tspan><tspan x="620.00" dy="27.50">become an entrepreneur.</tspan></text></g>
+<g data-beat="5"><path d="M 1040.00,558.00 L 1040.00,640.00 L 915.00,640.00" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-WhyEntrepreneurship)"/></g>
+</svg>

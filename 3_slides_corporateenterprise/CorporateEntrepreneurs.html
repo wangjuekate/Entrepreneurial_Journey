@@ -9,77 +9,304 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; }
+      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; --warn: #b45309; --bad: #b91c1c; }
       .reveal { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: #fff; }
       .reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; letter-spacing: 0; }
       .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.45em; }
-      .reveal h3 { font-size: 0.72em; color: var(--accent); margin-bottom: 0.45em; }
+      .reveal h3 { font-size: 0.72em; color: var(--accent); margin-bottom: 0.35em; }
       .reveal h4 { font-size: 0.58em; color: var(--muted); margin-bottom: 0.4em; }
       .reveal p, .reveal li { font-size: 0.48em; line-height: 1.45; color: var(--ink); }
       .reveal ul { margin: 0.35em 0 0 1.1em; }
       .reveal li { margin-bottom: 0.35em; }
       .title-slide h2 { font-size: 1.35em; }
-      .subtitle { color: var(--muted); text-align: center; }
-      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; text-align: left; }
+      .subtitle { color: var(--muted); text-align: center; font-size: 0.5em; }
+      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; text-align: left; align-items: center; }
+      .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; text-align: left; }
+      .four-col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; text-align: left; }
       .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 18px 22px; text-align: left; }
-      .question-slide li { list-style: none; margin-left: -1em; }
+      .box.warn { border-left-color: var(--warn); }
+      .box.bad { border-left-color: var(--bad); }
+      .card { background: var(--soft); border-top: 5px solid var(--accent); padding: 14px 16px; border-radius: 8px; text-align: left; }
+      .card p { font-size: 0.42em; }
+      .card.warn { border-top-color: var(--warn); }
+      .card.bad { border-top-color: var(--bad); }
       .small { font-size: 0.42em; color: var(--muted); }
+      /* Figures are inlined <svg> (not <img>) so their data-beat groups can be
+         animated. Sized in reveal's 960x700 slide coordinates: vh units do not
+         scale with the deck. Rebuild with build_figures.py + inline_figures.py. */
+      .fig-embed svg { display: block; margin: 0 auto; width: auto; height: auto; max-width: 100%; max-height: 450px; }
+      .fig-cap { font-size: 0.42em; color: var(--muted); margin-top: 0.55em; }
+      .quote { font-size: 0.72em; font-weight: 600; line-height: 1.3; }
+      .quote .em { color: var(--accent); }
+      /* Figure beats cross-fade in place. Deliberately NOT fade-up: a transform on an
+         SVG <g> would slide diagram parts out of register with the arrows pointing at
+         them. Scoped to .fig-embed so reveal's own transform transition still drives
+         fade-up on the prose. */
+      .fig-embed .fragment { transition: opacity 0.35s ease; }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
+
+        <!-- Title -->
         <section class="title-slide">
           <h2>Corporate Entrepreneurs</h2>
-          <p class="subtitle">Week 4: Tuesday, September 22</p>
+          <p class="subtitle">MENT 2234 &middot; Module 3 &middot; Concept Lecture</p>
+          <p class="subtitle">Case: Amazon Web Services &middot; Mental model: the CEAI chain</p>
+          <aside class="notes">This is the module that answers "I am never going to start a company, why am I here". Say that out loud in the first minute.</aside>
         </section>
+
+        <!-- Hook -->
         <section>
-          <h2>What Is Corporate Entrepreneurship?</h2>
-          <p>Corporate entrepreneurs create new products, services, markets, or business models inside existing organizations.</p>
-          <p>They use the resources of a large firm while fighting the inertia of that same firm.</p>
-        </section>
-        <section>
-          <h2>Advantages and Constraints</h2>
+          <h2>Gmail inside Google</h2>
           <div class="two-col">
             <div>
-              <h3>Advantages</h3>
-              <p>Access to capital, talent, customers, infrastructure, and brand.</p>
-              <p>Ability to scale successful ideas quickly.</p>
+              <ul>
+                <li class="fragment fade-up">In the early 2000s email providers offered tiny storage. People deleted mail to make room for mail.</li>
+                <li class="fragment fade-up">A Google engineer, <strong>Paul Buchheit</strong>, thought email could be redesigned. He did not leave to found a startup.</li>
+                <li class="fragment fade-up">He built it <em>inside</em>, on the company's resources, infrastructure and expertise. Most people thought <strong>1 GB of free storage</strong> was impossible.</li>
+                <li class="fragment fade-up">Google let him experiment, and backed it.</li>
+              </ul>
             </div>
-            <div>
-              <h3>Constraints</h3>
-              <p>Bureaucracy, legacy incentives, internal politics, and risk aversion.</p>
-              <p>Pressure to protect existing revenue streams.</p>
+            <div class="box fragment fade-up">
+              <h3>Four questions before we name anything</h3>
+              <p>Why inside Google rather than as a startup?</p>
+              <p>Which organizational resources made it possible?</p>
+              <p>What barriers would that team have faced?</p>
+              <p><strong>Is Buchheit an entrepreneur, a corporate entrepreneur, or both?</strong></p>
             </div>
           </div>
+          <aside class="notes">Take the last question to a vote. The split in the room is the lecture &mdash; do not resolve it yet.</aside>
         </section>
+
+        <!-- Who else -->
         <section>
-          <h2>Skills Needed</h2>
-          <ul>
-            <li>Frame opportunities in language the organization understands.</li>
-            <li>Build internal coalitions across functions.</li>
-            <li>Experiment without threatening the core business too early.</li>
-            <li>Use metrics that show learning and strategic fit.</li>
-          </ul>
+          <h2>You already know several of them</h2>
+          <div class="four-col">
+            <div class="card fragment fade-up" data-fragment-index="1"><h4>AWS</h4><p>inside Amazon &mdash; the case you open on Thursday.</p></div>
+            <div class="card fragment fade-up" data-fragment-index="1"><h4>PlayStation</h4><p>inside Sony.</p></div>
+            <div class="card fragment fade-up" data-fragment-index="1"><h4>Post-it Notes</h4><p>inside 3M.</p></div>
+            <div class="card fragment fade-up" data-fragment-index="1"><h4>Apple Pay</h4><p>inside Apple.</p></div>
+          </div>
+          <div class="box fragment fade-up" data-fragment-index="2" style="margin-top: 22px;">
+            <h3>The definition, from the examples</h3>
+            <p>Corporate entrepreneurs are employees who create significant innovations, businesses, products, services or business models <strong>while working inside an established organization</strong>.</p>
+            <p>Unlike founders, they have access to organizational resources &mdash; and must navigate organizational constraints to use them.</p>
+          </div>
+          <aside class="notes">Brainstorm first, reveal the cards as confirmation. If someone names a company you have not heard of, take it &mdash; the point is that the category is everywhere.</aside>
         </section>
+
+        <!-- Two types -->
         <section>
-          <h2>AWS Preview</h2>
-          <p>Amazon Web Services illustrates how an internal capability can become a major external business.</p>
-          <p>The case asks how a company recognizes that an internal tool can become a platform for other firms.</p>
+          <h2>Two shapes it takes</h2>
+          <div class="two-col">
+            <div class="box fragment fade-up">
+              <h3>Corporate venture</h3>
+              <p>A new business, venture, product line or growth opportunity created inside the corporation.</p>
+              <p class="small">AWS inside Amazon &middot; Gmail inside Google &middot; PlayStation inside Sony</p>
+              <p class="small"><em>Why build rather than acquire a startup?</em></p>
+            </div>
+            <div class="box warn fragment fade-up">
+              <h3>Strategic entrepreneurship</h3>
+              <p>Entrepreneurial action that reshapes the company's own strategy, competitive position, capabilities or business model.</p>
+              <p class="small">Netflix DVD &rarr; streaming &middot; Microsoft &rarr; cloud &middot; Adobe &rarr; subscription</p>
+              <p class="small"><em>Why is this harder than launching a product?</em></p>
+            </div>
+          </div>
+          <p class="small fragment fade-up">The second is harder because there is no clean line between the new thing and the thing that currently pays everyone's salary.</p>
+          <aside class="notes">Both discussion questions are worth two minutes each. The answer to the second one previews the trap you return to in Module 6, when a fast decision turns out to have been a one-way door.</aside>
         </section>
+
+        <!-- The five stages -->
         <section>
-          <h2>Discussion</h2>
-          <ul>
-            <li>Why might a large company ignore a promising internal opportunity?</li>
-            <li>What makes corporate entrepreneurship different from startup entrepreneurship?</li>
-            <li>How should leaders protect a new idea before it proves itself?</li>
-          </ul>
+          <h2>What an intrapreneur actually does</h2>
+          <div class="four-col">
+            <div class="card fragment fade-up" data-fragment-index="1"><h4>1 &middot; Recognize</h4><p>Spot the opportunity &mdash; usually from inside the operation, where the pain is.</p></div>
+            <div class="card fragment fade-up" data-fragment-index="1"><h4>2 &middot; Develop</h4><p>Turn a complaint into a concept somebody could fund.</p></div>
+            <div class="card fragment fade-up" data-fragment-index="2"><h4>3 &middot; Build support</h4><p>The hard one. Find the manager who will spend their credibility on it.</p></div>
+            <div class="card fragment fade-up" data-fragment-index="2"><h4>4 &middot; Experiment</h4><p>Validate cheaply, before the number is big enough to be noticed.</p></div>
+          </div>
+          <div class="box fragment fade-up" data-fragment-index="3" style="margin-top: 20px;">
+            <h3>5 &middot; Scale and integrate</h3>
+            <p>Additional funding, expanded team, market rollout &mdash; and the moment the venture stops being a secret and starts being a line item somebody has to defend.</p>
+          </div>
+          <aside class="notes">Stage 3 is where corporate ventures die, not stage 1. Say so now; the figure on the next slide explains why.</aside>
+        </section>
+
+        <!-- Figure -->
+        <section>
+          <h2>The mental model &mdash; the CEAI chain</h2>
+          <div class="fig-embed" role="img" aria-label="External triggers feeding five internal conditions, pivoting through a middle manager to individual and organizational outcomes, benchmarked against competitors and against the firm's own prior years"><!--fig:Corporate_enterprise-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="16.0 72.0 1348.0 716.0" width="1348" height="716" font-family="Segoe Print, Comic Sans MS, Bradley Hand, cursive">
+<defs><marker id="ah-Corporate_enterprise" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1e1e1e"/></marker></defs>
+<g data-beat="1"><text x="60.00" y="112.20" font-size="18" fill="#0f766e">EXTERNAL TRIGGER</text></g>
+<g data-beat="1"><rect x="60.00" y="140.00" width="210.00" height="54.00" rx="13.5" ry="13.5" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="1"><text x="165.00" y="171.68" font-size="17" fill="#1e1e1e" text-anchor="middle">new technology</text></g>
+<g data-beat="1"><rect x="60.00" y="208.00" width="210.00" height="54.00" rx="13.5" ry="13.5" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="1"><text x="165.00" y="239.68" font-size="17" fill="#1e1e1e" text-anchor="middle">a new entrant</text></g>
+<g data-beat="1"><rect x="60.00" y="276.00" width="210.00" height="54.00" rx="13.5" ry="13.5" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="1"><text x="165.00" y="307.68" font-size="17" fill="#1e1e1e" text-anchor="middle">regulation</text></g>
+<g data-beat="1"><rect x="60.00" y="344.00" width="210.00" height="54.00" rx="13.5" ry="13.5" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="1"><text x="165.00" y="375.68" font-size="17" fill="#1e1e1e" text-anchor="middle">a customer shift</text></g>
+<g data-beat="1"><text x="165.00" y="444.40" font-size="16" fill="#4b5563" text-anchor="middle"><tspan x="165.00">Everybody sees the same triggers.</tspan><tspan x="165.00" dy="20.00">Amazon&#x27;s competitors also noticed</tspan><tspan x="165.00" dy="20.00">servers were getting cheap.</tspan><tspan x="165.00" dy="20.00">Triggers are free — they are not</tspan><tspan x="165.00" dy="20.00">an advantage.</tspan></text></g>
+<g data-beat="2"><path d="M 274.00,167.00 L 344.00,190.00" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-Corporate_enterprise)"/></g>
+<g data-beat="2"><path d="M 274.00,235.00 L 344.00,250.00" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-Corporate_enterprise)"/></g>
+<g data-beat="2"><path d="M 274.00,303.00 L 344.00,310.00" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-Corporate_enterprise)"/></g>
+<g data-beat="2"><path d="M 274.00,371.00 L 344.00,370.00" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-Corporate_enterprise)"/></g>
+<g data-beat="2"><text x="350.00" y="112.20" font-size="18" fill="#0f766e">INTERNAL CONDITIONS</text></g>
+<g data-beat="2"><rect x="350.00" y="130.00" width="330.00" height="340.00" rx="16.0" ry="16.0" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="2"><text x="515.00" y="209.05" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="515.00">· management support</tspan><tspan x="515.00" dy="21.25"></tspan><tspan x="515.00" dy="21.25">· work discretion</tspan><tspan x="515.00" dy="21.25"></tspan><tspan x="515.00" dy="21.25">· rewards &amp; recognition</tspan><tspan x="515.00" dy="21.25"></tspan><tspan x="515.00" dy="21.25">· time availability</tspan><tspan x="515.00" dy="21.25"></tspan><tspan x="515.00" dy="21.25">· organizational boundaries</tspan><tspan x="515.00" dy="21.25">   (permission to take risk)</tspan></text></g>
+<g data-beat="2"><text x="515.00" y="496.40" font-size="16" fill="#b45309" text-anchor="middle"><tspan x="515.00">Notice what is NOT on that list: money.</tspan><tspan x="515.00" dy="20.00">Amazon had $1.18 BILLION of free cash flow</tspan><tspan x="515.00" dy="20.00">in 2007. Permission, time and cover were</tspan><tspan x="515.00" dy="20.00">the binding constraint — never cash.</tspan></text></g>
+<g data-beat="3"><path d="M 684.00,300.00 L 756.00,300.00" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-Corporate_enterprise)"/></g>
+<g data-beat="3"><rect x="760.00" y="240.00" width="250.00" height="120.00" rx="16.0" ry="16.0" fill="#fff4e6" stroke="#b45309" stroke-width="2"/></g>
+<g data-beat="3"><text x="885.00" y="292.30" font-size="22" fill="#1e1e1e" text-anchor="middle"><tspan x="885.00">MIDDLE</tspan><tspan x="885.00" dy="27.50">MANAGER</tspan></text></g>
+<g data-beat="3"><text x="885.00" y="399.40" font-size="16" fill="#4b5563" text-anchor="middle"><tspan x="885.00">Not the CEO. Senior enough to</tspan><tspan x="885.00" dy="20.00">allocate people, junior enough to be</tspan><tspan x="885.00" dy="20.00">measured on this quarter — so the</tspan><tspan x="885.00" dy="20.00">venture&#x27;s only advocate is also the</tspan><tspan x="885.00" dy="20.00">person who pays for it.</tspan></text></g>
+<g data-beat="4"><path d="M 1014.00,300.00 L 1086.00,300.00" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-Corporate_enterprise)"/></g>
+<g data-beat="4"><rect x="1090.00" y="240.00" width="250.00" height="120.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="4"><text x="1215.00" y="282.45" font-size="18" fill="#1e1e1e" text-anchor="middle"><tspan x="1215.00">individual &amp;</tspan><tspan x="1215.00" dy="22.50">organizational</tspan><tspan x="1215.00" dy="22.50">outcomes</tspan></text></g>
+<g data-beat="5"><path d="M 1215.00,364.00 L 1215.00,604.00 L 710.00,604.00" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-Corporate_enterprise)"/></g>
+<g data-beat="5"><rect x="350.00" y="628.00" width="700.00" height="76.00" rx="16.0" ry="16.0" fill="#fff4e6" stroke="#b45309" stroke-width="2"/></g>
+<g data-beat="5"><text x="700.00" y="659.70" font-size="18" fill="#1e1e1e" text-anchor="middle"><tspan x="700.00">Benchmark TWICE — against competitors, AND against our own last few years.</tspan><tspan x="700.00" dy="22.50">Drop either one and you get a confidently wrong answer.</tspan></text></g>
+<g data-beat="5"><text x="700.00" y="735.40" font-size="16" fill="#4b5563" text-anchor="middle"><tspan x="700.00">AWS year one: operating income FELL from $432M to $389M while technology spend rose</tspan><tspan x="700.00" dy="20.00">from $451M to $662M. The cost hits the parent a full year before the benefit does.</tspan></text></g>
+</svg>
+<!--/fig:Corporate_enterprise--></div>
+          <p class="fig-cap fragment fade-up" data-fragment-index="99">The five stages tell you what an intrapreneur <em>does</em>. This tells you whether any of it <strong>survives</strong>.</p>
+          <aside class="notes">Beat 1: triggers are free. Beat 2: the conditions are the whole game &mdash; pause on the absence of money. Beat 3 is the finding they do not expect. Do not rush beat 5; benchmarking twice is what the simulation grades.</aside>
+        </section>
+
+        <!-- The conditions -->
+        <section>
+          <h2>The five conditions &mdash; and what each one really asks</h2>
+          <div class="three-col">
+            <div class="card fragment fade-up" data-fragment-index="1"><h3>Management support</h3><p>Will someone senior spend their own credibility on this?</p></div>
+            <div class="card fragment fade-up" data-fragment-index="1"><h3>Work discretion</h3><p>Can I decide without asking? Am I allowed to be wrong?</p></div>
+            <div class="card fragment fade-up" data-fragment-index="1"><h3>Rewards</h3><p>Does anyone's career get better if this works?</p></div>
+            <div class="card fragment fade-up" data-fragment-index="2"><h3>Time availability</h3><p>Is this someone's job, or their evenings?</p></div>
+            <div class="card fragment fade-up" data-fragment-index="2"><h3>Boundaries</h3><p>Where, exactly, does the permission run out?</p></div>
+            <div class="card warn fragment fade-up" data-fragment-index="3"><h3>Not on the list: money</h3><p>Amazon had <strong>$1.18 billion</strong> of free cash flow in 2007. Cash was never the binding constraint.</p></div>
+          </div>
+          <aside class="notes">Save the sixth card. Ask them what is missing from the list before you reveal it &mdash; almost every room says "budget", which is exactly the wrong answer.</aside>
+        </section>
+
+        <!-- The middle manager -->
+        <section>
+          <h2>The pivot is not the CEO</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">Whether a venture gets resources, discretion and air cover is decided by a manager <strong>two or three levels down</strong>.</li>
+                <li class="fragment fade-up">Senior enough to allocate people. Junior enough to be measured on <em>this quarter</em>.</li>
+                <li class="fragment fade-up">That person is simultaneously the venture's only advocate and <strong>the one who pays for it out of their own numbers</strong>.</li>
+              </ul>
+            </div>
+            <div class="box warn fragment fade-up">
+              <h3>Advantages come with their opposites</h3>
+              <p><strong>You get:</strong> capital, talent, an existing customer base, distribution, brand, infrastructure.</p>
+              <p><strong>You get:</strong> approval layers, legacy incentives that reward protecting the old business, internal politics, and risk aversion.</p>
+            </div>
+          </div>
+          <aside class="notes">Ask who in the room has worked somewhere with a manager like this. The answers are better than anything you can say here.</aside>
+        </section>
+
+        <!-- Where AWS sits -->
+        <section>
+          <h2>Where AWS actually sits on the chain</h2>
+          <div class="three-col">
+            <div class="card fragment fade-up" data-fragment-index="1"><h4>Trigger</h4><p>Cheap commodity servers, and the company's own scaling pain. Every competitor saw the same thing.</p></div>
+            <div class="card fragment fade-up" data-fragment-index="1"><h4>Management support</h4><p>Explicit: <em>"we generally focus on growing gross profit and operating profit <strong>dollars</strong> rather than maximizing margin percentages."</em></p></div>
+            <div class="card fragment fade-up" data-fragment-index="1"><h4>Time and discretion</h4><p>A dedicated team &mdash; not a side project, not someone's evenings.</p></div>
+            <div class="card warn fragment fade-up" data-fragment-index="2"><h4>Boundaries</h4><p>A <strong>4.4%</strong> operating margin, and shareholders who read every quarter.</p></div>
+            <div class="card warn fragment fade-up" data-fragment-index="2"><h4>Middle manager</h4><p>The person who had to defend the spend at the budget review.</p></div>
+            <div class="card bad fragment fade-up" data-fragment-index="3"><h4>Outcome, year one</h4><p>Operating income <strong>fell</strong> from <strong>$432M to $389M</strong> while technology spend rose from <strong>$451M to $662M</strong>.</p></div>
+          </div>
+          <p class="small fragment fade-up">Read the last card again. <strong>The venture's cost hits the parent's books a full year before any benefit does.</strong> That is not failure &mdash; it is the normal shape of every corporate venture, and precisely the shape that gets one cancelled.</p>
+          <aside class="notes">This is the slide that decides Thursday. If they internalise the one-year lag, the simulation's budget-review decision becomes arguable instead of obvious.</aside>
+        </section>
+
+        <!-- The one question -->
+        <section>
+          <h2>The one question the model makes you ask</h2>
+          <p class="quote fragment fade-up">Not &ldquo;is it a good idea?&rdquo; &mdash; but <span class="em">which of the five conditions does this idea not have yet, and who is the one manager who could grant it?</span></p>
+          <div class="box fragment fade-up" style="margin-top: 22px;">
+            <p><strong>Ideas are not scarce inside large firms. Conditions are.</strong></p>
+            <p>And benchmark the outcome <em>twice</em> &mdash; against competitors, and against the firm's own prior years. Compare a two-year-old venture only to its parent and it looks pitiful. Compare it only to itself and you never notice it is losing.</p>
+          </div>
+          <aside class="notes">Have them apply the question to their own team venture: which condition is missing, and who could grant it. It works for a student team as well as a corporation.</aside>
+        </section>
+
+        <!-- The one line -->
+        <section>
+          <h2>The one line to carry in</h2>
+          <p class="quote fragment fade-up">Startups create innovation <span class="em">without</span> organizational resources. Corporate entrepreneurs create it <span class="em">despite</span> organizational bureaucracy.</p>
+          <p class="small fragment fade-up">The central challenge is not generating ideas. It is turning an idea into organizational action and sustained value &mdash; which is a political skill as much as a creative one.</p>
+          <aside class="notes">Return to the opening vote: entrepreneur, corporate entrepreneur, or both. Most rooms move after this slide.</aside>
+        </section>
+
+        <!-- Bridge -->
+        <section>
+          <h2>Next: the simulation</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">You will open Amazon's <strong>real annual report for 2007</strong> &mdash; AWS about eighteen months old, its revenue reported nowhere, its costs already visible.</li>
+                <li class="fragment fade-up">Before each decision, say <strong>which link of the chain it sits on</strong>: trigger, condition, middle manager, or outcome.</li>
+              </ul>
+            </div>
+            <div class="box warn fragment fade-up">
+              <h3>What makes this module different</h3>
+              <p><strong>You are not a startup.</strong> You have a parent. The parent has shareholders. And the parent reads results every ninety days.</p>
+            </div>
+          </div>
+          <aside class="notes">Hand out role packets. Stress the ninety-day clock &mdash; it is the constraint that makes the AWS decisions hard rather than obvious in hindsight.</aside>
         </section>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script><!--narration-->
+      window.NARRATION = {};
+      <!--/narration--></script>
     <script>
-      Reveal.initialize({ hash: true, slideNumber: true });
+      // Each inlined figure carries data-beat="N" groups written by
+      // build_figures.py. Turn them into reveal fragments so the drawing builds
+      // up one beat at a time, in step with the speaker. Captions sit at index
+      // 99 so they always land last.
+      document.querySelectorAll('.fig-embed [data-beat]').forEach(function (g) {
+        g.classList.add('fragment');
+        g.setAttribute('data-fragment-index', g.getAttribute('data-beat'));
+      });
+
+      // Rehearsal / screen-capture mode. ?auto walks the deck; with no
+      // Narration.md compiled in (window.NARRATION is empty) every beat gets the
+      // 4s default, and ?auto=3500 overrides it with a fixed millisecond
+      // interval. Any key press stops it. To pace it against a real script,
+      // write Narration.md and run Tools/Figure_Convert/build_narration.py.
+      var auto = new URLSearchParams(location.search).get('auto');
+      var fixed = parseInt(auto, 10);
+      var running = auto !== null;
+      document.addEventListener('keydown', function () { running = false; });
+
+      function dwell() {
+        var i = Reveal.getIndices();
+        var key = i.h + ':' + (typeof i.f === 'number' ? i.f : -1);
+        var secs = (window.NARRATION || {})[key];
+        return fixed || (secs ? secs * 1000 : 4000);
+      }
+
+      function tick() {
+        if (!running) return;
+        setTimeout(function () {
+          if (!running) return;
+          var before = JSON.stringify(Reveal.getIndices());
+          Reveal.next();
+          if (JSON.stringify(Reveal.getIndices()) === before) return;  // end of deck
+          tick();
+        }, dwell());
+      }
+
+      Reveal.initialize({ hash: true, slideNumber: true, plugins: [ RevealNotes ] })
+        .then(function () { if (running) tick(); });
     </script>
   </body>
 </html>

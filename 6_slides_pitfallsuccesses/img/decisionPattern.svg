@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="76.0 50.0 1116.0 830.0" width="1116" height="830" font-family="Segoe Print, Comic Sans MS, Bradley Hand, cursive">
+<defs><marker id="ah-decisionPattern" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1e1e1e"/></marker></defs>
+<g data-beat="1"><path d="M 810.00,142.00 L 810.00,558.00" fill="none" stroke="#adb5bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g data-beat="1"><path d="M 452.00,350.00 L 1168.00,350.00" fill="none" stroke="#adb5bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g data-beat="1"><text x="632.50" y="127.67" font-size="17" fill="#4b5563" text-anchor="middle">LOW</text></g>
+<g data-beat="1"><text x="987.50" y="127.67" font-size="17" fill="#4b5563" text-anchor="middle">HIGH</text></g>
+<g data-beat="1"><text x="440.00" y="241.55" font-size="17" fill="#4b5563" text-anchor="end"><tspan x="440.00">EASY</tspan><tspan x="440.00" dy="21.25">(two-way door)</tspan></text></g>
+<g data-beat="1"><text x="440.00" y="446.55" font-size="17" fill="#4b5563" text-anchor="end"><tspan x="440.00">HARD</tspan><tspan x="440.00" dy="21.25">(one-way door)</tspan></text></g>
+<g data-beat="1"><text x="810.00" y="92.22" font-size="19" fill="#1e1e1e" text-anchor="middle">Consequence if wrong</text></g>
+<g data-beat="1"><text x="440.00" y="92.22" font-size="19" fill="#1e1e1e" text-anchor="end">Reversibility</text></g>
+<g data-beat="2"><rect x="460.00" y="150.00" width="345.00" height="195.00" rx="16.0" ry="16.0" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="2"><text x="632.50" y="241.20" font-size="18" fill="#1e1e1e" text-anchor="middle"><tspan x="632.50">Decide fast.</tspan><tspan x="632.50" dy="22.50">Just try it.</tspan></text></g>
+<g data-beat="3"><rect x="815.00" y="150.00" width="345.00" height="195.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="3"><text x="987.50" y="241.20" font-size="18" fill="#1e1e1e" text-anchor="middle"><tspan x="987.50">Decide fast — but</tspan><tspan x="987.50" dy="22.50">gather the evidence first.</tspan></text></g>
+<g data-beat="4"><rect x="460.00" y="355.00" width="345.00" height="195.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="4"><text x="632.50" y="446.20" font-size="18" fill="#1e1e1e" text-anchor="middle"><tspan x="632.50">Decide fast — it is cheap</tspan><tspan x="632.50" dy="22.50">even if it is permanent.</tspan></text></g>
+<g data-beat="5"><rect x="815.00" y="355.00" width="345.00" height="195.00" rx="16.0" ry="16.0" fill="#fff5f5" stroke="#c92a2a" stroke-width="2"/></g>
+<g data-beat="5"><text x="987.50" y="446.20" font-size="18" fill="#1e1e1e" text-anchor="middle"><tspan x="987.50">Decide SLOWLY,</tspan><tspan x="987.50" dy="22.50">and carefully.</tspan></text></g>
+<g data-beat="6"><path d="M 560.00,148.00 L 560.00,102.00 L 260.00,102.00" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-decisionPattern)"/></g>
+<g data-beat="6"><text x="100.00" y="92.40" font-size="16" fill="#b45309"><tspan x="100.00">Treating a TWO-WAY door</tspan><tspan x="100.00" dy="20.00">like a one-way door:</tspan><tspan x="100.00" dy="20.00">three weeks on a poster.</tspan><tspan x="100.00" dy="20.00">Slow, cautious, expensive</tspan><tspan x="100.00" dy="20.00">in chances missed.</tspan></text></g>
+<g data-beat="6"><path d="M 1010.00,552.00 L 1010.00,596.00" fill="none" stroke="#c92a2a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-decisionPattern)"/></g>
+<g data-beat="6"><text x="810.00" y="618.40" font-size="16" fill="#c92a2a" text-anchor="middle"><tspan x="810.00">Treating a ONE-WAY door like a two-way door: moving fast and</tspan><tspan x="810.00" dy="20.00">cheerfully through a door that locks behind you. The expensive one.</tspan></text></g>
+<g data-beat="7"><rect x="460.00" y="668.00" width="700.00" height="118.00" rx="16.0" ry="16.0" fill="#fff5f5" stroke="#c92a2a" stroke-width="2"/></g>
+<g data-beat="7"><text x="810.00" y="699.80" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="810.00">MoviePass, August 2017: $9.95 a month, unlimited.</tspan><tspan x="810.00" dy="21.25">&quot;It&#x27;s just a price — we can change it back.&quot;</tspan><tspan x="810.00" dy="21.25">You cannot. Once a million people anchor on $9.95, raising it</tspan><tspan x="810.00" dy="21.25">returns you to a smaller, angrier company.</tspan></text></g>
+<g data-beat="7"><text x="810.00" y="810.40" font-size="16" fill="#4b5563" text-anchor="middle"><tspan x="810.00">A price cut is a one-way door. Cost of revenue that year: 197%</tspan><tspan x="810.00" dy="20.00">— $2.00 spent for every $1.00 collected. The year before: 72%,</tspan><tspan x="810.00" dy="20.00">and the business made a gross profit.</tspan></text></g>
+</svg>

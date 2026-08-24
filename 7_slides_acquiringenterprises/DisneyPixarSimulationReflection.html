@@ -3,74 +3,196 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Simulation Reflection: Disney's Acquisition of Pixar</title>
+    <title>Simulation Reflection: Five and a Half Billion of Goodwill</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; }
+      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; --warn: #b45309; }
       .reveal { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: #fff; }
       .reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; letter-spacing: 0; }
-      .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.45em; }
-      .reveal h3 { font-size: 0.72em; color: var(--accent); margin-bottom: 0.45em; }
-      .reveal h4 { font-size: 0.58em; color: var(--muted); margin-bottom: 0.4em; }
-      .reveal p, .reveal li { font-size: 0.48em; line-height: 1.45; color: var(--ink); }
-      .reveal ul { margin: 0.35em 0 0 1.1em; }
+      .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.4em; }
+      .reveal h3 { font-size: 0.7em; color: var(--accent); margin-bottom: 0.3em; }
+      .reveal h4 { font-size: 0.55em; color: var(--muted); margin-bottom: 0.4em; }
+      .reveal p, .reveal li { font-size: 0.46em; line-height: 1.45; color: var(--ink); }
+      .reveal ul { margin: 0.3em 0 0 1.1em; }
       .reveal li { margin-bottom: 0.35em; }
-      .title-slide h2 { font-size: 1.35em; }
-      .subtitle { color: var(--muted); text-align: center; }
-      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; text-align: left; }
-      .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 18px 22px; text-align: left; }
-      .question-slide li { list-style: none; margin-left: -1em; }
-      .small { font-size: 0.42em; color: var(--muted); }
+      .title-slide h2 { font-size: 1.3em; }
+      .subtitle { color: var(--muted); text-align: center; font-size: 0.5em; }
+      .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 16px 20px; text-align: left; }
+      .small { font-size: 0.4em; color: var(--muted); }
+      /* role question slides */
+      .role-h { display: flex; align-items: center; gap: 12px; margin-bottom: 0.3em; }
+      .role-h .emoji { font-size: 1.1em; }
+      .role-h h2 { margin: 0; text-align: left; }
+      .q { font-weight: 600; text-align: left; margin-bottom: 0.4em; }
+      .reveal .options { list-style: none; margin: 0 0 0 0.2em; text-align: left; }
+      .reveal .options li { padding-left: 1.9em; text-indent: -1.9em; }
+      .reveal .role-h ~ p { text-align: left; }
+      .options li { margin-bottom: 0.35em; }
+      .options .k { display: inline-block; min-width: 1.7em; font-weight: 700; color: var(--accent); }
+      .reflect { background: #ecfdf5; border-left: 5px solid var(--accent); padding: 14px 18px; text-align: left; }
+      .reflect .tag { font-size: 0.4em; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
+      .reflect li { font-size: 0.44em; }
+      .quote { font-size: 0.6em; font-weight: 600; line-height: 1.3; }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
+
+        <!-- Title -->
         <section class="title-slide">
-          <h2>Simulation Reflection: Disney's Acquisition of Pixar</h2>
-          <p class="subtitle">Week 10: Thursday, November 5</p>
+          <h2>Five and a Half Billion of Goodwill</h2>
         </section>
+
+        <!-- The scenario / source -->
         <section>
-          <h2>Case Setup</h2>
-          <p>Disney needed renewed animation strength, while Pixar had a powerful creative process and successful films.</p>
-          <p>Your team will decide how Disney should structure the acquisition and integration.</p>
+          <h2>The case</h2>
+          <div class="box"><p>Late 2006. The deal closed on 5 May: Disney bought Pixar all-stock for <strong>$7.5 billion</strong>. About <strong>$1.1 billion</strong> was Pixar's own cash, only about <strong>$1.0 billion</strong> landed on identifiable assets, and about <strong>$5.5 billion</strong> became goodwill. Source: FY2006 10-K.</p></div>
         </section>
-        <section class="question-slide">
-          <h2>Decision 1: Deal Logic</h2>
-          <ul>
-            <li>A: Treat Pixar mainly as an asset Disney can absorb.</li>
-            <li>B: Treat Pixar as a creative capability that must retain autonomy.</li>
-          </ul>
-        </section>
-        <section class="question-slide">
-          <h2>Decision 2: Culture</h2>
-          <ul>
-            <li>A: Standardize Pixar under Disney processes.</li>
-            <li>B: Preserve Pixar's creative process and use it to strengthen Disney animation.</li>
-          </ul>
-        </section>
-        <section class="question-slide">
-          <h2>Decision 3: Leadership</h2>
-          <ul>
-            <li>A: Replace Pixar leadership with Disney executives.</li>
-            <li>B: Give Pixar leaders authority over animation decisions.</li>
-          </ul>
-        </section>
+
+        <!-- Group Discussion: draw the week's mental model -->
         <section>
-          <h2>Reflection Questions</h2>
-          <ul>
-            <li>What value was Disney really buying?</li>
-            <li>Which integration choice protected that value?</li>
-            <li>How can an acquisition create value for both sides?</li>
+          <h2>Group Discussion</h2>
+          <div class="reflect">
+            <ul>
+              <li>Form groups with classmates who had the same role.</li>
+              <li>Before any discussion of answers, draw the <strong>Integration Ladder</strong> &mdash; preserve, symbiosis, absorb.</li>
+              <li>Ask first whether the allocation says this deal bought <strong>assets</strong> or <strong>people</strong>, then name your rung.</li>
+              <li>Select one representative to present your group's placement and draw it on the board.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <div class="role-h"><span class="emoji">&#128176;</span><h2>Financial Lead</h2></div>
+          <p class="q">The price was <strong>$7.5 billion</strong>. About <strong>$1.1 billion</strong> was Pixar's own cash, only about <strong>$1.0 billion</strong> landed on identifiable assets, and about <strong>$5.5 billion</strong> became goodwill. Was this paid the right way, and what test tells you next year whether it was worth it?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Pay in stock so Pixar's people carry the risk with us; judge it in a year on whether the film-makers are still here and producing.</li>
+            <li><span class="k">B</span> Pay in stock, manage dilution with buybacks; judge it on whether animation earnings cover the cost of the shares issued.</li>
+            <li><span class="k">C</span> Borrow and pay cash &mdash; cheaper than issuing equity at this price if we're confident.</li>
+            <li><span class="k">D</span> Renegotiate the price down toward the $1 billion of assets we can actually identify.</li>
           </ul>
         </section>
         <section>
-          <h2>Takeaway</h2>
-          <div class="box"><p>Successful acquisitions protect the source of value before forcing integration.</p></div>
+          <div class="role-h"><span class="emoji">&#128176;</span><h2>Financial Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Convert a cultural argument into a <em>measurable test</em>. &ldquo;Are the film-makers still here and producing&rdquo; is something you can check in twelve months.</li>
+              <li>About 73% of the price is goodwill. What Disney bought is not on the balance sheet in any form you can point at.</li>
+              <li><strong>(D) is the trap.</strong> It misunderstands the deal entirely. The goodwill <em>is</em> the asset; valuing only what can be listed values a car park.</li>
+            </ul>
+          </div>
         </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128227;</span><h2>Marketing Lead</h2></div>
+          <p class="q">You now own two of the most trusted brands in family entertainment. The filing says the company <em>&ldquo;now produces feature animation films under both the Disney and Pixar banners.&rdquo;</em> What do you do with the two names?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Keep them separate and distinct &mdash; Pixar films stay Pixar films.</li>
+            <li><span class="k">B</span> Put both names on the films so trust runs in both directions.</li>
+            <li><span class="k">C</span> Keep Pixar prominent for now, let it merge into Disney over several years.</li>
+            <li><span class="k">D</span> Fold Pixar into the Disney brand now &mdash; we paid for it, put our name on it.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128227;</span><h2>Marketing Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>A brand is a <em>prediction audiences make</em>, not a logo. Two trusted names make two different predictions, and merging them averages the two.</li>
+              <li>The filing's own language &mdash; &ldquo;under both the Disney and Pixar banners&rdquo; &mdash; already contains the structure of the answer.</li>
+              <li><strong>(D) is the trap.</strong> &ldquo;We paid for it, put our name on it&rdquo; spends $5.5 billion of goodwill on a logo change, and the weaker prediction survives the merge.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#9881;&#65039;</span><h2>Operation Lead</h2></div>
+          <p class="q">Pixar is a wholly-owned subsidiary in <strong>Emeryville</strong>, four hundred miles from Burbank, with its own building, processes and leadership &mdash; while Disney's own animation studio is struggling. How do you integrate?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Leave Pixar where it is and put its leaders in charge of Disney Animation too.</li>
+            <li><span class="k">B</span> Keep them separate but deliberately share technology and practices both ways.</li>
+            <li><span class="k">C</span> Keep Emeryville, but have Pixar report through existing studio management.</li>
+            <li><span class="k">D</span> Move Pixar to Burbank under our animation leadership &mdash; that's where the savings are.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#9881;&#65039;</span><h2>Operation Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Pick the rung <em>from the allocation</em>, not from instinct. A goodwill-dominant deal sits on <strong>preserve</strong>.</li>
+              <li>The acquirer's own animation studio is the one that is struggling &mdash; which inverts the usual direction of an integration.</li>
+              <li><strong>(D) is the trap.</strong> The textbook synergy play. It relocates about $1 billion of assets and destroys the $5.5 billion that cannot be relocated.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128187;</span><h2>Tech Lead</h2></div>
+          <p class="q">Both studios have a complete animation pipeline, and the filing names <em>&ldquo;embracing leading-edge technologies&rdquo;</em> as a reason for the deal. Neither is obviously worse, and running two is expensive. What happens?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Leave Pixar's pipeline alone; move the good parts of it into Disney Animation.</li>
+            <li><span class="k">B</span> Run both, share tools deliberately where each is genuinely better.</li>
+            <li><span class="k">C</span> Pick one standard and migrate everyone over about three years.</li>
+            <li><span class="k">D</span> Migrate Pixar onto our existing systems &mdash; two pipelines is duplication.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128187;</span><h2>Tech Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>A pipeline <em>encodes a working method</em>, not just software. Standardising the tool standardises the method along with it.</li>
+              <li>Intangibles were only <strong>$233 million</strong> of the $7.5 billion price. The technology was never what Disney was buying.</li>
+              <li><strong>(D) is the trap.</strong> Presented as an IT saving; actually a modification to the process the company paid $5.5 billion of goodwill for.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128274;</span><h2>Security Lead</h2></div>
+          <p class="q">About <strong>$5.5 billion</strong> of what you bought is goodwill &mdash; not a building, a patent or a film library. Much of it walks out of the building every evening. What is the top risk, and what do you do about it?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Creative leadership walking out is the top risk &mdash; protect their autonomy and how they work.</li>
+            <li><span class="k">B</span> Lock the intellectual property down &mdash; characters and rendering technology are what we bought.</li>
+            <li><span class="k">C</span> Retention packages and non-competes for the key people.</li>
+            <li><span class="k">D</span> Standard post-merger security and systems consolidation &mdash; routine integration.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128274;</span><h2>Security Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Recognise the one risk that <em>cannot be contracted away</em>. Retention money keeps people at their desks; it does not keep them doing the work you bought.</li>
+              <li>The strongest control available here belongs to Operations, not Security &mdash; saying so plainly is the strong answer, not a dodge.</li>
+              <li><strong>(D) is the trap.</strong> It treats a goodwill-dominant creative acquisition as an IT integration. The consolidation itself is the risk.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#129517;</span><h2>Account Manager</h2></div>
+          <p>You do <strong>not</strong> answer a functional question. After all five leads present their selection and a one-sentence defence:</p>
+          <ul class="options">
+            <li><span class="k">1</span> <strong>Rank</strong> the five problems 1&ndash;5, each used once, with one sentence justifying #1 that contains a figure from the packet.</li>
+            <li><span class="k">2</span> <strong>Weight</strong> them &mdash; 100 points across the five, in blocks of 10, totalling exactly 100.</li>
+          </ul>
+          <p class="q" style="margin-top:0.5em;"><strong>Part 3 &mdash; Place the deal on the ladder.</strong> Preserve, symbiosis, or absorb &mdash; and what <em>in the numbers</em> tells you so?</p>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#129517;</span><h2>Account Manager &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Ranking is order; weighting is magnitude. A flat split scores <strong>2 of 6</strong> &mdash; the designed penalty for refusing to choose.</li>
+              <li>The strong pattern ranks <strong>integration and key people above brands and pipeline</strong>, keeps the price off the bottom, and weights the top two at about 70 of 100.</li>
+              <li>The deal is <strong>PRESERVE</strong>, and 73% goodwill is the evidence &mdash; ideally noticing the <strong>$26 million</strong> of abandoned sequels as the sign Disney had already decided.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Key takeaway -->
+        <section>
+          <h2>Key takeaway</h2>
+          <div class="box"><p>Price is standalone value plus synergy, minus the value you destroy integrating. When 73% of the price is goodwill, the integration plan <em>is</em> the deal.</p></div>
+          <p class="quote" style="margin-top: 20px;">Most of what Disney bought walks out of the building every evening.</p>
+        </section>
+
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>

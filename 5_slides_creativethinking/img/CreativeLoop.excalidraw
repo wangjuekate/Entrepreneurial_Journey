@@ -4,15 +4,15 @@
   "source": "MENT2234",
   "elements": [
     {
-      "id": "ax",
-      "type": "arrow",
-      "x": 230,
-      "y": 620,
-      "width": 950,
-      "height": 0,
+      "id": "dfb",
+      "type": "rectangle",
+      "x": 80,
+      "y": 100,
+      "width": 320,
+      "height": 110,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
+      "strokeColor": "#1971c2",
+      "backgroundColor": "#e7f5ff",
       "fillStyle": "solid",
       "strokeWidth": 2,
       "strokeStyle": "solid",
@@ -20,7 +20,9 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": null,
+      "roundness": {
+        "type": 3
+      },
       "seed": 365818449,
       "version": 1,
       "versionNonce": 420054432,
@@ -31,30 +33,15 @@
       "locked": false,
       "customData": {
         "beat": 1
-      },
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          950,
-          0
-        ]
-      ],
-      "lastCommittedPoint": null,
-      "startBinding": null,
-      "endBinding": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
+      }
     },
     {
-      "id": "ay",
-      "type": "arrow",
-      "x": 230,
-      "y": 620,
-      "width": 0,
-      "height": 540,
+      "id": "dft",
+      "type": "text",
+      "x": 80,
+      "y": 100,
+      "width": 320,
+      "height": 110,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -77,29 +64,23 @@
       "customData": {
         "beat": 1
       },
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          -540
-        ]
-      ],
-      "lastCommittedPoint": null,
-      "startBinding": null,
-      "endBinding": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
+      "text": "DEFINE\nthe problem",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": null,
+      "originalText": "DEFINE\nthe problem",
+      "lineHeight": 1.25,
+      "baseline": 18
     },
     {
-      "id": "ayl",
+      "id": "dfc",
       "type": "text",
-      "x": 250,
-      "y": 52,
-      "width": 453.55999999999995,
-      "height": 21.25,
+      "x": 80,
+      "y": 224,
+      "width": 320,
+      "height": 56,
       "angle": 0,
       "strokeColor": "#4b5563",
       "backgroundColor": "transparent",
@@ -122,26 +103,26 @@
       "customData": {
         "beat": 1
       },
-      "text": "RETURN \u2014 money, fulfilment, the dent you leave",
+      "text": "What is the real\nquestion here?",
       "fontSize": 17,
       "fontFamily": 1,
-      "textAlign": "left",
-      "verticalAlign": "top",
+      "textAlign": "center",
+      "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "RETURN \u2014 money, fulfilment, the dent you leave",
+      "originalText": "What is the real\nquestion here?",
       "lineHeight": 1.25,
       "baseline": 15
     },
     {
-      "id": "axl",
-      "type": "text",
-      "x": 620,
-      "y": 636,
-      "width": 157.76,
-      "height": 21.25,
+      "id": "idb",
+      "type": "rectangle",
+      "x": 470,
+      "y": 100,
+      "width": 320,
+      "height": 110,
       "angle": 0,
-      "strokeColor": "#4b5563",
-      "backgroundColor": "transparent",
+      "strokeColor": "#0f766e",
+      "backgroundColor": "#e6fffa",
       "fillStyle": "solid",
       "strokeWidth": 2,
       "strokeStyle": "solid",
@@ -149,7 +130,9 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": null,
+      "roundness": {
+        "type": 3
+      },
       "seed": 834078421,
       "version": 1,
       "versionNonce": 2008166732,
@@ -159,27 +142,18 @@
       "link": null,
       "locked": false,
       "customData": {
-        "beat": 1
-      },
-      "text": "TOTAL RISK BORNE",
-      "fontSize": 17,
-      "fontFamily": 1,
-      "textAlign": "left",
-      "verticalAlign": "top",
-      "containerId": null,
-      "originalText": "TOTAL RISK BORNE",
-      "lineHeight": 1.25,
-      "baseline": 15
+        "beat": 2
+      }
     },
     {
-      "id": "axl2",
+      "id": "idt",
       "type": "text",
-      "x": 620,
-      "y": 660,
-      "width": 334.08,
-      "height": 40.0,
+      "x": 470,
+      "y": 100,
+      "width": 320,
+      "height": 110,
       "angle": 0,
-      "strokeColor": "#4b5563",
+      "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
@@ -198,28 +172,28 @@
       "link": null,
       "locked": false,
       "customData": {
-        "beat": 1
+        "beat": 2
       },
-      "text": "four risks stacked, not one:\nfinancial \u00b7 career \u00b7 family \u00b7 mental",
-      "fontSize": 16,
+      "text": "IDEATE\n(diverge)",
+      "fontSize": 20,
       "fontFamily": 1,
-      "textAlign": "left",
-      "verticalAlign": "top",
+      "textAlign": "center",
+      "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "four risks stacked, not one:\nfinancial \u00b7 career \u00b7 family \u00b7 mental",
+      "originalText": "IDEATE\n(diverge)",
       "lineHeight": 1.25,
-      "baseline": 14
+      "baseline": 18
     },
     {
-      "id": "A",
-      "type": "ellipse",
-      "x": 750,
-      "y": 455,
-      "width": 200,
-      "height": 90,
+      "id": "idc",
+      "type": "text",
+      "x": 470,
+      "y": 224,
+      "width": 320,
+      "height": 56,
       "angle": 0,
-      "strokeColor": "#b45309",
-      "backgroundColor": "#fff4e6",
+      "strokeColor": "#4b5563",
+      "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
       "strokeStyle": "solid",
@@ -238,18 +212,27 @@
       "locked": false,
       "customData": {
         "beat": 2
-      }
+      },
+      "text": "Many options,\nno judging yet",
+      "fontSize": 17,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": null,
+      "originalText": "Many options,\nno judging yet",
+      "lineHeight": 1.25,
+      "baseline": 15
     },
     {
-      "id": "At",
-      "type": "text",
-      "x": 750,
-      "y": 455,
-      "width": 200,
-      "height": 90,
+      "id": "ptb",
+      "type": "rectangle",
+      "x": 860,
+      "y": 100,
+      "width": 320,
+      "height": 110,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
+      "strokeColor": "#b45309",
+      "backgroundColor": "#fff4e6",
       "fillStyle": "solid",
       "strokeWidth": 2,
       "strokeStyle": "solid",
@@ -257,7 +240,9 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": null,
+      "roundness": {
+        "type": 3
+      },
       "seed": 486747545,
       "version": 1,
       "versionNonce": 368886728,
@@ -267,27 +252,18 @@
       "link": null,
       "locked": false,
       "customData": {
-        "beat": 2
-      },
-      "text": "A \u2014 high risk,\nlow return",
-      "fontSize": 17,
-      "fontFamily": 1,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": null,
-      "originalText": "A \u2014 high risk,\nlow return",
-      "lineHeight": 1.25,
-      "baseline": 15
+        "beat": 3
+      }
     },
     {
-      "id": "Ac",
+      "id": "ptt",
       "type": "text",
-      "x": 720,
-      "y": 555,
-      "width": 260,
-      "height": 44,
+      "x": 860,
+      "y": 100,
+      "width": 320,
+      "height": 110,
       "angle": 0,
-      "strokeColor": "#4b5563",
+      "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
@@ -306,28 +282,28 @@
       "link": null,
       "locked": false,
       "customData": {
-        "beat": 2
+        "beat": 3
       },
-      "text": "Most ventures live here. Not failure \u2014\nthe middle of the ride. WeWork 2021.",
-      "fontSize": 15,
+      "text": "PROTOTYPE & TEST\n(converge)",
+      "fontSize": 20,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "Most ventures live here. Not failure \u2014\nthe middle of the ride. WeWork 2021.",
+      "originalText": "PROTOTYPE & TEST\n(converge)",
       "lineHeight": 1.25,
-      "baseline": 14
+      "baseline": 18
     },
     {
-      "id": "B",
-      "type": "ellipse",
-      "x": 330,
-      "y": 165,
-      "width": 200,
-      "height": 90,
+      "id": "ptc",
+      "type": "text",
+      "x": 860,
+      "y": 224,
+      "width": 320,
+      "height": 56,
       "angle": 0,
-      "strokeColor": "#1971c2",
-      "backgroundColor": "#e7f5ff",
+      "strokeColor": "#4b5563",
+      "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
       "strokeStyle": "solid",
@@ -346,17 +322,26 @@
       "locked": false,
       "customData": {
         "beat": 3
-      }
+      },
+      "text": "The cheapest test\nthat could FAIL",
+      "fontSize": 17,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": null,
+      "originalText": "The cheapest test\nthat could FAIL",
+      "lineHeight": 1.25,
+      "baseline": 15
     },
     {
-      "id": "Bt",
-      "type": "text",
-      "x": 330,
-      "y": 165,
-      "width": 200,
-      "height": 90,
+      "id": "a1",
+      "type": "arrow",
+      "x": 404,
+      "y": 155,
+      "width": 62,
+      "height": 0,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#4b5563",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
@@ -375,25 +360,31 @@
       "link": null,
       "locked": false,
       "customData": {
-        "beat": 3
+        "beat": 2
       },
-      "text": "B \u2014 low risk,\nhigh return",
-      "fontSize": 17,
-      "fontFamily": 1,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": null,
-      "originalText": "B \u2014 low risk,\nhigh return",
-      "lineHeight": 1.25,
-      "baseline": 15
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          62,
+          0
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
     },
     {
-      "id": "Bc",
-      "type": "text",
-      "x": 300,
-      "y": 265,
-      "width": 260,
-      "height": 44,
+      "id": "a2",
+      "type": "arrow",
+      "x": 794,
+      "y": 155,
+      "width": 62,
+      "height": 0,
       "angle": 0,
       "strokeColor": "#4b5563",
       "backgroundColor": "transparent",
@@ -416,26 +407,32 @@
       "customData": {
         "beat": 3
       },
-      "text": "Everyone thinks they are aiming here.\nAlmost nobody lands here.",
-      "fontSize": 15,
-      "fontFamily": 1,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": null,
-      "originalText": "Everyone thinks they are aiming here.\nAlmost nobody lands here.",
-      "lineHeight": 1.25,
-      "baseline": 14
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          62,
+          0
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
     },
     {
-      "id": "C",
-      "type": "ellipse",
-      "x": 860,
-      "y": 145,
-      "width": 200,
-      "height": 90,
+      "id": "back",
+      "type": "arrow",
+      "x": 1180,
+      "y": 155,
+      "width": 1180,
+      "height": 159,
       "angle": 0,
       "strokeColor": "#0f766e",
-      "backgroundColor": "#e6fffa",
+      "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
       "strokeStyle": "solid",
@@ -454,17 +451,48 @@
       "locked": false,
       "customData": {
         "beat": 4
-      }
+      },
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          40,
+          0
+        ],
+        [
+          40,
+          159
+        ],
+        [
+          -1140,
+          159
+        ],
+        [
+          -1140,
+          0
+        ],
+        [
+          -1104,
+          0
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
     },
     {
-      "id": "Ct",
+      "id": "backl",
       "type": "text",
-      "x": 860,
-      "y": 145,
-      "width": 200,
-      "height": 90,
+      "x": 380,
+      "y": 288,
+      "width": 500,
+      "height": 30,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#0f766e",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
@@ -485,26 +513,26 @@
       "customData": {
         "beat": 4
       },
-      "text": "C \u2014 high risk,\nhigh return",
-      "fontSize": 17,
+      "text": "redefine the problem, go again",
+      "fontSize": 18,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "C \u2014 high risk,\nhigh return",
+      "originalText": "redefine the problem, go again",
       "lineHeight": 1.25,
-      "baseline": 15
+      "baseline": 16
     },
     {
-      "id": "Cc",
-      "type": "text",
-      "x": 830,
-      "y": 245,
-      "width": 260,
-      "height": 44,
+      "id": "dvb",
+      "type": "rectangle",
+      "x": 80,
+      "y": 400,
+      "width": 550,
+      "height": 158,
       "angle": 0,
-      "strokeColor": "#4b5563",
-      "backgroundColor": "transparent",
+      "strokeColor": "#0f766e",
+      "backgroundColor": "#e6fffa",
       "fillStyle": "solid",
       "strokeWidth": 2,
       "strokeStyle": "solid",
@@ -512,7 +540,9 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": null,
+      "roundness": {
+        "type": 3
+      },
       "seed": 1691334854,
       "version": 1,
       "versionNonce": 97262324,
@@ -522,27 +552,18 @@
       "link": null,
       "locked": false,
       "customData": {
-        "beat": 4
-      },
-      "text": "The founder who got off at the top.",
-      "fontSize": 15,
-      "fontFamily": 1,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": null,
-      "originalText": "The founder who got off at the top.",
-      "lineHeight": 1.25,
-      "baseline": 14
+        "beat": 5
+      }
     },
     {
-      "id": "up",
+      "id": "dvt",
       "type": "text",
-      "x": 250,
-      "y": 92,
-      "width": 532.4399999999999,
-      "height": 22.5,
+      "x": 80,
+      "y": 400,
+      "width": 550,
+      "height": 158,
       "angle": 0,
-      "strokeColor": "#0f766e",
+      "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
@@ -563,34 +584,36 @@
       "customData": {
         "beat": 5
       },
-      "text": "no ceiling \u2014 your upside is capped by your ambition",
+      "text": "DIVERGE\n\ngenerating options\n\"yes, and \u2014 what else?\"\nfails by never stopping \u00b7 feels wasteful",
       "fontSize": 18,
       "fontFamily": 1,
-      "textAlign": "left",
-      "verticalAlign": "top",
+      "textAlign": "center",
+      "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "no ceiling \u2014 your upside is capped by your ambition",
+      "originalText": "DIVERGE\n\ngenerating options\n\"yes, and \u2014 what else?\"\nfails by never stopping \u00b7 feels wasteful",
       "lineHeight": 1.25,
       "baseline": 16
     },
     {
-      "id": "floor",
-      "type": "line",
-      "x": 230,
-      "y": 700,
-      "width": 950,
-      "height": 0,
+      "id": "cvb",
+      "type": "rectangle",
+      "x": 680,
+      "y": 400,
+      "width": 550,
+      "height": 158,
       "angle": 0,
-      "strokeColor": "#c92a2a",
-      "backgroundColor": "transparent",
+      "strokeColor": "#b45309",
+      "backgroundColor": "#fff4e6",
       "fillStyle": "solid",
       "strokeWidth": 2,
-      "strokeStyle": "dashed",
+      "strokeStyle": "solid",
       "roughness": 1,
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": null,
+      "roundness": {
+        "type": 3
+      },
       "seed": 1015545144,
       "version": 1,
       "versionNonce": 1755582180,
@@ -601,32 +624,17 @@
       "locked": false,
       "customData": {
         "beat": 5
-      },
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          950,
-          0
-        ]
-      ],
-      "lastCommittedPoint": null,
-      "startBinding": null,
-      "endBinding": null,
-      "startArrowhead": null,
-      "endArrowhead": null
+      }
     },
     {
-      "id": "down",
+      "id": "cvt",
       "type": "text",
-      "x": 240,
-      "y": 712,
-      "width": 657.7199999999999,
-      "height": 22.5,
+      "x": 680,
+      "y": 400,
+      "width": 550,
+      "height": 158,
       "angle": 0,
-      "strokeColor": "#c92a2a",
+      "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
@@ -647,25 +655,25 @@
       "customData": {
         "beat": 5
       },
-      "text": "the floor is your signature \u2014 you can lose more than you put in",
+      "text": "CONVERGE\n\nchoosing between them\n\"which of these could be wrong?\"\nfails by starting too early \u00b7 feels decisive",
       "fontSize": 18,
       "fontFamily": 1,
-      "textAlign": "left",
-      "verticalAlign": "top",
+      "textAlign": "center",
+      "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "the floor is your signature \u2014 you can lose more than you put in",
+      "originalText": "CONVERGE\n\nchoosing between them\n\"which of these could be wrong?\"\nfails by starting too early \u00b7 feels decisive",
       "lineHeight": 1.25,
       "baseline": 16
     },
     {
-      "id": "fall",
-      "type": "arrow",
-      "x": 955,
-      "y": 500,
-      "width": 165,
-      "height": 196,
+      "id": "vs",
+      "type": "line",
+      "x": 655,
+      "y": 410,
+      "width": 0,
+      "height": 138,
       "angle": 0,
-      "strokeColor": "#c92a2a",
+      "strokeColor": "#4b5563",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
@@ -692,27 +700,23 @@
           0
         ],
         [
-          165,
-          0
-        ],
-        [
-          165,
-          196
+          0,
+          138
         ]
       ],
       "lastCommittedPoint": null,
       "startBinding": null,
       "endBinding": null,
       "startArrowhead": null,
-      "endArrowhead": "arrow"
+      "endArrowhead": null
     },
     {
-      "id": "same",
+      "id": "vsn",
       "type": "text",
-      "x": 270,
-      "y": 330,
-      "width": 512.7199999999999,
-      "height": 63.75,
+      "x": 80,
+      "y": 578,
+      "width": 1150,
+      "height": 52,
       "angle": 0,
       "strokeColor": "#4b5563",
       "backgroundColor": "transparent",
@@ -735,26 +739,26 @@
       "customData": {
         "beat": 5
       },
-      "text": "Neumann and his 2,000 employees rode the SAME\ncurve. They just sat at different points on the risk\naxis \u2014 he had a parachute, they had stock.",
+      "text": "Almost every bad meeting you will sit in is a room trying to do both at once.\nSay out loud which one you are doing: \"we're still diverging \u2014 hold the objections for ten minutes.\"",
       "fontSize": 17,
       "fontFamily": 1,
-      "textAlign": "left",
-      "verticalAlign": "top",
+      "textAlign": "center",
+      "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "Neumann and his 2,000 employees rode the SAME\ncurve. They just sat at different points on the risk\naxis \u2014 he had a parachute, they had stock.",
+      "originalText": "Almost every bad meeting you will sit in is a room trying to do both at once.\nSay out loud which one you are doing: \"we're still diverging \u2014 hold the objections for ten minutes.\"",
       "lineHeight": 1.25,
       "baseline": 15
     },
     {
-      "id": "qb",
+      "id": "mxb",
       "type": "rectangle",
-      "x": 710,
-      "y": 18,
-      "width": 500,
-      "height": 70,
+      "x": 190,
+      "y": 656,
+      "width": 930,
+      "height": 120,
       "angle": 0,
-      "strokeColor": "#0f766e",
-      "backgroundColor": "#e6fffa",
+      "strokeColor": "#c92a2a",
+      "backgroundColor": "#fff5f5",
       "fillStyle": "solid",
       "strokeWidth": 2,
       "strokeStyle": "solid",
@@ -778,12 +782,12 @@
       }
     },
     {
-      "id": "qt",
+      "id": "mxt",
       "type": "text",
-      "x": 710,
-      "y": 18,
-      "width": 500,
-      "height": 70,
+      "x": 190,
+      "y": 656,
+      "width": 930,
+      "height": 120,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -806,15 +810,15 @@
       "customData": {
         "beat": 6
       },
-      "text": "Which axis does this move me on \u2014\nand can I survive the move if I'm wrong?",
-      "fontSize": 18,
+      "text": "The most expensive mistake in business is treating a prototype like a product.\n\nA prototype is funded for LEARNING and judged on what you found out.\nA product is funded for REVENUE and judged on money. Swap them and you either\ncancel an experiment for missing a target it never had, or bet the company on\nsomething nobody tested. Both look, from the inside, exactly like being decisive.",
+      "fontSize": 16,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "Which axis does this move me on \u2014\nand can I survive the move if I'm wrong?",
+      "originalText": "The most expensive mistake in business is treating a prototype like a product.\n\nA prototype is funded for LEARNING and judged on what you found out.\nA product is funded for REVENUE and judged on money. Swap them and you either\ncancel an experiment for missing a target it never had, or bet the company on\nsomething nobody tested. Both look, from the inside, exactly like being decisive.",
       "lineHeight": 1.25,
-      "baseline": 16
+      "baseline": 14
     }
   ],
   "appState": {

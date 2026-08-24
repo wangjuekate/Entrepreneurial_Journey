@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; --warn: #b45309; }
+      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; --warn: #b45309; --bad: #b91c1c; }
       .reveal { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: #fff; }
       .reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; letter-spacing: 0; }
       .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.45em; }
@@ -22,19 +22,27 @@
       .subtitle { color: var(--muted); text-align: center; font-size: 0.5em; }
       .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; text-align: left; align-items: center; }
       .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; text-align: left; }
+      .four-col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; text-align: left; }
       .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 18px 22px; text-align: left; }
+      .box.warn { border-left-color: var(--warn); }
+      .box.bad { border-left-color: var(--bad); }
       .card { background: var(--soft); border-top: 5px solid var(--accent); padding: 14px 16px; border-radius: 8px; text-align: left; }
       .card p { font-size: 0.42em; }
+      .card.warn { border-top-color: var(--warn); }
+      .card.bad { border-top-color: var(--bad); }
       .small { font-size: 0.42em; color: var(--muted); }
-      /* figure placeholder */
-      .fig { border: 2px dashed var(--line); border-radius: 12px; background: var(--soft);
-             display: flex; flex-direction: column; align-items: center; justify-content: center;
-             gap: 10px; padding: 24px; min-height: 300px; text-align: center; }
-      .fig .fig-icon { font-size: 1.5em; color: var(--accent); }
-      .fig .fig-label { font-size: 0.4em; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
-      .fig .fig-desc { font-size: 0.4em; max-width: 40ch; line-height: 1.4; color: var(--muted); }
+      /* Figures are inlined <svg> (not <img>) so their data-beat groups can be
+         animated. Sized in reveal's 960x700 slide coordinates: vh units do not
+         scale with the deck. Rebuild with build_figures.py + inline_figures.py. */
+      .fig-embed svg { display: block; margin: 0 auto; width: auto; height: auto; max-width: 100%; max-height: 450px; }
+      .fig-cap { font-size: 0.42em; color: var(--muted); margin-top: 0.55em; }
       .quote { font-size: 0.72em; font-weight: 600; line-height: 1.3; }
       .quote .em { color: var(--accent); }
+      /* Figure beats cross-fade in place. Deliberately NOT fade-up: a transform on an
+         SVG <g> would slide diagram parts out of register with the arrows pointing at
+         them. Scoped to .fig-embed so reveal's own transform transition still drives
+         fade-up on the prose. */
+      .fig-embed .fragment { transition: opacity 0.35s ease; }
     </style>
   </head>
   <body>
@@ -44,158 +52,294 @@
         <!-- Title -->
         <section class="title-slide">
           <h2>The Sweets &amp; the Bitterness of Entrepreneurship</h2>
-          <p class="subtitle">MENT 2234 · Module 1 · Concept Lecture</p>
+          <p class="subtitle">MENT 2234 &middot; Module 1 &middot; Concept Lecture</p>
+          <p class="subtitle">Case: WeWork &middot; Mental model: the Risk&ndash;Return Asymmetry Map</p>
+          <aside class="notes">Tell this like a stand-up set. Pause where the script says pause, let them laugh, then land the point. Do not open with the risks.</aside>
         </section>
 
-        <!-- Hook: the ride -->
+        <!-- Hook -->
         <section>
           <h2>It is not a straight line up</h2>
           <div class="two-col">
             <div>
-              <p>Everybody thinks entrepreneurship is a line going up and to the right.</p>
-              <p>It is a <strong>roller coaster</strong> — and the tickets are <strong>non-refundable</strong>.</p>
-              <p>Same ride, same people: some get off at the top, some at the bottom.</p>
+              <ul>
+                <li class="fragment fade-up">Everybody thinks entrepreneurship is a line going up and to the right.</li>
+                <li class="fragment fade-up">It is a <strong>roller coaster</strong> &mdash; and the tickets are <strong>non-refundable</strong>.</li>
+                <li class="fragment fade-up">Same ride, same people. Some get off at the top. Some get off at the bottom.</li>
+              </ul>
             </div>
-            <div class="fig">
-              <div class="fig-icon"><i class="fa-solid fa-chart-line"></i></div>
-              <div class="fig-label">Figure — the ride</div>
-              <div class="fig-desc">Roller-coaster curve of a founder's journey: the same track carries both the highs (sweets) and the drops (bitterness).</div>
+            <div class="box fragment fade-up">
+              <h3>Today I sell you the ride twice</h3>
+              <p>First why people get on. Then why some of them get off wishing they had never seen the amusement park.</p>
+              <p>Stay with me &mdash; the second half is the half that is usually left out.</p>
             </div>
           </div>
-          <aside class="notes">Sell the ride twice — first why people get on, then why some wish they never saw the park. Same people, same ride.</aside>
+          <aside class="notes">Say "non-refundable" and stop. That is the line the whole hour hangs on. Ask for a show of hands: who here wants to start something?</aside>
         </section>
 
-        <!-- Sweets: illustrative story -->
+        <!-- Sweets: the story -->
         <section>
-          <h2>A true story — the sweets</h2>
+          <h2>A true story &mdash; the sweets</h2>
           <div class="two-col">
             <div>
-              <p>At 27, broke and sleeping on a friend's couch, two founders rented out <strong>air mattresses</strong> in their apartment — cereal included — just to make rent.</p>
-              <p>To fund it, they sold <strong>novelty cereal boxes</strong> at $40 a box.</p>
-              <p>Ten years on: a company worth <strong>more than the entire Hilton chain</strong> — owning none of the buildings. That is <strong>Airbnb</strong>.</p>
+              <ul>
+                <li class="fragment fade-up">At 27, broke and sleeping on a friend's couch, two founders rented out <strong>air mattresses</strong> in their own apartment during a design conference. Three mattresses. Breakfast included.</li>
+                <li class="fragment fade-up">To fund it they printed novelty <strong>cereal boxes</strong> and sold them at <strong>$40 a box</strong>. Grown men selling breakfast cereal to survive.</li>
+                <li class="fragment fade-up">Ten years on, that couch-surfing guy is a billionaire and the company is worth more than the entire <strong>Hilton</strong> chain &mdash; a chain that owns actual buildings.</li>
+              </ul>
             </div>
-            <div class="fig">
-              <div class="fig-icon"><i class="fa-solid fa-box"></i></div>
-              <div class="fig-label">Figure — the origin story</div>
-              <div class="fig-desc">Airbnb's cereal-box / air-mattress beginning next to its later valuation — the "started from nothing" contrast.</div>
+            <div class="box fragment fade-up">
+              <h3>He owns nobody's building</h3>
+              <p>He owns the app that owns the idea. That is <strong>Airbnb</strong>.</p>
+              <p class="small">Remember the cereal box. It comes back in twenty minutes, on a private jet.</p>
             </div>
           </div>
-          <aside class="notes">The couch-surfing founder becomes a billionaire; owns the app that owns the idea, not the buildings. Sets up the three sweets.</aside>
+          <aside class="notes">Pause after "cereal". Let them laugh. The cereal box is a callback you will cash in on the WeWork slide &mdash; plant it deliberately.</aside>
         </section>
 
         <!-- The three sweets -->
         <section>
           <h2>What are the returns?</h2>
           <div class="three-col">
-            <div class="card">
+            <div class="card fragment fade-up">
               <h3>Financial freedom</h3>
-              <p>Not "rich" — <em>free</em>. A salary has a number on it; a company you own does not.</p>
+              <p>Not "rich" &mdash; <em>free</em>. The kind where the alarm clock becomes optional.</p>
+              <p>A salary has a number written on it. A company you own does not.</p>
             </div>
-            <div class="card">
+            <div class="card fragment fade-up">
               <h3>Fulfillment</h3>
-              <p>The first time a stranger pays for something that did not exist until you made it — that vote hits different.</p>
+              <p>The first time a total stranger pays for a thing that did not exist until you made it exist.</p>
+              <p>A teacher grades your work. A boss approves it. A customer <strong>votes with their wallet</strong>. That vote hits different.</p>
             </div>
-            <div class="card">
+            <div class="card fragment fade-up">
               <h3>To be remembered</h3>
-              <p>Disney was told he "lacked imagination." Founders try to leave a dent in the universe.</p>
+              <p>Walt Disney was rejected from a newspaper job &mdash; the editor said he "lacked imagination."</p>
+              <p>That editor's name is a trivia question. Most people rent their years; founders try to buy a monument.</p>
             </div>
           </div>
-          <aside class="notes">Freedom, meaning, immortality. That's the pitch — then turn the lights down.</aside>
+          <aside class="notes">Freedom, meaning, immortality. Deliver it as a pitch &mdash; "sign here" &mdash; then turn the lights down on the next slide.</aside>
         </section>
 
-        <!-- Flip side: the $47B man -->
+        <!-- The turn -->
         <section>
-          <h2>The flip side — the $47 billion man</h2>
+          <h2>The flip side &mdash; the $47 billion man</h2>
           <div class="two-col">
             <div>
-              <p>Adam Neumann's WeWork was "worth" <strong>$47B</strong>. He rang the bell early and said the party would never end.</p>
-              <p>The moment strangers opened the books, $47B became <strong>~$7B in weeks</strong>. The IPO collapsed; he was pushed out.</p>
-              <p>He left with a <strong>~$1B</strong> parachute. <strong>2,000 employees</strong> lost their jobs and their stock. Same ride — different exits.</p>
+              <ul>
+                <li class="fragment fade-up">Adam Neumann's WeWork was "worth" <strong>$47B</strong>. He flew a private jet and &mdash; allegedly &mdash; smuggled weed across a border <em>inside a cereal box</em>.</li>
+                <li class="fragment fade-up">He rang the bell early. He threw the party. He told everyone the party would never end.</li>
+                <li class="fragment fade-up">Then the company tried to go public. The moment strangers could open the books &mdash; the <em>same books you will open</em> &mdash; $47B became about <strong>$7B in weeks</strong>.</li>
+              </ul>
             </div>
-            <div class="fig">
-              <div class="fig-icon"><i class="fa-solid fa-chart-column"></i></div>
-              <div class="fig-label">Figure — the collapse</div>
-              <div class="fig-desc">Bar chart: WeWork valuation $47B → ~$7B once the books opened. A figure lands the drop faster than words.</div>
+            <div class="box warn fragment fade-up">
+              <h3>The twist that breaks your brain</h3>
+              <p>He did not go to debtors' prison. He walked away with a parachute worth around <strong>$1 billion</strong>.</p>
+              <p>So was that a happy ending? Ask the <strong>2,000 employees</strong> who lost their jobs and their stock.</p>
             </div>
           </div>
-          <aside class="notes">Same people twice — this is the founder whose real books they'll open in the simulation.</aside>
+          <aside class="notes">Cash the cereal-box callback here &mdash; entrepreneurship runs on cereal. Then stop performing. The $1B-versus-2,000-people contrast is the pivot of the lecture.</aside>
         </section>
 
-        <!-- The risks (4 dimensions, matches Risk_Return figure) -->
+        <!-- The four risks -->
         <section>
-          <h2>What are the risks?</h2>
-          <div class="three-col" style="grid-template-columns: repeat(2, 1fr);">
-            <div class="card">
-              <h3>Financial risk</h3>
-              <p>The venture can fail; founders can go bankrupt. A personal guarantee has your name on it.</p>
-            </div>
-            <div class="card">
-              <h3>Career risk</h3>
-              <p>Founders often have to leave a stable job to pursue the venture — with no guarantee of return.</p>
-            </div>
-            <div class="card">
-              <h3>Family risk</h3>
-              <p>Time and attention get pulled to the business; relationships strain under the load.</p>
-            </div>
-            <div class="card">
-              <h3>Mental risk</h3>
-              <p>Stress and loneliness; no off switch. The phone becomes a leash.</p>
-            </div>
+          <h2>What are the risks? Not one risk &mdash; four</h2>
+          <div class="four-col">
+            <div class="card warn fragment fade-up" data-fragment-index="1"><h4>Financial</h4><p>The loan. The personal guarantee with your name on it. Founders sign these all the time.</p></div>
+            <div class="card warn fragment fade-up" data-fragment-index="1"><h4>Career</h4><p>The three years you did not spend getting promoted somewhere safe.</p></div>
+            <div class="card warn fragment fade-up" data-fragment-index="2"><h4>Family</h4><p>The birthdays. The people who signed up for a person and got a company.</p></div>
+            <div class="card warn fragment fade-up" data-fragment-index="2"><h4>Mental</h4><p>The 3 a.m. ceiling. No off switch; the phone is a leash.</p></div>
           </div>
-          <aside class="notes">These four dimensions are the axes of the risk/return tool a few slides ahead.</aside>
+          <p class="small fragment fade-up">These four are the horizontal axis of the model two slides from now. Every business textbook gets lazy here and calls it "risk."</p>
+          <aside class="notes">Land these in two clicks, two at a time. Say explicitly that this is the axis they are about to draw &mdash; it stops the figure feeling like a new topic.</aside>
         </section>
 
-        <!-- Bitterness up close (the three lived costs) -->
+        <!-- The bitterness -->
         <section>
           <h2>The bitterness, up close</h2>
           <div class="three-col">
-            <div class="card">
+            <div class="card bad fragment fade-up">
               <h3>Deep in debt</h3>
-              <p>WeWork lost <strong>$4.6B</strong> in a single year and spent more to run its buildings than it earned. Sign a lease guarantee and failure follows you home.</p>
+              <p>The scoreboard does not care about your vision. WeWork lost <strong>$4.6B in a single year</strong> and spent more running its buildings than it earned from them.</p>
+              <p>Sign a personal guarantee and the failure is not abstract. It follows you home.</p>
             </div>
-            <div class="card">
+            <div class="card bad fragment fade-up">
               <h3>The slaved schedule</h3>
-              <p>No weekend, no off switch. Being your own boss can mean hiring the worst boss you've had — one who never lets you clock out.</p>
+              <p>Musk slept on the Tesla factory floor during production hell. Romantic in a keynote.</p>
+              <p>Now live it: the business follows you into the shower, into dinner, into your kid's birthday party.</p>
             </div>
-            <div class="card">
+            <div class="card bad fragment fade-up">
               <h3>Regret</h3>
-              <p>Sold too early, or held on too long. Falling in love with your own story is the most expensive romance there is.</p>
+              <p>The founder who sold too early and watched the buyer make the billions. The founder who held on too long and rode a good company into the ground.</p>
+              <p>Both of them lie awake.</p>
             </div>
           </div>
-          <aside class="notes">The upside is capped by ambition; the downside is capped by your signature.</aside>
+          <p class="small fragment fade-up">Being your own boss sounds like freedom until you realise you hired the <strong>worst boss you have ever had</strong> &mdash; one who never lets you clock out, because he is you.</p>
+          <aside class="notes">Change tone here. Stop selling and start levelling with them. The "worst boss" line works only if you have dropped the performance first.</aside>
         </section>
 
-        <!-- The tool -->
+        <!-- Figure -->
         <section>
-          <h2>A tool to weigh risk vs. return</h2>
-          <img src="img/Risk_Return.svg" alt="Risk versus Return curve" style="max-height: 62vh; width: auto; background: #fff;">
-          <p class="small">Plot a venture on the curve: how much financial / career / family / mental risk buys how much return.</p>
+          <h2>The mental model &mdash; the Risk&ndash;Return Asymmetry Map</h2>
+          <div class="fig-embed" role="img" aria-label="Financial return plotted against total risk borne, with three ventures marked, and the asymmetry between an uncapped upside and a downside floored by your own signature"><!--fig:Risk_Return-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="206.0 -6.0 1028.0 764.5" width="1028" height="764" font-family="Segoe Print, Comic Sans MS, Bradley Hand, cursive">
+<defs><marker id="ah-Risk_Return" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1e1e1e"/></marker></defs>
+<g data-beat="1"><path d="M 230.00,620.00 L 1180.00,620.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-Risk_Return)"/></g>
+<g data-beat="1"><path d="M 230.00,620.00 L 230.00,80.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-Risk_Return)"/></g>
+<g data-beat="1"><text x="250.00" y="67.30" font-size="17" fill="#4b5563">RETURN — money, fulfilment, the dent you leave</text></g>
+<g data-beat="1"><text x="620.00" y="651.30" font-size="17" fill="#4b5563">TOTAL RISK BORNE</text></g>
+<g data-beat="1"><text x="620.00" y="674.40" font-size="16" fill="#4b5563"><tspan x="620.00">four risks stacked, not one:</tspan><tspan x="620.00" dy="20.00">financial · career · family · mental</tspan></text></g>
+<g data-beat="2"><ellipse cx="850.00" cy="500.00" rx="100.00" ry="45.00" fill="#fff4e6" stroke="#b45309" stroke-width="2"/></g>
+<g data-beat="2"><text x="850.00" y="494.05" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="850.00">A — high risk,</tspan><tspan x="850.00" dy="21.25">low return</tspan></text></g>
+<g data-beat="2"><text x="850.00" y="571.75" font-size="15" fill="#4b5563" text-anchor="middle"><tspan x="850.00">Most ventures live here. Not failure —</tspan><tspan x="850.00" dy="18.75">the middle of the ride. WeWork 2021.</tspan></text></g>
+<g data-beat="3"><ellipse cx="430.00" cy="210.00" rx="100.00" ry="45.00" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="3"><text x="430.00" y="204.05" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="430.00">B — low risk,</tspan><tspan x="430.00" dy="21.25">high return</tspan></text></g>
+<g data-beat="3"><text x="430.00" y="281.75" font-size="15" fill="#4b5563" text-anchor="middle"><tspan x="430.00">Everyone thinks they are aiming here.</tspan><tspan x="430.00" dy="18.75">Almost nobody lands here.</tspan></text></g>
+<g data-beat="4"><ellipse cx="960.00" cy="190.00" rx="100.00" ry="45.00" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="4"><text x="960.00" y="184.05" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="960.00">C — high risk,</tspan><tspan x="960.00" dy="21.25">high return</tspan></text></g>
+<g data-beat="4"><text x="960.00" y="271.12" font-size="15" fill="#4b5563" text-anchor="middle">The founder who got off at the top.</text></g>
+<g data-beat="5"><text x="250.00" y="108.20" font-size="18" fill="#0f766e">no ceiling — your upside is capped by your ambition</text></g>
+<g data-beat="5"><path d="M 230.00,700.00 L 1180.00,700.00" fill="none" stroke="#c92a2a" stroke-width="2" stroke-dasharray="8 6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g data-beat="5"><text x="240.00" y="728.20" font-size="18" fill="#c92a2a">the floor is your signature — you can lose more than you put in</text></g>
+<g data-beat="5"><path d="M 955.00,500.00 L 1120.00,500.00 L 1120.00,696.00" fill="none" stroke="#c92a2a" stroke-width="2" stroke-dasharray="8 6" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-Risk_Return)"/></g>
+<g data-beat="5"><text x="270.00" y="345.30" font-size="17" fill="#4b5563"><tspan x="270.00">Neumann and his 2,000 employees rode the SAME</tspan><tspan x="270.00" dy="21.25">curve. They just sat at different points on the risk</tspan><tspan x="270.00" dy="21.25">axis — he had a parachute, they had stock.</tspan></text></g>
+<g data-beat="6"><rect x="710.00" y="18.00" width="500.00" height="70.00" rx="16.0" ry="16.0" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="6"><text x="960.00" y="46.70" font-size="18" fill="#1e1e1e" text-anchor="middle"><tspan x="960.00">Which axis does this move me on —</tspan><tspan x="960.00" dy="22.50">and can I survive the move if I&#x27;m wrong?</tspan></text></g>
+</svg>
+<!--/fig:Risk_Return--></div>
+          <p class="fig-cap fragment fade-up" data-fragment-index="99">Everything in the last twenty minutes fits on two axes &mdash; and the two axes are <strong>not symmetric</strong>. That asymmetry is what makes this a model and not a chart.</p>
+          <aside class="notes">Make them draw it. Beat 1 the axes &mdash; say out loud that the horizontal is four risks stacked. Beats 2-4 the three points, A first. Beat 5 is the whole lecture. Do not click to beat 6 until someone has tried to answer it.</aside>
+        </section>
+
+        <!-- How to read it -->
+        <section>
+          <h2>How to read the map</h2>
+          <div class="three-col">
+            <div class="card warn fragment fade-up">
+              <h3>Point A &mdash; high risk, low return</h3>
+              <p>Most ventures live here. This is <em>not</em> failure yet; it is the middle of the ride.</p>
+              <p><strong>WeWork in 2021 is here</strong>, and that is the moment you walk into on Thursday.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <h3>Point B &mdash; low risk, high return</h3>
+              <p>Everyone thinks they are aiming here. Almost nobody lands here.</p>
+              <p>The ones who do usually had a structural advantage they rarely admit to.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <h3>Point C &mdash; high risk, high return</h3>
+              <p>The founder who got off at the top.</p>
+              <p>Same curve as A. Different point on the risk axis, and a different exit.</p>
+            </div>
+          </div>
+          <aside class="notes">Ask the room to place a company they know on the map before you reveal each card. Getting B wrong is the useful mistake &mdash; most students put their own idea there.</aside>
+        </section>
+
+        <!-- The asymmetry -->
+        <section>
+          <h2>The asymmetry &mdash; the part that makes it a model</h2>
+          <p class="quote fragment fade-up">Your upside is capped by your <span class="em">ambition</span>. Your downside is capped by your <span class="em">signature</span>.</p>
+          <div class="two-col" style="margin-top: 20px;">
+            <div class="box fragment fade-up">
+              <h3>Return has no ceiling</h3>
+              <p>A company you own has no number written on it. You cannot gain more than you built &mdash; but nothing caps what you can build.</p>
+            </div>
+            <div class="box bad fragment fade-up">
+              <h3>Risk has a floor you guaranteed</h3>
+              <p>You can lose <strong>more than you invested</strong>. Neumann and his 2,000 employees rode the <em>same</em> curve &mdash; they just sat at different points on the risk axis. He had a parachute. They had stock.</p>
+            </div>
+          </div>
+          <aside class="notes">This is the slide to photograph. If they remember one sentence from Module 1, make it the quote.</aside>
+        </section>
+
+        <!-- The one question -->
+        <section>
+          <h2>The one question the model makes you ask</h2>
+          <p class="quote fragment fade-up">Not &ldquo;how big is the win?&rdquo; &mdash; but <span class="em">which axis does this move me on, and can I survive the move if I am wrong?</span></p>
+          <div class="box warn fragment fade-up" style="margin-top: 22px;">
+            <h3>Run it on a real decision</h3>
+            <p>Expanding into a building that costs <strong>$1.20 to run for every $1.00 it earns</strong> moves you <em>right</em> on the risk axis and barely at all <em>up</em> on the return axis.</p>
+            <p>That is not ambition. That is paying more for the same seat on the ride.</p>
+          </div>
+          <aside class="notes">Do this one out loud with them, slowly. The $1.20-for-$1.00 building is a real WeWork number and it reappears in the simulation packet &mdash; they should recognise it.</aside>
         </section>
 
         <!-- The one line -->
         <section>
           <h2>The one line to carry in</h2>
-          <p class="quote">The sweet and the bitter are not two rides. They are the <span class="em">same ride</span>.</p>
-          <div class="box" style="margin-top: 22px;">
-            <p>At every turn, solve the problem in front of you — do not surrender to the emotion the turn makes you feel.</p>
-            <p><strong>Emotion is the weather. The numbers are the map.</strong></p>
+          <p class="quote fragment fade-up">The sweet and the bitter are not two rides. They are the <span class="em">same ride</span>.</p>
+          <div class="box fragment fade-up" style="margin-top: 22px;">
+            <p>The freedom and the debt come off the same decisions. The fulfillment and the sleepless nights are the same nights. Nobody sells you a ticket to just the top of the roller coaster.</p>
+            <p>The difference between the founder who gets off at the top and the one who gets off at the bottom is <strong>not how they feel</strong>. Everybody feels the drop. The difference is what they <em>do</em> at the bottom of it.</p>
           </div>
-          <aside class="notes">WeWork's founder felt like a genius at $47B and never looked at the numbers. Airbnb's founders felt like failures eating cereal and looked every day.</aside>
+          <p class="small fragment fade-up"><strong>Emotion is the weather. The numbers are the map.</strong> Neumann felt like a genius at $47B and never looked at the numbers. Airbnb's founders felt like failures eating cereal and looked every single day.</p>
+          <aside class="notes">Long pause before the last line. Then hand out the role pages &mdash; do not let the emotion of the slide be the last thing in the room.</aside>
         </section>
 
-        <!-- Transition to simulation -->
+        <!-- Bridge -->
         <section>
           <h2>Next: the simulation</h2>
-          <p>You will open WeWork's <strong>real FY2021 books</strong> at the exact moment the ride hit the top.</p>
-          <p>Your job is not to <em>feel</em> about it. Your job is to <strong>decide</strong>.</p>
-          <p class="small">→ WeWork at the Edge (2022)</p>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">You will open WeWork's <strong>real FY2021 books</strong> at the exact moment the ride hit the top.</li>
+                <li class="fragment fade-up">Each of you holds one role and one decision, with four options and not enough information.</li>
+                <li class="fragment fade-up">Before you choose, <strong>put your decision on the map</strong>. Say out loud which axis it moves you on.</li>
+              </ul>
+            </div>
+            <div class="box fragment fade-up">
+              <h3>Your job is not to feel about it</h3>
+              <p>Your job is to <strong>decide</strong> &mdash; and then to defend the decision with a number rather than a feeling.</p>
+              <p class="small">&rarr; WeWork at the Edge (2022). Buckle in.</p>
+            </div>
+          </div>
+          <aside class="notes">Hand out role packets as you talk. Remind them the reflection is due after Thursday and that "I felt uneasy" is not a reflection.</aside>
         </section>
-
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script><!--narration-->
+      window.NARRATION = {};
+      <!--/narration--></script>
     <script>
-      Reveal.initialize({ hash: true, slideNumber: true });
+      // Each inlined figure carries data-beat="N" groups written by
+      // build_figures.py. Turn them into reveal fragments so the drawing builds
+      // up one beat at a time, in step with the speaker. Captions sit at index
+      // 99 so they always land last.
+      document.querySelectorAll('.fig-embed [data-beat]').forEach(function (g) {
+        g.classList.add('fragment');
+        g.setAttribute('data-fragment-index', g.getAttribute('data-beat'));
+      });
+
+      // Rehearsal / screen-capture mode. ?auto walks the deck; with no
+      // Narration.md compiled in (window.NARRATION is empty) every beat gets the
+      // 4s default, and ?auto=3500 overrides it with a fixed millisecond
+      // interval. Any key press stops it. To pace it against a real script,
+      // write Narration.md and run Tools/Figure_Convert/build_narration.py.
+      var auto = new URLSearchParams(location.search).get('auto');
+      var fixed = parseInt(auto, 10);
+      var running = auto !== null;
+      document.addEventListener('keydown', function () { running = false; });
+
+      function dwell() {
+        var i = Reveal.getIndices();
+        var key = i.h + ':' + (typeof i.f === 'number' ? i.f : -1);
+        var secs = (window.NARRATION || {})[key];
+        return fixed || (secs ? secs * 1000 : 4000);
+      }
+
+      function tick() {
+        if (!running) return;
+        setTimeout(function () {
+          if (!running) return;
+          var before = JSON.stringify(Reveal.getIndices());
+          Reveal.next();
+          if (JSON.stringify(Reveal.getIndices()) === before) return;  // end of deck
+          tick();
+        }, dwell());
+      }
+
+      Reveal.initialize({ hash: true, slideNumber: true, plugins: [ RevealNotes ] })
+        .then(function () { if (running) tick(); });
     </script>
   </body>
 </html>

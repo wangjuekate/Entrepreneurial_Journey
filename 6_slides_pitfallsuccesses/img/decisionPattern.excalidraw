@@ -4,14 +4,14 @@
   "source": "MENT2234",
   "elements": [
     {
-      "id": "ax",
-      "type": "arrow",
-      "x": 230,
-      "y": 620,
-      "width": 950,
-      "height": 0,
+      "id": "gv",
+      "type": "line",
+      "x": 810.0,
+      "y": 142,
+      "width": 0,
+      "height": 416,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#adb5bd",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
@@ -38,25 +38,25 @@
           0
         ],
         [
-          950,
-          0
+          0.0,
+          416
         ]
       ],
       "lastCommittedPoint": null,
       "startBinding": null,
       "endBinding": null,
       "startArrowhead": null,
-      "endArrowhead": "arrow"
+      "endArrowhead": null
     },
     {
-      "id": "ay",
-      "type": "arrow",
-      "x": 230,
-      "y": 620,
-      "width": 0,
-      "height": 540,
+      "id": "gh",
+      "type": "line",
+      "x": 452,
+      "y": 350.0,
+      "width": 716,
+      "height": 0,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#adb5bd",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
@@ -83,23 +83,23 @@
           0
         ],
         [
-          0,
-          -540
+          716,
+          0.0
         ]
       ],
       "lastCommittedPoint": null,
       "startBinding": null,
       "endBinding": null,
       "startArrowhead": null,
-      "endArrowhead": "arrow"
+      "endArrowhead": null
     },
     {
-      "id": "ayl",
+      "id": "gc0",
       "type": "text",
-      "x": 250,
-      "y": 52,
-      "width": 453.55999999999995,
-      "height": 21.25,
+      "x": 460,
+      "y": 110,
+      "width": 345.0,
+      "height": 26,
       "angle": 0,
       "strokeColor": "#4b5563",
       "backgroundColor": "transparent",
@@ -122,23 +122,23 @@
       "customData": {
         "beat": 1
       },
-      "text": "RETURN \u2014 money, fulfilment, the dent you leave",
+      "text": "LOW",
       "fontSize": 17,
       "fontFamily": 1,
-      "textAlign": "left",
-      "verticalAlign": "top",
+      "textAlign": "center",
+      "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "RETURN \u2014 money, fulfilment, the dent you leave",
+      "originalText": "LOW",
       "lineHeight": 1.25,
       "baseline": 15
     },
     {
-      "id": "axl",
+      "id": "gc1",
       "type": "text",
-      "x": 620,
-      "y": 636,
-      "width": 157.76,
-      "height": 21.25,
+      "x": 815.0,
+      "y": 110,
+      "width": 345.0,
+      "height": 26,
       "angle": 0,
       "strokeColor": "#4b5563",
       "backgroundColor": "transparent",
@@ -161,23 +161,23 @@
       "customData": {
         "beat": 1
       },
-      "text": "TOTAL RISK BORNE",
+      "text": "HIGH",
       "fontSize": 17,
       "fontFamily": 1,
-      "textAlign": "left",
-      "verticalAlign": "top",
+      "textAlign": "center",
+      "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "TOTAL RISK BORNE",
+      "originalText": "HIGH",
       "lineHeight": 1.25,
       "baseline": 15
     },
     {
-      "id": "axl2",
+      "id": "gr0",
       "type": "text",
-      "x": 620,
-      "y": 660,
-      "width": 334.08,
-      "height": 40.0,
+      "x": 290,
+      "y": 150,
+      "width": 150,
+      "height": 195.0,
       "angle": 0,
       "strokeColor": "#4b5563",
       "backgroundColor": "transparent",
@@ -200,26 +200,26 @@
       "customData": {
         "beat": 1
       },
-      "text": "four risks stacked, not one:\nfinancial \u00b7 career \u00b7 family \u00b7 mental",
-      "fontSize": 16,
+      "text": "EASY\n(two-way door)",
+      "fontSize": 17,
       "fontFamily": 1,
-      "textAlign": "left",
-      "verticalAlign": "top",
+      "textAlign": "right",
+      "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "four risks stacked, not one:\nfinancial \u00b7 career \u00b7 family \u00b7 mental",
+      "originalText": "EASY\n(two-way door)",
       "lineHeight": 1.25,
-      "baseline": 14
+      "baseline": 15
     },
     {
-      "id": "A",
-      "type": "ellipse",
-      "x": 750,
-      "y": 455,
-      "width": 200,
-      "height": 90,
+      "id": "gr1",
+      "type": "text",
+      "x": 290,
+      "y": 355.0,
+      "width": 150,
+      "height": 195.0,
       "angle": 0,
-      "strokeColor": "#b45309",
-      "backgroundColor": "#fff4e6",
+      "strokeColor": "#4b5563",
+      "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
       "strokeStyle": "solid",
@@ -237,16 +237,25 @@
       "link": null,
       "locked": false,
       "customData": {
-        "beat": 2
-      }
+        "beat": 1
+      },
+      "text": "HARD\n(one-way door)",
+      "fontSize": 17,
+      "fontFamily": 1,
+      "textAlign": "right",
+      "verticalAlign": "middle",
+      "containerId": null,
+      "originalText": "HARD\n(one-way door)",
+      "lineHeight": 1.25,
+      "baseline": 15
     },
     {
-      "id": "At",
+      "id": "gxt",
       "type": "text",
-      "x": 750,
-      "y": 455,
-      "width": 200,
-      "height": 90,
+      "x": 460,
+      "y": 74,
+      "width": 700,
+      "height": 26,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -267,27 +276,27 @@
       "link": null,
       "locked": false,
       "customData": {
-        "beat": 2
+        "beat": 1
       },
-      "text": "A \u2014 high risk,\nlow return",
-      "fontSize": 17,
+      "text": "Consequence if wrong",
+      "fontSize": 19,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "A \u2014 high risk,\nlow return",
+      "originalText": "Consequence if wrong",
       "lineHeight": 1.25,
-      "baseline": 15
+      "baseline": 17
     },
     {
-      "id": "Ac",
+      "id": "gyt",
       "type": "text",
-      "x": 720,
-      "y": 555,
-      "width": 260,
-      "height": 44,
+      "x": 290,
+      "y": 74,
+      "width": 150,
+      "height": 26,
       "angle": 0,
-      "strokeColor": "#4b5563",
+      "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
@@ -306,28 +315,28 @@
       "link": null,
       "locked": false,
       "customData": {
-        "beat": 2
+        "beat": 1
       },
-      "text": "Most ventures live here. Not failure \u2014\nthe middle of the ride. WeWork 2021.",
-      "fontSize": 15,
+      "text": "Reversibility",
+      "fontSize": 19,
       "fontFamily": 1,
-      "textAlign": "center",
+      "textAlign": "right",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "Most ventures live here. Not failure \u2014\nthe middle of the ride. WeWork 2021.",
+      "originalText": "Reversibility",
       "lineHeight": 1.25,
-      "baseline": 14
+      "baseline": 17
     },
     {
-      "id": "B",
-      "type": "ellipse",
-      "x": 330,
-      "y": 165,
-      "width": 200,
-      "height": 90,
+      "id": "gq0b",
+      "type": "rectangle",
+      "x": 460,
+      "y": 150,
+      "width": 345.0,
+      "height": 195.0,
       "angle": 0,
-      "strokeColor": "#1971c2",
-      "backgroundColor": "#e7f5ff",
+      "strokeColor": "#0f766e",
+      "backgroundColor": "#e6fffa",
       "fillStyle": "solid",
       "strokeWidth": 2,
       "strokeStyle": "solid",
@@ -335,7 +344,9 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": null,
+      "roundness": {
+        "type": 3
+      },
       "seed": 501739760,
       "version": 1,
       "versionNonce": 181421254,
@@ -345,16 +356,16 @@
       "link": null,
       "locked": false,
       "customData": {
-        "beat": 3
+        "beat": 2
       }
     },
     {
-      "id": "Bt",
+      "id": "gq0t",
       "type": "text",
-      "x": 330,
-      "y": 165,
-      "width": 200,
-      "height": 90,
+      "x": 460,
+      "y": 150,
+      "width": 345.0,
+      "height": 195.0,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -375,28 +386,28 @@
       "link": null,
       "locked": false,
       "customData": {
-        "beat": 3
+        "beat": 2
       },
-      "text": "B \u2014 low risk,\nhigh return",
-      "fontSize": 17,
+      "text": "Decide fast.\nJust try it.",
+      "fontSize": 18,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "B \u2014 low risk,\nhigh return",
+      "originalText": "Decide fast.\nJust try it.",
       "lineHeight": 1.25,
-      "baseline": 15
+      "baseline": 16
     },
     {
-      "id": "Bc",
-      "type": "text",
-      "x": 300,
-      "y": 265,
-      "width": 260,
-      "height": 44,
+      "id": "gq1b",
+      "type": "rectangle",
+      "x": 815.0,
+      "y": 150,
+      "width": 345.0,
+      "height": 195.0,
       "angle": 0,
-      "strokeColor": "#4b5563",
-      "backgroundColor": "transparent",
+      "strokeColor": "#1971c2",
+      "backgroundColor": "#e7f5ff",
       "fillStyle": "solid",
       "strokeWidth": 2,
       "strokeStyle": "solid",
@@ -404,7 +415,9 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": null,
+      "roundness": {
+        "type": 3
+      },
       "seed": 1487001326,
       "version": 1,
       "versionNonce": 597161183,
@@ -415,27 +428,18 @@
       "locked": false,
       "customData": {
         "beat": 3
-      },
-      "text": "Everyone thinks they are aiming here.\nAlmost nobody lands here.",
-      "fontSize": 15,
-      "fontFamily": 1,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": null,
-      "originalText": "Everyone thinks they are aiming here.\nAlmost nobody lands here.",
-      "lineHeight": 1.25,
-      "baseline": 14
+      }
     },
     {
-      "id": "C",
-      "type": "ellipse",
-      "x": 860,
-      "y": 145,
-      "width": 200,
-      "height": 90,
+      "id": "gq1t",
+      "type": "text",
+      "x": 815.0,
+      "y": 150,
+      "width": 345.0,
+      "height": 195.0,
       "angle": 0,
-      "strokeColor": "#0f766e",
-      "backgroundColor": "#e6fffa",
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
       "strokeStyle": "solid",
@@ -453,19 +457,28 @@
       "link": null,
       "locked": false,
       "customData": {
-        "beat": 4
-      }
+        "beat": 3
+      },
+      "text": "Decide fast \u2014 but\ngather the evidence first.",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": null,
+      "originalText": "Decide fast \u2014 but\ngather the evidence first.",
+      "lineHeight": 1.25,
+      "baseline": 16
     },
     {
-      "id": "Ct",
-      "type": "text",
-      "x": 860,
-      "y": 145,
-      "width": 200,
-      "height": 90,
+      "id": "gq2b",
+      "type": "rectangle",
+      "x": 460,
+      "y": 355.0,
+      "width": 345.0,
+      "height": 195.0,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
+      "strokeColor": "#1971c2",
+      "backgroundColor": "#e7f5ff",
       "fillStyle": "solid",
       "strokeWidth": 2,
       "strokeStyle": "solid",
@@ -473,7 +486,9 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": null,
+      "roundness": {
+        "type": 3
+      },
       "seed": 606896609,
       "version": 1,
       "versionNonce": 789180431,
@@ -484,26 +499,17 @@
       "locked": false,
       "customData": {
         "beat": 4
-      },
-      "text": "C \u2014 high risk,\nhigh return",
-      "fontSize": 17,
-      "fontFamily": 1,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": null,
-      "originalText": "C \u2014 high risk,\nhigh return",
-      "lineHeight": 1.25,
-      "baseline": 15
+      }
     },
     {
-      "id": "Cc",
+      "id": "gq2t",
       "type": "text",
-      "x": 830,
-      "y": 245,
-      "width": 260,
-      "height": 44,
+      "x": 460,
+      "y": 355.0,
+      "width": 345.0,
+      "height": 195.0,
       "angle": 0,
-      "strokeColor": "#4b5563",
+      "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
@@ -524,26 +530,26 @@
       "customData": {
         "beat": 4
       },
-      "text": "The founder who got off at the top.",
-      "fontSize": 15,
+      "text": "Decide fast \u2014 it is cheap\neven if it is permanent.",
+      "fontSize": 18,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "The founder who got off at the top.",
+      "originalText": "Decide fast \u2014 it is cheap\neven if it is permanent.",
       "lineHeight": 1.25,
-      "baseline": 14
+      "baseline": 16
     },
     {
-      "id": "up",
-      "type": "text",
-      "x": 250,
-      "y": 92,
-      "width": 532.4399999999999,
-      "height": 22.5,
+      "id": "gq3b",
+      "type": "rectangle",
+      "x": 815.0,
+      "y": 355.0,
+      "width": 345.0,
+      "height": 195.0,
       "angle": 0,
-      "strokeColor": "#0f766e",
-      "backgroundColor": "transparent",
+      "strokeColor": "#c92a2a",
+      "backgroundColor": "#fff5f5",
       "fillStyle": "solid",
       "strokeWidth": 2,
       "strokeStyle": "solid",
@@ -551,7 +557,9 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": null,
+      "roundness": {
+        "type": 3
+      },
       "seed": 1342652864,
       "version": 1,
       "versionNonce": 760089498,
@@ -562,30 +570,21 @@
       "locked": false,
       "customData": {
         "beat": 5
-      },
-      "text": "no ceiling \u2014 your upside is capped by your ambition",
-      "fontSize": 18,
-      "fontFamily": 1,
-      "textAlign": "left",
-      "verticalAlign": "top",
-      "containerId": null,
-      "originalText": "no ceiling \u2014 your upside is capped by your ambition",
-      "lineHeight": 1.25,
-      "baseline": 16
+      }
     },
     {
-      "id": "floor",
-      "type": "line",
-      "x": 230,
-      "y": 700,
-      "width": 950,
-      "height": 0,
+      "id": "gq3t",
+      "type": "text",
+      "x": 815.0,
+      "y": 355.0,
+      "width": 345.0,
+      "height": 195.0,
       "angle": 0,
-      "strokeColor": "#c92a2a",
+      "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
-      "strokeStyle": "dashed",
+      "strokeStyle": "solid",
       "roughness": 1,
       "opacity": 100,
       "groupIds": [],
@@ -602,31 +601,25 @@
       "customData": {
         "beat": 5
       },
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          950,
-          0
-        ]
-      ],
-      "lastCommittedPoint": null,
-      "startBinding": null,
-      "endBinding": null,
-      "startArrowhead": null,
-      "endArrowhead": null
+      "text": "Decide SLOWLY,\nand carefully.",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": null,
+      "originalText": "Decide SLOWLY,\nand carefully.",
+      "lineHeight": 1.25,
+      "baseline": 16
     },
     {
-      "id": "down",
-      "type": "text",
-      "x": 240,
-      "y": 712,
-      "width": 657.7199999999999,
-      "height": 22.5,
+      "id": "d1",
+      "type": "arrow",
+      "x": 560,
+      "y": 148,
+      "width": 300,
+      "height": 46,
       "angle": 0,
-      "strokeColor": "#c92a2a",
+      "strokeColor": "#b45309",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
@@ -645,31 +638,41 @@
       "link": null,
       "locked": false,
       "customData": {
-        "beat": 5
+        "beat": 6
       },
-      "text": "the floor is your signature \u2014 you can lose more than you put in",
-      "fontSize": 18,
-      "fontFamily": 1,
-      "textAlign": "left",
-      "verticalAlign": "top",
-      "containerId": null,
-      "originalText": "the floor is your signature \u2014 you can lose more than you put in",
-      "lineHeight": 1.25,
-      "baseline": 16
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -46
+        ],
+        [
+          -300,
+          -46
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
     },
     {
-      "id": "fall",
-      "type": "arrow",
-      "x": 955,
-      "y": 500,
-      "width": 165,
-      "height": 196,
+      "id": "d1l",
+      "type": "text",
+      "x": 100,
+      "y": 78,
+      "width": 231.99999999999997,
+      "height": 100.0,
       "angle": 0,
-      "strokeColor": "#c92a2a",
+      "strokeColor": "#b45309",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
-      "strokeStyle": "dashed",
+      "strokeStyle": "solid",
       "roughness": 1,
       "opacity": 100,
       "groupIds": [],
@@ -684,37 +687,27 @@
       "link": null,
       "locked": false,
       "customData": {
-        "beat": 5
+        "beat": 6
       },
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          165,
-          0
-        ],
-        [
-          165,
-          196
-        ]
-      ],
-      "lastCommittedPoint": null,
-      "startBinding": null,
-      "endBinding": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
+      "text": "Treating a TWO-WAY door\nlike a one-way door:\nthree weeks on a poster.\nSlow, cautious, expensive\nin chances missed.",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Treating a TWO-WAY door\nlike a one-way door:\nthree weeks on a poster.\nSlow, cautious, expensive\nin chances missed.",
+      "lineHeight": 1.25,
+      "baseline": 14
     },
     {
-      "id": "same",
-      "type": "text",
-      "x": 270,
-      "y": 330,
-      "width": 512.7199999999999,
-      "height": 63.75,
+      "id": "d2",
+      "type": "arrow",
+      "x": 1010,
+      "y": 552,
+      "width": 0,
+      "height": 44,
       "angle": 0,
-      "strokeColor": "#4b5563",
+      "strokeColor": "#c92a2a",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
@@ -733,28 +726,34 @@
       "link": null,
       "locked": false,
       "customData": {
-        "beat": 5
+        "beat": 6
       },
-      "text": "Neumann and his 2,000 employees rode the SAME\ncurve. They just sat at different points on the risk\naxis \u2014 he had a parachute, they had stock.",
-      "fontSize": 17,
-      "fontFamily": 1,
-      "textAlign": "left",
-      "verticalAlign": "top",
-      "containerId": null,
-      "originalText": "Neumann and his 2,000 employees rode the SAME\ncurve. They just sat at different points on the risk\naxis \u2014 he had a parachute, they had stock.",
-      "lineHeight": 1.25,
-      "baseline": 15
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          44
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
     },
     {
-      "id": "qb",
-      "type": "rectangle",
-      "x": 710,
-      "y": 18,
-      "width": 500,
-      "height": 70,
+      "id": "d2l",
+      "type": "text",
+      "x": 460,
+      "y": 602,
+      "width": 700,
+      "height": 44,
       "angle": 0,
-      "strokeColor": "#0f766e",
-      "backgroundColor": "#e6fffa",
+      "strokeColor": "#c92a2a",
+      "backgroundColor": "transparent",
       "fillStyle": "solid",
       "strokeWidth": 2,
       "strokeStyle": "solid",
@@ -762,9 +761,7 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "roundness": {
-        "type": 3
-      },
+      "roundness": null,
       "seed": 1391076363,
       "version": 1,
       "versionNonce": 1948853187,
@@ -775,15 +772,56 @@
       "locked": false,
       "customData": {
         "beat": 6
+      },
+      "text": "Treating a ONE-WAY door like a two-way door: moving fast and\ncheerfully through a door that locks behind you. The expensive one.",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": null,
+      "originalText": "Treating a ONE-WAY door like a two-way door: moving fast and\ncheerfully through a door that locks behind you. The expensive one.",
+      "lineHeight": 1.25,
+      "baseline": 14
+    },
+    {
+      "id": "mpb",
+      "type": "rectangle",
+      "x": 460,
+      "y": 668,
+      "width": 700,
+      "height": 118,
+      "angle": 0,
+      "strokeColor": "#c92a2a",
+      "backgroundColor": "#fff5f5",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 2130032618,
+      "version": 1,
+      "versionNonce": 1879435654,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "customData": {
+        "beat": 7
       }
     },
     {
-      "id": "qt",
+      "id": "mpt",
       "type": "text",
-      "x": 710,
-      "y": 18,
-      "width": 500,
-      "height": 70,
+      "x": 460,
+      "y": 668,
+      "width": 700,
+      "height": 118,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -795,26 +833,65 @@
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 2130032618,
+      "seed": 1180132239,
       "version": 1,
-      "versionNonce": 1879435654,
+      "versionNonce": 1432914532,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
       "customData": {
-        "beat": 6
+        "beat": 7
       },
-      "text": "Which axis does this move me on \u2014\nand can I survive the move if I'm wrong?",
-      "fontSize": 18,
+      "text": "MoviePass, August 2017: $9.95 a month, unlimited.\n\"It's just a price \u2014 we can change it back.\"\nYou cannot. Once a million people anchor on $9.95, raising it\nreturns you to a smaller, angrier company.",
+      "fontSize": 17,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "Which axis does this move me on \u2014\nand can I survive the move if I'm wrong?",
+      "originalText": "MoviePass, August 2017: $9.95 a month, unlimited.\n\"It's just a price \u2014 we can change it back.\"\nYou cannot. Once a million people anchor on $9.95, raising it\nreturns you to a smaller, angrier company.",
       "lineHeight": 1.25,
-      "baseline": 16
+      "baseline": 15
+    },
+    {
+      "id": "mpn",
+      "type": "text",
+      "x": 460,
+      "y": 796,
+      "width": 700,
+      "height": 60,
+      "angle": 0,
+      "strokeColor": "#4b5563",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 341345464,
+      "version": 1,
+      "versionNonce": 1213442572,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "customData": {
+        "beat": 7
+      },
+      "text": "A price cut is a one-way door. Cost of revenue that year: 197%\n\u2014 $2.00 spent for every $1.00 collected. The year before: 72%,\nand the business made a gross profit.",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": null,
+      "originalText": "A price cut is a one-way door. Cost of revenue that year: 197%\n\u2014 $2.00 spent for every $1.00 collected. The year before: 72%,\nand the business made a gross profit.",
+      "lineHeight": 1.25,
+      "baseline": 14
     }
   ],
   "appState": {

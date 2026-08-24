@@ -3,74 +3,196 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Simulation Reflection: Netflix</title>
+    <title>Simulation Reflection: Six Thousand Against Ninety Thousand</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; }
+      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; --warn: #b45309; }
       .reveal { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: #fff; }
       .reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; letter-spacing: 0; }
-      .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.45em; }
-      .reveal h3 { font-size: 0.72em; color: var(--accent); margin-bottom: 0.45em; }
-      .reveal h4 { font-size: 0.58em; color: var(--muted); margin-bottom: 0.4em; }
-      .reveal p, .reveal li { font-size: 0.48em; line-height: 1.45; color: var(--ink); }
-      .reveal ul { margin: 0.35em 0 0 1.1em; }
+      .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.4em; }
+      .reveal h3 { font-size: 0.7em; color: var(--accent); margin-bottom: 0.3em; }
+      .reveal h4 { font-size: 0.55em; color: var(--muted); margin-bottom: 0.4em; }
+      .reveal p, .reveal li { font-size: 0.46em; line-height: 1.45; color: var(--ink); }
+      .reveal ul { margin: 0.3em 0 0 1.1em; }
       .reveal li { margin-bottom: 0.35em; }
-      .title-slide h2 { font-size: 1.35em; }
-      .subtitle { color: var(--muted); text-align: center; }
-      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; text-align: left; }
-      .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 18px 22px; text-align: left; }
-      .question-slide li { list-style: none; margin-left: -1em; }
-      .small { font-size: 0.42em; color: var(--muted); }
+      .title-slide h2 { font-size: 1.3em; }
+      .subtitle { color: var(--muted); text-align: center; font-size: 0.5em; }
+      .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 16px 20px; text-align: left; }
+      .small { font-size: 0.4em; color: var(--muted); }
+      /* role question slides */
+      .role-h { display: flex; align-items: center; gap: 12px; margin-bottom: 0.3em; }
+      .role-h .emoji { font-size: 1.1em; }
+      .role-h h2 { margin: 0; text-align: left; }
+      .q { font-weight: 600; text-align: left; margin-bottom: 0.4em; }
+      .reveal .options { list-style: none; margin: 0 0 0 0.2em; text-align: left; }
+      .reveal .options li { padding-left: 1.9em; text-indent: -1.9em; }
+      .reveal .role-h ~ p { text-align: left; }
+      .options li { margin-bottom: 0.35em; }
+      .options .k { display: inline-block; min-width: 1.7em; font-weight: 700; color: var(--accent); }
+      .reflect { background: #ecfdf5; border-left: 5px solid var(--accent); padding: 14px 18px; text-align: left; }
+      .reflect .tag { font-size: 0.4em; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
+      .reflect li { font-size: 0.44em; }
+      .quote { font-size: 0.6em; font-weight: 600; line-height: 1.3; }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
+
+        <!-- Title -->
         <section class="title-slide">
-          <h2>Simulation Reflection: Netflix</h2>
-          <p class="subtitle">Week 8: Thursday, October 22</p>
+          <h2>Six Thousand Against Ninety Thousand: Netflix in 2008</h2>
         </section>
+
+        <!-- The scenario / source -->
         <section>
-          <h2>Case Setup</h2>
-          <p>Netflix repeatedly changed how it delivered entertainment to customers.</p>
-          <p>Your team will decide how to recognize shifts in technology, customer behavior, and competition.</p>
+          <h2>The case</h2>
+          <div class="box"><p>Early 2008. Netflix has <strong>7.5 million subscribers</strong>, about <strong>90,000 DVD titles</strong>, a nationwide shipping network and about <strong>$1.2 billion</strong> of revenue. A year ago it launched instant watching &mdash; bundled free, <strong>6,000 titles</strong>, roughly one fifteenth of the library. Source: FY2007 10-K.</p></div>
         </section>
-        <section class="question-slide">
-          <h2>Decision 1: Current Model</h2>
-          <ul>
-            <li>A: Improve the existing DVD model because it still works.</li>
-            <li>B: Invest in streaming before the market is fully proven.</li>
-          </ul>
-        </section>
-        <section class="question-slide">
-          <h2>Decision 2: Content Strategy</h2>
-          <ul>
-            <li>A: Depend mainly on licensed content from studios.</li>
-            <li>B: Build original content to control differentiation.</li>
-          </ul>
-        </section>
-        <section class="question-slide">
-          <h2>Decision 3: Customer Learning</h2>
-          <ul>
-            <li>A: Trust executive intuition about what viewers want.</li>
-            <li>B: Use data, experimentation, and customer behavior to guide decisions.</li>
-          </ul>
-        </section>
+
+        <!-- Group Discussion: draw the week's mental model -->
         <section>
-          <h2>Reflection Questions</h2>
-          <ul>
-            <li>Which decision required the most creativity?</li>
-            <li>What constraint shaped the best idea?</li>
-            <li>How did Netflix balance imagination and evidence?</li>
+          <h2>Group Discussion</h2>
+          <div class="reflect">
+            <ul>
+              <li>Form groups with classmates who had the same role.</li>
+              <li>Before any discussion of answers, draw the <strong>Diverge&ndash;Converge Loop</strong> &mdash; defining, ideating, prototyping and testing.</li>
+              <li>Name the stage your decision sits in, and what that means about how fast to move.</li>
+              <li>Select one representative to present your group's placement and draw it on the board.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <div class="role-h"><span class="emoji">&#128176;</span><h2>Financial Lead</h2></div>
+          <p class="q">Instant watching earns <strong>no separate revenue</strong> &mdash; it is bundled free. Gross margin is <strong>34.8%</strong> and <strong>fell</strong> this year. Every streaming dollar comes out of the disc business. How do you fund it?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Protect a fixed slice of revenue; judge it on what we learn, not what it earns.</li>
+            <li><span class="k">B</span> Fund it from what streaming saves &mdash; every film watched online is a disc not posted twice.</li>
+            <li><span class="k">C</span> Cap it at a small experiment budget until studio licensing costs are clear.</li>
+            <li><span class="k">D</span> Wait until instant watching shows real revenue before funding it properly.</li>
           </ul>
         </section>
         <section>
-          <h2>Takeaway</h2>
-          <div class="box"><p>Creative thinking is not random novelty. It is disciplined imagination connected to customer change.</p></div>
+          <div class="role-h"><span class="emoji">&#128176;</span><h2>Financial Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Fund a prototype on <em>learning goals</em>, not revenue targets. Instant watching earns nothing by design &mdash; that is the experiment, not a defect in it.</li>
+              <li>Gross margin is 34.8% and falling, and every streaming dollar comes out of the disc business that pays for everything.</li>
+              <li><strong>(D) is the trap.</strong> With what would it produce the revenue? This is how experiments die everywhere, and it always sounds like discipline.</li>
+            </ul>
+          </div>
         </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128227;</span><h2>Marketing Lead</h2></div>
+          <p class="q">You must describe <strong>6,000 titles</strong> to subscribers who already get <strong>90,000</strong> on disc, while Blockbuster attacks the core business. What do you say?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Give it away inside existing plans and watch what people actually watch &mdash; the information beats the revenue.</li>
+            <li><span class="k">B</span> Use it as the reason to stay with us rather than switch to Blockbuster.</li>
+            <li><span class="k">C</span> Charge separately, to find out what people will pay for watching instantly.</li>
+            <li><span class="k">D</span> Market it as the replacement for DVDs &mdash; get people onto the future now.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128227;</span><h2>Marketing Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Reframe positioning as a <em>learning instrument</em>. Bundled free, the question stops being &ldquo;what will they pay&rdquo; and becomes &ldquo;what do they watch.&rdquo;</li>
+              <li>6,000 streaming titles against 90,000 on disc is one fifteenth of the library. What you promise has to fit what you actually have.</li>
+              <li><strong>(D) is the trap.</strong> Promising a replacement that delivers one fifteenth of the library manufactures churn and teaches the company that streaming &ldquo;failed.&rdquo;</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#9881;&#65039;</span><h2>Operation Lead</h2></div>
+          <p class="q">The shipping network moves <strong>90,000 titles</strong> to <strong>7.5 million</strong> subscribers and is <strong>100% of revenue</strong>. Its possible replacement is one year old with <strong>6,000 titles</strong>. What do you do with the network?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Keep it at full strength &mdash; it pays for everything, including the experiment.</li>
+            <li><span class="k">B</span> Use streaming for the obscure titles that barely get posted; take that cost out of shipping.</li>
+            <li><span class="k">C</span> Consolidate some shipping centres, put the savings into streaming rights.</li>
+            <li><span class="k">D</span> Start winding it down now &mdash; streaming is obviously where this ends up.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#9881;&#65039;</span><h2>Operation Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Protect the cash engine that funds the experiment. The shipping network is 100% of revenue and serves 7.5 million subscribers.</li>
+              <li>The long tail is the bridge: titles that barely get posted are the cheapest thing to move online first, and the saving is real.</li>
+              <li><strong>(D) is the trap.</strong> Pure hindsight. On 2008 evidence this dismantles the only source of revenue in order to fund a PC-only feature with 6,000 titles.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128187;</span><h2>Tech Lead</h2></div>
+          <p class="q">Instant watching runs <strong>only on PCs</strong> &mdash; and almost nobody watches films at a desk. In January 2008 the company announced an LG arrangement, <strong>terms not finalised</strong>. Where should this run?</p>
+          <ul class="options">
+            <li><span class="k">A</span> One service any device can plug into; treat the PC as the prototype it is.</li>
+            <li><span class="k">B</span> Partner with TV makers like LG to reach the screen people actually watch films on.</li>
+            <li><span class="k">C</span> Build our own box that plugs into the television, controlling the whole experience.</li>
+            <li><span class="k">D</span> Perfect it on the PC and wait until streaming demand is proven before building elsewhere.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128187;</span><h2>Tech Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>A PC-only test is <em>not a valid test</em>. Almost nobody watches films at a desk, so the experiment measures the wrong thing.</li>
+              <li>The device question has to be settled before anyone measures demand &mdash; otherwise every number that follows is about the screen, not the service.</li>
+              <li><strong>(D) is the trap.</strong> A rigged test dressed as discipline. It measures appetite for films on the one screen where people do not watch films.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128274;</span><h2>Security Lead</h2></div>
+          <p class="q">Streaming adds two things to protect: <strong>licensed films</strong> the studios will pull if they leak, and <strong>a record of what every subscriber watched</strong>. Where do you set the bar?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Protect both above all else &mdash; the films, or licensing stops; and viewing history, because it's nobody else's business.</li>
+            <li><span class="k">B</span> Full content protection before broadening distribution to more devices.</li>
+            <li><span class="k">C</span> Rely on device partners to handle protection on their own hardware.</li>
+            <li><span class="k">D</span> Deal with it once streaming is a material part of the business.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128274;</span><h2>Security Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Rank <em>two asymmetric risks</em> rather than treating security as one dial: leaked films end the licences, leaked viewing history harms subscribers.</li>
+              <li>Content protection gates distribution &mdash; you cannot reach more devices than the rights holders will tolerate.</li>
+              <li><strong>(D) is the trap.</strong> By the time streaming is material, the licences and the data are already exposed.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#129517;</span><h2>Account Manager</h2></div>
+          <p>You do <strong>not</strong> answer a functional question. After all five leads present their selection and a one-sentence defence:</p>
+          <ul class="options">
+            <li><span class="k">1</span> <strong>Rank</strong> the five problems 1&ndash;5, each used once, with one sentence justifying #1 that contains a figure from the packet.</li>
+            <li><span class="k">2</span> <strong>Weight</strong> them &mdash; 100 points across the five, in blocks of 10, totalling exactly 100.</li>
+          </ul>
+          <p class="q" style="margin-top:0.5em;"><strong>Part 3 &mdash; Name the stage of the loop.</strong> Defining, ideating, or prototyping and testing? And what does that mean about how fast the company should move?</p>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#129517;</span><h2>Account Manager &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Ranking is order; weighting is magnitude. A flat split scores <strong>2 of 6</strong> &mdash; the designed penalty for refusing to choose.</li>
+              <li>The strong pattern ranks <strong>devices and funding above positioning and rights</strong>, keeps the DVD network off the bottom, and weights the top two at about 70 of 100.</li>
+              <li>The company is still at <strong>prototype-and-test</strong> &mdash; which means move deliberately, not fast. Naming the stage is what sets the speed.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Key takeaway -->
+        <section>
+          <h2>Key takeaway</h2>
+          <div class="box"><p>Creativity is a loop, not a moment. The discipline is knowing which stage you are in &mdash; and refusing to run your test on the one screen where nobody watches films.</p></div>
+          <p class="quote" style="margin-top: 20px;">Fund a prototype on what it teaches, not on what it earns.</p>
+        </section>
+
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>

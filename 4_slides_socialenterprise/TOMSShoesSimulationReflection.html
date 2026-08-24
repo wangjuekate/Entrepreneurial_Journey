@@ -3,74 +3,196 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Simulation Reflection: TOMS Shoes</title>
+    <title>Simulation Reflection: TOMS at 20</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; }
+      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; --warn: #b45309; }
       .reveal { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: #fff; }
       .reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; letter-spacing: 0; }
-      .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.45em; }
-      .reveal h3 { font-size: 0.72em; color: var(--accent); margin-bottom: 0.45em; }
-      .reveal h4 { font-size: 0.58em; color: var(--muted); margin-bottom: 0.4em; }
-      .reveal p, .reveal li { font-size: 0.48em; line-height: 1.45; color: var(--ink); }
-      .reveal ul { margin: 0.35em 0 0 1.1em; }
+      .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.4em; }
+      .reveal h3 { font-size: 0.7em; color: var(--accent); margin-bottom: 0.3em; }
+      .reveal h4 { font-size: 0.55em; color: var(--muted); margin-bottom: 0.4em; }
+      .reveal p, .reveal li { font-size: 0.46em; line-height: 1.45; color: var(--ink); }
+      .reveal ul { margin: 0.3em 0 0 1.1em; }
       .reveal li { margin-bottom: 0.35em; }
-      .title-slide h2 { font-size: 1.35em; }
-      .subtitle { color: var(--muted); text-align: center; }
-      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; text-align: left; }
-      .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 18px 22px; text-align: left; }
-      .question-slide li { list-style: none; margin-left: -1em; }
-      .small { font-size: 0.42em; color: var(--muted); }
+      .title-slide h2 { font-size: 1.3em; }
+      .subtitle { color: var(--muted); text-align: center; font-size: 0.5em; }
+      .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 16px 20px; text-align: left; }
+      .small { font-size: 0.4em; color: var(--muted); }
+      /* role question slides */
+      .role-h { display: flex; align-items: center; gap: 12px; margin-bottom: 0.3em; }
+      .role-h .emoji { font-size: 1.1em; }
+      .role-h h2 { margin: 0; text-align: left; }
+      .q { font-weight: 600; text-align: left; margin-bottom: 0.4em; }
+      .reveal .options { list-style: none; margin: 0 0 0 0.2em; text-align: left; }
+      .reveal .options li { padding-left: 1.9em; text-indent: -1.9em; }
+      .reveal .role-h ~ p { text-align: left; }
+      .options li { margin-bottom: 0.35em; }
+      .options .k { display: inline-block; min-width: 1.7em; font-weight: 700; color: var(--accent); }
+      .reflect { background: #ecfdf5; border-left: 5px solid var(--accent); padding: 14px 18px; text-align: left; }
+      .reflect .tag { font-size: 0.4em; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
+      .reflect li { font-size: 0.44em; }
+      .quote { font-size: 0.6em; font-weight: 600; line-height: 1.3; }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
+
+        <!-- Title -->
         <section class="title-slide">
-          <h2>Simulation Reflection: TOMS Shoes</h2>
-          <p class="subtitle">Week 5: Thursday, October 1</p>
+          <h2>TOMS at 20: Mission and Margin</h2>
         </section>
+
+        <!-- The scenario / source -->
         <section>
-          <h2>Case Setup</h2>
-          <p>TOMS built a recognizable brand around giving shoes to children in need.</p>
-          <p>Your team will decide how to balance simple messaging, measurable impact, and long-term sustainability.</p>
+          <h2>The case</h2>
+          <div class="box"><p>2025. TOMS is twenty years old: <strong>$200 million</strong> given away, <strong>106 million lives</strong> it says it has impacted, and a B Corp certification. It also no longer does the thing it is famous for &mdash; <strong>One-for-One is over</strong>. Source: the company's own impact report. Nobody audits an impact report; that is part of the lesson.</p></div>
         </section>
-        <section class="question-slide">
-          <h2>Decision 1: Impact Model</h2>
-          <ul>
-            <li>A: Continue one-for-one donations because the model is easy to understand.</li>
-            <li>B: Shift toward local partnerships, community needs, and measurable outcomes.</li>
-          </ul>
-        </section>
-        <section class="question-slide">
-          <h2>Decision 2: Brand Message</h2>
-          <ul>
-            <li>A: Emphasize the emotional story of giving.</li>
-            <li>B: Emphasize transparent evidence about impact and limits.</li>
-          </ul>
-        </section>
-        <section class="question-slide">
-          <h2>Decision 3: Growth</h2>
-          <ul>
-            <li>A: Expand product categories quickly to grow donations.</li>
-            <li>B: Grow more slowly while testing whether each product supports the mission.</li>
-          </ul>
-        </section>
+
+        <!-- Group Discussion: draw the week's mental model -->
         <section>
-          <h2>Reflection Questions</h2>
-          <ul>
-            <li>What impact claims are strongest?</li>
-            <li>What impact claims need more evidence?</li>
-            <li>How can a social enterprise avoid mission drift?</li>
+          <h2>Group Discussion</h2>
+          <div class="reflect">
+            <ul>
+              <li>Form groups with classmates who had the same role.</li>
+              <li>Before any discussion of answers, draw the <strong>Mission&ndash;Margin Axis</strong> &mdash; community welfare on one end, profit on the other.</li>
+              <li>Say whether your choice makes mission and margin <strong>reinforce</strong> each other or <strong>work against</strong> each other.</li>
+              <li>Select one representative to present your group's placement and draw it on the board.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <div class="role-h"><span class="emoji">&#128176;</span><h2>Financial Lead</h2></div>
+          <p class="q">Twenty years and <strong>$200 million</strong> given &mdash; but the original promise was a <strong>fixed cost per unit</strong>, and it is gone. Giving is now grants, decided each year. A bad trading year is coming eventually. Where does the giving money come from?</p>
+          <ul class="options">
+            <li><span class="k">A</span> A published share of profit &mdash; scales with the business; a bad year means a smaller number, not a broken promise.</li>
+            <li><span class="k">B</span> An endowment in a separate foundation, insulated from trading.</li>
+            <li><span class="k">C</span> The marketing budget &mdash; it is what makes people choose us.</li>
+            <li><span class="k">D</span> Whatever is left after a good year, and nothing in a bad one.</li>
           </ul>
         </section>
         <section>
-          <h2>Takeaway</h2>
-          <div class="box"><p>Social entrepreneurship requires a model that is emotionally compelling, financially durable, and empirically honest.</p></div>
+          <div class="role-h"><span class="emoji">&#128176;</span><h2>Financial Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>One-for-One was <em>structural</em> &mdash; a cost of goods sold. Grants are <em>discretionary</em> &mdash; a budget line. That is the whole change, and it is invisible in the impact report.</li>
+              <li>Twenty years and $200 million given, but the fixed cost per unit that guaranteed it is gone. Giving is now decided annually, by people who also have a P&amp;L to hit.</li>
+              <li><strong>(D) is the trap.</strong> This is not a policy, it is the absence of one. It sounds generous and guarantees that the first bad year ends the programme.</li>
+            </ul>
+          </div>
         </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128227;</span><h2>Marketing Lead</h2></div>
+          <p class="q"><em>&ldquo;Buy a pair, give a pair&rdquo;</em> was the clearest promise in retail. What replaced it is <strong>more useful and far harder to put on a shoebox</strong>. How do you describe the company now?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Report what actually changed for people, verified externally &mdash; and accept a harder story.</li>
+            <li><span class="k">B</span> One simple headline number, with the outcome evidence published underneath it.</li>
+            <li><span class="k">C</span> Go back to One-for-One &mdash; a promise people understand is worth more than one they don't.</li>
+            <li><span class="k">D</span> Lead with <strong>106 million lives</strong> and <strong>$200 million given</strong>; don't draw attention to the change.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128227;</span><h2>Marketing Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Admit the effectiveness-versus-legibility trade-off out loud. The new model is better and less repeatable, and pretending otherwise is the failure mode.</li>
+              <li>&ldquo;106 million lives impacted&rdquo; uses a word the report never defines, and nobody outside the company audits either number.</li>
+              <li><strong>(D) is the trap.</strong> Marketing a promise the company no longer keeps &mdash; the most comfortable failure in social enterprise, because nobody ever has to admit it happened.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#9881;&#65039;</span><h2>Operation Lead</h2></div>
+          <p class="q">Giving now spreads across <strong>mental health, gun violence, education and disaster relief</strong>, through a large partner roster, on roughly <strong>$10 million a year</strong>. How do you structure the portfolio?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Fewer partners, bigger multi-year money, held to measured outcomes.</li>
+            <li><span class="k">B</span> Keep the breadth, but require the same outcome measures from every partner.</li>
+            <li><span class="k">C</span> Let local partners set priorities and fund them flexibly.</li>
+            <li><span class="k">D</span> Spread as widely as possible &mdash; more causes and countries make a bigger story.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#9881;&#65039;</span><h2>Operation Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Ask what a grant does if it is a <em>rounding error to the recipient</em>. Roughly $10 million a year across four unrelated causes buys very little in any one of them.</li>
+              <li>Concentration is the uncomfortable answer: fewer partners and multi-year money is how a grant becomes a change rather than a line item.</li>
+              <li><strong>(D) is the trap.</strong> It optimises the report, not the outcome. More logos, thinner grants, nothing decisive anywhere.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128187;</span><h2>Tech Lead</h2></div>
+          <p class="q">The report counts <strong>dollars given</strong> and <strong>lives &ldquo;impacted&rdquo;</strong> &mdash; a word it never defines &mdash; and nobody outside the company audits either. What do you build?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Outcome measurement with partners, checked by someone who doesn't work for us.</li>
+            <li><span class="k">B</span> Fund partners' own measurement capacity rather than imposing a system.</li>
+            <li><span class="k">C</span> Buy an off-the-shelf impact platform for numbers this year rather than in three.</li>
+            <li><span class="k">D</span> Keep counting what we give &mdash; cheap, honest about the input, and what customers respond to.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128187;</span><h2>Tech Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Separate <em>inputs</em> from <em>outcomes</em> explicitly. Dollars given is an input the company controls; lives changed is an outcome it does not.</li>
+              <li>Measurement is not free: every dollar spent measuring is a dollar not granted. A strong answer states that defence before rejecting it.</li>
+              <li><strong>(D) is the trap.</strong> Honest about the input and silent about the result &mdash; and cheap, which is why it persists.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128274;</span><h2>Security Lead</h2></div>
+          <p class="q">Proving outcomes means collecting data about beneficiaries &mdash; <strong>some in mental-health crisis, some in violence-prevention programmes</strong>. A leak would not embarrass the company; it could <strong>endanger them</strong>. How much do you collect?</p>
+          <ul class="options">
+            <li><span class="k">A</span> The least possible, de-identified &mdash; a leak here endangers people, not the brand.</li>
+            <li><span class="k">B</span> A full protection and audit programme across partners before any data moves.</li>
+            <li><span class="k">C</span> Leave the data with partners; write the obligations into grant agreements.</li>
+            <li><span class="k">D</span> Collect as much detail as possible &mdash; richer data proves the impact is real.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128274;</span><h2>Security Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Reach for <em>data minimisation</em> before data protection. The safest record is the one you never collected.</li>
+              <li>The people in this dataset are in mental-health crisis and violence-prevention programmes. The severity here is measured in harm to them, not cost to the brand.</li>
+              <li><strong>(D) is the trap.</strong> It sounds rigorous. It builds a list of people in crisis, spread across dozens of under-resourced nonprofits.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#129517;</span><h2>Account Manager</h2></div>
+          <p>You do <strong>not</strong> answer a functional question. After all five leads present their selection and a one-sentence defence:</p>
+          <ul class="options">
+            <li><span class="k">1</span> <strong>Rank</strong> the five problems 1&ndash;5, each used once, with one sentence justifying #1 that contains a figure from the packet.</li>
+            <li><span class="k">2</span> <strong>Weight</strong> them &mdash; 100 points across the five, in blocks of 10, totalling exactly 100.</li>
+          </ul>
+          <p class="q" style="margin-top:0.5em;"><strong>Part 3 &mdash; Place the company on the axis.</strong> Nonprofit &larr; social enterprise &rarr; corporation. Say where TOMS sits <em>and in which direction it has been moving</em>.</p>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#129517;</span><h2>Account Manager &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Ranking is order; weighting is magnitude. A flat split scores <strong>2 of 6</strong> &mdash; the designed penalty for refusing to choose.</li>
+              <li>The strong pattern ranks <strong>funding and measurement above story and partners</strong>, weighting those two at about 70 of 100 between them.</li>
+              <li>Placing TOMS on the axis is not enough &mdash; <em>the movement is the finding</em>. A company can keep its certification and still drift.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Key takeaway -->
+        <section>
+          <h2>Key takeaway</h2>
+          <div class="box"><p>Nobody audits an impact report. A mission that was once a cost of goods sold is now a budget line, and the difference only becomes visible in a bad year.</p></div>
+          <p class="quote" style="margin-top: 20px;">Dollars given is an input you control. Lives changed is an outcome you do not.</p>
+        </section>
+
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>

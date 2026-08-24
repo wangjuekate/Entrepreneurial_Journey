@@ -1,0 +1,21 @@
+- application [ref=e2]:
+  - generic:
+    - generic [ref=e3]:
+      - heading "The Entrepreneurial Journey" [level=2] [ref=e4]
+      - paragraph [ref=e5]: MENT 2234 / BADM 2234 · Fall 2026 · Course Overview
+      - paragraph [ref=e6]: Kate Wang · TuTh 8:00–9:15 AM · ITE C80
+    - generic:
+      - heading [level=2]:
+        - text: The worst
+        - emphasis: and
+        - text: the best time to be a business major
+    - generic:
+      - heading [level=2]: Where the value moved
+      - img:
+        - img
+  - link "1" [ref=e11] [cursor=pointer]:
+    - /url: "#/"
+  - complementary:
+    - button "next slide" [ref=e12] [cursor=pointer]
+  - text: Speaker notes
+  - generic [ref=e15]: The Entrepreneurial Journey MENT 2234 / BADM 2234 · Fall 2026 · Course Overview Kate Wang · TuTh 8:00–9:15 AM · ITE C80

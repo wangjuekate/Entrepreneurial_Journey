@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="56.0 28.0 1420.0 706.0" width="1420" height="706" font-family="Segoe Print, Comic Sans MS, Bradley Hand, cursive">
+<defs><marker id="ah-SemesterSpine" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1e1e1e"/></marker></defs>
+<text x="80.00" y="73.60" font-size="24" fill="#1e1e1e">8 modules. One rhythm.</text>
+<g data-beat="2"><text x="80.00" y="201.20" font-size="18" fill="#0f766e">Modules 1-4  ·  Weeks 2-5</text></g>
+<g data-beat="2"><rect x="80.00" y="230.00" width="190.00" height="110.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="2"><text x="175.00" y="279.05" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="175.00">1  Sweets &amp;</tspan><tspan x="175.00" dy="21.25">Bitterness</tspan></text></g>
+<g data-beat="2"><text x="175.00" y="365.12" font-size="15" fill="#b45309" text-anchor="middle">WeWork</text></g>
+<g data-beat="2"><rect x="300.00" y="230.00" width="190.00" height="110.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="2"><text x="395.00" y="279.05" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="395.00">2  Ethical &amp;</tspan><tspan x="395.00" dy="21.25">Legal</tspan></text></g>
+<g data-beat="2"><text x="395.00" y="365.12" font-size="15" fill="#b45309" text-anchor="middle">Theranos</text></g>
+<g data-beat="2"><rect x="520.00" y="230.00" width="190.00" height="110.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="2"><text x="615.00" y="279.05" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="615.00">3  Corporate</tspan><tspan x="615.00" dy="21.25">Entrepreneurs</tspan></text></g>
+<g data-beat="2"><text x="615.00" y="365.12" font-size="15" fill="#b45309" text-anchor="middle">Amazon Web Services</text></g>
+<g data-beat="2"><rect x="740.00" y="230.00" width="190.00" height="110.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="2"><text x="835.00" y="279.05" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="835.00">4  Social</tspan><tspan x="835.00" dy="21.25">Entrepreneurs</tspan></text></g>
+<g data-beat="2"><text x="835.00" y="365.12" font-size="15" fill="#b45309" text-anchor="middle">TOMS Shoes</text></g>
+<g data-beat="4"><text x="80.00" y="468.20" font-size="18" fill="#0f766e">Modules 5-8  ·  Weeks 8-11</text></g>
+<g data-beat="4"><rect x="80.00" y="490.00" width="190.00" height="110.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="4"><text x="175.00" y="539.05" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="175.00">5  Creative</tspan><tspan x="175.00" dy="21.25">Thinking</tspan></text></g>
+<g data-beat="4"><text x="175.00" y="625.12" font-size="15" fill="#b45309" text-anchor="middle">Netflix</text></g>
+<g data-beat="4"><rect x="300.00" y="490.00" width="190.00" height="110.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="4"><text x="395.00" y="539.05" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="395.00">6  Pitfalls &amp;</tspan><tspan x="395.00" dy="21.25">Successes</tspan></text></g>
+<g data-beat="4"><text x="395.00" y="625.12" font-size="15" fill="#b45309" text-anchor="middle">MoviePass</text></g>
+<g data-beat="4"><rect x="520.00" y="490.00" width="190.00" height="110.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="4"><text x="615.00" y="539.05" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="615.00">7  Acquiring</tspan><tspan x="615.00" dy="21.25">Enterprises</tspan></text></g>
+<g data-beat="4"><text x="615.00" y="625.12" font-size="15" fill="#b45309" text-anchor="middle">Disney - Pixar</text></g>
+<g data-beat="4"><rect x="740.00" y="490.00" width="190.00" height="110.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="4"><text x="835.00" y="539.05" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="835.00">8  Franchising</tspan><tspan x="835.00" dy="21.25">Enterprises</tspan></text></g>
+<g data-beat="4"><text x="835.00" y="625.12" font-size="15" fill="#b45309" text-anchor="middle">Shake Shack</text></g>
+<g data-beat="3"><rect x="80.00" y="378.00" width="850.00" height="58.00" rx="14.5" ry="14.5" fill="#fff4e6" stroke="#b45309" stroke-width="2"/></g>
+<g data-beat="3"><text x="505.00" y="412.50" font-size="20" fill="#1e1e1e" text-anchor="middle">Week 7 — Midterm team presentation video + report (15%)</text></g>
+<g data-beat="5"><rect x="80.00" y="650.00" width="850.00" height="60.00" rx="15.0" ry="15.0" fill="#fff4e6" stroke="#b45309" stroke-width="2"/></g>
+<g data-beat="5"><text x="505.00" y="685.50" font-size="20" fill="#1e1e1e" text-anchor="middle">Week 15 — Final team presentation video + report (20%)</text></g>
+<g data-beat="1"><text x="980.00" y="68.20" font-size="18" fill="#0f766e">Every module, the same two beats</text></g>
+<g data-beat="1"><rect x="990.00" y="110.00" width="400.00" height="90.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="1"><text x="1190.00" y="148.35" font-size="19" fill="#1e1e1e" text-anchor="middle"><tspan x="1190.00">Tuesday</tspan><tspan x="1190.00" dy="23.75">concept + case</tspan></text></g>
+<g data-beat="1"><path d="M 1190.00,204.00 L 1190.00,254.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-SemesterSpine)"/></g>
+<g data-beat="1"><rect x="990.00" y="260.00" width="400.00" height="90.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="1"><text x="1190.00" y="298.35" font-size="19" fill="#1e1e1e" text-anchor="middle"><tspan x="1190.00">Thursday</tspan><tspan x="1190.00" dy="23.75">simulation + reflection</tspan></text></g>
+<g data-beat="1"><path d="M 1390.00,305.00 L 1452.00,305.00 L 1452.00,155.00 L 1390.00,155.00" fill="none" stroke="#1971c2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-SemesterSpine)"/></g>
+<g data-beat="1"><text x="990.00" y="386.40" font-size="16" fill="#4b5563"><tspan x="990.00">Miss a beat and the reflection</tspan><tspan x="990.00" dy="20.00">grade is where you feel it.</tspan></text></g>
+<g data-beat="5"><rect x="990.00" y="470.00" width="400.00" height="120.00" rx="16.0" ry="16.0" fill="#fff4e6" stroke="#b45309" stroke-width="2"/></g>
+<g data-beat="5"><text x="1190.00" y="512.45" font-size="18" fill="#1e1e1e" text-anchor="middle"><tspan x="1190.00">Week 12</tspan><tspan x="1190.00" dy="22.50">Business Plan &amp; Venture Capital</tspan><tspan x="1190.00" dy="22.50">Summary and Future Directions</tspan></text></g>
+<g data-beat="5"><text x="990.00" y="632.40" font-size="16" fill="#4b5563"><tspan x="990.00">Finals week — reports and presentation video</tspan><tspan x="990.00" dy="20.00">submitted for review.</tspan></text></g>
+</svg>

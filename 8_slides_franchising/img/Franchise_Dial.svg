@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="36.0 36.0 1158.0 782.0" width="1158" height="782" font-family="Segoe Print, Comic Sans MS, Bradley Hand, cursive">
+<defs><marker id="ah-Franchise_Dial" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1e1e1e"/></marker></defs>
+<g data-beat="1"><text x="230.00" y="80.50" font-size="20" fill="#0f766e" text-anchor="middle">STANDARDIZATION</text></g>
+<g data-beat="1"><text x="970.00" y="80.50" font-size="20" fill="#b45309" text-anchor="middle">AUTONOMY</text></g>
+<g data-beat="1"><path d="M 200.00,118.00 L 1000.00,118.00" fill="none" stroke="#4b5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-Franchise_Dial)"/></g>
+<g data-beat="1"><path d="M 1000.00,118.00 L 200.00,118.00" fill="none" stroke="#4b5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-Franchise_Dial)"/></g>
+<g data-beat="1"><ellipse cx="580.00" cy="118.00" rx="20.00" ry="18.00" fill="#ffffff" stroke="#4b5563" stroke-width="2"/></g>
+<g data-beat="1"><text x="230.00" y="157.68" font-size="17" fill="#4b5563" text-anchor="middle">company-operated</text></g>
+<g data-beat="1"><text x="970.00" y="157.68" font-size="17" fill="#4b5563" text-anchor="middle">licensed / franchised</text></g>
+<g data-beat="2"><text x="230.00" y="199.68" font-size="17" fill="#0f766e" text-anchor="middle">you control it</text></g>
+<g data-beat="2"><text x="970.00" y="199.68" font-size="17" fill="#b45309" text-anchor="middle">they control it</text></g>
+<g data-beat="2"><text x="230.00" y="233.68" font-size="17" fill="#0f766e" text-anchor="middle">your capital</text></g>
+<g data-beat="2"><text x="970.00" y="233.68" font-size="17" fill="#b45309" text-anchor="middle">their capital</text></g>
+<g data-beat="2"><text x="230.00" y="267.68" font-size="17" fill="#0f766e" text-anchor="middle">slower growth</text></g>
+<g data-beat="2"><text x="970.00" y="267.68" font-size="17" fill="#b45309" text-anchor="middle">fast growth</text></g>
+<g data-beat="2"><text x="230.00" y="301.68" font-size="17" fill="#0f766e" text-anchor="middle">your margin</text></g>
+<g data-beat="2"><text x="970.00" y="301.68" font-size="17" fill="#b45309" text-anchor="middle">a royalty</text></g>
+<g data-beat="2"><text x="230.00" y="335.68" font-size="17" fill="#c92a2a" text-anchor="middle">your problem</text></g>
+<g data-beat="2"><text x="970.00" y="335.68" font-size="17" fill="#c92a2a" text-anchor="middle">STILL your problem</text></g>
+<g data-beat="2"><rect x="420.00" y="306.00" width="360.00" height="52.00" rx="13.0" ry="13.0" fill="#fff5f5" stroke="#c92a2a" stroke-width="2"/></g>
+<g data-beat="2"><text x="600.00" y="325.35" font-size="19" fill="#1e1e1e" text-anchor="middle"><tspan x="600.00">Control transfers.</tspan><tspan x="600.00" dy="23.75">Reputation does not.</tspan></text></g>
+<g data-beat="3"><text x="60.00" y="412.20" font-size="18" fill="#0f766e">Before you turn that dial toward autonomy, the thing you are copying has to pass three tests.</text></g>
+<g data-beat="3"><rect x="60.00" y="436.00" width="350.00" height="130.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="3"><text x="235.00" y="473.80" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="235.00">GATE 1 — CODIFIABLE</tspan><tspan x="235.00" dy="21.25"></tspan><tspan x="235.00" dy="21.25">Can the whole thing be</tspan><tspan x="235.00" dy="21.25">written down?</tspan></text></g>
+<g data-beat="3"><text x="235.00" y="596.38" font-size="15" fill="#4b5563" text-anchor="middle"><tspan x="235.00">If not, you are not franchising</tspan><tspan x="235.00" dy="18.75">a system. You are franchising</tspan><tspan x="235.00" dy="18.75">a hope.</tspan></text></g>
+<g data-beat="4"><rect x="440.00" y="436.00" width="350.00" height="130.00" rx="16.0" ry="16.0" fill="#fff5f5" stroke="#c92a2a" stroke-width="2"/></g>
+<g data-beat="4"><text x="615.00" y="473.80" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="615.00">GATE 2 — UNIT-PROFITABLE</tspan><tspan x="615.00" dy="21.25"></tspan><tspan x="615.00" dy="21.25">Does ONE of them make money</tspan><tspan x="615.00" dy="21.25">BEFORE you copy it?</tspan></text></g>
+<g data-beat="4"><text x="615.00" y="596.38" font-size="15" fill="#4b5563" text-anchor="middle"><tspan x="615.00">The one people skip, and the one</tspan><tspan x="615.00" dy="18.75">that kills companies. If not, you are</tspan><tspan x="615.00" dy="18.75">about to mass-produce a loss.</tspan></text></g>
+<g data-beat="5"><rect x="820.00" y="436.00" width="350.00" height="130.00" rx="16.0" ry="16.0" fill="#fff4e6" stroke="#b45309" stroke-width="2"/></g>
+<g data-beat="5"><text x="995.00" y="473.80" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="995.00">GATE 3 — MONITORABLE</tspan><tspan x="995.00" dy="21.25"></tspan><tspan x="995.00" dy="21.25">Can you SEE it from a</tspan><tspan x="995.00" dy="21.25">distance?</tspan></text></g>
+<g data-beat="5"><text x="995.00" y="596.38" font-size="15" fill="#4b5563" text-anchor="middle"><tspan x="995.00">&quot;It&#x27;s in the agreement&quot; is not</tspan><tspan x="995.00" dy="18.75">seeing. An annual audit visit is a</tspan><tspan x="995.00" dy="18.75">photograph. You need a feed.</tspan></text></g>
+<g data-beat="6"><rect x="250.00" y="672.00" width="720.00" height="62.00" rx="15.5" ry="15.5" fill="#fff5f5" stroke="#c92a2a" stroke-width="2"/></g>
+<g data-beat="6"><text x="610.00" y="709.05" font-size="22" fill="#1e1e1e" text-anchor="middle">A photocopier does not improve the original.</text></g>
+<g data-beat="6"><text x="610.00" y="765.40" font-size="16" fill="#4b5563" text-anchor="middle"><tspan x="610.00">If the unit is weakening, copying it faster gives you more weak units — while your TOTAL numbers</tspan><tspan x="610.00" dy="20.00">keep going up, so the press release looks great as the business gets thinner every year.</tspan></text></g>
+</svg>

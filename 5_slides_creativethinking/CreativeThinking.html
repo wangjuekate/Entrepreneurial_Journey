@@ -9,82 +9,328 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; }
+      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; --warn: #b45309; --bad: #b91c1c; }
       .reveal { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: #fff; }
       .reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; letter-spacing: 0; }
       .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.45em; }
-      .reveal h3 { font-size: 0.72em; color: var(--accent); margin-bottom: 0.45em; }
+      .reveal h3 { font-size: 0.72em; color: var(--accent); margin-bottom: 0.35em; }
       .reveal h4 { font-size: 0.58em; color: var(--muted); margin-bottom: 0.4em; }
       .reveal p, .reveal li { font-size: 0.48em; line-height: 1.45; color: var(--ink); }
       .reveal ul { margin: 0.35em 0 0 1.1em; }
       .reveal li { margin-bottom: 0.35em; }
       .title-slide h2 { font-size: 1.35em; }
-      .subtitle { color: var(--muted); text-align: center; }
-      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; text-align: left; }
+      .subtitle { color: var(--muted); text-align: center; font-size: 0.5em; }
+      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; text-align: left; align-items: center; }
+      .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; text-align: left; }
+      .four-col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; text-align: left; }
       .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 18px 22px; text-align: left; }
-      .question-slide li { list-style: none; margin-left: -1em; }
+      .box.warn { border-left-color: var(--warn); }
+      .box.bad { border-left-color: var(--bad); }
+      .card { background: var(--soft); border-top: 5px solid var(--accent); padding: 14px 16px; border-radius: 8px; text-align: left; }
+      .card p { font-size: 0.42em; }
+      .card.warn { border-top-color: var(--warn); }
+      .card.bad { border-top-color: var(--bad); }
       .small { font-size: 0.42em; color: var(--muted); }
+      /* Figures are inlined <svg> (not <img>) so their data-beat groups can be
+         animated. Sized in reveal's 960x700 slide coordinates: vh units do not
+         scale with the deck. Rebuild with build_figures.py + inline_figures.py. */
+      .fig-embed svg { display: block; margin: 0 auto; width: auto; height: auto; max-width: 100%; max-height: 450px; }
+      .fig-cap { font-size: 0.42em; color: var(--muted); margin-top: 0.55em; }
+      .quote { font-size: 0.72em; font-weight: 600; line-height: 1.3; }
+      .quote .em { color: var(--accent); }
+      /* Figure beats cross-fade in place. Deliberately NOT fade-up: a transform on an
+         SVG <g> would slide diagram parts out of register with the arrows pointing at
+         them. Scoped to .fig-embed so reveal's own transform transition still drives
+         fade-up on the prose. */
+      .fig-embed .fragment { transition: opacity 0.35s ease; }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
+
+        <!-- Title -->
         <section class="title-slide">
           <h2>Creative Thinking</h2>
-          <p class="subtitle">Week 8: Tuesday, October 20</p>
+          <p class="subtitle">MENT 2234 &middot; Module 5 &middot; Concept Lecture</p>
+          <p class="subtitle">Case: Netflix &middot; Mental model: the Diverge&ndash;Converge Loop</p>
+          <aside class="notes">Tell this like a stand-up set. Pause where the script pauses. The whole hour is a demolition of "creativity is a personality trait" &mdash; do not soften it.</aside>
         </section>
+
+        <!-- Hook -->
         <section>
-          <h2>Creativity as Entrepreneurial Skill</h2>
-          <p>Creative thinking is the ability to generate, combine, test, and communicate new possibilities.</p>
-          <p>In entrepreneurship, creativity is useful when it helps solve a real problem for a real user.</p>
-        </section>
-        <section>
-          <h2>Divergent and Convergent Thinking</h2>
+          <h2>Creativity is not a personality</h2>
           <div class="two-col">
             <div>
-              <h3>Divergent</h3>
-              <p>Generate many options.</p>
-              <p>Delay judgment.</p>
-              <p>Look across domains.</p>
-              <p>Ask unusual questions.</p>
+              <ul>
+                <li class="fragment fade-up">You think there are <em>creative people</em> &mdash; art students, the one in your group project with opinions about typefaces &mdash; and then there is you, doing the spreadsheet.</li>
+                <li class="fragment fade-up">I am going to spend twenty minutes taking that away from you.</li>
+                <li class="fragment fade-up">Creativity is a <strong>loop</strong>. A process with three steps you can run on purpose, on a Tuesday, in a bad mood, without any tattoos at all.</li>
+              </ul>
             </div>
-            <div>
-              <h3>Convergent</h3>
-              <p>Select promising options.</p>
-              <p>Test assumptions.</p>
-              <p>Fit ideas to constraints.</p>
-              <p>Choose what to build next.</p>
+            <div class="box fragment fade-up">
+              <h3>And at the end</h3>
+              <p>I will show you a company that ran the loop correctly and then almost described it <em>wrong</em> in its own annual report.</p>
             </div>
           </div>
+          <aside class="notes">Ask for a show of hands: who considers themselves a creative person? Note the number. Ask again at the end of the hour.</aside>
         </section>
+
+        <!-- Velcro -->
         <section>
-          <h2>Design Thinking Loop</h2>
-          <ul>
-            <li>Empathize with users.</li>
-            <li>Define the problem.</li>
-            <li>Ideate possible solutions.</li>
-            <li>Prototype quickly.</li>
-            <li>Test and revise.</li>
+          <h2>The wrong question &mdash; a true story</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">1940s. A Swiss engineer, <strong>George de Mestral</strong>, comes back from walking his dog in the Alps and spends the evening picking burrs out of its fur. Annoying. Everybody who has owned a dog has done this.</li>
+                <li class="fragment fade-up">Here is what he did differently: <strong>he put one under a microscope</strong>.</li>
+                <li class="fragment fade-up">He was not asking &ldquo;how do I get burrs off my dog.&rdquo; He asked <strong>&ldquo;why does this stick so well.&rdquo;</strong> Tiny hooks catching tiny loops. Eight years later he patented <strong>Velcro</strong>.</li>
+              </ul>
+            </div>
+            <div class="box fragment fade-up">
+              <h3>Inspiration did not strike</h3>
+              <p>The dog invented nothing. The microscope invented nothing. <strong>The question did.</strong></p>
+              <p>He swapped a complaint for an investigation, and the idea was on the other side of it.</p>
+            </div>
+          </div>
+          <aside class="notes">Pause after "he put one under a microscope". This story is normally told as luck; the whole point is that the only lucky thing was a change of question.</aside>
+        </section>
+
+        <!-- The three steps -->
+        <section>
+          <h2>Three steps, and almost nobody does the first one</h2>
+          <div class="three-col">
+            <div class="card fragment fade-up">
+              <h3>1 &middot; Define the problem</h3>
+              <p>&mdash; and notice you probably defined it wrong.</p>
+              <p>&ldquo;Sales are down.&rdquo; &ldquo;Students aren't engaged.&rdquo; &ldquo;Get the burrs off the dog.&rdquo; Every one is an <strong>answer pretending to be a question</strong>.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <h3>2 &middot; Ideate</h3>
+              <p>&mdash; and stop judging so early.</p>
+              <p>Generate options <em>without</em> deciding between them. School trained you against this. Judging while you generate is growing a plant while pulling on it to check the roots.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <h3>3 &middot; Prototype and test</h3>
+              <p>&mdash; cheaply, in a way that can actually fail.</p>
+              <p>The point is not to prove you were right. It is to find out for as little money as possible <strong>whether you were wrong</strong>. A test that cannot fail is a performance.</p>
+            </div>
+          </div>
+          <aside class="notes">Step 1 is where the marks are. Make them re-ask a problem from their own team venture out loud before you move on.</aside>
+        </section>
+
+        <!-- Why it is a loop -->
+        <section>
+          <h2>Why it is a loop and not a staircase</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">You do not run the three steps once and walk away with an idea.</li>
+                <li class="fragment fade-up">The test fails or half-works &mdash; and the failure <strong>tells you something about the problem you did not know when you defined it</strong>.</li>
+                <li class="fragment fade-up">So you define it again, better, and go round.</li>
+              </ul>
+            </div>
+            <div class="box warn fragment fade-up">
+              <h3>The Velcro story hides forty tries</h3>
+              <p>The version you hear: dog, microscope, Velcro. The version that happened: eight years of <em>this material doesn't hook</em>, <em>this loom won't weave it</em>, <em>it works but it costs too much</em>.</p>
+              <p>Every one of those redefined the problem. <strong>He did not persist. He iterated.</strong></p>
+            </div>
+          </div>
+          <p class="small fragment fade-up">The mistake that ends careers is not failing. It is finishing one lap and treating the result as final &mdash; &ldquo;it worked, ship it&rdquo; or &ldquo;it failed, kill it&rdquo; &mdash; when the honest answer is <strong>&ldquo;that lap taught me the question was wrong.&rdquo;</strong></p>
+          <aside class="notes">Change tone here. This is the part they actually need, and it is the part that shows up in the reflection grade.</aside>
+        </section>
+
+        <!-- Figure -->
+        <section>
+          <h2>The mental model &mdash; the Diverge&ndash;Converge Loop</h2>
+          <div class="fig-embed" role="img" aria-label="Define, ideate and prototype-and-test in a loop that returns to redefine the problem, with the diverge and converge moves contrasted and the cost of treating a prototype like a product"><!--fig:CreativeLoop-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="16.0 76.0 1238.0 724.0" width="1238" height="724" font-family="Segoe Print, Comic Sans MS, Bradley Hand, cursive">
+<defs><marker id="ah-CreativeLoop" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1e1e1e"/></marker></defs>
+<g data-beat="1"><rect x="80.00" y="100.00" width="320.00" height="110.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="1"><text x="240.00" y="148.00" font-size="20" fill="#1e1e1e" text-anchor="middle"><tspan x="240.00">DEFINE</tspan><tspan x="240.00" dy="25.00">the problem</tspan></text></g>
+<g data-beat="1"><text x="240.00" y="246.05" font-size="17" fill="#4b5563" text-anchor="middle"><tspan x="240.00">What is the real</tspan><tspan x="240.00" dy="21.25">question here?</tspan></text></g>
+<g data-beat="2"><rect x="470.00" y="100.00" width="320.00" height="110.00" rx="16.0" ry="16.0" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="2"><text x="630.00" y="148.00" font-size="20" fill="#1e1e1e" text-anchor="middle"><tspan x="630.00">IDEATE</tspan><tspan x="630.00" dy="25.00">(diverge)</tspan></text></g>
+<g data-beat="2"><text x="630.00" y="246.05" font-size="17" fill="#4b5563" text-anchor="middle"><tspan x="630.00">Many options,</tspan><tspan x="630.00" dy="21.25">no judging yet</tspan></text></g>
+<g data-beat="3"><rect x="860.00" y="100.00" width="320.00" height="110.00" rx="16.0" ry="16.0" fill="#fff4e6" stroke="#b45309" stroke-width="2"/></g>
+<g data-beat="3"><text x="1020.00" y="148.00" font-size="20" fill="#1e1e1e" text-anchor="middle"><tspan x="1020.00">PROTOTYPE &amp; TEST</tspan><tspan x="1020.00" dy="25.00">(converge)</tspan></text></g>
+<g data-beat="3"><text x="1020.00" y="246.05" font-size="17" fill="#4b5563" text-anchor="middle"><tspan x="1020.00">The cheapest test</tspan><tspan x="1020.00" dy="21.25">that could FAIL</tspan></text></g>
+<g data-beat="2"><path d="M 404.00,155.00 L 466.00,155.00" fill="none" stroke="#4b5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-CreativeLoop)"/></g>
+<g data-beat="3"><path d="M 794.00,155.00 L 856.00,155.00" fill="none" stroke="#4b5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-CreativeLoop)"/></g>
+<g data-beat="4"><path d="M 1180.00,155.00 L 1220.00,155.00 L 1220.00,314.00 L 40.00,314.00 L 40.00,155.00 L 76.00,155.00" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-CreativeLoop)"/></g>
+<g data-beat="4"><text x="630.00" y="307.95" font-size="18" fill="#0f766e" text-anchor="middle">redefine the problem, go again</text></g>
+<g data-beat="5"><rect x="80.00" y="400.00" width="550.00" height="158.00" rx="16.0" ry="16.0" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="5"><text x="355.00" y="438.95" font-size="18" fill="#1e1e1e" text-anchor="middle"><tspan x="355.00">DIVERGE</tspan><tspan x="355.00" dy="22.50"></tspan><tspan x="355.00" dy="22.50">generating options</tspan><tspan x="355.00" dy="22.50">&quot;yes, and — what else?&quot;</tspan><tspan x="355.00" dy="22.50">fails by never stopping · feels wasteful</tspan></text></g>
+<g data-beat="5"><rect x="680.00" y="400.00" width="550.00" height="158.00" rx="16.0" ry="16.0" fill="#fff4e6" stroke="#b45309" stroke-width="2"/></g>
+<g data-beat="5"><text x="955.00" y="438.95" font-size="18" fill="#1e1e1e" text-anchor="middle"><tspan x="955.00">CONVERGE</tspan><tspan x="955.00" dy="22.50"></tspan><tspan x="955.00" dy="22.50">choosing between them</tspan><tspan x="955.00" dy="22.50">&quot;which of these could be wrong?&quot;</tspan><tspan x="955.00" dy="22.50">fails by starting too early · feels decisive</tspan></text></g>
+<g data-beat="5"><path d="M 655.00,410.00 L 655.00,548.00" fill="none" stroke="#4b5563" stroke-width="2" stroke-dasharray="8 6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g data-beat="5"><text x="655.00" y="598.05" font-size="17" fill="#4b5563" text-anchor="middle"><tspan x="655.00">Almost every bad meeting you will sit in is a room trying to do both at once.</tspan><tspan x="655.00" dy="21.25">Say out loud which one you are doing: &quot;we&#x27;re still diverging — hold the objections for ten minutes.&quot;</tspan></text></g>
+<g data-beat="6"><rect x="190.00" y="656.00" width="930.00" height="120.00" rx="16.0" ry="16.0" fill="#fff5f5" stroke="#c92a2a" stroke-width="2"/></g>
+<g data-beat="6"><text x="655.00" y="670.40" font-size="16" fill="#1e1e1e" text-anchor="middle"><tspan x="655.00">The most expensive mistake in business is treating a prototype like a product.</tspan><tspan x="655.00" dy="20.00"></tspan><tspan x="655.00" dy="20.00">A prototype is funded for LEARNING and judged on what you found out.</tspan><tspan x="655.00" dy="20.00">A product is funded for REVENUE and judged on money. Swap them and you either</tspan><tspan x="655.00" dy="20.00">cancel an experiment for missing a target it never had, or bet the company on</tspan><tspan x="655.00" dy="20.00">something nobody tested. Both look, from the inside, exactly like being decisive.</tspan></text></g>
+</svg>
+<!--/fig:CreativeLoop--></div>
+          <p class="fig-cap fragment fade-up" data-fragment-index="99">Three boxes and one arrow back. The arrow back is the part people leave out &mdash; and the part that makes it a model rather than a poster.</p>
+          <aside class="notes">Beats 1-3 build the pipeline; beat 4 is the whole point. Beat 5 is the meeting they have all sat in. Land hard on beat 6 &mdash; it is the sentence the simulation grades.</aside>
+        </section>
+
+        <!-- Diverge vs converge -->
+        <section>
+          <h2>Two moves &mdash; and you cannot run both at once</h2>
+          <div class="two-col">
+            <div class="box fragment fade-up">
+              <h3>Diverge</h3>
+              <p><strong>Doing:</strong> generating options.</p>
+              <p><strong>Right instinct:</strong> &ldquo;yes, and &mdash; what else?&rdquo;</p>
+              <p><strong>Fails by:</strong> never stopping. <strong>Feels:</strong> wasteful.</p>
+            </div>
+            <div class="box warn fragment fade-up">
+              <h3>Converge</h3>
+              <p><strong>Doing:</strong> choosing between them.</p>
+              <p><strong>Right instinct:</strong> &ldquo;which of these could be wrong?&rdquo;</p>
+              <p><strong>Fails by:</strong> starting too early. <strong>Feels:</strong> decisive.</p>
+            </div>
+          </div>
+          <p class="small fragment fade-up">Almost every bad meeting you will sit in is a room trying to do both at the same time. Somebody offers an idea, somebody explains why it will not work, and forty minutes later you have two options and everyone is annoyed.</p>
+          <p class="small fragment fade-up">Do them at separate times, and <strong>say out loud which one you are doing</strong>. &ldquo;We're still diverging &mdash; hold the objections for ten minutes&rdquo; is worth more than any creativity workshop you will ever attend.</p>
+          <aside class="notes">This is the most immediately usable slide in the course. Tell them to try the sentence in their next team meeting and report back Thursday.</aside>
+        </section>
+
+        <!-- Knowing the stage -->
+        <section>
+          <h2>Knowing which stage you are at is the actual skill</h2>
+          <p class="quote fragment fade-up">The most expensive mistake in business is treating a <span class="em">prototype</span> like a <span class="em">product</span>.</p>
+          <div class="two-col" style="margin-top: 20px;">
+            <div class="box fragment fade-up">
+              <h3>A prototype</h3>
+              <p>Funded for <strong>learning</strong>. Judged on <strong>what you found out</strong>. Expected to be embarrassing.</p>
+            </div>
+            <div class="box warn fragment fade-up">
+              <h3>A product</h3>
+              <p>Funded for <strong>revenue</strong>. Judged on <strong>money</strong>. Had better not be embarrassing.</p>
+            </div>
+          </div>
+          <p class="small fragment fade-up">Get it backwards and one of two things happens: you cancel an experiment for missing a revenue target it should never have had, or you bet the company on something that was never properly tested. <strong>Both look, from the inside, exactly like being decisive.</strong></p>
+          <aside class="notes">This is the bridge into Netflix. Say explicitly that the next slide is a company being honest about which stage it was at.</aside>
+        </section>
+
+        <!-- Netflix -->
+        <section>
+          <h2>The company you are about to open</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">January 2007. A DVD-by-mail company adds a feature letting subscribers watch films instantly. You know the company. You know how the story ends.</li>
+                <li class="fragment fade-up"><strong>Nobody in that building knew.</strong></li>
+                <li class="fragment fade-up">What they actually had: about <strong>6,000 titles</strong> instantly, against about <strong>90,000</strong> on disc. One fifteenth of the catalogue.</li>
+                <li class="fragment fade-up">And it only ran on a <strong>personal computer</strong> &mdash; a machine that in 2007 sat on a desk in a study. Ask your parents where they watched films in 2007.</li>
+              </ul>
+            </div>
+            <div class="box warn fragment fade-up">
+              <h3>From the same annual report, same paragraph</h3>
+              <p><em>&ldquo;We believe that the <strong>DVD format</strong>, along with its high definition successor formats, including Blu-ray, <strong>will continue to be the main vehicle for watching content in the home for the foreseeable future.</strong>&rdquo;</em></p>
+            </div>
+          </div>
+          <aside class="notes">Read the quotation aloud, slowly, and then let it sit in silence. Do not explain it yet &mdash; the next slide is the explanation and it is much better if they get there first.</aside>
+        </section>
+
+        <!-- The re-read -->
+        <section>
+          <h2>Read it the other way</h2>
+          <div class="two-col">
+            <div class="box fragment fade-up">
+              <h3>The lazy reading</h3>
+              <p>A company that did not see it coming.</p>
+            </div>
+            <div class="box fragment fade-up">
+              <h3>The useful reading</h3>
+              <p><strong>That is what the prototype stage sounds like when someone is being honest.</strong></p>
+            </div>
+          </div>
+          <ul style="margin-top: 18px;">
+            <li class="fragment fade-up">They had a <strong>hypothesis, not a conclusion</strong>. Six thousand titles on the wrong screen.</li>
+            <li class="fragment fade-up">So they funded it as an <strong>experiment</strong>, bundled it free so they could watch what people actually did with it, and kept the disc business at full strength because it was paying for everything.</li>
+            <li class="fragment fade-up">Then they went round the loop again. The living room came later. The catalogue came later. Original content came a lot later.</li>
           </ul>
+          <aside class="notes">This is the slide that changes how they read every annual report for the rest of the course. Hedged language is sometimes cowardice and sometimes accuracy &mdash; make them argue which this is.</aside>
         </section>
+
+        <!-- The one line -->
         <section>
-          <h2>Netflix Preview</h2>
-          <p>Netflix shows creative thinking across multiple business model changes: DVD rentals, streaming, original content, and global distribution.</p>
-          <p>The case asks how a venture keeps reinventing itself without losing strategic focus.</p>
+          <h2>The one line to carry in</h2>
+          <p class="quote fragment fade-up">Ideas are cheap. <span class="em">Knowing what you have actually got is expensive.</span></p>
+          <div class="box fragment fade-up" style="margin-top: 22px;">
+            <p>Everyone in the DVD industry in 2007 had the idea that films would eventually stream. It was obvious, and it had been obvious for a decade. <strong>The idea was free.</strong></p>
+            <p>The creative act was <strong>knowing what stage they were at</strong> &mdash; knowing what they had shipped was still an experiment, and having the nerve to keep funding it as one, instead of killing it for missing a number it should never have been given.</p>
+          </div>
+          <p class="small fragment fade-up">Creativity is not a personality. It is a loop, and the skill is knowing where on the loop you are standing.</p>
+          <aside class="notes">Ask the opening question again: who is a creative person? The hands should change. If they do not, you rushed the Velcro slide.</aside>
         </section>
+
+        <!-- Bridge -->
         <section>
-          <h2>Discussion</h2>
-          <ul>
-            <li>What makes an idea creative but still practical?</li>
-            <li>How do constraints improve creativity?</li>
-            <li>When should a company stop optimizing the old model and create a new one?</li>
-          </ul>
+          <h2>Next: the simulation</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">You will open Netflix's <strong>real books</strong> at the exact moment the loop was running and nobody knew the ending.</li>
+                <li class="fragment fade-up">Before each decision, say <strong>which stage of the loop you are at</strong> &mdash; defining, diverging, or converging.</li>
+              </ul>
+            </div>
+            <div class="box bad fragment fade-up">
+              <h3>One rule, and I am serious about it</h3>
+              <p><strong>You know how this turns out and they did not.</strong></p>
+              <p>&ldquo;Streaming obviously wins&rdquo; is not an argument &mdash; it is a spoiler. Defend every choice from what is actually in the filing in front of you.</p>
+            </div>
+          </div>
+          <aside class="notes">Hand out the role pages. Enforce the no-hindsight rule from the first minute of Thursday or the whole exercise collapses into smugness.</aside>
         </section>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script><!--narration-->
+      window.NARRATION = {};
+      <!--/narration--></script>
     <script>
-      Reveal.initialize({ hash: true, slideNumber: true });
+      // Each inlined figure carries data-beat="N" groups written by
+      // build_figures.py. Turn them into reveal fragments so the drawing builds
+      // up one beat at a time, in step with the speaker. Captions sit at index
+      // 99 so they always land last.
+      document.querySelectorAll('.fig-embed [data-beat]').forEach(function (g) {
+        g.classList.add('fragment');
+        g.setAttribute('data-fragment-index', g.getAttribute('data-beat'));
+      });
+
+      // Rehearsal / screen-capture mode. ?auto walks the deck; with no
+      // Narration.md compiled in (window.NARRATION is empty) every beat gets the
+      // 4s default, and ?auto=3500 overrides it with a fixed millisecond
+      // interval. Any key press stops it. To pace it against a real script,
+      // write Narration.md and run Tools/Figure_Convert/build_narration.py.
+      var auto = new URLSearchParams(location.search).get('auto');
+      var fixed = parseInt(auto, 10);
+      var running = auto !== null;
+      document.addEventListener('keydown', function () { running = false; });
+
+      function dwell() {
+        var i = Reveal.getIndices();
+        var key = i.h + ':' + (typeof i.f === 'number' ? i.f : -1);
+        var secs = (window.NARRATION || {})[key];
+        return fixed || (secs ? secs * 1000 : 4000);
+      }
+
+      function tick() {
+        if (!running) return;
+        setTimeout(function () {
+          if (!running) return;
+          var before = JSON.stringify(Reveal.getIndices());
+          Reveal.next();
+          if (JSON.stringify(Reveal.getIndices()) === before) return;  // end of deck
+          tick();
+        }, dwell());
+      }
+
+      Reveal.initialize({ hash: true, slideNumber: true, plugins: [ RevealNotes ] })
+        .then(function () { if (running) tick(); });
     </script>
   </body>
 </html>

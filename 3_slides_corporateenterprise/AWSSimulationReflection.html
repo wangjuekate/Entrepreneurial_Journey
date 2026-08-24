@@ -3,74 +3,196 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Simulation Reflection: Amazon Web Services</title>
+    <title>Simulation Reflection: The Venture Inside (AWS)</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; }
+      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; --warn: #b45309; }
       .reveal { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: #fff; }
       .reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; letter-spacing: 0; }
-      .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.45em; }
-      .reveal h3 { font-size: 0.72em; color: var(--accent); margin-bottom: 0.45em; }
-      .reveal h4 { font-size: 0.58em; color: var(--muted); margin-bottom: 0.4em; }
-      .reveal p, .reveal li { font-size: 0.48em; line-height: 1.45; color: var(--ink); }
-      .reveal ul { margin: 0.35em 0 0 1.1em; }
+      .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.4em; }
+      .reveal h3 { font-size: 0.7em; color: var(--accent); margin-bottom: 0.3em; }
+      .reveal h4 { font-size: 0.55em; color: var(--muted); margin-bottom: 0.4em; }
+      .reveal p, .reveal li { font-size: 0.46em; line-height: 1.45; color: var(--ink); }
+      .reveal ul { margin: 0.3em 0 0 1.1em; }
       .reveal li { margin-bottom: 0.35em; }
-      .title-slide h2 { font-size: 1.35em; }
-      .subtitle { color: var(--muted); text-align: center; }
-      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; text-align: left; }
-      .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 18px 22px; text-align: left; }
-      .question-slide li { list-style: none; margin-left: -1em; }
-      .small { font-size: 0.42em; color: var(--muted); }
+      .title-slide h2 { font-size: 1.3em; }
+      .subtitle { color: var(--muted); text-align: center; font-size: 0.5em; }
+      .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 16px 20px; text-align: left; }
+      .small { font-size: 0.4em; color: var(--muted); }
+      /* role question slides */
+      .role-h { display: flex; align-items: center; gap: 12px; margin-bottom: 0.3em; }
+      .role-h .emoji { font-size: 1.1em; }
+      .role-h h2 { margin: 0; text-align: left; }
+      .q { font-weight: 600; text-align: left; margin-bottom: 0.4em; }
+      .reveal .options { list-style: none; margin: 0 0 0 0.2em; text-align: left; }
+      .reveal .options li { padding-left: 1.9em; text-indent: -1.9em; }
+      .reveal .role-h ~ p { text-align: left; }
+      .options li { margin-bottom: 0.35em; }
+      .options .k { display: inline-block; min-width: 1.7em; font-weight: 700; color: var(--accent); }
+      .reflect { background: #ecfdf5; border-left: 5px solid var(--accent); padding: 14px 18px; text-align: left; }
+      .reflect .tag { font-size: 0.4em; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
+      .reflect li { font-size: 0.44em; }
+      .quote { font-size: 0.6em; font-weight: 600; line-height: 1.3; }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
+
+        <!-- Title -->
         <section class="title-slide">
-          <h2>Simulation Reflection: Amazon Web Services</h2>
-          <p class="subtitle">Week 4: Thursday, September 24</p>
+          <h2>The Venture Inside: AWS in 2008</h2>
         </section>
+
+        <!-- The scenario / source -->
         <section>
-          <h2>Case Setup</h2>
-          <p>Amazon developed infrastructure capabilities to support its own operations.</p>
-          <p>The strategic question is whether those capabilities should remain internal tools or become external services for developers and businesses.</p>
+          <h2>The case</h2>
+          <div class="box"><p>Early 2008. Amazon has just filed its FY2007 annual report: <strong>$14.8 billion</strong> of goods sold, <strong>$655 million</strong> from operations &mdash; a <strong>4.4%</strong> margin. Eighteen months ago it launched Amazon Web Services, sold to a customer the filing has to introduce as <em>&ldquo;developer customers.&rdquo;</em></p></div>
         </section>
-        <section class="question-slide">
-          <h2>Decision 1: Market Entry</h2>
-          <ul>
-            <li>A: Keep infrastructure internal to protect operational advantage.</li>
-            <li>B: Offer infrastructure services externally and build a new business line.</li>
-          </ul>
-        </section>
-        <section class="question-slide">
-          <h2>Decision 2: Resource Allocation</h2>
-          <ul>
-            <li>A: Fund only projects tied directly to the retail core.</li>
-            <li>B: Fund a separate team with room to build cloud services.</li>
-          </ul>
-        </section>
-        <section class="question-slide">
-          <h2>Decision 3: Internal Buy-In</h2>
-          <ul>
-            <li>A: Sell the idea as a technical side project.</li>
-            <li>B: Frame it as a strategic platform with customer and revenue potential.</li>
-          </ul>
-        </section>
+
+        <!-- Group Discussion: draw the week's mental model -->
         <section>
-          <h2>Reflection Questions</h2>
-          <ul>
-            <li>What evidence would convince leadership to support AWS?</li>
-            <li>What internal resistance would you expect?</li>
-            <li>How can a corporate entrepreneur protect experimentation time?</li>
+          <h2>Group Discussion</h2>
+          <div class="reflect">
+            <ul>
+              <li>Form groups with classmates who had the same role.</li>
+              <li>Before any discussion of answers, draw the <strong>CEAI chain</strong> &mdash; trigger, internal conditions, middle manager, outcome.</li>
+              <li>Place your decision on the chain and say which link it depends on.</li>
+              <li>Select one representative to present your group's placement and draw it on the board.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <div class="role-h"><span class="emoji">&#128176;</span><h2>Financial Lead</h2></div>
+          <p class="q">Technology and content spend rose from <strong>$451 M to $818 M</strong> in two years. Operating margin is <strong>4.4%</strong>, and AWS revenue is <strong>not reported separately</strong> anywhere. How does this business get funded and measured?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Its own P&amp;L and capital budget, measured against outside cloud competitors &mdash; not retail.</li>
+            <li><span class="k">B</span> A protected central innovation budget, ring-fenced so retail's targets can't raid it.</li>
+            <li><span class="k">C</span> Funded out of retail's operating budget, held to the same margin everyone else hits.</li>
+            <li><span class="k">D</span> No dedicated funding until it shows enough revenue to justify it.</li>
           </ul>
         </section>
         <section>
-          <h2>Takeaway</h2>
-          <div class="box"><p>Corporate entrepreneurship turns internal capabilities into new sources of value when leaders give ideas structure, evidence, and strategic protection.</p></div>
+          <div class="role-h"><span class="emoji">&#128176;</span><h2>Financial Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Name the <em>benchmark</em>, not just the budget. A venture measured against retail's 4.4% margin will always look like a bad retailer.</li>
+              <li>Technology and content spend nearly doubled, $451 M to $818 M, while AWS revenue appeared nowhere in the filing &mdash; the venture was being funded before it could be measured.</li>
+              <li><strong>(D) is the trap.</strong> With what would it produce the revenue? This is the single most common way an intrapreneurial venture dies, and it sounds like prudence.</li>
+            </ul>
+          </div>
         </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128227;</span><h2>Marketing Lead</h2></div>
+          <p class="q">The filing introduces <strong>&ldquo;developer customers&rdquo;</strong> who can use AWS to <em>&ldquo;enable virtually any type of business.&rdquo;</em> Amazon has never sold to developers. Where does the effort go?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Make it something a developer can try in ten minutes &mdash; docs, self-serve signup, free tier.</li>
+            <li><span class="k">B</span> Go after startups and small companies who could never afford their own data centre.</li>
+            <li><span class="k">C</span> Sell through the enterprise relationships we already have from seller services.</li>
+            <li><span class="k">D</span> Market it to the customers we already have &mdash; the people who buy books from us.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128227;</span><h2>Marketing Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Separate <em>who chooses</em> from <em>who pays</em>. The developer who picks the service has no budget authority and decides anyway.</li>
+              <li>Amazon had never sold to developers &mdash; the filing had to introduce them as a category. A new customer type is a new company, not a new campaign.</li>
+              <li><strong>(D) is the trap.</strong> &ldquo;Leverage our customer base&rdquo; sounds like synergy. Nobody buying a book wants a message queue.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#9881;&#65039;</span><h2>Operation Lead</h2></div>
+          <p class="q">EC2 lets developers <em>&ldquo;requisition machines for use&rdquo;</em> on demand &mdash; so you must own the computers <strong>before</strong> anyone asks. The filing warns that new businesses make the network <em>&ldquo;increasingly complex.&rdquo;</em> How much do you build ahead of demand?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Build ahead and accept low utilisation early &mdash; no capacity on demand means no product.</li>
+            <li><span class="k">B</span> Start on spare capacity from the retail peaks, then build dedicated capacity as demand shows.</li>
+            <li><span class="k">C</span> Lease from existing data centre providers until demand is proven, then build.</li>
+            <li><span class="k">D</span> Add capacity only after demand appears &mdash; don't buy servers on a hope.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#9881;&#65039;</span><h2>Operation Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Name the asymmetry between over- and under-building. Idle servers are a cost you can see; the customer who could not get a machine is a cost you cannot.</li>
+              <li>Renting machines &ldquo;on demand&rdquo; means owning them before anyone asks. The product promise is a balance-sheet commitment.</li>
+              <li><strong>(D) is the trap.</strong> A developer who cannot get a machine does not complain. They leave, and they tell other developers.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128187;</span><h2>Tech Lead</h2></div>
+          <p class="q">AWS is being built out of the infrastructure Amazon already runs its store on. The filing describes S3 as <em>&ldquo;a simple web services interface.&rdquo;</em> What do you build and what do you buy?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Documented services behind one interface &mdash; and our own teams use exactly the same one.</li>
+            <li><span class="k">B</span> Build for outside customers first; move internal teams onto it later, once proven.</li>
+            <li><span class="k">C</span> White-label infrastructure from an existing hosting provider, our interface on top.</li>
+            <li><span class="k">D</span> Expose the systems that already run the retail site directly &mdash; fastest way to ship.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128187;</span><h2>Tech Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Ask who is allowed to <em>bypass</em> the interface. If internal teams keep a private door, the public one never becomes a product.</li>
+              <li>One interface used by everyone, including the parent, is the only honest test that the product is finished.</li>
+              <li><strong>(D) is the trap.</strong> An internal system assumes its callers are colleagues. A product cannot assume anything about its callers at all.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128274;</span><h2>Security Lead</h2></div>
+          <p class="q">You will hold <strong>other companies' data</strong> and run <strong>their code</strong> on hardware you also use for Amazon's <strong>own retail business</strong> &mdash; and some customers will be Amazon's <strong>competitors</strong>. Where do you set the bar?</p>
+          <ul class="options">
+            <li><span class="k">A</span> Treat separating customers on shared hardware as the top risk; publish who secures what.</li>
+            <li><span class="k">B</span> Stand up a full compliance and certification programme now, before a serious customer.</li>
+            <li><span class="k">C</span> Cap liability in the contract; customers secure their own data.</li>
+            <li><span class="k">D</span> Defer serious security spend until revenue justifies it.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#128274;</span><h2>Security Lead &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Multi-tenancy is a <em>new, top-severity risk class</em>, not an increment on the old one. You are running competitors' code on the hardware that runs your own store.</li>
+              <li>Publishing who secures what is a product decision as much as a security one &mdash; the boundary has to be legible before an enterprise will cross it.</li>
+              <li><strong>(D) is the trap.</strong> In infrastructure, trust is the product. Deferring it is deferring the product.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#129517;</span><h2>Account Manager</h2></div>
+          <p>You do <strong>not</strong> answer a functional question. After all five leads present their selection and a one-sentence defence:</p>
+          <ul class="options">
+            <li><span class="k">1</span> <strong>Rank</strong> the five problems 1&ndash;5, each used once, with one sentence justifying #1 that contains a figure from the packet.</li>
+            <li><span class="k">2</span> <strong>Weight</strong> them &mdash; 100 points across the five, in blocks of 10, totalling exactly 100.</li>
+          </ul>
+          <p class="q" style="margin-top:0.5em;"><strong>Part 3 &mdash; Name what it needs from its parent.</strong> Money? Permission? Time? Cover from the quarterly review? Say which, and why.</p>
+        </section>
+        <section>
+          <div class="role-h"><span class="emoji">&#129517;</span><h2>Account Manager &mdash; Key Takeaways</h2></div>
+          <div class="reflect">
+            <ul>
+              <li>Ranking is order; weighting is magnitude. A flat split scores <strong>2 of 6</strong> &mdash; the designed penalty for refusing to choose.</li>
+              <li>The strong pattern ranks <strong>funding and the platform above customers and capacity</strong>, weighting those two at about 70 of 100 between them.</li>
+              <li>What the venture most needs is rarely money. It is <strong>protected resources measured against an external benchmark</strong> &mdash; permission, expressed in budget form.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Key takeaway -->
+        <section>
+          <h2>Key takeaway</h2>
+          <div class="box"><p>A corporate venture is killed by the parent's metrics long before the market gets a vote. The CEAI chain asks what the venture needs from the organisation around it &mdash; and the answer is usually permission, not cash.</p></div>
+          <p class="quote" style="margin-top: 20px;">Measured against retail, every new business is a bad retailer.</p>
+        </section>
+
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="236.0 50.0 947.6 810.0" width="948" height="810" font-family="Segoe Print, Comic Sans MS, Bradley Hand, cursive">
+<defs><marker id="ah-LegalEthical" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1e1e1e"/></marker></defs>
+<g data-beat="1"><path d="M 780.00,142.00 L 780.00,588.00" fill="none" stroke="#adb5bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g data-beat="1"><path d="M 422.00,365.00 L 1138.00,365.00" fill="none" stroke="#adb5bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g data-beat="1"><text x="602.50" y="127.67" font-size="17" fill="#4b5563" text-anchor="middle">NO</text></g>
+<g data-beat="1"><text x="957.50" y="127.67" font-size="17" fill="#4b5563" text-anchor="middle">YES</text></g>
+<g data-beat="1"><text x="410.00" y="259.68" font-size="17" fill="#4b5563" text-anchor="end">YES</text></g>
+<g data-beat="1"><text x="410.00" y="479.68" font-size="17" fill="#4b5563" text-anchor="end">NO</text></g>
+<g data-beat="1"><text x="780.00" y="92.22" font-size="19" fill="#1e1e1e" text-anchor="middle">Is it LEGAL?</text></g>
+<g data-beat="1"><text x="410.00" y="92.22" font-size="19" fill="#1e1e1e" text-anchor="end">Is it ETHICAL?</text></g>
+<g data-beat="4"><rect x="430.00" y="150.00" width="345.00" height="210.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="4"><text x="602.50" y="238.43" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="602.50">Ethical but NOT legal</tspan><tspan x="602.50" dy="21.25"></tspan><tspan x="602.50" dy="21.25">civil disobedience</tspan></text></g>
+<g data-beat="2"><rect x="785.00" y="150.00" width="345.00" height="210.00" rx="16.0" ry="16.0" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="2"><text x="957.50" y="238.43" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="957.50">Legal AND ethical</tspan><tspan x="957.50" dy="21.25"></tspan><tspan x="957.50" dy="21.25">a university · a hospital</tspan></text></g>
+<g data-beat="3"><rect x="430.00" y="370.00" width="345.00" height="210.00" rx="16.0" ry="16.0" fill="#fff5f5" stroke="#c92a2a" stroke-width="2"/></g>
+<g data-beat="3"><text x="602.50" y="447.80" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="602.50">Neither</tspan><tspan x="602.50" dy="21.25"></tspan><tspan x="602.50" dy="21.25">selling illegal drugs</tspan><tspan x="602.50" dy="21.25">securities fraud</tspan></text></g>
+<g data-beat="5"><rect x="785.00" y="370.00" width="345.00" height="210.00" rx="16.0" ry="16.0" fill="#fff4e6" stroke="#b45309" stroke-width="2"/></g>
+<g data-beat="5"><text x="957.50" y="437.18" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="957.50">Legal but NOT ethical</tspan><tspan x="957.50" dy="21.25"></tspan><tspan x="957.50" dy="21.25">payday &amp; title loans</tspan><tspan x="957.50" dy="21.25">subscription traps</tspan><tspan x="957.50" dy="21.25">predatory collection</tspan></text></g>
+<g data-beat="6"><rect x="690.00" y="128.00" width="180.00" height="474.00" fill="none" stroke="#adb5bd" stroke-width="2" stroke-dasharray="8 6"/></g>
+<g data-beat="6"><text x="430.00" y="629.30" font-size="17" fill="#4b5563"><tspan x="430.00">THE GREY ZONE — crypto · AI · early eBay · gig work.</tspan><tspan x="430.00" dy="21.25">New businesses routinely operate where the law has not arrived yet.</tspan><tspan x="430.00" dy="21.25">That is not automatically wrong. It is the normal condition of innovation.</tspan></text></g>
+<g data-beat="7"><rect x="430.00" y="710.00" width="700.00" height="96.00" rx="16.0" ry="16.0" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="7"><text x="780.00" y="740.45" font-size="18" fill="#1e1e1e" text-anchor="middle"><tspan x="780.00">1. Could a regulator charge me for this?</tspan><tspan x="780.00" dy="22.50">2. If not — would I be comfortable if the person</tspan><tspan x="780.00" dy="22.50">affected could see exactly what I did?</tspan></text></g>
+<g data-beat="7"><text x="430.00" y="830.40" font-size="16" fill="#4b5563">Answer them separately, and in that order.</text></g>
+</svg>

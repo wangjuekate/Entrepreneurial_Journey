@@ -9,73 +9,311 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; }
+      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; --warn: #b45309; --bad: #b91c1c; }
       .reveal { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: #fff; }
       .reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; letter-spacing: 0; }
       .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.45em; }
-      .reveal h3 { font-size: 0.72em; color: var(--accent); margin-bottom: 0.45em; }
+      .reveal h3 { font-size: 0.72em; color: var(--accent); margin-bottom: 0.35em; }
       .reveal h4 { font-size: 0.58em; color: var(--muted); margin-bottom: 0.4em; }
       .reveal p, .reveal li { font-size: 0.48em; line-height: 1.45; color: var(--ink); }
       .reveal ul { margin: 0.35em 0 0 1.1em; }
       .reveal li { margin-bottom: 0.35em; }
       .title-slide h2 { font-size: 1.35em; }
-      .subtitle { color: var(--muted); text-align: center; }
-      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; text-align: left; }
+      .subtitle { color: var(--muted); text-align: center; font-size: 0.5em; }
+      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; text-align: left; align-items: center; }
+      .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; text-align: left; }
+      .four-col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; text-align: left; }
       .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 18px 22px; text-align: left; }
-      .question-slide li { list-style: none; margin-left: -1em; }
+      .box.warn { border-left-color: var(--warn); }
+      .box.bad { border-left-color: var(--bad); }
+      .card { background: var(--soft); border-top: 5px solid var(--accent); padding: 14px 16px; border-radius: 8px; text-align: left; }
+      .card p { font-size: 0.42em; }
+      .card.warn { border-top-color: var(--warn); }
+      .card.bad { border-top-color: var(--bad); }
       .small { font-size: 0.42em; color: var(--muted); }
+      /* Figures are inlined <svg> (not <img>) so their data-beat groups can be
+         animated. Sized in reveal's 960x700 slide coordinates: vh units do not
+         scale with the deck. Rebuild with build_figures.py + inline_figures.py. */
+      .fig-embed svg { display: block; margin: 0 auto; width: auto; height: auto; max-width: 100%; max-height: 450px; }
+      .fig-cap { font-size: 0.42em; color: var(--muted); margin-top: 0.55em; }
+      .quote { font-size: 0.72em; font-weight: 600; line-height: 1.3; }
+      .quote .em { color: var(--accent); }
+      /* Figure beats cross-fade in place. Deliberately NOT fade-up: a transform on an
+         SVG <g> would slide diagram parts out of register with the arrows pointing at
+         them. Scoped to .fig-embed so reveal's own transform transition still drives
+         fade-up on the prose. */
+      .fig-embed .fragment { transition: opacity 0.35s ease; }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
+
+        <!-- Title -->
         <section class="title-slide">
           <h2>Common Pitfalls and Successes</h2>
-          <p class="subtitle">Week 9: Tuesday, October 27</p>
+          <p class="subtitle">MENT 2234 &middot; Module 6 &middot; Concept Lecture</p>
+          <p class="subtitle">Case: MoviePass / Helios and Matheson &middot; Mental model: the Decision Pattern grid</p>
+          <aside class="notes">Outcomes come from patterns of decisions, not single events. Say that in the first minute so nobody spends the hour hunting for the one fatal mistake.</aside>
         </section>
+
+        <!-- Hook -->
         <section>
-          <h2>Why Ventures Fail or Succeed</h2>
-          <p>Entrepreneurial outcomes usually come from patterns of decisions, not one single event.</p>
-          <p>Common pitfalls include ignoring customers, resisting change, misreading competition, and overcommitting to a fading model.</p>
+          <h2>The student club's big choice</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">An entrepreneurship club gets the chance to host a famous founder on campus. Large budget, venue booked months ahead, the club's reputation on the line.</li>
+                <li class="fragment fade-up">Some members want <strong>several weeks</strong> of information-gathering and stakeholder consultation before deciding.</li>
+                <li class="fragment fade-up">At the same time, a second decision: whether to change the design of the <strong>event poster</strong>.</li>
+                <li class="fragment fade-up">The club runs <strong>the same lengthy process for both</strong>. They miss the deadline to secure the speaker, and spend three weeks on the poster.</li>
+              </ul>
+            </div>
+            <div class="box warn fragment fade-up">
+              <h3>Four questions</h3>
+              <p>Were both decisions equally important?</p>
+              <p>Should they have used the same process?</p>
+              <p>What happens when an organization treats every decision as carrying the same risk?</p>
+              <p><strong>Have you seen a group get slow by overanalyzing small things?</strong></p>
+            </div>
+          </div>
+          <aside class="notes">The last question always lands. Take two or three real answers &mdash; group projects, student government, a job. It makes the grid feel like a diagnosis rather than a framework.</aside>
         </section>
+
+        <!-- Two types -->
         <section>
-          <h2>Common Pitfalls</h2>
-          <ul>
-            <li>Falling in love with the product instead of the problem.</li>
-            <li>Ignoring weak signals from customers or technology shifts.</li>
-            <li>Scaling before the model is validated.</li>
-            <li>Protecting legacy revenue so strongly that new opportunities are missed.</li>
-            <li>Confusing past success with future advantage.</li>
-          </ul>
+          <h2>Not all decisions are the same</h2>
+          <div class="two-col">
+            <div class="box bad fragment fade-up">
+              <h3>Type 1 &mdash; one-way doors</h3>
+              <p>Difficult or impossible to reverse. High impact. Long-term consequences.</p>
+              <p class="small">Acquiring a company &middot; launching a degree program &middot; entering a new market &middot; building a factory</p>
+              <p><strong>Approach:</strong> gather substantial information, consult stakeholders, analyze carefully, move deliberately.</p>
+            </div>
+            <div class="box fragment fade-up">
+              <h3>Type 2 &mdash; two-way doors</h3>
+              <p>Reversible. Experimental. Lower risk.</p>
+              <p class="small">Changing a website design &middot; testing a campaign &middot; adjusting a classroom activity &middot; piloting a process</p>
+              <p><strong>Approach:</strong> decide quickly, experiment, learn from the result, change direction if you need to.</p>
+            </div>
+          </div>
+          <p class="small fragment fade-up">Ask yourself the obvious follow-up: <em>why do organizations so reliably treat Type 2 decisions as if they were Type 1?</em></p>
+          <aside class="notes">Get examples of each from their own experience before revealing the boxes. The disagreements about which is which are exactly the skill being taught.</aside>
         </section>
+
+        <!-- Figure -->
         <section>
-          <h2>Common Success Patterns</h2>
-          <ul>
-            <li>Customer discovery and fast learning.</li>
-            <li>Clear value proposition.</li>
-            <li>Evidence-based decisions.</li>
-            <li>Flexible strategy with disciplined execution.</li>
-            <li>Teams willing to question assumptions.</li>
-          </ul>
+          <h2>The mental model &mdash; the Decision Pattern grid</h2>
+          <div class="fig-embed" role="img" aria-label="A two by two grid of reversibility against consequence, with a rule for each box, the two failure diagonals, and MoviePass placed in the slow-and-careful box it moved through fast"><!--fig:decisionPattern-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="76.0 50.0 1116.0 830.0" width="1116" height="830" font-family="Segoe Print, Comic Sans MS, Bradley Hand, cursive">
+<defs><marker id="ah-decisionPattern" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1e1e1e"/></marker></defs>
+<g data-beat="1"><path d="M 810.00,142.00 L 810.00,558.00" fill="none" stroke="#adb5bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g data-beat="1"><path d="M 452.00,350.00 L 1168.00,350.00" fill="none" stroke="#adb5bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g data-beat="1"><text x="632.50" y="127.67" font-size="17" fill="#4b5563" text-anchor="middle">LOW</text></g>
+<g data-beat="1"><text x="987.50" y="127.67" font-size="17" fill="#4b5563" text-anchor="middle">HIGH</text></g>
+<g data-beat="1"><text x="440.00" y="241.55" font-size="17" fill="#4b5563" text-anchor="end"><tspan x="440.00">EASY</tspan><tspan x="440.00" dy="21.25">(two-way door)</tspan></text></g>
+<g data-beat="1"><text x="440.00" y="446.55" font-size="17" fill="#4b5563" text-anchor="end"><tspan x="440.00">HARD</tspan><tspan x="440.00" dy="21.25">(one-way door)</tspan></text></g>
+<g data-beat="1"><text x="810.00" y="92.22" font-size="19" fill="#1e1e1e" text-anchor="middle">Consequence if wrong</text></g>
+<g data-beat="1"><text x="440.00" y="92.22" font-size="19" fill="#1e1e1e" text-anchor="end">Reversibility</text></g>
+<g data-beat="2"><rect x="460.00" y="150.00" width="345.00" height="195.00" rx="16.0" ry="16.0" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="2"><text x="632.50" y="241.20" font-size="18" fill="#1e1e1e" text-anchor="middle"><tspan x="632.50">Decide fast.</tspan><tspan x="632.50" dy="22.50">Just try it.</tspan></text></g>
+<g data-beat="3"><rect x="815.00" y="150.00" width="345.00" height="195.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="3"><text x="987.50" y="241.20" font-size="18" fill="#1e1e1e" text-anchor="middle"><tspan x="987.50">Decide fast — but</tspan><tspan x="987.50" dy="22.50">gather the evidence first.</tspan></text></g>
+<g data-beat="4"><rect x="460.00" y="355.00" width="345.00" height="195.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="4"><text x="632.50" y="446.20" font-size="18" fill="#1e1e1e" text-anchor="middle"><tspan x="632.50">Decide fast — it is cheap</tspan><tspan x="632.50" dy="22.50">even if it is permanent.</tspan></text></g>
+<g data-beat="5"><rect x="815.00" y="355.00" width="345.00" height="195.00" rx="16.0" ry="16.0" fill="#fff5f5" stroke="#c92a2a" stroke-width="2"/></g>
+<g data-beat="5"><text x="987.50" y="446.20" font-size="18" fill="#1e1e1e" text-anchor="middle"><tspan x="987.50">Decide SLOWLY,</tspan><tspan x="987.50" dy="22.50">and carefully.</tspan></text></g>
+<g data-beat="6"><path d="M 560.00,148.00 L 560.00,102.00 L 260.00,102.00" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-decisionPattern)"/></g>
+<g data-beat="6"><text x="100.00" y="92.40" font-size="16" fill="#b45309"><tspan x="100.00">Treating a TWO-WAY door</tspan><tspan x="100.00" dy="20.00">like a one-way door:</tspan><tspan x="100.00" dy="20.00">three weeks on a poster.</tspan><tspan x="100.00" dy="20.00">Slow, cautious, expensive</tspan><tspan x="100.00" dy="20.00">in chances missed.</tspan></text></g>
+<g data-beat="6"><path d="M 1010.00,552.00 L 1010.00,596.00" fill="none" stroke="#c92a2a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-decisionPattern)"/></g>
+<g data-beat="6"><text x="810.00" y="618.40" font-size="16" fill="#c92a2a" text-anchor="middle"><tspan x="810.00">Treating a ONE-WAY door like a two-way door: moving fast and</tspan><tspan x="810.00" dy="20.00">cheerfully through a door that locks behind you. The expensive one.</tspan></text></g>
+<g data-beat="7"><rect x="460.00" y="668.00" width="700.00" height="118.00" rx="16.0" ry="16.0" fill="#fff5f5" stroke="#c92a2a" stroke-width="2"/></g>
+<g data-beat="7"><text x="810.00" y="699.80" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="810.00">MoviePass, August 2017: $9.95 a month, unlimited.</tspan><tspan x="810.00" dy="21.25">&quot;It&#x27;s just a price — we can change it back.&quot;</tspan><tspan x="810.00" dy="21.25">You cannot. Once a million people anchor on $9.95, raising it</tspan><tspan x="810.00" dy="21.25">returns you to a smaller, angrier company.</tspan></text></g>
+<g data-beat="7"><text x="810.00" y="810.40" font-size="16" fill="#4b5563" text-anchor="middle"><tspan x="810.00">A price cut is a one-way door. Cost of revenue that year: 197%</tspan><tspan x="810.00" dy="20.00">— $2.00 spent for every $1.00 collected. The year before: 72%,</tspan><tspan x="810.00" dy="20.00">and the business made a gross profit.</tspan></text></g>
+</svg>
+<!--/fig:decisionPattern--></div>
+          <p class="fig-cap fragment fade-up" data-fragment-index="99">Two axes: <strong>can I walk this back</strong>, and <strong>what does it cost me if I cannot</strong>. Two answers, four boxes, and a rule for each box.</p>
+          <aside class="notes">Make them draw it. Beats 2-5 one box at a time. Beat 6 is the pair of failure modes &mdash; note they are opposites. Hold beat 7 until someone in the room has guessed which box the price cut was in.</aside>
         </section>
+
+        <!-- The two failure modes -->
         <section>
-          <h2>Kodak Preview</h2>
-          <p>Kodak had deep technical capability and brand strength, but struggled to respond to digital photography.</p>
-          <p>The case asks why successful organizations fail to act on changes they can see.</p>
+          <h2>Two ways to get it wrong, and they are opposites</h2>
+          <div class="two-col">
+            <div class="box warn fragment fade-up">
+              <h3>Treating a two-way door like a one-way door</h3>
+              <p>The club spending three weeks on a poster. Slow, cautious, and expensive in opportunities missed.</p>
+              <p class="small">This is analysis paralysis, consensus obsession, and one-size-fits-all process.</p>
+            </div>
+            <div class="box bad fragment fade-up">
+              <h3>Treating a one-way door like a two-way door</h3>
+              <p>Moving fast and cheerfully through a door that <strong>locks behind you</strong>.</p>
+              <p class="small">This is the expensive one. This is MoviePass.</p>
+            </div>
+          </div>
+          <p class="small fragment fade-up">Notice that the standard advice &mdash; &ldquo;be decisive&rdquo; or &ldquo;do your homework&rdquo; &mdash; is <strong>right half the time and catastrophic the other half</strong>, and the advice never tells you which half you are in. The grid does.</p>
+          <aside class="notes">This is why the model beats the slogan. If a student can only remember one slide from this module, it should be this one.</aside>
         </section>
+
+        <!-- The 70% rule -->
         <section>
-          <h2>Discussion</h2>
-          <ul>
-            <li>Why do successful firms resist change?</li>
-            <li>What signals should make leaders rethink the model?</li>
-            <li>How can entrepreneurs avoid becoming trapped by their own early success?</li>
-          </ul>
+          <h2>How much information is enough?</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">Most decisions should be made with roughly <strong>70% of the information you wish you had</strong>.</li>
+                <li class="fragment fade-up">Waiting for 90% costs you: lost opportunities, slow response, reduced innovation, competitors moving first.</li>
+                <li class="fragment fade-up">But 70% of <em>what</em>? The grid answers that. In a two-way door, 70% is generous. In the bottom-right box, 70% may be reckless.</li>
+              </ul>
+            </div>
+            <div class="box fragment fade-up">
+              <h3>Run it live</h3>
+              <p>A startup has an AI study tool. Testing is promising. Some technical issues are unresolved. Competitors are launching. Three more months would produce more data.</p>
+              <p><strong>A:</strong> wait three months. <strong>B:</strong> launch now and improve on feedback.</p>
+              <p class="small">Which information is <em>essential</em>, and which is merely <em>desirable</em>? When does caution become costly?</p>
+            </div>
+          </div>
+          <aside class="notes">Split the room and vote before discussing. Then ask which box the launch decision is in &mdash; that reframing usually flips several votes.</aside>
+        </section>
+
+        <!-- Disagree and commit -->
+        <section>
+          <h2>Disagree and commit</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">A product team debates a new feature. Half think it is valuable, half think it is too risky. After extensive discussion, <strong>no consensus emerges</strong>.</li>
+                <li class="fragment fade-up">Traditional outcome: the debate continues, more meetings happen, decision velocity collapses.</li>
+                <li class="fragment fade-up">The alternative is one sentence: <strong>&ldquo;I disagree with this decision, but I commit to supporting it.&rdquo;</strong></li>
+              </ul>
+            </div>
+            <div class="box fragment fade-up">
+              <h3>What it buys you</h3>
+              <p>Honest debate preserved. Endless meetings avoided. Movement despite uncertainty. Learning through action rather than argument.</p>
+              <p class="small">Ask: what would happen if <em>every</em> decision required unanimous agreement?</p>
+            </div>
+          </div>
+          <p class="small fragment fade-up">The limit case: sometimes a disagreement is not a difference of opinion but a difference of <strong>goals</strong> &mdash; marketing wants growth, compliance wants risk reduction, and neither accepts the other's assumptions. More meetings will not fix that. <strong>That one escalates.</strong></p>
+          <aside class="notes">Draw out the difference between healthy disagreement and genuine misalignment. Teams that never escalate look harmonious right up until they are not.</aside>
+        </section>
+
+        <!-- Where the tools sit -->
+        <section>
+          <h2>Three tools, and the grid decides which one you may reach for</h2>
+          <div class="three-col">
+            <div class="card fragment fade-up"><h3>The grid</h3><p>Tells you <strong>which box</strong> a decision is in &mdash; and therefore which of the other two tools you are allowed to use.</p></div>
+            <div class="card fragment fade-up"><h3>The 70% rule</h3><p>Tells you <strong>when</strong> you have enough information to stop gathering.</p></div>
+            <div class="card fragment fade-up"><h3>Disagree and commit</h3><p>Tells you <strong>how</strong> to stop debating without pretending you agree.</p></div>
+          </div>
+          <p class="small fragment fade-up">Reach for speed in the bottom-right box and you get MoviePass. Reach for deliberation in the top-left and you get three weeks on a poster.</p>
+          <aside class="notes">This ordering is the thing students most often get backwards. The grid comes first; it is not one tool among three.</aside>
+        </section>
+
+        <!-- MoviePass -->
+        <section>
+          <h2>The case: a price is a one-way door</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">August 2017. MoviePass cuts its price to <strong>$9.95 a month</strong> &mdash; unlimited movies. A million people sign up in four months.</li>
+                <li class="fragment fade-up">It looked like the best two-way door in the world: <em>&ldquo;it's just a price, we can change it back.&rdquo;</em></li>
+                <li class="fragment fade-up"><strong>You cannot change it back.</strong> Once a million people have anchored on $9.95, raising the price does not return you to where you started &mdash; it returns you to a smaller, angrier company.</li>
+              </ul>
+            </div>
+            <div class="box bad fragment fade-up">
+              <h3>What the filing shows</h3>
+              <p>Cost of delivering the service: <strong>197% of revenue</strong> &mdash; about <strong>$2.00 spent for every $1.00 collected</strong>.</p>
+              <p>The year <em>before</em> the price cut, that same ratio was <strong>72%</strong>, and the business made a gross profit.</p>
+              <p class="small">The decision was fast. The door was one-way. The consequence was the company.</p>
+            </div>
+          </div>
+          <aside class="notes">Let them argue about whether a price cut is really irreversible before you give the answer. The anchoring argument is the one that convinces &mdash; not the accounting.</aside>
+        </section>
+
+        <!-- The one question -->
+        <section>
+          <h2>The one question the model makes you ask</h2>
+          <p class="quote fragment fade-up">Before any decision: <span class="em">if this is wrong, can I walk it back &mdash; and what does it cost me if I cannot?</span></p>
+          <div class="box fragment fade-up" style="margin-top: 22px;">
+            <p>That is it. Two answers, four boxes, and a rule for each box.</p>
+            <p>The <strong>70% rule</strong> tells you when you have enough information. <strong>Disagree and commit</strong> tells you how to stop debating. But <strong>the grid tells you which of those tools you are even allowed to reach for.</strong></p>
+          </div>
+          <aside class="notes">Have them run the question on a decision their own team venture faces this week. Most teams find they are being slow about something reversible.</aside>
+        </section>
+
+        <!-- The one line -->
+        <section>
+          <h2>The one line to carry in</h2>
+          <p class="quote fragment fade-up">Ventures do not usually die of one bad decision. They die of a <span class="em">pattern</span> &mdash; the same process applied to every door in the building.</p>
+          <p class="small fragment fade-up">The failure modes to watch for in your own team: decisions made by whoever argues longest rather than whoever has the evidence; the quietest person in the room being right and nobody finding out; and confusing <em>being tired of a debate</em> with <em>having resolved it</em>.</p>
+          <aside class="notes">Name the three team failure modes slowly. Students recognise their own group projects in all three, which is exactly the point.</aside>
+        </section>
+
+        <!-- Bridge -->
+        <section>
+          <h2>Next: the simulation</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">You will open <strong>Helios and Matheson's real annual report for 2017</strong> &mdash; the year of the price cut.</li>
+                <li class="fragment fade-up">Each of you gets one decision and four options.</li>
+                <li class="fragment fade-up"><strong>Before you choose, put your decision in the grid.</strong> Say out loud which box it is in &mdash; then decide at the speed that box allows.</li>
+              </ul>
+            </div>
+            <div class="box warn fragment fade-up">
+              <h3>For the Account Manager</h3>
+              <p>When you rank the five problems at the end, notice that <strong>they are not all in the same box</strong>. Ranking them by size is the obvious mistake.</p>
+            </div>
+          </div>
+          <aside class="notes">Hand out role packets. The Account Manager's ranking is where this module is actually assessed &mdash; make sure they have heard the warning before they start.</aside>
         </section>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script><!--narration-->
+      window.NARRATION = {};
+      <!--/narration--></script>
     <script>
-      Reveal.initialize({ hash: true, slideNumber: true });
+      // Each inlined figure carries data-beat="N" groups written by
+      // build_figures.py. Turn them into reveal fragments so the drawing builds
+      // up one beat at a time, in step with the speaker. Captions sit at index
+      // 99 so they always land last.
+      document.querySelectorAll('.fig-embed [data-beat]').forEach(function (g) {
+        g.classList.add('fragment');
+        g.setAttribute('data-fragment-index', g.getAttribute('data-beat'));
+      });
+
+      // Rehearsal / screen-capture mode. ?auto walks the deck; with no
+      // Narration.md compiled in (window.NARRATION is empty) every beat gets the
+      // 4s default, and ?auto=3500 overrides it with a fixed millisecond
+      // interval. Any key press stops it. To pace it against a real script,
+      // write Narration.md and run Tools/Figure_Convert/build_narration.py.
+      var auto = new URLSearchParams(location.search).get('auto');
+      var fixed = parseInt(auto, 10);
+      var running = auto !== null;
+      document.addEventListener('keydown', function () { running = false; });
+
+      function dwell() {
+        var i = Reveal.getIndices();
+        var key = i.h + ':' + (typeof i.f === 'number' ? i.f : -1);
+        var secs = (window.NARRATION || {})[key];
+        return fixed || (secs ? secs * 1000 : 4000);
+      }
+
+      function tick() {
+        if (!running) return;
+        setTimeout(function () {
+          if (!running) return;
+          var before = JSON.stringify(Reveal.getIndices());
+          Reveal.next();
+          if (JSON.stringify(Reveal.getIndices()) === before) return;  // end of deck
+          tick();
+        }, dwell());
+      }
+
+      Reveal.initialize({ hash: true, slideNumber: true, plugins: [ RevealNotes ] })
+        .then(function () { if (running) tick(); });
     </script>
   </body>
 </html>

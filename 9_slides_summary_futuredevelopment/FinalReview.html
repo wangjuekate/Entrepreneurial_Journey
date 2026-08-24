@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Business Plan and Venture Capital</title>
+    <title>Final Review: What Did We Actually Learn?</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; }
+      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; --warn: #b45309; }
       .reveal { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: #fff; }
       .reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; letter-spacing: 0; }
       .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.45em; }
@@ -24,15 +24,182 @@
       .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 18px 22px; text-align: left; }
       .question-slide li { list-style: none; margin-left: -1em; }
       .small { font-size: 0.42em; color: var(--muted); }
+      /* case cards */
+      .four-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; text-align: left; margin-top: 0.4em; }
+      .card { background: var(--soft); border-top: 4px solid var(--accent); border-radius: 6px; padding: 12px 14px; }
+      .card h4 { color: var(--accent); font-size: 0.46em; font-weight: 700; margin: 0 0 0.3em 0; }
+      .card p { font-size: 0.38em; line-height: 1.35; color: var(--muted); margin: 0; }
+      .card.warn { border-top-color: var(--warn); }
+      .card.warn h4 { color: var(--warn); }
+      /* the loop */
+      .loop { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 0.6em 0; }
+      .loop .step { background: var(--soft); border: 2px solid var(--accent); border-radius: 999px; padding: 14px 26px; font-size: 0.5em; font-weight: 700; color: var(--accent); }
+      .loop .arrow { color: var(--muted); font-size: 0.5em; }
+      .loop .step.key { background: var(--accent); color: #fff; }
+      /* venture hub */
+      .hub { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; align-items: center; text-align: center; margin-top: 0.5em; }
+      .hub div { font-size: 0.4em; color: var(--muted); line-height: 1.35; }
+      .hub .center { background: var(--accent); color: #fff; font-size: 0.5em; font-weight: 700; border-radius: 8px; padding: 22px 10px; }
+      /* photo placeholder */
+      .fig { border: 2px dashed var(--line); border-radius: 12px; background: var(--soft);
+             display: flex; flex-direction: column; align-items: center; justify-content: center;
+             gap: 8px; padding: 20px; min-height: 300px; text-align: center; }
+      .fig .fig-icon { font-size: 1.4em; color: var(--accent); }
+      .fig .fig-label { font-size: 0.38em; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
+      .fig .fig-desc { font-size: 0.38em; max-width: 40ch; line-height: 1.4; color: var(--muted); }
+      .closing { font-size: 0.95em; font-weight: 700; line-height: 1.3; }
+      table { font-size: 0.44em; }
+      .reveal table th { color: var(--accent); }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section class="title-slide">
 
-          
-      Bonus point of participating in a simulation of real workplace implementation. 
+        <!-- Title -->
+        <section class="title-slide">
+          <h2>What did we actually learn?</h2>
+          <p class="subtitle">MENT 2234 &middot; The Entrepreneurial Journey &middot; Final Review</p>
+          <p class="subtitle">Week 12: Thursday, November 19</p>
+        </section>
+
+        <!-- The loop -->
+        <section>
+          <h2>The semester in one picture</h2>
+          <div class="loop">
+            <span class="step">Observe</span><span class="arrow">&rarr;</span>
+            <span class="step">Decide</span><span class="arrow">&rarr;</span>
+            <span class="step">Act</span><span class="arrow">&rarr;</span>
+            <span class="step">Learn</span><span class="arrow">&rarr;</span>
+            <span class="step key">Adapt</span>
+          </div>
+          <p class="small">Adapt is the step people skip. Skipping it is the difference between ten years of experience and one year of experience repeated ten times.</p>
+          <aside class="notes">Walk each step out loud. Observe: you never get the full picture. Decide: at some point reading stops and you commit. Act: it touches the world. Learn: the world answers, usually not how you predicted. Adapt: you change the next decision.</aside>
+        </section>
+
+        <!-- What the simulations were for -->
+        <section>
+          <h2>What the simulations were for</h2>
+          <div class="box">
+            <p>The simulation was never about getting the &ldquo;right&rdquo; answer.</p>
+            <p>It was about making a decision, seeing the consequence, and improving the next decision.</p>
+          </div>
+          <p>That is exactly what the reflections asked for: actions taken, lessons learned, improvements for next time.</p>
+          <p class="small">Thirty percent of your grade was you practicing Learn and Adapt in writing.</p>
+        </section>
+
+        <!-- Cases -->
+        <section>
+          <h2>The cases you argued about</h2>
+          <div class="four-col">
+            <div class="card fragment fade-up" data-fragment-index="1"><h4>1 &middot; WeWork</h4><p>Sweets and bitterness &mdash; what ambition costs.</p></div>
+            <div class="card fragment fade-up" data-fragment-index="1"><h4>2 &middot; Theranos</h4><p>Ethical and legal standards &mdash; where the line is.</p></div>
+            <div class="card fragment fade-up" data-fragment-index="1"><h4>3 &middot; AWS</h4><p>Corporate entrepreneurs &mdash; building new inside old.</p></div>
+            <div class="card fragment fade-up" data-fragment-index="1"><h4>4 &middot; TOMS Shoes</h4><p>Social entrepreneurs &mdash; mission and margin.</p></div>
+            <div class="card warn fragment fade-up" data-fragment-index="2"><h4>5 &middot; Netflix</h4><p>Creative thinking under uncertainty.</p></div>
+            <div class="card warn fragment fade-up" data-fragment-index="2"><h4>6 &middot; MoviePass</h4><p>Pitfalls and successes &mdash; one-way and two-way doors.</p></div>
+            <div class="card warn fragment fade-up" data-fragment-index="2"><h4>7 &middot; Disney &ndash; Pixar</h4><p>Acquiring enterprises &mdash; what you are really buying.</p></div>
+            <div class="card warn fragment fade-up" data-fragment-index="2"><h4>8 &middot; Shake Shack</h4><p>Franchising &mdash; how much control to give away.</p></div>
+            <div class="card warn fragment fade-up" data-fragment-index="2"><h4>9 &middot; SkillSimm</h4><p>Business plan and venture capital &mdash; making the case.</p></div>
+          </div>
+          <aside class="notes">Two waves: the first half of the semester, then the second. Ask which of the nine they changed their mind about between the simulation and the reflection.</aside>
+        </section>
+
+        <!-- Not nine separate companies -->
+        <section>
+          <h2>You didn't learn nine separate companies</h2>
+          <div class="hub">
+            <div>Is this opportunity real?</div>
+            <div>Who is it for?</div>
+            <div>What does it cost me?</div>
+            <div>Where do I build it?</div>
+            <div class="center">YOUR<br>VENTURE</div>
+            <div>What am I willing to do?</div>
+            <div>How do I grow it?</div>
+            <div>Who do I answer to?</div>
+            <div>What can I take back?</div>
+          </div>
+          <p class="small">WeWork and Theranos are the same question at different volumes. AWS and Shake Shack are the same question from opposite ends.</p>
+        </section>
+
+        <section>
+          <h2>Entrepreneurship is not knowing one answer</h2>
+          <div class="box">
+            <p>It is making interconnected decisions under uncertainty &mdash; and being honest about which ones you can take back.</p>
+          </div>
+        </section>
+
+        <!-- Grading design -->
+        <section>
+          <h2>What you were graded on</h2>
+          <table>
+            <tr><th>Component</th><th>Weight</th><th>What it was really testing</th></tr>
+            <tr><td>Pre-class blog commenting</td><td>10%</td><td>Forming an opinion before you knew the ending</td></tr>
+            <tr><td>In-class participation</td><td>20%</td><td>Defending a position to people who disagreed</td></tr>
+            <tr><td>Simulation reflections</td><td>30%</td><td>Closing the loop &mdash; Learn and Adapt, in writing</td></tr>
+            <tr><td>Team project</td><td>40%</td><td>Register, midterm video pitch, final video pitch</td></tr>
+          </table>
+          <p class="small">The team project is 40% for a reason. Every venture you studied succeeded or failed on the same thing your team did.</p>
+        </section>
+
+        <!-- Memory -->
+        <section>
+          <h2>Memory of this class</h2>
+          <div class="fig">
+            <div class="fig-icon"><i class="fa-solid fa-camera-retro"></i></div>
+            <div class="fig-label">Class photos</div>
+            <div class="fig-desc">Drop the semester photos in here before the session.</div>
+          </div>
+        </section>
+
+        <!-- Next chapter: classes -->
+        <section>
+          <h2>The next chapter: more classes</h2>
+          <ul>
+            <li><strong>MENT 3235 &mdash; Venture Planning, Management, and Growth.</strong> The direct sequel. Where this course asked <em>should this exist</em>, 3235 asks <em>how do you build and run it</em>: market research, operations, IP, legal structure, pricing, budgeting, and a real venture website and pitch. Open to business majors, junior standing or higher.</li>
+            <li><strong>MENT 4900.</strong> The broader strategic management view for students who want to run the whole board rather than one venture.</li>
+          </ul>
+        </section>
+
+        <!-- Next chapter: programs and funding -->
+        <section>
+          <h2>The next chapter: fellowships and funding</h2>
+          <div class="two-col">
+            <div class="box">
+              <h3>Programs at UConn</h3>
+              <ul>
+                <li>Innovation Quest (IQ)</li>
+                <li>Technology Incubation Program (TIP)</li>
+                <li>Werth Institute for Entrepreneurship &amp; Innovation</li>
+                <li>Entrepreneurship &amp; Innovation Consortium</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h3>Funding, honestly</h3>
+              <p>At your stage the money that matters is small, non-dilutive, and attached to a program: competitions, grants, and fellowships.</p>
+              <p>Nobody writes a term sheet off a class project. What they fund is evidence.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Calendar -->
+        <section>
+          <h2>What is left on the calendar</h2>
+          <ul>
+            <li><strong>December 1&ndash;8.</strong> Study weeks and study day. Finish the final video pitch and report.</li>
+            <li><strong>Thursday, December 10.</strong> Team presentation video review.</li>
+            <li><strong>Tuesday, December 15.</strong> Finalize your website and submit for review.</li>
+            <li><strong>Thursday, December 17.</strong> Final grade posting and review.</li>
+          </ul>
+          <p class="small">Late work is penalized 10% per day. More than one week late is not accepted.</p>
+        </section>
+
+        <!-- Close -->
+        <section>
+          <p class="closing">The semester ends.<br>The experiment doesn't.</p>
+          <aside class="notes">You will forget the details of these nine companies. Keep the loop, and keep the habit of asking: is this a door I can walk back through?</aside>
+        </section>
+
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>

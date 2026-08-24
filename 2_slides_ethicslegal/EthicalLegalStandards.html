@@ -9,72 +9,310 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; }
+      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; --warn: #b45309; --bad: #b91c1c; }
       .reveal { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: #fff; }
       .reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; letter-spacing: 0; }
       .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.45em; }
-      .reveal h3 { font-size: 0.72em; color: var(--accent); margin-bottom: 0.45em; }
+      .reveal h3 { font-size: 0.72em; color: var(--accent); margin-bottom: 0.35em; }
       .reveal h4 { font-size: 0.58em; color: var(--muted); margin-bottom: 0.4em; }
       .reveal p, .reveal li { font-size: 0.48em; line-height: 1.45; color: var(--ink); }
       .reveal ul { margin: 0.35em 0 0 1.1em; }
       .reveal li { margin-bottom: 0.35em; }
       .title-slide h2 { font-size: 1.35em; }
-      .subtitle { color: var(--muted); text-align: center; }
-      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; text-align: left; }
+      .subtitle { color: var(--muted); text-align: center; font-size: 0.5em; }
+      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; text-align: left; align-items: center; }
+      .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; text-align: left; }
+      .four-col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; text-align: left; }
       .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 18px 22px; text-align: left; }
-      .question-slide li { list-style: none; margin-left: -1em; }
+      .box.warn { border-left-color: var(--warn); }
+      .box.bad { border-left-color: var(--bad); }
+      .card { background: var(--soft); border-top: 5px solid var(--accent); padding: 14px 16px; border-radius: 8px; text-align: left; }
+      .card p { font-size: 0.42em; }
+      .card.warn { border-top-color: var(--warn); }
+      .card.bad { border-top-color: var(--bad); }
       .small { font-size: 0.42em; color: var(--muted); }
+      /* Figures are inlined <svg> (not <img>) so their data-beat groups can be
+         animated. Sized in reveal's 960x700 slide coordinates: vh units do not
+         scale with the deck. Rebuild with build_figures.py + inline_figures.py. */
+      .fig-embed svg { display: block; margin: 0 auto; width: auto; height: auto; max-width: 100%; max-height: 450px; }
+      .fig-cap { font-size: 0.42em; color: var(--muted); margin-top: 0.55em; }
+      .quote { font-size: 0.72em; font-weight: 600; line-height: 1.3; }
+      .quote .em { color: var(--accent); }
+      /* Figure beats cross-fade in place. Deliberately NOT fade-up: a transform on an
+         SVG <g> would slide diagram parts out of register with the arrows pointing at
+         them. Scoped to .fig-embed so reveal's own transform transition still drives
+         fade-up on the prose. */
+      .fig-embed .fragment { transition: opacity 0.35s ease; }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
+
+        <!-- Title -->
         <section class="title-slide">
           <h2>Ethical and Legal Standards for Entrepreneurs</h2>
+          <p class="subtitle">MENT 2234 &middot; Module 2 &middot; Concept Lecture</p>
+          <p class="subtitle">Case: Theranos &middot; Mental model: the Legal &times; Ethical grid</p>
+          <aside class="notes">Do not open with Theranos. Open with the fictional tracker, so they commit to a judgement before they know they are judging a famous company.</aside>
         </section>
+
+        <!-- Hook: the fictional case -->
         <section>
-          <h2>Why Ethics Matter Early</h2>
-          <p>New ventures operate with ambiguity, speed, and pressure. Those conditions make ethical shortcuts tempting.</p>
-          <p>Ethics and legal compliance are not add-ons; they shape trust, fundraising, hiring, customer safety, and survival.</p>
+          <h2>The miracle fitness tracker</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">A founder claims her wristband detects dehydration, blood sugar, stress and early illness with <strong>95% accuracy</strong>.</li>
+                <li class="fragment fade-up">Investors are excited. Employees work long hours. Customers pre-order.</li>
+                <li class="fragment fade-up">In testing, engineers find many predictions are <strong>unreliable</strong>. The founder does not say so publicly &mdash; she believes it will eventually work.</li>
+                <li class="fragment fade-up">The company keeps advertising the product as fully proven, and starts selling it.</li>
+              </ul>
+            </div>
+            <div class="box warn fragment fade-up">
+              <h3>Three questions, before anyone says a company name</h3>
+              <p>What concerns you here?</p>
+              <p>Who is affected by that decision?</p>
+              <p><strong>At what point does optimism become dishonesty?</strong></p>
+            </div>
+          </div>
+          <aside class="notes">Take answers to the third question and write them on the board. You will come back to those exact words when the grid appears. Nobody has said "Theranos" yet &mdash; keep it that way.</aside>
         </section>
+
+        <!-- Two definitions -->
         <section>
-          <h2>Core Standards</h2>
-          <ul>
-            <li>Truthful claims about products, technology, traction, and results.</li>
-            <li>Responsible treatment of customers, employees, partners, and investors.</li>
-            <li>Accurate records, financial reporting, and governance.</li>
-            <li>Respect for privacy, safety, intellectual property, and contracts.</li>
-            <li>Clear accountability when evidence contradicts the story.</li>
-          </ul>
+          <h2>Two words we use as if they were one</h2>
+          <div class="two-col">
+            <div class="box fragment fade-up">
+              <h3>Legal</h3>
+              <p>Actions that comply with applicable laws, regulations, contracts and formal rules established by society.</p>
+              <p class="small">Answered by a regulator or a court. <strong>Knowable in advance</strong>, by asking a lawyer.</p>
+            </div>
+            <div class="box fragment fade-up">
+              <h3>Ethical</h3>
+              <p>Actions that are morally responsible, fair, honest and respectful of stakeholders &mdash; whether or not any law requires them.</p>
+              <p class="small">Answered by the people affected. <strong>Not always knowable in advance.</strong></p>
+            </div>
+          </div>
+          <p class="small fragment fade-up">Different answers, different judges, different penalties. Legality establishes the <strong>minimum</strong>. Ethics usually demands more.</p>
+          <aside class="notes">Run this as the two open questions from the plan: "what is legal" and "what is ethical", brainstormed on the board first, then reveal each box as the summary of what they said.</aside>
         </section>
+
+        <!-- Why students conflate them -->
         <section>
-          <h2>Entrepreneurial Pressure Points</h2>
-          <ul>
-            <li>Promising more than the product can deliver.</li>
-            <li>Confusing confidence with proof.</li>
-            <li>Hiding negative data from stakeholders.</li>
-            <li>Rewarding loyalty over expertise.</li>
-            <li>Treating regulation as an obstacle instead of a responsibility.</li>
-          </ul>
+          <h2>Most of you arrive believing these are the same question</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">Payday lending is <strong>legal</strong> in much of the United States, and few people would call it fair.</li>
+                <li class="fragment fade-up">Recalling a product <em>before</em> a regulator makes you is required by <strong>nobody</strong>, and is obviously right.</li>
+                <li class="fragment fade-up">Both facts are ordinary. Both are invisible if you only ask one of the two questions.</li>
+              </ul>
+            </div>
+            <div class="box fragment fade-up">
+              <h3>Getting each one wrong costs differently</h3>
+              <p><strong>Legal, wrong:</strong> you lose the company, and sometimes your liberty.</p>
+              <p><strong>Ethical, wrong:</strong> you lose trust, staff and customers &mdash; slowly, and then all at once.</p>
+            </div>
+          </div>
+          <aside class="notes">Ask: why do organisations focus on legality and neglect ethics? The honest answer &mdash; legality has a deadline and a bill, ethics does not &mdash; is worth drawing out of them rather than saying.</aside>
         </section>
+
+        <!-- Figure -->
         <section>
-          <h2>Theranos Preview</h2>
-          <p>Theranos is a useful case because it connects founder charisma, investor pressure, secrecy, product claims, patient risk, and governance failures.</p>
-          <p>The question is not only what went wrong, but what warning signs leaders should have acted on earlier.</p>
+          <h2>The mental model &mdash; the Legal &times; Ethical grid</h2>
+          <div class="fig-embed" role="img" aria-label="A two by two grid of legal against ethical with four quadrants, the grey zone running down the middle, and the two questions to ask in order"><!--fig:LegalEthical-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="236.0 50.0 947.6 810.0" width="948" height="810" font-family="Segoe Print, Comic Sans MS, Bradley Hand, cursive">
+<defs><marker id="ah-LegalEthical" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1e1e1e"/></marker></defs>
+<g data-beat="1"><path d="M 780.00,142.00 L 780.00,588.00" fill="none" stroke="#adb5bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g data-beat="1"><path d="M 422.00,365.00 L 1138.00,365.00" fill="none" stroke="#adb5bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g data-beat="1"><text x="602.50" y="127.67" font-size="17" fill="#4b5563" text-anchor="middle">NO</text></g>
+<g data-beat="1"><text x="957.50" y="127.67" font-size="17" fill="#4b5563" text-anchor="middle">YES</text></g>
+<g data-beat="1"><text x="410.00" y="259.68" font-size="17" fill="#4b5563" text-anchor="end">YES</text></g>
+<g data-beat="1"><text x="410.00" y="479.68" font-size="17" fill="#4b5563" text-anchor="end">NO</text></g>
+<g data-beat="1"><text x="780.00" y="92.22" font-size="19" fill="#1e1e1e" text-anchor="middle">Is it LEGAL?</text></g>
+<g data-beat="1"><text x="410.00" y="92.22" font-size="19" fill="#1e1e1e" text-anchor="end">Is it ETHICAL?</text></g>
+<g data-beat="4"><rect x="430.00" y="150.00" width="345.00" height="210.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="4"><text x="602.50" y="238.43" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="602.50">Ethical but NOT legal</tspan><tspan x="602.50" dy="21.25"></tspan><tspan x="602.50" dy="21.25">civil disobedience</tspan></text></g>
+<g data-beat="2"><rect x="785.00" y="150.00" width="345.00" height="210.00" rx="16.0" ry="16.0" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="2"><text x="957.50" y="238.43" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="957.50">Legal AND ethical</tspan><tspan x="957.50" dy="21.25"></tspan><tspan x="957.50" dy="21.25">a university · a hospital</tspan></text></g>
+<g data-beat="3"><rect x="430.00" y="370.00" width="345.00" height="210.00" rx="16.0" ry="16.0" fill="#fff5f5" stroke="#c92a2a" stroke-width="2"/></g>
+<g data-beat="3"><text x="602.50" y="447.80" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="602.50">Neither</tspan><tspan x="602.50" dy="21.25"></tspan><tspan x="602.50" dy="21.25">selling illegal drugs</tspan><tspan x="602.50" dy="21.25">securities fraud</tspan></text></g>
+<g data-beat="5"><rect x="785.00" y="370.00" width="345.00" height="210.00" rx="16.0" ry="16.0" fill="#fff4e6" stroke="#b45309" stroke-width="2"/></g>
+<g data-beat="5"><text x="957.50" y="437.18" font-size="17" fill="#1e1e1e" text-anchor="middle"><tspan x="957.50">Legal but NOT ethical</tspan><tspan x="957.50" dy="21.25"></tspan><tspan x="957.50" dy="21.25">payday &amp; title loans</tspan><tspan x="957.50" dy="21.25">subscription traps</tspan><tspan x="957.50" dy="21.25">predatory collection</tspan></text></g>
+<g data-beat="6"><rect x="690.00" y="128.00" width="180.00" height="474.00" fill="none" stroke="#adb5bd" stroke-width="2" stroke-dasharray="8 6"/></g>
+<g data-beat="6"><text x="430.00" y="629.30" font-size="17" fill="#4b5563"><tspan x="430.00">THE GREY ZONE — crypto · AI · early eBay · gig work.</tspan><tspan x="430.00" dy="21.25">New businesses routinely operate where the law has not arrived yet.</tspan><tspan x="430.00" dy="21.25">That is not automatically wrong. It is the normal condition of innovation.</tspan></text></g>
+<g data-beat="7"><rect x="430.00" y="710.00" width="700.00" height="96.00" rx="16.0" ry="16.0" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="7"><text x="780.00" y="740.45" font-size="18" fill="#1e1e1e" text-anchor="middle"><tspan x="780.00">1. Could a regulator charge me for this?</tspan><tspan x="780.00" dy="22.50">2. If not — would I be comfortable if the person</tspan><tspan x="780.00" dy="22.50">affected could see exactly what I did?</tspan></text></g>
+<g data-beat="7"><text x="430.00" y="830.40" font-size="16" fill="#4b5563">Answer them separately, and in that order.</text></g>
+</svg>
+<!--/fig:LegalEthical--></div>
+          <p class="fig-cap fragment fade-up" data-fragment-index="99">The Venn diagram is easier to <em>use</em> as a 2&times;2. Two questions, four boxes &mdash; and a column down the middle where most new businesses actually live.</p>
+          <aside class="notes">Make them draw it. Beat 2 the easy box, beat 3 the obvious one, beat 4 civil disobedience, and slow right down on beat 5 &mdash; legal-but-not-ethical is the box they will end up in, not the bottom-left one.</aside>
         </section>
+
+        <!-- The four boxes with examples -->
         <section>
-          <h2>Discussion</h2>
-          <ul>
-            <li>When is optimism useful, and when does it become deception?</li>
-            <li>Who inside a startup should have power to stop unsafe decisions?</li>
-            <li>What evidence should be required before making claims to customers?</li>
-          </ul>
+          <h2>Four boxes, with real occupants</h2>
+          <div class="four-col">
+            <div class="card fragment fade-up" data-fragment-index="1"><h4>Legal AND ethical</h4><p>Paying by labour law. Reporting finances accurately. Protecting patient data. Honouring contracts.</p></div>
+            <div class="card fragment fade-up" data-fragment-index="1"><h4>Ethical, not legally required</h4><p>Extra support for a struggling employee. Being transparent about product limits. Recalling before a regulator makes you.</p></div>
+            <div class="card warn fragment fade-up" data-fragment-index="2"><h4>Legal but NOT ethical</h4><p>Pricing that exploits desperate customers. Confusing terms. Trading on what the customer cannot know.</p></div>
+            <div class="card bad fragment fade-up" data-fragment-index="2"><h4>Neither</h4><p>Selling illegal drugs. Securities fraud. Here the ethical debate is already over.</p></div>
+          </div>
+          <p class="small fragment fade-up">The fine-print case: lawyers conclude the advertising complies, because every disclosure technically appears somewhere. Has the company acted legally? Yes. Ethically?</p>
+          <aside class="notes">The fine-print scenario is the one to argue about &mdash; it is the box most of them will actually be standing in within five years of graduating.</aside>
+        </section>
+
+        <!-- The grey zone -->
+        <section>
+          <h2>The grey zone is where entrepreneurs actually live</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">Crypto. AI. Early eBay. Gig work. New businesses routinely operate where the law has not arrived yet.</li>
+                <li class="fragment fade-up"><strong>That is not automatically wrong.</strong> It is the normal condition of innovation.</li>
+                <li class="fragment fade-up">The eBay of 1996 had no settled law about liability for what strangers sold each other. Someone had to go first.</li>
+              </ul>
+            </div>
+            <div class="box warn fragment fade-up">
+              <h3>The grey zone has exactly one rule</h3>
+              <p>In the grey zone, the <strong>ethical question is the only one you have</strong>. Use it &mdash; because when the law finally arrives, it will be written by people looking back at what you did.</p>
+            </div>
+          </div>
+          <aside class="notes">Head off the cynical reading: this is not permission to do whatever is not yet illegal. The last sentence is the whole point &mdash; the law is written retrospectively, by people reading your emails.</aside>
+        </section>
+
+        <!-- Theranos preview -->
+        <section>
+          <h2>The case: Theranos</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">The promise: hundreds of medical tests from <strong>a few drops of blood</strong>.</li>
+                <li class="fragment fade-up">It attracted major investors, an influential board, enormous media attention and partnerships with healthcare organisations.</li>
+                <li class="fragment fade-up">Investigations eventually showed the technology did not perform as claimed, and that many tests ran on <strong>ordinary commercial equipment</strong>.</li>
+              </ul>
+            </div>
+            <div class="box fragment fade-up">
+              <h3>The useful question</h3>
+              <p>Not only <em>what went wrong</em> &mdash; but <strong>which warning signs should have been acted on, and by whom</strong>.</p>
+              <p class="small">Founder charisma, investor pressure, secrecy, product claims, patient risk, governance. All six are in this case at once.</p>
+            </div>
+          </div>
+          <aside class="notes">Point back at the fitness-tracker slide. They already made the judgement; now the company has a name and a share price.</aside>
+        </section>
+
+        <!-- Where Theranos sits -->
+        <section>
+          <h2>Where Theranos actually sits &mdash; all four boxes</h2>
+          <div class="four-col">
+            <div class="card fragment fade-up"><h4>Legal and ethical</h4><p>Keeping the analyzer's design confidential. <strong>Every</strong> company protects a design.</p></div>
+            <div class="card warn fragment fade-up"><h4>Legal, not ethical</h4><p>Being slow to admit test-accuracy problems internally. Ugly &mdash; not yet criminal.</p></div>
+            <div class="card warn fragment fade-up"><h4>The grey zone tipping over</h4><p>Not telling the retail partner which machines ran the tests. Contract, consent, patient safety.</p></div>
+            <div class="card bad fragment fade-up"><h4>Neither</h4><p>Telling investors 2014 revenue was <strong>$108 million</strong> when it was <strong>a little over $100,000</strong>. This is what the SEC charged.</p></div>
+          </div>
+          <p class="small fragment fade-up">Everything above that last card is a judgement call. That last card is not. Students who put the whole company in one box learn nothing from it.</p>
+          <aside class="notes">This is the slide that separates a good reflection from a lazy one. Insist they can name which box each decision is in, and why the boxes differ.</aside>
+        </section>
+
+        <!-- The one question -->
+        <section>
+          <h2>The one question the model makes you ask</h2>
+          <div class="two-col">
+            <div class="box fragment fade-up">
+              <h3>Ask both, separately, in this order</h3>
+              <p><strong>1. Could a regulator charge me for this?</strong></p>
+              <p><strong>2. If not &mdash; would I be comfortable if the person affected could see exactly what I did?</strong></p>
+            </div>
+            <div>
+              <ul>
+                <li class="fragment fade-up">Yes to (1) and the ethical debate is <strong>over</strong>. You have a legal problem, not a moral one.</li>
+                <li class="fragment fade-up">No to (1) and no to (2) puts you in the bottom-right box &mdash; where reputations go to die quietly.</li>
+                <li class="fragment fade-up">The common failure is answering the ethical question and telling yourself you have answered the legal one.</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">Make them say the order out loud. Reversing it is exactly how smart people talk themselves into the bottom-right box.</aside>
+        </section>
+
+        <!-- The one line -->
+        <section>
+          <h2>The one line to carry in</h2>
+          <p class="quote fragment fade-up">Legality is the <span class="em">floor</span>, not the standard. And in the grey zone there is no floor &mdash; only the answer you will have to give later.</p>
+          <div class="box fragment fade-up" style="margin-top: 22px;">
+            <p>Truthful claims about product, technology, traction and results. Accurate records. Clear accountability when the evidence contradicts the story you have been telling.</p>
+            <p><strong>Optimism becomes dishonesty at the moment you have evidence and keep selling the old story anyway.</strong></p>
+          </div>
+          <aside class="notes">Close the loop on the opening question. That last sentence is the answer to "at what point does optimism become dishonesty" &mdash; compare it with what they said at the start.</aside>
+        </section>
+
+        <!-- Bridge -->
+        <section>
+          <h2>Next: the simulation</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">You will work from the <strong>SEC's own complaints</strong> against Theranos, Holmes and Balwani. Not a documentary, not a book &mdash; the filings.</li>
+                <li class="fragment fade-up">It is <strong>2014</strong>. Nobody has been charged with anything yet.</li>
+                <li class="fragment fade-up">Each of you gets one decision and four options, and every option is one somebody at that company actually considered.</li>
+                <li class="fragment fade-up">Before you choose, <strong>say which box you are in</strong>.</li>
+              </ul>
+            </div>
+            <div class="box warn fragment fade-up">
+              <h3>A caution to carry through the hour</h3>
+              <p>These are <em>allegations</em> from civil complaints. Argue them as allegations &mdash; that is also how you will have to argue in any real room where this matters.</p>
+            </div>
+          </div>
+          <aside class="notes">Hand out the role packets here. Restate the 2014 framing twice; the whole exercise collapses if they reason from what they already know happened.</aside>
         </section>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script><!--narration-->
+      window.NARRATION = {};
+      <!--/narration--></script>
     <script>
-      Reveal.initialize({ hash: true, slideNumber: true });
+      // Each inlined figure carries data-beat="N" groups written by
+      // build_figures.py. Turn them into reveal fragments so the drawing builds
+      // up one beat at a time, in step with the speaker. Captions sit at index
+      // 99 so they always land last.
+      document.querySelectorAll('.fig-embed [data-beat]').forEach(function (g) {
+        g.classList.add('fragment');
+        g.setAttribute('data-fragment-index', g.getAttribute('data-beat'));
+      });
+
+      // Rehearsal / screen-capture mode. ?auto walks the deck; with no
+      // Narration.md compiled in (window.NARRATION is empty) every beat gets the
+      // 4s default, and ?auto=3500 overrides it with a fixed millisecond
+      // interval. Any key press stops it. To pace it against a real script,
+      // write Narration.md and run Tools/Figure_Convert/build_narration.py.
+      var auto = new URLSearchParams(location.search).get('auto');
+      var fixed = parseInt(auto, 10);
+      var running = auto !== null;
+      document.addEventListener('keydown', function () { running = false; });
+
+      function dwell() {
+        var i = Reveal.getIndices();
+        var key = i.h + ':' + (typeof i.f === 'number' ? i.f : -1);
+        var secs = (window.NARRATION || {})[key];
+        return fixed || (secs ? secs * 1000 : 4000);
+      }
+
+      function tick() {
+        if (!running) return;
+        setTimeout(function () {
+          if (!running) return;
+          var before = JSON.stringify(Reveal.getIndices());
+          Reveal.next();
+          if (JSON.stringify(Reveal.getIndices()) === before) return;  // end of deck
+          tick();
+        }, dwell());
+      }
+
+      Reveal.initialize({ hash: true, slideNumber: true, plugins: [ RevealNotes ] })
+        .then(function () { if (running) tick(); });
     </script>
   </body>
 </html>

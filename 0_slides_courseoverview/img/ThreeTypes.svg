@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="116.0 6.0 1088.0 707.2" width="1088" height="707" font-family="Segoe Print, Comic Sans MS, Bradley Hand, cursive">
+<defs><marker id="ah-ThreeTypes" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1e1e1e"/></marker></defs>
+<g data-beat="1"><path d="M 140.00,620.00 L 1180.00,620.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-ThreeTypes)"/></g>
+<g data-beat="1"><path d="M 140.00,620.00 L 140.00,110.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ah-ThreeTypes)"/></g>
+<g data-beat="1"><text x="800.00" y="649.30" font-size="17" fill="#4b5563">Capital + risk you take on</text></g>
+<g data-beat="1"><text x="158.00" y="127.30" font-size="17" fill="#4b5563">Ceiling — how big it can get</text></g>
+<g data-beat="2"><ellipse cx="340.00" cy="520.00" rx="120.00" ry="70.00" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="2"><text x="340.00" y="501.48" font-size="19" fill="#1e1e1e" text-anchor="middle"><tspan x="340.00">Side hustle</tspan><tspan x="340.00" dy="23.75">~$1M</tspan><tspan x="340.00" dy="23.75">keep the day job</tspan></text></g>
+<g data-beat="3"><ellipse cx="640.00" cy="390.00" rx="130.00" ry="80.00" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="3"><text x="640.00" y="371.48" font-size="19" fill="#1e1e1e" text-anchor="middle"><tspan x="640.00">Small business</tspan><tspan x="640.00" dy="23.75">private operation</tspan><tspan x="640.00" dy="23.75">owner cash flow</tspan></text></g>
+<g data-beat="4"><ellipse cx="960.00" cy="240.00" rx="150.00" ry="95.00" fill="#fff4e6" stroke="#b45309" stroke-width="2"/></g>
+<g data-beat="4"><text x="960.00" y="221.47" font-size="19" fill="#1e1e1e" text-anchor="middle"><tspan x="960.00">Startup</tspan><tspan x="960.00" dy="23.75">venture scale</tspan><tspan x="960.00" dy="23.75">highest risk</tspan></text></g>
+<g data-beat="5"><path d="M 300.00,545.00 L 1030.00,215.00" fill="none" stroke="#adb5bd" stroke-width="2" stroke-dasharray="8 6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g data-beat="5"><rect x="380.00" y="30.00" width="620.00" height="62.00" rx="15.5" ry="15.5" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="5"><text x="690.00" y="67.60" font-size="24" fill="#1e1e1e" text-anchor="middle">All three can make you wealthy.</text></g>
+<g data-beat="5"><text x="140.00" y="683.30" font-size="17" fill="#4b5563">Different rides, same skill set — this course trains you for all three.</text></g>
+</svg>

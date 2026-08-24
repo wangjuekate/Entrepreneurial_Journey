@@ -9,72 +9,320 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; }
+      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; --warn: #b45309; --bad: #b91c1c; }
       .reveal { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: #fff; }
       .reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; letter-spacing: 0; }
       .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.45em; }
-      .reveal h3 { font-size: 0.72em; color: var(--accent); margin-bottom: 0.45em; }
+      .reveal h3 { font-size: 0.72em; color: var(--accent); margin-bottom: 0.35em; }
       .reveal h4 { font-size: 0.58em; color: var(--muted); margin-bottom: 0.4em; }
       .reveal p, .reveal li { font-size: 0.48em; line-height: 1.45; color: var(--ink); }
       .reveal ul { margin: 0.35em 0 0 1.1em; }
       .reveal li { margin-bottom: 0.35em; }
       .title-slide h2 { font-size: 1.35em; }
-      .subtitle { color: var(--muted); text-align: center; }
-      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; text-align: left; }
+      .subtitle { color: var(--muted); text-align: center; font-size: 0.5em; }
+      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; text-align: left; align-items: center; }
+      .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; text-align: left; }
+      .four-col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; text-align: left; }
       .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 18px 22px; text-align: left; }
-      .question-slide li { list-style: none; margin-left: -1em; }
+      .box.warn { border-left-color: var(--warn); }
+      .box.bad { border-left-color: var(--bad); }
+      .card { background: var(--soft); border-top: 5px solid var(--accent); padding: 14px 16px; border-radius: 8px; text-align: left; }
+      .card p { font-size: 0.42em; }
+      .card.warn { border-top-color: var(--warn); }
+      .card.bad { border-top-color: var(--bad); }
       .small { font-size: 0.42em; color: var(--muted); }
+      /* Figures are inlined <svg> (not <img>) so their data-beat groups can be
+         animated. Sized in reveal's 960x700 slide coordinates: vh units do not
+         scale with the deck. Rebuild with build_figures.py + inline_figures.py. */
+      .fig-embed svg { display: block; margin: 0 auto; width: auto; height: auto; max-width: 100%; max-height: 450px; }
+      .fig-cap { font-size: 0.42em; color: var(--muted); margin-top: 0.55em; }
+      .quote { font-size: 0.72em; font-weight: 600; line-height: 1.3; }
+      .quote .em { color: var(--accent); }
+      /* Figure beats cross-fade in place. Deliberately NOT fade-up: a transform on an
+         SVG <g> would slide diagram parts out of register with the arrows pointing at
+         them. Scoped to .fig-embed so reveal's own transform transition still drives
+         fade-up on the prose. */
+      .fig-embed .fragment { transition: opacity 0.35s ease; }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
+
+        <!-- Title -->
         <section class="title-slide">
           <h2>Acquiring Enterprises</h2>
-          <p class="subtitle">Week 10: Tuesday, November 3</p>
+          <p class="subtitle">MENT 2234 &middot; Module 7 &middot; Concept Lecture</p>
+          <p class="subtitle">Case: Disney and Pixar &middot; Mental model: the allocation, then the ladder</p>
+          <aside class="notes">Buying a company is most of the entrepreneurship that actually happens and almost none of the entrepreneurship anyone talks about. Open on that gap.</aside>
         </section>
+
+        <!-- Hook -->
         <section>
-          <h2>Why Companies Acquire</h2>
-          <p>Acquisitions can help firms access talent, technology, intellectual property, customers, brands, or new capabilities.</p>
-          <p>The challenge is not only buying a company, but preserving the value that made it worth buying.</p>
+          <h2>There are two ways to become an entrepreneur</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">The one you have all imagined: the garage, the whiteboard, the ramen, the moment it works. Very romantic. Very slow. <strong>Most of them die.</strong></li>
+                <li class="fragment fade-up">The one nobody puts in a film: <strong>you buy one that already exists</strong>.</li>
+                <li class="fragment fade-up">Somebody already did the garage part. Found the customers, hired the staff, survived the first three years. And now they are sixty-three and their kids want to be dentists.</li>
+              </ul>
+            </div>
+            <div class="box fragment fade-up">
+              <h3>Today</h3>
+              <p>The one thing that decides whether buying a company makes you rich or ruins you.</p>
+              <p>Shown through the most successful acquisition in modern business history &mdash; which, at the time, a lot of very serious people thought was insane.</p>
+            </div>
+          </div>
+          <aside class="notes">Ask how many have considered buying a business rather than starting one. Usually nobody. That silence is the reason this module exists.</aside>
         </section>
+
+        <!-- The car wash -->
         <section>
-          <h2>Acquisition Motives</h2>
-          <ul>
-            <li>Capability acquisition: get skills or technology faster than building internally.</li>
-            <li>Market access: reach customers, channels, or geographies.</li>
-            <li>Strategic renewal: enter a new growth path.</li>
-            <li>Defensive move: prevent competitors from gaining an asset.</li>
-          </ul>
+          <h2>The car wash &mdash; why buy instead of build</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">A friend looked at starting a business for two years. Business plans, spreadsheets, the lot. Then he <strong>bought a car wash</strong> from a man who had run it for thirty years.</li>
+                <li class="fragment fade-up">Day one he had customers, cash flow, four employees who knew what they were doing, and a building. Day one of a startup you have a laptop and a feeling.</li>
+                <li class="fragment fade-up"><strong>What you buy:</strong> time &mdash; you skip finding out whether anyone wants this. <strong>What you pay:</strong> the price &mdash; the seller already knows it works, so you pay for the certainty.</li>
+              </ul>
+            </div>
+            <div class="box fragment fade-up">
+              <h3>The trade, in one line</h3>
+              <p>A startup founder pays with <strong>years and risk</strong>. An acquisition entrepreneur pays with <strong>money and debt</strong>.</p>
+              <p>The founder might build something worth a billion. The acquirer probably never has that upside &mdash; but <strong>they get paid on Friday</strong>.</p>
+            </div>
+          </div>
+          <p class="small fragment fade-up">The car wash had a building, four bays and a pressure-washing rig. <strong>If everybody quit tomorrow, he would still own something.</strong> Hold on to that sentence &mdash; it is the entire lecture.</p>
+          <aside class="notes">Say the last sentence and then stop. Everything in the next forty minutes is a consequence of it.</aside>
         </section>
+
+        <!-- The price splits three ways -->
         <section>
-          <h2>Integration Risks</h2>
-          <ul>
-            <li>Destroying culture or creative autonomy.</li>
-            <li>Overpaying because of excitement or fear.</li>
-            <li>Losing key employees after acquisition.</li>
-            <li>Forcing the acquired company into incompatible processes.</li>
-            <li>Failing to define post-acquisition decision rights.</li>
-          </ul>
+          <h2>What you are actually paying for</h2>
+          <p class="quote fragment fade-up">Price = <span class="em">standalone value</span> + <span class="em">synergy</span> &minus; <span class="em">integration cost</span></p>
+          <div class="three-col" style="margin-top: 22px;">
+            <div class="card fragment fade-up"><h3>Standalone value</h3><p>What the business is worth carrying on exactly as it is.</p></div>
+            <div class="card fragment fade-up"><h3>Synergy</h3><p>What it is worth extra <em>because you own it</em>. Their product through your sales team. Your factory making their thing.</p></div>
+            <div class="card bad fragment fade-up"><h3>Integration cost</h3><p>What it costs to combine them. Systems, redundancies, and about <strong>eighteen months where nobody does their actual job</strong>.</p></div>
+          </div>
+          <p class="small fragment fade-up">In every deal anyone regrets, buyers are <strong>wildly optimistic about the second number and completely silent about the third</strong>. Synergy gets a slide and a dollar sign. Integration cost gets no slide &mdash; because admitting it means admitting you will spend a year making both companies worse.</p>
+          <aside class="notes">Ask why integration cost never gets a slide. The honest answer &mdash; because whoever puts it up is arguing against their own deal &mdash; is worth drawing out.</aside>
         </section>
+
+        <!-- Figure -->
         <section>
-          <h2>Disney and Pixar Preview</h2>
-          <p>Disney's acquisition of Pixar is a case about buying creative capability while protecting the culture that produced it.</p>
-          <p>The question is how to integrate without erasing the acquired firm's advantage.</p>
+          <h2>The mental model &mdash; the allocation, then the ladder</h2>
+          <div class="fig-embed" role="img" aria-label="The purchase price split into cash, hard assets and goodwill, and the three integration rungs of absorb, symbiosis and preserve that the split picks for you"><!--fig:Acquisition_Value-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="36.0 16.0 1128.0 856.0" width="1128" height="856" font-family="Segoe Print, Comic Sans MS, Bradley Hand, cursive">
+<defs><marker id="ah-Acquisition_Value" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1e1e1e"/></marker></defs>
+<g data-beat="1"><text x="60.00" y="57.10" font-size="19" fill="#0f766e">PART ONE — read what you bought</text></g>
+<g data-beat="1"><rect x="60.00" y="86.00" width="560.00" height="66.00" rx="16.0" ry="16.0" fill="#fff4e6" stroke="#b45309" stroke-width="2"/></g>
+<g data-beat="1"><text x="340.00" y="125.05" font-size="22" fill="#1e1e1e" text-anchor="middle">THE PRICE YOU PAID</text></g>
+<g data-beat="1"><text x="340.00" y="175.40" font-size="16" fill="#4b5563" text-anchor="middle">the accountants&#x27; autopsy: assign it to everything they can identify</text></g>
+<g data-beat="2"><rect x="60.00" y="196.00" width="560.00" height="64.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="2"><text x="340.00" y="233.22" font-size="19" fill="#1e1e1e" text-anchor="middle">cash and investments</text></g>
+<g data-beat="2"><text x="634.00" y="232.68" font-size="17" fill="#4b5563">you bought back your own money</text></g>
+<g data-beat="3"><rect x="60.00" y="268.00" width="560.00" height="92.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="3"><text x="340.00" y="307.35" font-size="19" fill="#1e1e1e" text-anchor="middle"><tspan x="340.00">buildings, equipment,</tspan><tspan x="340.00" dy="23.75">patents, film costs</tspan></text></g>
+<g data-beat="3"><text x="634.00" y="318.68" font-size="17" fill="#4b5563">still yours if everyone quits</text></g>
+<g data-beat="4"><rect x="60.00" y="368.00" width="560.00" height="84.00" rx="16.0" ry="16.0" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="4"><text x="340.00" y="415.23" font-size="19" fill="#1e1e1e" text-anchor="middle">GOODWILL</text></g>
+<g data-beat="4"><text x="634.00" y="414.68" font-size="17" fill="#4b5563">walks out of the car park at 6pm</text></g>
+<g data-beat="4"><text x="340.00" y="483.68" font-size="17" fill="#b45309" text-anchor="middle">Look at that ratio and you know what kind of deal you just did.</text></g>
+<g data-beat="5"><text x="60.00" y="543.10" font-size="19" fill="#0f766e">PART TWO — the ladder tells you what to do about it</text></g>
+<g data-beat="5"><rect x="60.00" y="572.00" width="340.00" height="140.00" rx="16.0" ry="16.0" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/></g>
+<g data-beat="5"><text x="230.00" y="606.40" font-size="16" fill="#1e1e1e" text-anchor="middle"><tspan x="230.00">ABSORB</tspan><tspan x="230.00" dy="20.00"></tspan><tspan x="230.00" dy="20.00">value is in assets and scale</tspan><tspan x="230.00" dy="20.00">fold it in, cut duplication,</tspan><tspan x="230.00" dy="20.00">bank the savings</tspan></text></g>
+<g data-beat="5"><rect x="430.00" y="572.00" width="340.00" height="140.00" rx="16.0" ry="16.0" fill="#fff4e6" stroke="#b45309" stroke-width="2"/></g>
+<g data-beat="5"><text x="600.00" y="606.40" font-size="16" fill="#1e1e1e" text-anchor="middle"><tspan x="600.00">SYMBIOSIS</tspan><tspan x="600.00" dy="20.00"></tspan><tspan x="600.00" dy="20.00">value is in both</tspan><tspan x="600.00" dy="20.00">keep them separate, share</tspan><tspan x="600.00" dy="20.00">deliberately, both directions</tspan></text></g>
+<g data-beat="5"><rect x="800.00" y="572.00" width="340.00" height="140.00" rx="16.0" ry="16.0" fill="#e6fffa" stroke="#0f766e" stroke-width="2"/></g>
+<g data-beat="5"><text x="970.00" y="606.40" font-size="16" fill="#1e1e1e" text-anchor="middle"><tspan x="970.00">PRESERVE</tspan><tspan x="970.00" dy="20.00"></tspan><tspan x="970.00" dy="20.00">value is in people and</tspan><tspan x="970.00" dy="20.00">how they work</tspan><tspan x="970.00" dy="20.00">change as little as possible</tspan></text></g>
+<g data-beat="5"><path d="M 60.00,728.00 L 1140.00,728.00" fill="none" stroke="#4b5563" stroke-width="2" stroke-dasharray="8 6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g data-beat="5"><text x="230.00" y="753.67" font-size="17" fill="#4b5563" text-anchor="middle">LOW goodwill  →  absorb</text></g>
+<g data-beat="5"><text x="970.00" y="753.67" font-size="17" fill="#4b5563" text-anchor="middle">HIGH goodwill  →  preserve</text></g>
+<g data-beat="6"><rect x="60.00" y="782.00" width="1080.00" height="66.00" rx="16.0" ry="16.0" fill="#fff5f5" stroke="#c92a2a" stroke-width="2"/></g>
+<g data-beat="6"><text x="600.00" y="808.35" font-size="19" fill="#1e1e1e" text-anchor="middle"><tspan x="600.00">The deals where the synergies look biggest are exactly the deals</tspan><tspan x="600.00" dy="23.75">where capturing them destroys what you bought.</tspan></text></g>
+</svg>
+<!--/fig:Acquisition_Value--></div>
+          <p class="fig-cap fragment fade-up" data-fragment-index="99">First read what you bought. Then the ratio tells you what to do about it &mdash; <strong>you do not get to choose the rung</strong>.</p>
+          <aside class="notes">Beats 2-4 walk the allocation from the least interesting slice to the most. Land beat 4 hard: goodwill walks out of the car park at 6pm. Beat 6 is the sentence they will need on Thursday.</aside>
         </section>
+
+        <!-- Goodwill -->
         <section>
-          <h2>Discussion</h2>
-          <ul>
-            <li>What should an acquirer preserve?</li>
-            <li>What should an acquirer integrate?</li>
-            <li>How do leaders know whether an acquisition is worth the price?</li>
-          </ul>
+          <h2>Goodwill is a beautiful word for an uncomfortable admission</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">After a deal closes, accountants perform an autopsy called the <strong>purchase price allocation</strong>. They assign the price to everything they can identify: cash, buildings, equipment, patents, inventory.</li>
+                <li class="fragment fade-up">Whatever is left over &mdash; the part they cannot assign to anything you can point at &mdash; gets a name.</li>
+                <li class="fragment fade-up"><strong>Goodwill.</strong> It means: <em>we paid this much more than the sum of the things we can list</em>.</li>
+              </ul>
+            </div>
+            <div class="box fragment fade-up">
+              <h3>What is actually in it</h3>
+              <p>The reputation. The customer habits. The way people work together. The fact that this team keeps producing.</p>
+              <p class="small">Look at the ratio and you know what kind of deal you just did.</p>
+            </div>
+          </div>
+          <aside class="notes">Contrast with the car wash: almost no goodwill. Fire everyone and you still own a car wash. That comparison does more work than any definition.</aside>
+        </section>
+
+        <!-- The ladder -->
+        <section>
+          <h2>Three rungs &mdash; and the allocation picks one for you</h2>
+          <div class="three-col">
+            <div class="card fragment fade-up"><h3>Absorb</h3><p><strong>When the value is in</strong> assets and scale.</p><p>Fold it in, cut duplication, bank the savings.</p></div>
+            <div class="card warn fragment fade-up"><h3>Symbiosis</h3><p><strong>When the value is in</strong> both.</p><p>Keep them separate, share deliberately, in both directions.</p></div>
+            <div class="card fragment fade-up"><h3>Preserve</h3><p><strong>When the value is in</strong> people and how they work.</p><p>Change as little as possible.</p></div>
+          </div>
+          <p class="quote fragment fade-up" style="margin-top: 22px;">Low goodwill &rarr; <span class="em">absorb</span>. High goodwill &rarr; <span class="em">preserve</span>.</p>
+          <p class="small fragment fade-up">And here is the cruelty: <strong>the deals where the synergies look biggest are exactly the deals where capturing them destroys what you bought.</strong></p>
+          <aside class="notes">These are not preferences. Say that twice. Students want to argue integration style as a matter of leadership philosophy; the allocation has already decided it.</aside>
+        </section>
+
+        <!-- The case -->
+        <section>
+          <h2>January 2006 &mdash; $7.5 billion for a building in Emeryville</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">Disney announces it will buy <strong>Pixar</strong> for <strong>$7.5 billion</strong> in stock.</li>
+                <li class="fragment fade-up">Pixar is a few hundred people in a building in California. No theme parks. No television networks. Some computers, some office furniture, and a rendering system.</li>
+                <li class="fragment fade-up">Now do the autopsy, from Disney's own annual report.</li>
+              </ul>
+            </div>
+            <div class="box warn fragment fade-up">
+              <h3>Where the $7.5 billion went</h3>
+              <p>Pixar's own cash and investments &mdash; <strong>~$1.1B</strong></p>
+              <p>Film costs, buildings, equipment, intangibles &mdash; <strong>~$1.0B</strong></p>
+              <p><strong>Goodwill &mdash; ~$5.5B</strong></p>
+              <p class="small">Goodwill on Disney's balance sheet went from $16,974M to $22,505M essentially overnight.</p>
+            </div>
+          </div>
+          <p class="small fragment fade-up"><strong>Seventy-three percent.</strong> Disney paid roughly a billion dollars for a studio and five and a half billion for <strong>a group of people and the way they worked together</strong>.</p>
+          <aside class="notes">Let the 73% sit in silence. Then ask which rung. It is not a close call, and it is not a judgement call &mdash; the allocation decided it before anyone had a meeting about culture.</aside>
+        </section>
+
+        <!-- The $26M footnote -->
+        <section>
+          <h2>The most expensive sentence in the footnotes</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">Disney had already started making its <strong>own sequels</strong> to Pixar films. In progress. Real money spent.</li>
+                <li class="fragment fade-up">After the deal closed they <strong>abandoned them</strong> and took a <strong>$26 million impairment</strong>.</li>
+                <li class="fragment fade-up">They wrote off their own work rather than overrule the studio they had just bought.</li>
+              </ul>
+            </div>
+            <div class="box fragment fade-up">
+              <h3>Twenty-six million dollars to say one thing</h3>
+              <p><strong>Your judgement outranks our sunk cost.</strong></p>
+              <p class="small">You will not find that on a slide about culture. You find it in a footnote in the accounts &mdash; and for the film-makers deciding whether to stay another decade, that footnote was worth more than any retention bonus anyone could have written.</p>
+            </div>
+          </div>
+          <aside class="notes">This is the slide students remember. Preserve is not a mood; it is something a company pays cash for, and here is the receipt.</aside>
+        </section>
+
+        <!-- Why it is hard -->
+        <section>
+          <h2>Why this is hard, honestly</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">You have just spent $7.5 billion. Your board approved it on a presentation <em>with synergies in it</em>. Your shareholders want to know what they got.</li>
+                <li class="fragment fade-up">Every instinct in a large organisation &mdash; every process, every incentive, every reporting line &mdash; pulls toward <strong>absorb</strong>. Standardise. Consolidate. Report upward. Capture the savings.</li>
+                <li class="fragment fade-up">So the person arguing for preserve is arguing for spending seven and a half billion dollars and then <strong>deliberately not managing it</strong>. In a meeting. Out loud. To the people who just wrote the cheque.</li>
+              </ul>
+            </div>
+            <div class="box bad fragment fade-up">
+              <h3>Why most acquisitions fail</h3>
+              <p>Not because buyers overpay &mdash; they do, and that is survivable.</p>
+              <p>They fail because the buyer <strong>integrates the way buyers integrate</strong>, and dismantles the exact arrangement of people and habits that made the thing worth buying.</p>
+              <p><strong>The value is not destroyed by a bad decision. It is destroyed by a series of completely reasonable ones.</strong></p>
+            </div>
+          </div>
+          <aside class="notes">Change tone and level with them. The last line is the one to slow down on &mdash; it is also the general lesson of the whole course.</aside>
+        </section>
+
+        <!-- The one line -->
+        <section>
+          <h2>The one line to carry in</h2>
+          <p class="quote fragment fade-up">Assets arrive on the balance sheet. <span class="em">Value leaves through the car park.</span></p>
+          <div class="box fragment fade-up" style="margin-top: 22px;">
+            <p>You cannot know what to do with a company you have bought until you know what you actually bought.</p>
+            <p>So before the integration plan, before the org chart, before the synergy slide &mdash; <strong>read the allocation</strong>. How much of this price is sitting in things that would still be here if everyone resigned on Monday?</p>
+            <p><strong>When the goodwill is small, integrate hard. When the goodwill is 73% of the price, the most valuable thing you can do is leave it alone.</strong></p>
+          </div>
+          <aside class="notes">This is the photograph slide. Then hand out the role pages.</aside>
+        </section>
+
+        <!-- Bridge -->
+        <section>
+          <h2>Next: the simulation</h2>
+          <div class="two-col">
+            <div>
+              <ul>
+                <li class="fragment fade-up">You will open <strong>Disney's real books</strong> for the year the Pixar deal closed. Each of you gets one decision and four options.</li>
+                <li class="fragment fade-up">Before each decision, <strong>say which rung of the ladder it sits on</strong> &mdash; and why the allocation puts it there.</li>
+              </ul>
+            </div>
+            <div class="box bad fragment fade-up">
+              <h3>One rule</h3>
+              <p><strong>You know this deal worked and nobody in 2006 did.</strong></p>
+              <p>At the time it was a very large cheque for a company with no factory. Defend every choice from what is actually in the filing.</p>
+            </div>
+          </div>
+          <aside class="notes">Same no-hindsight rule as Netflix. It matters more here, because the outcome is so famous that students will reason backwards from it without noticing.</aside>
         </section>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script><!--narration-->
+      window.NARRATION = {};
+      <!--/narration--></script>
     <script>
-      Reveal.initialize({ hash: true, slideNumber: true });
+      // Each inlined figure carries data-beat="N" groups written by
+      // build_figures.py. Turn them into reveal fragments so the drawing builds
+      // up one beat at a time, in step with the speaker. Captions sit at index
+      // 99 so they always land last.
+      document.querySelectorAll('.fig-embed [data-beat]').forEach(function (g) {
+        g.classList.add('fragment');
+        g.setAttribute('data-fragment-index', g.getAttribute('data-beat'));
+      });
+
+      // Rehearsal / screen-capture mode. ?auto walks the deck; with no
+      // Narration.md compiled in (window.NARRATION is empty) every beat gets the
+      // 4s default, and ?auto=3500 overrides it with a fixed millisecond
+      // interval. Any key press stops it. To pace it against a real script,
+      // write Narration.md and run Tools/Figure_Convert/build_narration.py.
+      var auto = new URLSearchParams(location.search).get('auto');
+      var fixed = parseInt(auto, 10);
+      var running = auto !== null;
+      document.addEventListener('keydown', function () { running = false; });
+
+      function dwell() {
+        var i = Reveal.getIndices();
+        var key = i.h + ':' + (typeof i.f === 'number' ? i.f : -1);
+        var secs = (window.NARRATION || {})[key];
+        return fixed || (secs ? secs * 1000 : 4000);
+      }
+
+      function tick() {
+        if (!running) return;
+        setTimeout(function () {
+          if (!running) return;
+          var before = JSON.stringify(Reveal.getIndices());
+          Reveal.next();
+          if (JSON.stringify(Reveal.getIndices()) === before) return;  // end of deck
+          tick();
+        }, dwell());
+      }
+
+      Reveal.initialize({ hash: true, slideNumber: true, plugins: [ RevealNotes ] })
+        .then(function () { if (running) tick(); });
     </script>
   </body>
 </html>
