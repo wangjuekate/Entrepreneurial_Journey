@@ -27,7 +27,6 @@ This course addresses three important areas related to new ventures:
 
 ## Enrollment Requirements
 
-- Open only to business majors
 - Not open to students who have passed or are currently taking MENT 3234 or BADM 3234
 
 ***
@@ -95,11 +94,11 @@ By the end of this course, students will be able to:
 
 ### 1. Individual Assignments (60%)
 
-**Pre-class Blog Commenting (10%)**
+**Pre-class Blog Commenting (20%)**
 - Students post a 50-100 word comment with a clear opinion and supporting evidence.
 
 
-**In-class Participation (20%)**
+**In-class Participation (10%)**
 - Active participation in discussions
 - Case study analyses
 - In-class exercises and workshops
@@ -209,7 +208,7 @@ Throughout the course, students will develop their creative capabilities through
 
 ### Weekly Time Commitment
 
-Expect to dedicate **25-26 hours per week** to this 5-week course, including weekends. This aligns with UConn's credit hour policy. See the [Online Student website](https://onlinestudent.uconn.edu/) for more information.
+Expect to dedicate **25-26 hours per week** to this course. This aligns with UConn's credit hour policy. See the [Online Student website](https://onlinestudent.uconn.edu/) for more information.
 
 ### Student Authentication and Verification
 
@@ -255,11 +254,9 @@ HuskyCT/Blackboard meets WCAG 2.0 and Section 508 accessibility standards.
 | HuskyCT/Blackboard | [Accessibility Statement](https://help.blackboard.com/Accessibility) | [Privacy Policy](https://www.blackboard.com/privacy-statement) |
 | Adobe Acrobat Reader | [Accessibility Statement](https://www.adobe.com/accessibility.html) | [Privacy Policy](https://www.adobe.com/privacy.html) |
 | Google Apps | [Accessibility](https://www.google.com/accessibility/) | [Privacy Policy](https://edu.google.com/why-google/privacy-security/) |
-| Microsoft Office & Skype | [Accessibility Statement](https://www.microsoft.com/accessibility) | [Privacy Statement](https://privacy.microsoft.com/) |
+| Microsoft Office | [Accessibility Statement](https://www.microsoft.com/accessibility) | [Privacy Statement](https://privacy.microsoft.com/) |
+| SkillSimm | [Accessibility Statement](https://www.skillsimm.com/terms) | [Privacy Statement](https://www.skillsimm.com/privacy) |
 
-**Internet Requirements:** Minimum 1.5 Mbps (4 Mbps or higher recommended)
-
-> **Note:** This course has NOT been designed for use with mobile devices.
 
 ### Technical Support
 
@@ -294,10 +291,4 @@ Students will evaluate instruction using University standard procedures administ
 - Entrepreneurship podcasts and videos
 - Industry reports and market research databases
 
-***
 
-**Welcome to The Entrepreneurial Journey! I look forward to working with you this semester as you develop the skills, knowledge, and mindset to create and grow innovative ventures.**
-
-***
-
-*Last Updated: August 2026*
