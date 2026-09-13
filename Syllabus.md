@@ -77,8 +77,8 @@ By the end of this course, students will be able to:
 | 10 | Thursday, November 5 | Simulation Reflection | |
 | 11 | Tuesday, November 10 | Franchising Enterprises | Shake Shack |
 | 11 | Thursday, November 12 | Simulation Reflection | |
-| 12 | Tuesday, November 17 | Business Plan and Venture Capital | SkillSimm incubated |
-| 12 | Thursday, November 19 | Simulation Reflection | |
+| 12 | Tuesday, November 17 | Course Summarizing | |
+| 12 | Thursday, November 19 | Study Day | |
 | 13 | Tuesday, November 24 | Thanksgiving | |
 | 13 | Thursday, November 26 | Thanksgiving | |
 | 14 | Tuesday, December 1 | Study Week | |
