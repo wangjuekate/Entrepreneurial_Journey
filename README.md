@@ -81,3 +81,5 @@
 ## Simulation Access
 
 - [Simulation Platform](https://app.skillsimm.com/?expired=1)
+
+- [ManagementDepartment](./ImportanceManagement/Importance_Management.html)
