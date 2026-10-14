@@ -103,13 +103,13 @@
       "customData": {
         "beat": 1
       },
-      "text": "Pre-class\nblog comment \u00b7 10%",
+      "text": "Pre-class\nblog comment · 10%",
       "fontSize": 18,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "Pre-class\nblog comment \u00b7 10%",
+      "originalText": "Pre-class\nblog comment · 10%",
       "lineHeight": 1.25,
       "baseline": 16
     },
@@ -219,13 +219,13 @@
       "customData": {
         "beat": 2
       },
-      "text": "In-class\nsimulation \u00b7 20%",
+      "text": "In-class\nparticipation · 10%",
       "fontSize": 18,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "In-class\nsimulation \u00b7 20%",
+      "originalText": "In-class\nparticipation · 10%",
       "lineHeight": 1.25,
       "baseline": 16
     },
@@ -335,13 +335,13 @@
       "customData": {
         "beat": 3
       },
-      "text": "After-class\nreflection \u00b7 30%",
+      "text": "After-class\nreflection · 40%",
       "fontSize": 18,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "After-class\nreflection \u00b7 30%",
+      "originalText": "After-class\nreflection · 40%",
       "lineHeight": 1.25,
       "baseline": 16
     },
@@ -490,13 +490,13 @@
       "customData": {
         "beat": 4
       },
-      "text": "Individual work \u2014 60%",
+      "text": "Individual work — 60%",
       "fontSize": 24,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "Individual work \u2014 60%",
+      "originalText": "Individual work — 60%",
       "lineHeight": 1.25,
       "baseline": 22
     },
@@ -600,13 +600,13 @@
       "customData": {
         "beat": 5
       },
-      "text": "Team Register \u00b7 5%\nWeek 1",
+      "text": "Team setup · ungraded\nWeek 1",
       "fontSize": 18,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "Team Register \u00b7 5%\nWeek 1",
+      "originalText": "Team setup · ungraded\nWeek 1",
       "lineHeight": 1.25,
       "baseline": 16
     },
@@ -716,13 +716,13 @@
       "customData": {
         "beat": 5
       },
-      "text": "Midterm pitch + report \u00b7 15%\nWeek 7",
+      "text": "Midterm pitch + report · 20%\nWeek 7",
       "fontSize": 18,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "Midterm pitch + report \u00b7 15%\nWeek 7",
+      "originalText": "Midterm pitch + report · 20%\nWeek 7",
       "lineHeight": 1.25,
       "baseline": 16
     },
@@ -832,13 +832,13 @@
       "customData": {
         "beat": 5
       },
-      "text": "Final pitch + report \u00b7 20%\nWeek 15 + Finals",
+      "text": "Final pitch + report · 20%\nWeek 15 + Finals",
       "fontSize": 18,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "Final pitch + report \u00b7 20%\nWeek 15 + Finals",
+      "originalText": "Final pitch + report · 20%\nWeek 15 + Finals",
       "lineHeight": 1.25,
       "baseline": 16
     },
@@ -903,13 +903,13 @@
       "customData": {
         "beat": 6
       },
-      "text": "Team venture \u2014 40%",
+      "text": "Team venture — 40%",
       "fontSize": 24,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "Team venture \u2014 40%",
+      "originalText": "Team venture — 40%",
       "lineHeight": 1.25,
       "baseline": 22
     },
@@ -1070,13 +1070,13 @@
       "customData": {
         "beat": 7
       },
-      "text": "Your grade \u2014 100%",
+      "text": "Your grade — 100%",
       "fontSize": 24,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "Your grade \u2014 100%",
+      "originalText": "Your grade — 100%",
       "lineHeight": 1.25,
       "baseline": 22
     },
@@ -1186,13 +1186,13 @@
       "customData": {
         "beat": 8
       },
-      "text": "Miss a week? Up to 3 exemptions \u2014 interview a classmate\nabout the simulation and submit the reflection.",
+      "text": "Miss a week? Up to 3 exemptions — interview a classmate\nabout the simulation and submit the reflection.",
       "fontSize": 17,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "Miss a week? Up to 3 exemptions \u2014 interview a classmate\nabout the simulation and submit the reflection.",
+      "originalText": "Miss a week? Up to 3 exemptions — interview a classmate\nabout the simulation and submit the reflection.",
       "lineHeight": 1.25,
       "baseline": 15
     }

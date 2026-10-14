@@ -68,13 +68,13 @@
       "customData": {
         "beat": 2
       },
-      "text": "Modules 1-4  \u00b7  Weeks 2-5",
+      "text": "Modules 1-4  ·  Weeks 2-5",
       "fontSize": 18,
       "fontFamily": 1,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "Modules 1-4  \u00b7  Weeks 2-5",
+      "originalText": "Modules 1-4  ·  Weeks 2-5",
       "lineHeight": 1.25,
       "baseline": 16
     },
@@ -547,13 +547,13 @@
       "customData": {
         "beat": 4
       },
-      "text": "Modules 5-8  \u00b7  Weeks 8-11",
+      "text": "Modules 5-8  ·  Weeks 8-11",
       "fontSize": 18,
       "fontFamily": 1,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "Modules 5-8  \u00b7  Weeks 8-11",
+      "originalText": "Modules 5-8  ·  Weeks 8-11",
       "lineHeight": 1.25,
       "baseline": 16
     },
@@ -1058,13 +1058,13 @@
       "customData": {
         "beat": 3
       },
-      "text": "Week 7 \u2014 Midterm team presentation video + report (15%)",
+      "text": "Week 7 — Midterm team presentation video + report (20%)",
       "fontSize": 20,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "Week 7 \u2014 Midterm team presentation video + report (15%)",
+      "originalText": "Week 7 — Midterm team presentation video + report (20%)",
       "lineHeight": 1.25,
       "baseline": 18
     },
@@ -1129,13 +1129,13 @@
       "customData": {
         "beat": 5
       },
-      "text": "Week 15 \u2014 Final team presentation video + report (20%)",
+      "text": "Week 15 — Final team presentation video + report (20%)",
       "fontSize": 20,
       "fontFamily": 1,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": null,
-      "originalText": "Week 15 \u2014 Final team presentation video + report (20%)",
+      "originalText": "Week 15 — Final team presentation video + report (20%)",
       "lineHeight": 1.25,
       "baseline": 18
     },
@@ -1557,13 +1557,13 @@
       "customData": {
         "beat": 5
       },
-      "text": "Finals week \u2014 reports and presentation video\nsubmitted for review.",
+      "text": "Finals week — reports and presentation video\nsubmitted for review.",
       "fontSize": 16,
       "fontFamily": 1,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "Finals week \u2014 reports and presentation video\nsubmitted for review.",
+      "originalText": "Finals week — reports and presentation video\nsubmitted for review.",
       "lineHeight": 1.25,
       "baseline": 14
     }

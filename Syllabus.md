@@ -65,10 +65,10 @@ By the end of this course, students will be able to:
 | 4 | Thursday, September 24 | Simulation Reflection | |
 | 5 | Tuesday, September 29 | Social Entrepreneurs | TOMS Shoes |
 | 5 | Thursday, October 1 | Simulation Reflection | |
-| 6 | Tuesday, October 6 | Study Week | |
+| 6 | Tuesday, October 6 | Mid-term Instruction | |
 | 6 | Thursday, October 8 | Study Week | |
 | 7 | Tuesday, October 13 | Study Day | |
-| 7 | Thursday, October 15 | Team Presentation Video Review | |
+| 7 | Thursday, October 15 | Mid-term Review | |
 | 8 | Tuesday, October 20 | Creative Thinking | Netflix |
 | 8 | Thursday, October 22 | Simulation Reflection | |
 | 9 | Tuesday, October 27 | Common Pitfalls and Successes | MoviePass |
@@ -77,16 +77,16 @@ By the end of this course, students will be able to:
 | 10 | Thursday, November 5 | Simulation Reflection | |
 | 11 | Tuesday, November 10 | Franchising Enterprises | Shake Shack |
 | 11 | Thursday, November 12 | Simulation Reflection | |
-| 12 | Tuesday, November 17 | Course Summarizing | |
+| 12 | Tuesday, November 17 | Course Summary and Final Project Instruction | |
 | 12 | Thursday, November 19 | Study Day | |
 | 13 | Tuesday, November 24 | Thanksgiving | |
 | 13 | Thursday, November 26 | Thanksgiving | |
 | 14 | Tuesday, December 1 | Study Week | |
 | 14 | Thursday, December 3 | Study Week | |
-| 15 | Tuesday, December 8 | Study Day | |
-| 15 | Thursday, December 10 | Team Presentation Video Review | |
-| Final | Tuesday, December 15 | Finalize your website and submit for review | |
-| Final | Thursday, December 17 | Final Grade Posting and Review | |
+| 15 | Tuesday, December 8 | Study Week | |
+| 15 | Thursday, December 10 | Study Week | |
+| Final | Tuesday, December 15 | Submit Final Report and Video | |
+| Final | Thursday, December 17 | Final Grade Posting | |
 
 ***
 
@@ -94,7 +94,7 @@ By the end of this course, students will be able to:
 
 ### 1. Individual Assignments (60%)
 
-**Pre-class Blog Commenting (20%)**
+**Pre-class Blog Commenting (10%)**
 - Students post a 50-100 word comment with a clear opinion and supporting evidence.
 
 
@@ -104,20 +104,24 @@ By the end of this course, students will be able to:
 - In-class exercises and workshops
 
 
-**Simulation Reflections (30%)**
+**Simulation Reflections (40%)**
 - Participate in the assigned in-class simulations.
-- Submit short reflections after simulation weeks describing actions taken, lessons learned, and improvements for next time.
+- Submit 1,000–1,500 word reflections after simulation weeks describing actions taken, lessons learned, and improvements for next time.
 
-### 2. Team Project: New Venture Development (40%)
+### 2. Team Project: Company Analysis (40%)
 
-Students will work in teams of 6 to develop a new venture concept throughout the semester. Teams stay together for the in-class simulations, which are built for six roles.
+Students work in five-person teams to analyze one selected company across the midterm and final. Weekly simulations use four functional leads (Financial, Marketing, Operation, and Tech) plus an Account Manager. The introductory exercise uses a smaller role set.
 
 **Deliverables:**
-- **Team Register (5%)** - Week 1
-- **Midterm Team Video Pitch and Report (15%)** - Week 7
+- **Team registration** - required setup; no separate course weight
+- **Midterm Team Video Pitch and Report (20%)** - Week 7
 - **Final Team Video Pitch and Report (20%)** - Week 15 and Final Week
 
 
+
+Blogs 10%; simulation reflections 40%; participation 10%; midterm report and video together 20%; final report and video together 20%. Team registration is required setup with no separate course weight. Preserve the existing Blackboard allocation between each report and video; use the video scoring criteria already posted there. Report rubric points (midterm 60 plus up to 4 bonus; final 50) are not course percentages. All existing Blackboard deadlines and cutoff times remain unchanged.
+
+See the [assignment guide](assignments/AssignmentGuide.html) for detailed requirements.
 
 ***
 
@@ -188,10 +192,10 @@ Throughout the course, students will develop their creative capabilities through
 
 - Essays should include terminology and concepts from assigned readings
 - Best essays will apply (not just name) these terms and concepts with proper citations
-- Outside academic sources are recommended for all papers and required for the first essay
-- Include a Works Cited section (counts toward page requirement)
+- Use and cite the evidence required in the assignment guides.
+- Include a Works Cited section; follow the length requirements in each assignment.
 - Follow Chicago Manual of Style (Author-Date format) per American Anthropological Association standards
-- **Accepted file formats:** .docx or .pdf only (other formats receive automatic failing grade)
+- **Written work:** .docx or .pdf; project reports follow the PDF submission workflow. Submit videos using the existing Blackboard instructions.
 - Multiple submission attempts allowed before deadline; only last submission will be graded
 - Monitor your grades and contact instructor immediately if problems arise
 

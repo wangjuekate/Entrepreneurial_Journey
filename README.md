@@ -6,6 +6,9 @@
 - Class Meeting: TuTh 8:00AM-9:15AM, ITE C80
 
 - [Syllabus](./Syllabus.md)
+- [Assignment guide and grading](./assignments/AssignmentGuide.html)
+- [Midterm instructions](./10_slides_Pitchvideo_review/Mid_Term_Instruction.html)
+- [Final instructions](./10_slides_Pitchvideo_review/Final_Project_Instruction.html)
 
 ## Pre-class Blogs and Presentations
 
@@ -43,7 +46,7 @@
 ### Week 6-7: Mid-term 
 
 - [Mid-term instructor evaluation](https://uconn.co1.qualtrics.com/jfe/form/SV_dps3nJ4ZvpUFIYm)
-- [Mid-term pitch video review](./10_slides_Pitchvideo_review/Mid-termreview.html)
+- [Mid-term pitch video review](./10_slides_Pitchvideo_review/Mid_Term_Review.html)
 
 ### Week 8: Creative Thinking
 
@@ -76,10 +79,10 @@
 
 ### Week 13-15: Final project
 
-- [Final pitch video review](./10_slides_Pitchvideo_review/Final_review.html)
+- [Final pitch video review](./10_slides_Pitchvideo_review/Final_Project_Instruction.html)
 
 ## Simulation Access
 
-- [Simulation Platform](https://app.skillsimm.com/?expired=1)
+- [Simulation Platform](https://app.skillsimm.com/)
 
 - [ManagementDepartment](./ImportanceManagement/Importance_Management.html)
