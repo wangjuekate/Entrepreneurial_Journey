@@ -6,9 +6,7 @@
 - Class Meeting: TuTh 8:00AM-9:15AM, ITE C80
 
 - [Syllabus](./Syllabus.md)
-- [Assignment guide and grading](./assignments/AssignmentGuide.html)
-- [Midterm instructions](./10_slides_Pitchvideo_review/Mid_Term_Instruction.html)
-- [Final instructions](./10_slides_Pitchvideo_review/Final_Project_Instruction.html)
+
 
 ## Pre-class Blogs and Presentations
 
@@ -17,6 +15,7 @@
 - [The Worst and Best Time to Be a Business Major](./0_slides_courseoverview/WorstBestEraBusinessMajor.md)
 - [Course Overview](./0_slides_courseoverview/CourseOverview.html)
 - [Team Formation and Resource Introduction](./0_slides_courseoverview/TeamFormationResources.html)
+- [Assignment guide and grading](./assignments/AssignmentGuide.html)
 
 
 ### Week 2: Sweets and Bitterness of Entrepreneurs
@@ -44,9 +43,8 @@
 - [Simulation Reflection: TOMS Shoes](./4_slides_socialenterprise/TOMSShoesSimulationReflection.html)
 
 ### Week 6-7: Mid-term 
-
-- [Mid-term instructor evaluation](https://uconn.co1.qualtrics.com/jfe/form/SV_dps3nJ4ZvpUFIYm)
-- [Mid-term pitch video review](./10_slides_Pitchvideo_review/Mid_Term_Review.html)
+- [Midterm instructions](./10_slides_Pitchvideo_review/Mid_Term_Instruction.html)
+- [Mid-Term Instructor Review](./10_slides_Pitchvideo_review/Mid_Term_Review.html)
 
 ### Week 8: Creative Thinking
 
@@ -75,11 +73,10 @@
 ### Week 12: Final Review and Summary
 
 - [Course summary](./9_slides_summary_futuredevelopment/FinalReview.html)
-
+- [Final instructions](./10_slides_Pitchvideo_review/Final_Project_Instruction.html)
 
 ### Week 13-15: Final project
 
-- [Final pitch video review](./10_slides_Pitchvideo_review/Final_Project_Instruction.html)
 
 ## Simulation Access
 
