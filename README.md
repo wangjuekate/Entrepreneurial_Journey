@@ -43,7 +43,7 @@
 - [Simulation Reflection: TOMS Shoes](./4_slides_socialenterprise/TOMSShoesSimulationReflection.html)
 
 ### Week 6-7: Mid-term 
-- [Midterm instructions](./10_slides_Pitchvideo_review/Mid_Term_Instruction.html)
+- [Midterm instructions](./10_slides_Pitchvideo_review/)
 - [Mid-Term Instructor Review](./10_slides_Pitchvideo_review/Mid_Term_Review.html)
 
 ### Week 8: Creative Thinking
@@ -70,12 +70,11 @@
 - [Franchising Enterprises](./8_slides_franchising/FranchisingEnterprises.html)
 - [Simulation Reflection: Shake Shack](./8_slides_franchising/ShakeShackSimulationReflection.html)
 
-### Week 12: Final Review and Summary
+### Week 12-15: Final Review and Final Project
 
 - [Course summary](./9_slides_summary_futuredevelopment/FinalReview.html)
-- [Final instructions](./10_slides_Pitchvideo_review/Final_Project_Instruction.html)
+- [Final instructions](./10_slides_Pitchvideo_review/Final2234.md)
 
-### Week 13-15: Final project
 
 
 ## Simulation Access

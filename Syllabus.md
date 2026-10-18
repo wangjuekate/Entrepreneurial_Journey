@@ -121,7 +121,7 @@ Students work in five-person teams to analyze one selected company across the mi
 
 Blogs 10%; simulation reflections 40%; participation 10%; midterm report and video together 20%; final report and video together 20%. Team registration is required setup with no separate course weight. Preserve the existing Blackboard allocation between each report and video; use the video scoring criteria already posted there. Report rubric points (midterm 60 plus up to 4 bonus; final 50) are not course percentages. All existing Blackboard deadlines and cutoff times remain unchanged.
 
-See the [assignment guide](assignments/AssignmentGuide.html) for detailed requirements.
+See the [assignment guide](assignments/AssignmentGuide.md) for detailed requirements.
 
 ***
 
