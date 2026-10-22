@@ -35,6 +35,16 @@
       .reflect { background: #ecfdf5; border-left: 5px solid var(--accent); padding: 14px 18px; text-align: left; }
       .reflect .tag { font-size: 0.4em; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
       .reflect li { font-size: 0.44em; }
+      .reveal .question-slide h3 { font-size: 0.55em; margin-bottom: 0.65em; }
+      .reveal .question-slide h2 { font-size: 0.9em; }
+      .reveal .question-slide .q { font-size: 0.6em; line-height: 1.35; }
+      .reveal .question-slide li { font-size: 0.52em; line-height: 1.4; }
+      .reveal .ranking-options { text-align: left; }
+      .reveal .takeaway-slide h3 { font-size: 0.55em; margin-bottom: 0.65em; }
+      .reveal .takeaway-slide h2 { font-size: 0.95em; }
+      .reveal .takeaway-slide .concept-link { font-size: 0.48em; color: var(--accent); }
+      .reveal .takeaway-slide li { font-size: 0.5em; line-height: 1.4; margin-bottom: 0.6em; }
+      .reveal .takeaway-slide li:last-child { margin-bottom: 0; }
       .quote { font-size: 0.6em; font-weight: 600; line-height: 1.3; }
     </style>
   </head>
@@ -55,10 +65,152 @@
 
       
 
-        <!-- Key takeaway -->
-        <section>
-          <h2>Key takeaway</h2>
-          <div class="box"><p>TBA</p>
+        <section class="question-slide">
+          <h3>Stage 1 — Establish the Company’s Position</h3>
+          <h2>Chief Financial Officer (CFO)</h2>
+          <p class="q">What operational savings can the company reasonably count on this round? Consult the COO before answering.</p>
+          <ul class="options">
+            <li><span class="k">A.</span> Each stream immediately pays for one avoided DVD shipment.</li>
+            <li><span class="k">B.</span> Closing the DVD network releases all the money the company needs.</li>
+            <li><span class="k">C.</span> The company has already verified that postage savings cover technology.</li>
+            <li><span class="k">D.</span> Only verified future shipment reductions could support later savings; no immediate postage savings are available this round.</li>
+          </ul>
+        </section>
+
+        <section class="question-slide">
+          <h3>Stage 1 — Establish the Company’s Position</h3>
+          <h2>Chief Marketing Officer (CMO)</h2>
+          <p class="q">Which implementation choices can deliver living-room viewing this round? Consult the CTO before answering.</p>
+          <ul class="options">
+            <li><span class="k">A.</span> Only the broad device platform can reach the living room.</li>
+            <li><span class="k">B.</span> All three implementations have identical device reach.</li>
+            <li><span class="k">C.</span> The television-partner rollout and broad device platform can reach the living room; PC improvement cannot.</li>
+            <li><span class="k">D.</span> PC improvement alone delivers television viewing.</li>
+          </ul>
+        </section>
+
+        <section class="question-slide">
+          <h3>Stage 1 — Establish the Company’s Position</h3>
+          <h2>Chief Operating Officer (COO)</h2>
+          <p class="q">Which customer-recruitment approach has the lower stated cost? Consult the CMO before answering.</p>
+          <ul class="options">
+            <li><span class="k">A.</span> Neither approach requires recruitment resources.</li>
+            <li><span class="k">B.</span> An existing-subscriber rollout has the lower stated recruitment cost.</li>
+            <li><span class="k">C.</span> A broad acquisition campaign has the lower stated recruitment cost.</li>
+            <li><span class="k">D.</span> Both approaches have the same recruitment cost.</li>
+          </ul>
+        </section>
+
+        <section class="question-slide">
+          <h3>Stage 1 — Establish the Company’s Position</h3>
+          <h2>Chief Technology Officer (CTO)</h2>
+          <p class="q">What investment capacity is available for the entire initiative? Consult the CFO before answering.</p>
+          <ul class="options">
+            <li><span class="k">A.</span> 60 planning units, including technology, recruitment, and operational support.</li>
+            <li><span class="k">B.</span> 70 planning units for technology, with support funded separately.</li>
+            <li><span class="k">C.</span> 60 planning units for technology alone.</li>
+            <li><span class="k">D.</span> Unlimited resources if future savings are promised.</li>
+          </ul>
+        </section>
+
+        <section class="takeaway-slide" data-stage="1">
+          <h3>Stage 1 — Key takeaways</h3>
+          <h2>Define the problem together</h2>
+          <p class="concept-link"><strong>Creative Thinking:</strong> Define the problem; know where you are on the loop.</p>
+          <div class="box">
+            <ul>
+            <li><strong>Combine the four perspectives.</strong> Finance, marketing, operations, and technology each hold part of the problem; consultation makes the constraints visible.</li>
+            <li><strong>Frame the decision:</strong> How can Netflix test living-room streaming within its resources while continuing to serve DVD customers?</li>
+            <li><strong>Recognize the stage.</strong> DVD is an established product; streaming is still a prototype. Use the evidence available in the simulation, not knowledge of Netflix’s eventual success.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="question-slide">
+          <h3>Stage 2 — Make Executive Decisions</h3>
+          <h2>Chief Financial Officer (CFO)</h2>
+          <p class="q">How should Netflix fund its streaming initiative while protecting the financial health of the company?</p>
+          <ul class="options">
+            <li><span class="k">A.</span> Approve the technology proposal first and find recruitment and support funding later.</li>
+            <li><span class="k">B.</span> Count expected postage savings as immediately available funding.</li>
+            <li><span class="k">C.</span> Hold all investment until streaming produces separate revenue.</li>
+            <li><span class="k">D.</span> Fund a coordinated allocation covering technology, customer recruitment, and operational support within the available ceiling.</li>
+          </ul>
+        </section>
+
+        <section class="question-slide">
+          <h3>Stage 2 — Make Executive Decisions</h3>
+          <h2>Chief Marketing Officer (CMO)</h2>
+          <p class="q">How should Netflix position instant watching, and which customers should the company prioritize?</p>
+          <ul class="options">
+            <li><span class="k">A.</span> Promise that instant watching can immediately replace the DVD catalogue.</li>
+            <li><span class="k">B.</span> Avoid introducing instant watching to any customers this round.</li>
+            <li><span class="k">C.</span> Prioritize existing subscribers and promise only the viewing experience the CTO and COO can support.</li>
+            <li><span class="k">D.</span> Launch a broad acquisition campaign alongside the television rollout.</li>
+          </ul>
+        </section>
+
+        <section class="question-slide">
+          <h3>Stage 2 — Make Executive Decisions</h3>
+          <h2>Chief Operating Officer (COO)</h2>
+          <p class="q">How should Netflix manage its DVD network while supporting the company’s move into streaming?</p>
+          <ul class="options">
+            <li><span class="k">A.</span> Maintain DVD service but allocate no support to streaming.</li>
+            <li><span class="k">B.</span> Maintain DVD service and reserve support resources for the agreed streaming rollout; assess savings after actual shipment changes.</li>
+            <li><span class="k">C.</span> Assume each stream replaces a shipment and release the resulting savings immediately.</li>
+            <li><span class="k">D.</span> Reduce DVD capacity before checking customer demand and service effects.</li>
+          </ul>
+        </section>
+
+        <section class="question-slide">
+          <h3>Stage 2 — Make Executive Decisions</h3>
+          <h2>Chief Technology Officer (CTO)</h2>
+          <p class="q">Which technology investment should Netflix prioritize to bring instant watching into the living room?</p>
+          <ul class="options">
+            <li><span class="k">A.</span> Prioritize a limited television-partner rollout, coordinated with customer recruitment and operational support.</li>
+            <li><span class="k">B.</span> Build a broad device platform immediately, regardless of the other functions’ needs.</li>
+            <li><span class="k">C.</span> Prioritize PC improvement as the company’s living-room solution.</li>
+            <li><span class="k">D.</span> Make no technology investment until all streaming demand is proven.</li>
+          </ul>
+        </section>
+
+        <section class="takeaway-slide" data-stage="2">
+          <h3>Stage 2 — Key takeaways</h3>
+          <h2>Choose a prototype you can learn from</h2>
+          <p class="concept-link"><strong>Creative Thinking:</strong> Separate diverging from converging; fund a prototype for learning.</p>
+          <div class="box">
+            <ul>
+            <li><strong>Consider alternatives before choosing.</strong> The simulation supplies options; evaluating them practices convergence. In your own venture, first make time to generate options without judging.</li>
+            <li><strong>Coordinate one feasible experiment.</strong> A limited television rollout to existing subscribers needs technology, recruitment, and support together, while DVD service continues.</li>
+            <li><strong>Match expectations to the stage.</strong> The rollout should generate evidence about viewing and service needs. Immediate standalone revenue or a full DVD replacement is not the test of a useful prototype.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="question-slide">
+          <h3>Stage 3 — Set Company Priorities</h3>
+          <h2>Chief Executive Officer (CEO)</h2>
+          <p class="q">As CEO, rank the four questions from most to least important for Netflix’s next strategic move. Discuss your executives’ recommendations before setting the company’s priorities.</p>
+          <ul class="ranking-options">
+            <li>Funding — the CFO’s question</li>
+            <li>Positioning — the CMO’s question</li>
+            <li>The DVD network — the COO’s question</li>
+            <li>Devices — the CTO’s question</li>
+          </ul>
+        </section>
+
+
+        <section class="takeaway-slide" data-stage="3">
+          <h3>Stage 3 — Key takeaways</h3>
+          <h2>Prioritize the next turn of the loop</h2>
+          <p class="concept-link"><strong>Creative Thinking:</strong> Prototype and test, then redefine the problem and go again.</p>
+          <div class="box">
+            <ul>
+            <li><strong>Prioritize what makes the test possible.</strong> The CEO combines executive evidence: device reach and funding shape feasibility; operations supports delivery; positioning must match what the team can provide.</li>
+            <li><strong>Make the next test capable of failing.</strong> Before rollout, specify what viewing behavior and support demand would challenge the plan. A priority ranking alone does not test the hypothesis.</li>
+            <li><strong>Use results to revise the problem.</strong> After the rollout, compare observations with expectations and adjust the next experiment. Verify shipment changes before counting DVD savings.</li>
+            </ul>
+          </div>
         </section>
 
       </div>
