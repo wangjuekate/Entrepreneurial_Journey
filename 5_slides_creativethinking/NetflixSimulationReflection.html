@@ -1,69 +1,116 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulation Reflection: Six Thousand Against Ninety Thousand</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; --warn: #b45309; }
-      .reveal { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: #fff; }
-      .reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; letter-spacing: 0; }
-      .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.4em; }
-      .reveal h3 { font-size: 0.7em; color: var(--accent); margin-bottom: 0.3em; }
-      .reveal h4 { font-size: 0.55em; color: var(--muted); margin-bottom: 0.4em; }
-      .reveal p, .reveal li { font-size: 0.46em; line-height: 1.45; color: var(--ink); }
-      .reveal ul { margin: 0.3em 0 0 1.1em; }
-      .reveal li { margin-bottom: 0.35em; }
-      .title-slide h2 { font-size: 1.3em; }
-      .subtitle { color: var(--muted); text-align: center; font-size: 0.5em; }
-      .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 16px 20px; text-align: left; }
-      .small { font-size: 0.4em; color: var(--muted); }
-      /* role question slides */
-      .role-h { display: flex; align-items: center; gap: 12px; margin-bottom: 0.3em; }
-      .role-h .emoji { font-size: 1.1em; }
-      .role-h h2 { margin: 0; text-align: left; }
-      .q { font-weight: 600; text-align: left; margin-bottom: 0.4em; }
-      .reveal .options { list-style: none; margin: 0 0 0 0.2em; text-align: left; }
-      .reveal .options li { padding-left: 1.9em; text-indent: -1.9em; }
-      .reveal .role-h ~ p { text-align: left; }
-      .options li { margin-bottom: 0.35em; }
-      .options .k { display: inline-block; min-width: 1.7em; font-weight: 700; color: var(--accent); }
-      .reflect { background: #ecfdf5; border-left: 5px solid var(--accent); padding: 14px 18px; text-align: left; }
-      .reflect .tag { font-size: 0.4em; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
-      .reflect li { font-size: 0.44em; }
-      .reveal .question-slide h3 { font-size: 0.55em; margin-bottom: 0.65em; }
-      .reveal .question-slide h2 { font-size: 0.9em; }
-      .reveal .question-slide .q { font-size: 0.6em; line-height: 1.35; }
-      .reveal .question-slide li { font-size: 0.52em; line-height: 1.4; }
-      .reveal .ranking-options { text-align: left; }
-      .reveal .takeaway-slide h3 { font-size: 0.55em; margin-bottom: 0.65em; }
-      .reveal .takeaway-slide h2 { font-size: 0.95em; }
-      .reveal .takeaway-slide .concept-link { font-size: 0.48em; color: var(--accent); }
-      .reveal .takeaway-slide li { font-size: 0.5em; line-height: 1.4; margin-bottom: 0.6em; }
+      :root { --ink: #182525; --muted: #526361; --line: #d7dfdb; --accent: #08695d; --soft: #eef3ef; --red: #b52b35; }
+      body { background: #f8f9f5; }
+      .reveal { font-family: "Avenir Next", "Segoe UI", Arial, sans-serif; color: var(--ink); font-size: 36px; }
+      .reveal .slides { text-align: left; }
+      .reveal .slides section { box-sizing: border-box; padding: 24px 32px; }
+      .reveal h1, .reveal h2, .reveal h3 { font-family: inherit; color: var(--ink); text-transform: none; letter-spacing: -.035em; }
+      .reveal h1 { font-size: 2.1em; line-height: 1.06; font-weight: 750; margin: 22px 0; }
+      .reveal h2 { font-size: 1.35em; line-height: 1.15; font-weight: 700; margin: 0 0 24px; }
+      .reveal h3, .reveal .eyebrow { color: var(--accent); font-size: .38em; line-height: 1.4; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; margin: 0 0 18px; }
+      .reveal p, .reveal li { font-size: .59em; line-height: 1.5; }
+      .reveal p { margin: 16px 0; }
+      .reveal strong { font-weight: 700; }
+      .reveal .subtitle { color: var(--muted); font-size: .66em; max-width: 760px; }
+      .reveal .small { font-size: .36em; color: var(--muted); line-height: 1.5; }
+      .title-slide::before { content: ""; display: block; width: 72px; height: 6px; background: var(--red); margin-bottom: 34px; }
+      .title-slide h1 span { color: var(--red); }
+      .title-slide .title-meta { border-top: 1px solid var(--line); padding-top: 20px; margin-top: 35px; color: var(--muted); font-size: .4em; }
+      .box { background: var(--soft); border-left: 4px solid var(--accent); padding: 22px 28px; border-radius: 0 12px 12px 0; }
+      .box p:first-child { margin-top: 0; }
+      .box p:last-child { margin-bottom: 0; }
+      .reveal .question-slide h2 { margin-bottom: 20px; }
+      .reveal .question-slide .q { font-size: .65em; line-height: 1.4; font-weight: 600; margin-bottom: 22px; max-width: 950px; }
+      .reveal .options { list-style: none; display: grid; gap: 10px; margin: 0; width: 100%; }
+      .reveal .options li { display: flex; align-items: baseline; gap: 14px; font-size: .53em; line-height: 1.42; background: #fff; border: 1px solid var(--line); border-radius: 9px; padding: 13px 18px; margin: 0; }
+      .options .k { color: var(--accent); font-weight: 750; flex: 0 0 24px; }
+      .reveal .takeaway-slide .concept-link { font-size: .48em; color: var(--accent); margin-bottom: 24px; }
+      .reveal .takeaway-slide ul { margin: 0 0 0 22px; }
+      .reveal .takeaway-slide li { font-size: .55em; line-height: 1.5; margin-bottom: 20px; padding-left: 6px; }
       .reveal .takeaway-slide li:last-child { margin-bottom: 0; }
-      .quote { font-size: 0.6em; font-weight: 600; line-height: 1.3; }
+      .reveal li::marker { color: var(--accent); }
+      .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 26px 0; }
+      .stat { padding: 22px 26px; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+      .reveal .stat .value { font-size: 1.12em; font-weight: 750; line-height: 1.1; letter-spacing: -.04em; margin: 0 0 10px; }
+      .reveal .stat .label { font-size: .46em; color: var(--muted); margin: 0; }
+      .reveal .stat .denominator { font-size: .48em; color: var(--muted); font-weight: 500; }
+      .reveal .stat .sample { font-size: .34em; color: var(--muted); margin: 8px 0 0; }
+      .stat.highlight { background: var(--soft); border-color: #b6d1c8; }
+      .reveal .callout { border-left: 4px solid var(--accent); padding: 8px 0 8px 20px; font-size: .57em; }
+      .reveal .award-mark { color: var(--accent); font-size: .4em; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 30px; }
+      .reveal .award-slide h2 { font-size: 1.9em; max-width: 800px; }
+      .reveal .ranking-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; list-style: none; margin: 24px 0; width: 100%; }
+      .reveal .ranking-options li { font-size: .57em; padding: 24px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+      .reveal .controls { color: var(--accent); }
+      .reveal .progress { color: var(--accent); height: 4px; }
+      .reveal .slide-number { background: transparent; color: var(--muted); font: 13px "Segoe UI", sans-serif; right: 20px; bottom: 15px; }
+      @media print { .reveal .stat, .reveal .options li { break-inside: avoid; } }
+      @media (prefers-reduced-motion: reduce) { .reveal *, .reveal *::before { transition: none !important; animation: none !important; } }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
 
-        <!-- Title -->
         <section class="title-slide">
-          <h2>Six Thousand Against Ninety Thousand: Netflix in 2008</h2>
+          <p class="eyebrow">Entrepreneurial Journey / Simulation reflection</p>
+          <h1>Six thousand against<br><span>ninety thousand.</span></h1>
+          <p class="subtitle">Netflix in 2008: making room for streaming.</p>
+          <p class="title-meta">Share information &nbsp; / &nbsp; Make a coordinated decision &nbsp; / &nbsp; Design the next test</p>
         </section>
 
-        <!-- The scenario / source -->
         <section>
-          <h2>The case</h2>
-          <div class="box"><p>Early 2008. Netflix has <strong>7.5 million subscribers</strong>, about <strong>90,000 DVD titles</strong>, a nationwide shipping network and about <strong>$1.2 billion</strong> of revenue. A year ago it launched instant watching &mdash; bundled free, <strong>6,000 titles</strong>, roughly one fifteenth of the library. Source: FY2007 10-K.</p></div>
+          <p class="eyebrow">The starting point / Early 2008</p>
+          <h2>A new service. A much smaller library.</h2>
+          <div class="stat-grid">
+            <div class="stat"><p class="value">7.5 million</p><p class="label">Netflix subscribers</p></div>
+            <div class="stat"><p class="value">$1.2 billion</p><p class="label">Approximate annual revenue</p></div>
+            <div class="stat"><p class="value">90,000</p><p class="label">DVD titles, supported by a nationwide shipping network</p></div>
+            <div class="stat highlight"><p class="value">6,000</p><p class="label">Instant-watching titles — about 1/15 of the DVD library</p></div>
+          </div>
+          <p class="callout">Instant watching launched a year earlier, bundled at no extra charge. How should Netflix take its next step?</p>
+          <p class="small">Source: Netflix FY2007 Form 10-K. Figures are rounded.</p>
         </section>
 
-      
+        <section class="award-slide">
+          <p class="award-mark">Team recognition</p>
+          <h2>Celebrating the<br>winning team</h2>
+          <p class="subtitle">Recognize the result. Reflect on the decisions behind it.</p>
+          <div class="box"><p>Which moment of information sharing helped your team most?</p></div>
+        </section>
+
+        <section>
+          <p class="eyebrow">Survey reflection / Before the simulation</p>
+          <h2>What guided your decisions?</h2>
+          <div class="box">
+            <p><strong>The pre-survey suggests a stronger focus on avoiding mistakes and fulfilling obligations than on pursuing gains and opportunities.</strong></p>
+          </div>
+          <p class="subtitle">Think back to a decision your team made.</p>
+          <p class="callout">When did caution protect your team? When might it have narrowed the options you considered?</p>
+          <aside class="notes">Qualitative summary from the supplied pre-survey notes. No pre-survey numerical scores or matched pre/post comparisons were provided.</aside>
+        </section>
+
+        <section>
+          <p class="eyebrow">Survey reflection / After the simulation</p>
+          <h2>Share information. Actively seek it.</h2>
+          <div class="stat-grid">
+            <div class="stat"><p class="value">5.30 <span class="denominator">/ 7</span></p><p class="label">Member decision focus</p><p class="sample">85 responses</p></div>
+            <div class="stat"><p class="value">3.69 <span class="denominator">/ 5</span></p><p class="label">Member information sharing</p><p class="sample">85 responses</p></div>
+            <div class="stat highlight"><p class="value">2.90 <span class="denominator">/ 5</span></p><p class="label">Leader solicitation of input</p><p class="sample">27 responses</p></div>
+            <div class="stat"><p class="value">4.21 <span class="denominator">/ 5</span></p><p class="label">Leader-reported information integration</p><p class="sample">26 responses</p></div>
+          </div>
+          <p class="callout"><strong>A next step for leaders:</strong> Invite each role’s evidence, ask for clarification, and check what is missing before deciding.</p>
+          <p class="small">Reported survey scores; scale maxima and response counts vary. These results alone do not establish pre-to-post improvement.</p>
+        </section>
 
         <section class="question-slide">
           <h3>Stage 1 — Establish the Company’s Position</h3>
@@ -217,7 +264,16 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
     <script>
-      Reveal.initialize({ hash: true, slideNumber: true });
+      Reveal.initialize({
+        hash: true,
+        slideNumber: 'c/t',
+        width: 1120,
+        height: 760,
+        margin: 0.06,
+        transition: 'none',
+        controlsTutorial: false,
+        progress: true
+      });
     </script>
   </body>
 </html>
