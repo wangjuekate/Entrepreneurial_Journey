@@ -2,49 +2,75 @@
 
 ## Start here
 
-**Create a venture report and pitch video that your team can adapt for a UConn funding opportunity, accelerator, or entrepreneurship support program. Submit both deliverables to Blackboard (HuskyCT).** The Team Leader submits the report PDF and the video file or accessible video link to their designated final assignments by the deadlines posted in Blackboard.
+**Create a venture report and pitch video that you or your team can adapt for a UConn funding opportunity, accelerator, or entrepreneurship support program. Submit both deliverables to Blackboard (HuskyCT).** The Team Leader or individual student submits the report PDF and the video file or accessible video link to their designated final assignments by the deadlines posted in Blackboard.
 
 | Item | Requirement |
 | --- | --- |
-| Team | Continue with your existing five-person team: four members and one Team Leader. |
+| Participation | Continue with your existing five-person team (four members and one Team Leader). Team participation is recommended; an individual option is available for students without a team. |
 | Project | Propose a new product or service inspired by your midterm company, or develop an original venture idea. |
-| Report | One standalone venture proposal PDF, worth **100 points**. |
-| Pitch video | One **10–20-minute** team pitch video, worth **100 points**. |
+| Report | One standalone venture proposal PDF following the selected participation option, worth **100 points**. |
+| Pitch video | One pitch video: **10–20 minutes for teams** or **8–10 minutes for individuals**, worth **100 points**. |
 | Intended audience | Reviewers for a relevant UConn funding or entrepreneurship program. Select one primary target and explain your fit. |
 | Course deadline | Use the existing final report and video deadlines posted in Blackboard. External program deadlines are separate. |
 | Course weight | The final project retains its existing **20% course weight**. The report and video are equally weighted within the final project. |
-| Length | No fixed report page or word minimum. Address every criterion with clear, concise writing and evidence. |
+| Length | Teams: no fixed page or word minimum. Individuals: aim for **6–8 pages** of main text, plus title page and references; see the individual option below. |
 
 ## Class schedule and communication
 
 | Date | Class arrangement and required work |
 | --- | --- |
 | **November 17, 8:00–9:15 a.m.** | Attend the remote class meeting. The instructor will summarize the course and review the final project requirements. |
-| **November 19–December 15** | No class meetings. Use the class time to work with your team on the final report and pitch video. |
+| **November 19–December 15** | No class meetings. Use the class time to work individually or with your team on the final report and pitch video. |
 
-Book office hours through Blackboard for team mentoring, feedback, or project questions.
+Book office hours through Blackboard for individual or team mentoring, feedback, or project questions.
 
 ## What to submit and where
 
 | Submission | Format | Where | Who submits |
 | --- | --- | --- | --- |
-| Final venture report | PDF containing the proposal, references, and application preparation appendix | **Blackboard final report assignment** | Team Leader, once for the team |
-| Final pitch video | 10–20-minute video file or accessible video link, using the field provided | **Blackboard final video assignment** | Team Leader, once for the team |
-| Individual contribution record | Brief, accurate summary of completed work | Assigned **SkillSimm task** | Each member |
-| Leader completion | Completed final leader task | **SkillSimm** | Team Leader, after all revisions are complete |
+| Final venture report | PDF containing the proposal and references; include the full team or concise individual application preparation appendix | **Blackboard final report assignment** | Team Leader, once for the team, or individual student |
+| Final pitch video | Video file (10–20 minutes for teams; 8–10 minutes for individuals) or accessible video link, using the field provided | **Blackboard final video assignment** | Team Leader, once for the team, or individual student |
 
-**SkillSimm completion does not replace either Blackboard submission.** Before the deadline, verify that both Blackboard submissions are complete, the PDF opens, and the instructor can play the video without requesting access.
+Before the deadline, verify that both Blackboard submissions are complete, the PDF opens, and the instructor can play the video without requesting access.
 
-### Team workspace
+## Individual option for students without a team
 
-Feel free to use your existing SkillSimm group workspace for team coordination.
+**Team participation is recommended.** A team can divide the five report sections, research, calculations, and presentation preparation among five members, then review and integrate the work together. An individual student is responsible for all five areas and the entire recording. The individual deliverables are shorter, but the work per student is greater because the core analysis is completed independently.
 
-- **Join link:** 
-- **Joining code:** 
+Students without a team may use this option with either venture path in Section 1. **Use the individual rubric and checklist below; the requirements in Sections 2–4 and the checklist in Section 6 apply to teams.** Section 5's source and citation guidance applies to both options. Both options have the same deadlines, maximum points, and course weight.
 
-## 1. Choose your venture, intended audience, and workspace
+- **Report:** Aim for **6–8 pages of main text**, plus a title page, references, and the concise application appendix described below. This is a suggested length, not a separate grading criterion. Include a brief executive summary and all five rubric areas.
+- **Evidence:** Use at least **five credible sources**, including the selected program's official requirements and evidence about customers and competing alternatives. Cite claims, show calculations, and distinguish evidence from assumptions. Published research is sufficient; interviews, surveys, a working prototype, and an external application remain optional.
+- **Scope:** Keep the venture focused on one initial customer segment and one proposed offering. Complete every core analysis in the individual rubric. Concise tables and calculations are appropriate; each recommendation needs evidence and an explanation.
+- **Application preparation appendix:** Include a concise **1–2-page appendix** with the program's official link and date checked, eligibility and your fit, current application window, required materials, one drafted application response or service inquiry, and remaining preparation steps. Summarize program fit and readiness in the pitch. This work is assessed within the program-fit criterion and carries no additional points.
+- **Pitch video:** Record an **8–10-minute** presentation yourself covering all five rubric areas. Explain your evidence, calculations, choices, and support request. Use readable visuals, audible speech, and source credits.
+- **Grading:** The report and video are each worth **100 points**, using the individual rubric separately for each deliverable. The final project remains **20% of the course grade**, with each deliverable contributing **10%**. Each criterion is assessed on the submitted evidence and reasoning; completing the project alone does not waive a criterion.
 
-Choose one of the following paths. Both require a report and pitch video about a venture your team proposes to develop.
+### Individual report and video rubric
+
+The report must contain the analysis and supporting details; the recording must explain the key evidence, calculations, and conclusions for each area. The report and video are graded separately.
+
+| Area | Requirements and scoring for each deliverable | Points |
+| --- | --- | --- |
+| A. Venture concept and creative thinking | Define the customer problem, solution, and feasibility (10); explain how you refined the idea and compare two existing alternatives (10). | **20** |
+| B. Evidence and risks | Support the customer need with research and acknowledge limitations (10); analyze two key risks and propose a validation test with a clear decision criterion (10). | **20** |
+| C. Business model and acquisition | Present a revenue-and-cost estimate with assumptions (10); compare building, buying, and partnering, recommend one route, and identify two due-diligence questions (10). | **20** |
+| D. Growth and execution | Explain a launch approach and assess whether franchising is suitable, giving reasons (10); specify three milestones with timing, resources, and measurable outcomes (10). | **20** |
+| E. Program fit and presentation | Explain program eligibility and fit, a justified support request, and application readiness (10); provide a clear overview, consistent figures, and professional writing or delivery with source credits (10). | **20** |
+| **Total** | | **100** |
+
+### Individual submission checklist
+
+- [ ] Choose a venture path and one UConn funding or support program.
+- [ ] Complete the executive summary and all five rubric areas, with at least five credible sources and clearly stated calculation assumptions.
+- [ ] Include the concise application preparation appendix and one drafted response or service inquiry.
+- [ ] Record an 8–10-minute pitch covering all five areas; verify that its evidence and figures match the report.
+- [ ] Submit your own report PDF to the **Blackboard final report assignment** and your video file or accessible link to the designated **Blackboard video assignment** by the posted deadlines.
+- [ ] Verify that the PDF opens, the video plays without an access request, and both submission receipts are saved.
+
+## 1. Choose your venture and intended audience
+
+Choose one of the following paths. Both require a report and pitch video about a venture you or your team propose to develop.
 
 ### Option A: Build on your midterm analysis
 
@@ -56,12 +82,12 @@ Start with a new product or service idea. Define the customer problem, explain y
 
 Use midterm feedback only as a reference while preparing the final project. Do not include a summary of that feedback, a response to instructor comments, or an account of feedback-related revisions in the report, appendix, or pitch video. These items are not graded.
 
-For either option, choose **one primary funding or support program** from Section 5. Explain why it fits your team, venture stage, and next milestone. You may identify additional programs as later steps.
+For either option, choose **one primary funding or support program** from Section 5. Explain why it fits you or your team, venture stage, and next milestone. You may identify additional programs as later steps.
 
-**The course deliverables are preparation for an external application.** For this assignment, submit them to Blackboard; an actual external application is optional. Programs may require shorter pitches, live presentations, application forms, different team sizes, or other materials. Document those requirements and prepare the relevant content rather than assuming the 10–20-minute course video and report can be uploaded unchanged. Your course grade depends on the quality of your work, not on winning funding or being admitted.
+**The course deliverables are preparation for an external application.** For this assignment, submit them to Blackboard; an actual external application is optional. Programs may require shorter pitches, live presentations, application forms, different team sizes, or other materials. Document those requirements and prepare the relevant content rather than assuming the course video and report can be uploaded unchanged. Your course grade depends on the quality of your work, not on winning funding or being admitted.
 
 
-## 2. Final report — 100 points
+## 2. Team final report — 100 points
 
 Write a standalone proposal that a reviewer can understand without reading your midterm. Begin with a title page naming the venture and all team members, followed by a concise executive summary covering the customer problem, solution, evidence, business model, and specific request for funding or support.
 
@@ -112,7 +138,7 @@ Include this appendix in the report PDF so your team can use the work after the 
 
 For a program with a selection pathway, explain the next eligible step. For example, a team targeting Wolff should explain the Summer Accelerator pathway. For a clinic or consulting program, prepare a focused request for assistance and define the expected output instead of requesting a cash prize.
 
-## 3. Final pitch video — 10–20 minutes, 100 points
+## 3. Team final pitch video — 10–20 minutes, 100 points
 
 **The Team Leader must submit the video file or an accessible video link to the Blackboard final video assignment by the posted deadline.** Check that the instructor can open and play the submitted version.
 
@@ -137,7 +163,7 @@ Make the final proposal self-contained so it can be exported for an external rea
 
 | Team role | Lead responsibility |
 | --- | --- |
-| Team Leader | Section A; integrate the report; coordinate the shared pitch; submit both deliverables to Blackboard; complete the SkillSimm leader task. |
+| Team Leader | Section A; integrate the report; coordinate the shared pitch; submit both deliverables to Blackboard |
 | Member 1 | Section B: customer evidence, pitfalls, and risk mitigation. |
 | Member 2 | Section C: business model and acquisition evaluation. |
 | Member 3 | Section D: growth, franchising, and partnerships. |
@@ -147,24 +173,19 @@ Make the final proposal self-contained so it can be exported for an external rea
 
 ### Team members
 
-Complete your assigned work, coordinate revisions with teammates, and submit your individual SkillSimm task with an accurate contribution summary. Because Google Doc edits may appear as “Anonymous,” this summary records your contribution.
+Complete your assigned work, coordinate revisions with teammates, and help review the final report and pitch video. The Team Leader submits both deliverables once for the team through Blackboard.
 
 ### Team Leader
 
-Your SkillSimm submission task unlocks after all four members submit their tasks.
-
-1. Review the complete final proposal, application appendix, and pitch video. Resolve inconsistent claims, numbers, and requests.
-2. Confirm that all revisions are complete and save a local copy. **Submitting the final leader task in SkillSimm captures the shared document as a final PDF and closes the project run.**
-3. Complete the SkillSimm leader task and retain the captured PDF as the course workflow record.
-4. **Submit the report to Blackboard:** Export the standalone final proposal, including references and appendix, as a PDF and upload it to the **final report assignment**. If the captured PDF contains only the final proposal and required supporting material, you may use it directly.
-5. **Submit the video to Blackboard:** Upload the 10–20-minute video or its accessible link to the **final video assignment**.
-6. Open the submitted PDF, check video access and playback, and verify submission receipts for **both** assignments.
-
-If SkillSimm prevents completion, save the final proposal as a PDF and submit the report and video through the existing Blackboard assignments by their posted deadlines. Keep contribution records and report the technical issue to the instructor.
+1. Review the complete final proposal, application appendix, and pitch video against both rubrics. Resolve inconsistent claims, numbers, and requests.
+2. Confirm that all revisions are complete and save the editable files and a local PDF.
+3. **Submit the report to Blackboard:** Export the standalone final proposal, including references and appendix, as a PDF and upload it to the **final report assignment** by the posted deadline.
+4. **Submit the video to Blackboard:** Upload the 10–20-minute video file or its accessible link to the designated **Blackboard video assignment**, following its instructions and posted deadline.
+5. Open the submitted PDF, check video access and playback, and save the submission receipts for both deliverables.
 
 ### Participation issues and peer evaluation
 
-If a team member is not actively participating, the Team Leader can take over that member's tasks in SkillSimm. To request a peer evaluation, attach **Part 1 of the peer evaluation request** to the end of the submitted report. After receiving the request, the instructor will initiate the evaluation and require each team member to complete **Part 2**. Individual grades will reflect each member's contributions.
+If a team member is not actively participating, the Team Leader can redistribute that member's assigned work within the team. To request a peer evaluation, attach **Part 1 of the peer evaluation request** to the end of the submitted report. After receiving the request, the instructor will initiate the evaluation and require each team member to complete **Part 2**. Individual grades will reflect each member's contributions.
 
 If the Team Leader is not actively participating, report the issue to the instructor so the instructor can reassign the leader role.
 
@@ -211,7 +232,7 @@ Use the official links below to choose a relevant audience. Program details were
 | [Intellectual Property and Entrepreneurship Law Clinic](https://law.uconn.edu/academics/clinics-experiential-education/intellectual-property-entrepreneurship-law-clinic/) | Supervised law students assist eligible Connecticut entrepreneurs with intellectual property matters. Legal services are free; clients remain responsible for applicable filing fees and other costs. | Identify the invention, brand, or other IP issue and the specific assistance needed. For business formation, also review the [Transactional Law Clinic](https://law.uconn.edu/academics/clinics-experiential-education/transactional-law-clinic/). |
 | [Verge Consulting](https://ccei.uconn.edu/programs/verge-consulting-group/) | Graduate student consultants work with CCEI and Connecticut SBDC advisors to support startups and small businesses. Confirm current client intake and service availability. | Define a focused consulting question, the information available, and a useful output, such as customer research or a market-entry recommendation. |
 
-## 6. Submission checklist
+## 6. Team submission checklist
 
 Before the existing Blackboard final deadlines:
 
@@ -220,8 +241,6 @@ Before the existing Blackboard final deadlines:
 - [ ] Check that the request, budget, milestones, and figures agree across the report and video.
 - [ ] Complete the **10–20-minute pitch video** and review it against the **100-point video rubric**.
 - [ ] Review the report against the **100-point report rubric**.
-- [ ] Complete each member's SkillSimm task and contribution summary.
-- [ ] Save all work before the Team Leader completes the final SkillSimm task and closes the project run.
 - [ ] Submit the **report PDF to the Blackboard final report assignment**.
 - [ ] Submit the **video file or accessible link to the Blackboard final video assignment**.
 - [ ] Verify PDF access, video playback, and submission receipts for both deliverables.
