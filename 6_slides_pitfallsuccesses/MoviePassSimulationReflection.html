@@ -1,68 +1,144 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulation Reflection: MoviePass at 197%</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; --warn: #b45309; }
-      .reveal { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: #fff; }
-      .reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; letter-spacing: 0; }
-      .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.4em; }
-      .reveal h3 { font-size: 0.7em; color: var(--accent); margin-bottom: 0.3em; }
-      .reveal h4 { font-size: 0.55em; color: var(--muted); margin-bottom: 0.4em; }
-      .reveal p, .reveal li { font-size: 0.46em; line-height: 1.45; color: var(--ink); }
-      .reveal ul { margin: 0.3em 0 0 1.1em; }
-      .reveal li { margin-bottom: 0.35em; }
-      .title-slide h2 { font-size: 1.3em; }
-      .subtitle { color: var(--muted); text-align: center; font-size: 0.5em; }
-      .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 16px 20px; text-align: left; }
-      .small { font-size: 0.4em; color: var(--muted); }
-      /* role question slides */
-      .role-h { display: flex; align-items: center; gap: 12px; margin-bottom: 0.3em; }
-      .role-h .emoji { font-size: 1.1em; }
-      .role-h h2 { margin: 0; text-align: left; }
-      .q { font-weight: 600; text-align: left; margin-bottom: 0.4em; }
-      .reveal .options { list-style: none; margin: 0 0 0 0.2em; text-align: left; }
-      .reveal .options li { padding-left: 1.9em; text-indent: -1.9em; }
-      .reveal .role-h ~ p { text-align: left; }
-      .options li { margin-bottom: 0.35em; }
-      .options .k { display: inline-block; min-width: 1.7em; font-weight: 700; color: var(--accent); }
-      .reflect { background: #ecfdf5; border-left: 5px solid var(--accent); padding: 14px 18px; text-align: left; }
-      .reflect .tag { font-size: 0.4em; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
-      .reflect li { font-size: 0.44em; }
-      .quote { font-size: 0.6em; font-weight: 600; line-height: 1.3; }
+      :root { --ink: #182525; --muted: #526361; --line: #d7dfdb; --accent: #08695d; --soft: #eef3ef; --red: #b52b35; }
+      body { background: #f8f9f5; }
+      .reveal { font-family: "Avenir Next", "Segoe UI", Arial, sans-serif; color: var(--ink); font-size: 36px; }
+      .reveal .slides { text-align: left; }
+      .reveal .slides section { box-sizing: border-box; padding: 24px 32px; }
+      .reveal h1, .reveal h2, .reveal h3 { font-family: inherit; color: var(--ink); text-transform: none; letter-spacing: -.035em; }
+      .reveal h1 { font-size: 2.1em; line-height: 1.06; font-weight: 750; margin: 22px 0; }
+      .reveal h2 { font-size: 1.35em; line-height: 1.15; font-weight: 700; margin: 0 0 24px; }
+      .reveal h3, .reveal .eyebrow { color: var(--accent); font-size: .38em; line-height: 1.4; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; margin: 0 0 18px; }
+      .reveal p, .reveal li { font-size: .59em; line-height: 1.5; }
+      .reveal p { margin: 16px 0; }
+      .reveal strong { font-weight: 700; }
+      .reveal .subtitle { color: var(--muted); font-size: .66em; max-width: 760px; }
+      .reveal .small { font-size: .36em; color: var(--muted); line-height: 1.5; }
+      .title-slide::before { content: ""; display: block; width: 72px; height: 6px; background: var(--red); margin-bottom: 34px; }
+      .title-slide h1 span { color: var(--red); }
+      .title-slide .title-meta { border-top: 1px solid var(--line); padding-top: 20px; margin-top: 35px; color: var(--muted); font-size: .4em; }
+      .box { background: var(--soft); border-left: 4px solid var(--accent); padding: 22px 28px; border-radius: 0 12px 12px 0; }
+      .box p:first-child { margin-top: 0; }
+      .box p:last-child { margin-bottom: 0; }
+      .reveal .question-slide h2 { margin-bottom: 20px; }
+      .reveal .question-slide .q { font-size: .65em; line-height: 1.4; font-weight: 600; margin-bottom: 22px; max-width: 950px; }
+      .reveal .options { list-style: none; display: grid; gap: 10px; margin: 0; width: 100%; }
+      .reveal .options li { display: flex; align-items: baseline; gap: 14px; font-size: .53em; line-height: 1.42; background: #fff; border: 1px solid var(--line); border-radius: 9px; padding: 13px 18px; margin: 0; }
+      .options .k { color: var(--accent); font-weight: 750; flex: 0 0 24px; }
+      .reveal .takeaway-slide .concept-link { font-size: .48em; color: var(--accent); margin-bottom: 24px; }
+      .reveal .takeaway-slide ul { margin: 0 0 0 22px; }
+      .reveal .takeaway-slide li { font-size: .55em; line-height: 1.5; margin-bottom: 20px; padding-left: 6px; }
+      .reveal .takeaway-slide li:last-child { margin-bottom: 0; }
+      .reveal li::marker { color: var(--accent); }
+      .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 26px 0; }
+      .stat { padding: 22px 26px; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+      .reveal .stat .value { font-size: 1.12em; font-weight: 750; line-height: 1.1; letter-spacing: -.04em; margin: 0 0 10px; }
+      .reveal .stat .label { font-size: .46em; color: var(--muted); margin: 0; }
+      .reveal .stat .denominator { font-size: .48em; color: var(--muted); font-weight: 500; }
+      .reveal .stat .sample { font-size: .34em; color: var(--muted); margin: 8px 0 0; }
+      .stat.highlight { background: var(--soft); border-color: #b6d1c8; }
+      .reveal .callout { border-left: 4px solid var(--accent); padding: 8px 0 8px 20px; font-size: .57em; }
+      .reveal .award-mark { color: var(--accent); font-size: .4em; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 30px; }
+      .reveal .award-slide h2 { font-size: 1.9em; max-width: 800px; }
+      .reveal .ranking-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; list-style: none; margin: 24px 0; width: 100%; }
+      .reveal .ranking-options li { font-size: .57em; padding: 24px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+      .reveal .controls { color: var(--accent); }
+      .reveal .progress { color: var(--accent); height: 4px; }
+      .reveal .slide-number { background: transparent; color: var(--muted); font: 13px "Segoe UI", sans-serif; right: 20px; bottom: 15px; }
+      @media print { .reveal .stat, .reveal .options li { break-inside: avoid; } }
+      @media (prefers-reduced-motion: reduce) { .reveal *, .reveal *::before { transition: none !important; animation: none !important; } }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
 
-        <!-- Title -->
         <section class="title-slide">
-          <h2>MoviePass at 197%</h2>
+<p class="eyebrow">Entrepreneurial Journey / Simulation reflection</p><h1>MoviePass<br><span>at 197%.</span></h1><p class="subtitle">Early 2018: making a subscription earn more than it costs.</p><p class="title-meta">Share information &nbsp; / &nbsp; Make a coordinated decision &nbsp; / &nbsp; Explain the priorities</p>
         </section>
 
-        <!-- The scenario / source -->
         <section>
-          <h2>The case</h2>
-          <div class="box"><p>Spring 2018. Helios and Matheson Analytics owns a majority of MoviePass. In August 2017 the price was cut to <strong>$9.95 a month for a movie a day</strong>; within four months there were <strong>over a million paying subscribers</strong>. Assess that growth alongside the costs and commitments in the filing. Source: FY2017 10-K.</p></div>
+<p class="eyebrow">The starting point / Early 2018 / FY2017 evidence</p><h2>Fast growth. Costs growing faster.</h2><div class="stat-grid"><div class="stat"><p class="value">$9.95</p><p class="label">Monthly price for up to one movie a day</p></div><div class="stat"><p class="value">Over 1 million</p><p class="label">Paying subscribers within four months</p></div><div class="stat"><p class="value">197%</p><p class="label">HMA cost of revenues as a share of revenue</p></div><div class="stat"><p class="value">$24.9 million</p><p class="label">HMA cash at December 31, 2017</p></div></div><p class="callout">Subscriber growth shows demand. What would show that the subscription model can sustain itself?</p><p class="small">Source: simulation common brief and executive packets, citing HMA’s FY2017 Form 10-K. The 197% ratio is company-wide, not a measured loss for every individual subscriber.</p>
         </section>
-        <!-- Key takeaway -->
+
+        <section class="award-slide">
+<p class="award-mark">Team recognition</p><h2>Celebrating the<br>winning team</h2><p class="subtitle">Recognize the result. Reflect on the decisions behind it.</p><div class="box"><p>Which moment of information sharing helped your team most?</p></div>
+        </section>
+
         <section>
-          <h2>Key takeaway</h2>
-          <div class="box"><p>TBA</p>
+<p class="eyebrow">Reflection / Team decision process</p><h2>Making decisions under uncertainty</h2><div class="box">Does AI substitute the communication or the decision-making process?</div>
+        </section>
+
+        <section class="question-slide">
+<h3>Stage 1 — Establish the Company’s Position</h3><h2>Chief Financial Officer (CFO)</h2><p class="q">What would a better ticket price from the theater chains require this round? Consult the COO before answering.</p><ul class="options"><li><span class="k">A.</span> Nothing: at a million subscribers the chains will offer a discount on their own.</li><li><span class="k">B.</span> Serving only partner cities, at no cost and with no subscriber loss.</li><li><span class="k">C.</span> A deal team costing 10 planning units, and the chains engage only if MoviePass brings per-subscriber attendance and cost data.</li><li><span class="k">D.</span> A deal team costing 25 planning units, with no data required.</li></ul>
+        </section>
+
+        <section class="question-slide">
+<h3>Stage 1 — Establish the Company’s Position</h3><h2>Chief Marketing Officer (CMO)</h2><p class="q">Which technology option shows what each subscriber costs in real time? Consult the CTO before answering.</p><ul class="options"><li><span class="k">A.</span> Off-the-shelf analytics shows each subscriber’s cost this month.</li><li><span class="k">B.</span> The sign-up features.</li><li><span class="k">C.</span> The theater ticketing integrations.</li><li><span class="k">D.</span> Only the real-time per-subscriber cost visibility build.</li></ul>
+        </section>
+
+        <section class="question-slide">
+<h3>Stage 1 — Establish the Company’s Position</h3><h2>Chief Operating Officer (COO)</h2><p class="q">Which pricing option stops adding loss-making subscribers at the lower stated cost without locking in $9.95? Consult the CMO before answering.</p><ul class="options"><li><span class="k">A.</span> An annual-prepay push for 5 planning units, with no price lock-in.</li><li><span class="k">B.</span> Stopping paid acquisition and moving to a cost-covering price with a usage cap, for 5 planning units.</li><li><span class="k">C.</span> Pushing $9.95 for the next milestone, for 20 planning units.</li><li><span class="k">D.</span> Split plans for 5 planning units.</li></ul>
+        </section>
+
+        <section class="question-slide">
+<h3>Stage 1 — Establish the Company’s Position</h3><h2>Chief Technology Officer (CTO)</h2><p class="q">What cash capacity is available this quarter, and what counts toward it? Consult the CFO before answering.</p><ul class="options"><li><span class="k">A.</span> 30 planning units for technology alone, plus any financing the company expects to raise.</li><li><span class="k">B.</span> Unlimited, because the company raised $75.2 million last year.</li><li><span class="k">C.</span> 30 planning units covering pricing, ticket deals and technology; financing not yet closed cannot be counted.</li><li><span class="k">D.</span> 30 planning units plus the $27.5 million of receivables.</li></ul>
+        </section>
+
+        <section class="takeaway-slide" data-stage="1">
+<h3>Stage 1 — Key takeaways</h3><h2>Diagnose the model before growing it</h2><p class="concept-link"><strong>Common Pitfalls &amp; Successes:</strong> Distinguish demand, cash, and sustainable economics.</p><div class="box"><ul><li><strong>Combine the four perspectives.</strong> The CFO holds the cash ceiling, the CMO the pricing choices, the COO the ticket-deal requirements, and the CTO the data capabilities.</li><li><strong>Do not confuse popularity with viability.</strong> Subscriber growth does not establish that revenue covers ticket costs. Check the economics before funding more acquisition.</li><li><strong>Use the decision grid.</strong> Ask how costly a mistake would be and how easily it could be reversed. Annual prepay brings in cash but locks the price for 12 months.</li></ul></div>
+        </section>
+
+        <section class="question-slide">
+<h3>Stage 2 — Make Executive Decisions</h3><h2>Chief Financial Officer (CFO)</h2><p class="q">You have $24.9 million in the bank, the company burned $27.4 million running itself last year, and cost of revenues is 197% of revenue. Where does the next dollar go?</p><ul class="options"><li><span class="k">A.</span> Raise capital now while the story is hot, and count it toward this quarter’s spending.</li><li><span class="k">B.</span> Cut operating expenses hard and leave pricing, ticket costs and technology unchanged.</li><li><span class="k">C.</span> Fund a coordinated allocation within the ceiling that changes what a subscription costs and earns: pricing, ticket deals and cost visibility.</li><li><span class="k">D.</span> Keep buying subscribers; at enough scale the theaters have to offer a better deal.</li></ul>
+        </section>
+
+        <section class="question-slide">
+<h3>Stage 2 — Make Executive Decisions</h3><h2>Chief Marketing Officer (CMO)</h2><p class="q">A million people signed up in four months, and every one of them loses money at $9.95. What do you do with the marketing budget?</p><ul class="options"><li><span class="k">A.</span> Push $9.95 harder for the next subscriber milestone.</li><li><span class="k">B.</span> Push annual prepay to hold the cash up front.</li><li><span class="k">C.</span> Split the plans: a cheap tier for light users and a higher price for heavy users.</li><li><span class="k">D.</span> Stop paid acquisition and move to a cost-covering price with a usage cap, so each subscriber’s cost is bounded while the COO renegotiates.</li></ul>
+        </section>
+
+        <section class="question-slide">
+<h3>Stage 2 — Make Executive Decisions</h3><h2>Chief Operating Officer (COO)</h2><p class="q">Cost of revenues rose 323% because MoviePass buys most tickets at full retail and hands them to subscribers. What do you do about the cost of the product itself?</p><ul class="options"><li><span class="k">A.</span> Renegotiate ticket prices with the chains, bringing the CTO’s per-subscriber attendance and cost data.</li><li><span class="k">B.</span> Keep paying full retail; at enough audience share the theaters will come to us.</li><li><span class="k">C.</span> Serve only cities with partner deals and stop serving the rest.</li><li><span class="k">D.</span> Build theater ticketing integrations first and negotiate prices next quarter.</li></ul>
+        </section>
+
+        <section class="question-slide">
+<h3>Stage 2 — Make Executive Decisions</h3><h2>Chief Technology Officer (CTO)</h2><p class="q">The app handles sign-up, theater check-in, and the data the company keeps calling its real asset. Cash is short. What do you build and what do you buy?</p><ul class="options"><li><span class="k">A.</span> Ship sign-up features that drive growth and instrument the economics later.</li><li><span class="k">B.</span> Build real-time per-subscriber cost visibility, coordinated with the COO’s renegotiation and the CMO’s pricing change.</li><li><span class="k">C.</span> Buy off-the-shelf analytics to get numbers this month.</li><li><span class="k">D.</span> Build the theater ticketing integrations first.</li></ul>
+        </section>
+
+        <section class="takeaway-slide" data-stage="2">
+<h3>Stage 2 — Key takeaways</h3><h2>Change the economics within the runway</h2><p class="concept-link"><strong>Common Pitfalls &amp; Successes:</strong> Measure first; keep the cost of changing course manageable.</p><div class="box"><ul><li><strong>Coordinate the whole allocation.</strong> Cost visibility (15) + ticket renegotiation (10) + a cost-covering price with a usage cap (5) use all 30 planning units.</li><li><strong>Build the evidence the decision needs.</strong> The COO needs per-subscriber attendance and cost data to negotiate; the CMO needs it to set pricing. In this scenario, off-the-shelf analytics lacks card-level cost.</li><li><strong>Watch the commitments behind the cash.</strong> Annual prepay preserves the $9.95 obligation. Expected financing is not available funding, and cutting overhead alone leaves ticket economics unchanged.</li></ul></div>
+        </section>
+
+        <section class="question-slide">
+<h3>Stage 3 — Set Company Priorities</h3><h2>Chief Executive Officer (CEO)</h2><p class="q">Rank the four questions from most to least important for MoviePass’s next strategic move. Discuss your executives’ recommendations before setting the priorities.</p><ul class="ranking-options"><li>Money — the CFO’s question</li><li>Growth — the CMO’s question</li><li>Ticket costs — the COO’s question</li><li>Tech — the CTO’s question</li></ul><p class="callout">Use each question once. Explain your first priority using information an executive shared through team chat.</p>
+        </section>
+
+        <section class="takeaway-slide" data-stage="3">
+<h3>Stage 3 — Key takeaways</h3><h2>Prioritize survival and a viable model</h2><p class="concept-link"><strong>Common Pitfalls &amp; Successes:</strong> Persist, pivot, or stop using evidence about the cost of continuing.</p><div class="box"><ul><li><strong>Put Money and Ticket costs first.</strong> Available resources bound the response; changing the input cost addresses the model’s immediate economic problem.</li><li><strong>Place Tech before Growth.</strong> Measurement enables negotiation and pricing. Growth comes last in the template because expanding a loss-making offer adds to the cash problem.</li><li><strong>Set a review point before expanding again.</strong> Examine subscriber revenue, ticket cost, usage, retention, and cash. State what evidence would support continuing, revising, or stopping the offer.</li></ul></div>
         </section>
 
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
     <script>
-      Reveal.initialize({ hash: true, slideNumber: true });
+      Reveal.initialize({
+        hash: true,
+        slideNumber: 'c/t',
+        width: 1120,
+        height: 760,
+        margin: 0.06,
+        transition: 'none',
+        controlsTutorial: false,
+        progress: true
+      });
     </script>
   </body>
 </html>
