@@ -1,63 +1,92 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulation Reflection: Five and a Half Billion of Goodwill</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; --warn: #b45309; }
-      .reveal { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: #fff; }
-      .reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; letter-spacing: 0; }
-      .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.4em; }
-      .reveal h3 { font-size: 0.7em; color: var(--accent); margin-bottom: 0.3em; }
-      .reveal h4 { font-size: 0.55em; color: var(--muted); margin-bottom: 0.4em; }
-      .reveal p, .reveal li { font-size: 0.46em; line-height: 1.45; color: var(--ink); }
-      .reveal ul { margin: 0.3em 0 0 1.1em; }
-      .reveal li { margin-bottom: 0.35em; }
-      .title-slide h2 { font-size: 1.3em; }
-      .subtitle { color: var(--muted); text-align: center; font-size: 0.5em; }
-      .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 16px 20px; text-align: left; }
-      .small { font-size: 0.4em; color: var(--muted); }
-      /* role question slides */
-      .role-h { display: flex; align-items: center; gap: 12px; margin-bottom: 0.3em; }
-      .role-h .emoji { font-size: 1.1em; }
-      .role-h h2 { margin: 0; text-align: left; }
-      .q { font-weight: 600; text-align: left; margin-bottom: 0.4em; }
-      .reveal .options { list-style: none; margin: 0 0 0 0.2em; text-align: left; }
-      .reveal .options li { padding-left: 1.9em; text-indent: -1.9em; }
-      .reveal .role-h ~ p { text-align: left; }
-      .options li { margin-bottom: 0.35em; }
-      .options .k { display: inline-block; min-width: 1.7em; font-weight: 700; color: var(--accent); }
-      .reflect { background: #ecfdf5; border-left: 5px solid var(--accent); padding: 14px 18px; text-align: left; }
-      .reflect .tag { font-size: 0.4em; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
-      .reflect li { font-size: 0.44em; }
-      .quote { font-size: 0.6em; font-weight: 600; line-height: 1.3; }
+      :root { --ink: #182525; --muted: #526361; --line: #d7dfdb; --accent: #08695d; --soft: #eef3ef; --red: #b52b35; }
+      body { background: #f8f9f5; }
+      .reveal { font-family: "Avenir Next", "Segoe UI", Arial, sans-serif; color: var(--ink); font-size: 36px; }
+      .reveal .slides { text-align: left; }
+      .reveal .slides section { box-sizing: border-box; padding: 24px 32px; }
+      .reveal h1, .reveal h2, .reveal h3 { font-family: inherit; color: var(--ink); text-transform: none; letter-spacing: -.035em; }
+      .reveal h1 { font-size: 2.1em; line-height: 1.06; font-weight: 750; margin: 22px 0; }
+      .reveal h2 { font-size: 1.35em; line-height: 1.15; font-weight: 700; margin: 0 0 24px; }
+      .reveal h3, .reveal .eyebrow { color: var(--accent); font-size: .38em; line-height: 1.4; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; margin: 0 0 18px; }
+      .reveal p, .reveal li { font-size: .59em; line-height: 1.5; }
+      .reveal p { margin: 16px 0; }
+      .reveal strong { font-weight: 700; }
+      .reveal .subtitle { color: var(--muted); font-size: .66em; max-width: 760px; }
+      .reveal .small { font-size: .36em; color: var(--muted); line-height: 1.5; }
+      .title-slide::before { content: ""; display: block; width: 72px; height: 6px; background: var(--red); margin-bottom: 34px; }
+      .title-slide h1 span { color: var(--red); }
+      .title-slide .title-meta { border-top: 1px solid var(--line); padding-top: 20px; margin-top: 35px; color: var(--muted); font-size: .4em; }
+      .box { background: var(--soft); border-left: 4px solid var(--accent); padding: 22px 28px; border-radius: 0 12px 12px 0; }
+      .box p:first-child { margin-top: 0; }
+      .box p:last-child { margin-bottom: 0; }
+      .reveal .question-slide h2 { margin-bottom: 20px; }
+      .reveal .question-slide .q { font-size: .65em; line-height: 1.4; font-weight: 600; margin-bottom: 22px; max-width: 950px; }
+      .reveal .options { list-style: none; display: grid; gap: 10px; margin: 0; width: 100%; }
+      .reveal .options li { display: flex; align-items: baseline; gap: 14px; font-size: .53em; line-height: 1.42; background: #fff; border: 1px solid var(--line); border-radius: 9px; padding: 13px 18px; margin: 0; }
+      .options .k { color: var(--accent); font-weight: 750; flex: 0 0 24px; }
+      .reveal .takeaway-slide .concept-link { font-size: .48em; color: var(--accent); margin-bottom: 24px; }
+      .reveal .takeaway-slide ul { margin: 0 0 0 22px; }
+      .reveal .takeaway-slide li { font-size: .55em; line-height: 1.5; margin-bottom: 20px; padding-left: 6px; }
+      .reveal .takeaway-slide li:last-child { margin-bottom: 0; }
+      .reveal li::marker { color: var(--accent); }
+      .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 26px 0; }
+      .stat { padding: 22px 26px; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+      .reveal .stat .value { font-size: 1.12em; font-weight: 750; line-height: 1.1; letter-spacing: -.04em; margin: 0 0 10px; }
+      .reveal .stat .label { font-size: .46em; color: var(--muted); margin: 0; }
+      .reveal .stat .denominator { font-size: .48em; color: var(--muted); font-weight: 500; }
+      .reveal .stat .sample { font-size: .34em; color: var(--muted); margin: 8px 0 0; }
+      .stat.highlight { background: var(--soft); border-color: #b6d1c8; }
+      .reveal .callout { border-left: 4px solid var(--accent); padding: 8px 0 8px 20px; font-size: .57em; }
+      .reveal .award-mark { color: var(--accent); font-size: .4em; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 30px; }
+      .reveal .award-slide h2 { font-size: 1.9em; max-width: 800px; }
+      .reveal .ranking-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; list-style: none; margin: 24px 0; width: 100%; }
+      .reveal .ranking-options li { font-size: .57em; padding: 24px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+      .reveal .controls { color: var(--accent); }
+      .reveal .progress { color: var(--accent); height: 4px; }
+      .reveal .slide-number { background: transparent; color: var(--muted); font: 13px "Segoe UI", sans-serif; right: 20px; bottom: 15px; }
+      @media print { .reveal .stat, .reveal .options li { break-inside: avoid; } }
+      @media (prefers-reduced-motion: reduce) { .reveal *, .reveal *::before { transition: none !important; animation: none !important; } }
+    
+      .reveal .dense .q { font-size: .57em; }
+      .reveal .ceo-slide .q { font-size: .52em; }
+      .reveal .ceo-slide .callout { font-size: .46em; }
+      .reveal .ceo-slide .ranking-options { gap: 12px; margin: 18px 0; }
+      .reveal .ceo-slide .ranking-options li { font-size: .49em; padding: 18px; }
+      .reveal .course-adjustment li { margin-bottom: 16px; }
+      .reveal .reflect { background: var(--soft); border-left: 4px solid var(--accent); padding: 22px 28px; }
+      .reveal .reflect li { margin-bottom: 16px; }
+      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+      .reveal .two-col li, .reveal .two-col p { font-size: .49em; }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
 
-        <!-- Title -->
-        <section class="title-slide">
-          <h2>Five and a Half Billion of Goodwill</h2>
-        </section>
-          <!-- The case -->
-        <section>
-          <h2>January 2006 &mdash; $7.5 billion for a building in Emeryville</h2>
+<section class="title-slide">
+<p class="eyebrow">Entrepreneurial Journey / Simulation reflection</p><h1>Five and a Half Billion of Goodwill</h1><p class="subtitle">Disney / Pixar: preserving the capabilities behind the acquisition.</p><p class="title-meta">Share information &nbsp; / &nbsp; Make a coordinated decision &nbsp; / &nbsp; Explain the priorities</p>
+</section>
+
+<section>
+          <h2>The 2006 deal &mdash; $7.5 billion for Pixar</h2>
           <div class="two-col">
             <div>
               <ul>
-                <li class="fragment fade-up">Disney announces it will buy <strong>Pixar</strong> for <strong>$7.5 billion</strong> in stock.</li>
-                <li class="fragment fade-up">Pixar is a few hundred people in a building in California. No theme parks. No television networks. Some computers, some office furniture, and a rendering system.</li>
-                <li class="fragment fade-up">Now do the autopsy, from Disney's own annual report.</li>
+                <li>Disney announces it will buy <strong>Pixar</strong> for <strong>$7.5 billion</strong> in stock.</li>
+                <li>Pixar is a few hundred people in a building in California. No theme parks. No television networks. Some computers, some office furniture, and a rendering system.</li>
+                <li>Now do the autopsy, from Disney's own annual report.</li>
               </ul>
             </div>
-            <div class="box warn fragment fade-up">
+            <div class="box">
               <h3>Where the $7.5 billion went</h3>
               <p>Pixar's own cash and investments &mdash; <strong>~$1.1B</strong></p>
               <p>Film costs, buildings, equipment, intangibles &mdash; <strong>~$1.0B</strong></p>
@@ -66,21 +95,71 @@
             </div>
           </div>
           <p class="small fragment fade-up"><strong>Seventy-three percent.</strong> Disney paid roughly a billion dollars for a studio and five and a half billion for <strong>a group of people and the way they worked together</strong>.</p>
-          <aside class="notes">Let the 73% sit in silence. Then ask which rung. It is not a close call, and it is not a judgement call &mdash; the allocation decided it before anyone had a meeting about culture.</aside>
+          
         </section>
 
+<section class="question-slide">
+<h3>Stage 1 — Establish the Company’s Position</h3><h2>Chief Financial Officer (CFO)</h2><p class="q">Which integration option and pipeline option, taken together, keep key-creative retention highest, and what do they cost together? Consult the COO and the CTO before answering.</p><ul class="options"><li><span class="k">A.</span><span>65 units at 85% retention: separate studios sharing both ways (25) and running both pipelines (40).</span></li><li><span class="k">B.</span><span>40 units at 10% retention: moving Pixar to Burbank (20) and migrating Pixar onto Disney’s systems (20).</span></li><li><span class="k">C.</span><span>55 units at 95% retention: Pixar’s leaders also run Disney Animation (30) and Pixar’s pipeline flows into Disney Animation (25).</span></li><li><span class="k">D.</span><span>50 units at 75% retention: separate studios sharing both ways (25) and Pixar’s pipeline flowing into Disney Animation (25).</span></li></ul>
+</section>
 
-             <!-- Key takeaway -->
-        <section>
-          <h2>Key takeaway</h2>
-          <div class="box"><p>TBA</p>
-        </section>
+<section class="question-slide">
+<h3>Stage 1 — Establish the Company’s Position</h3><h2>Chief Marketing Officer (CMO)</h2><p class="q">What key-creative retention does the board require in year one, and how much retention can brand and pipeline choices cost on top of the best integration option? Consult the CFO and the COO before answering.</p><ul class="options"><li><span class="k">A.</span><span>No retention test: the board judges the deal on animation earnings in year one, so any brand choice fits.</span></li><li><span class="k">B.</span><span>At least 90%; the best integration option starts at 95%, so brand and pipeline choices together can cost at most 5 points.</span></li><li><span class="k">C.</span><span>At least 90%; the best integration option starts at 100%, so brand choices can cost up to 10 points.</span></li><li><span class="k">D.</span><span>At least 75%; separate studios sharing both ways start at 85%, which leaves 10 points for brand choices.</span></li></ul>
+</section>
+
+<section class="question-slide">
+<h3>Stage 1 — Establish the Company’s Position</h3><h2>Chief Operating Officer (COO)</h2><p class="q">Which brand option and which pipeline option lose no key-creative retention, what does each cost, and what condition does the pipeline option carry? Consult the CMO and the CTO before answering.</p><ul class="options"><li><span class="k">A.</span><span>Keeping the brands separate (15) and Pixar’s pipeline flowing into Disney Animation (25); the pipeline option loses no retention only if Pixar’s leaders run Disney Animation.</span></li><li><span class="k">B.</span><span>Putting both names on the films (25) and running both pipelines (40); neither carries a condition.</span></li><li><span class="k">C.</span><span>Keeping the brands separate (15) and Pixar’s pipeline flowing into Disney Animation (25); the pipeline option works under any integration.</span></li><li><span class="k">D.</span><span>Folding Pixar into Disney (5) and migrating Pixar onto Disney’s systems (20); both save units without losing retention.</span></li></ul>
+</section>
+
+<section class="question-slide">
+<h3>Stage 1 — Establish the Company’s Position</h3><h2>Chief Technology Officer (CTO)</h2><p class="q">How large is the integration budget, what is the board’s year-one test, and what does the brand option that loses no retention leave for integration and the pipeline? Consult the CFO and the CMO before answering.</p><ul class="options"><li><span class="k">A.</span><span>70 units judged on animation earnings in year one; folding Pixar into Disney (5) leaves 65.</span></li><li><span class="k">B.</span><span>100 units, because the buyback cash returns to the budget; keeping the brands separate (15) leaves 85.</span></li><li><span class="k">C.</span><span>70 units with retention of at least 90% of key creatives; putting both names on the films (25) leaves 45.</span></li><li><span class="k">D.</span><span>70 units with retention of at least 90% of key creatives; keeping the brands separate (15) leaves 55.</span></li></ul>
+</section>
+
+<section class="takeaway-slide">
+<h3>Stage 1 — Key takeaways</h3><h2>Identify what must survive the deal</h2><p class="concept-link">Acquiring Enterprises: Choose integration around the capability being acquired.</p><div class="box"><ul><li><strong>Combine budget and retention.</strong> The CFO sets a 70-unit budget and at least 90% key-creative retention in year one. The best integration option starts at 95%, leaving only five points of headroom.</li><li><strong>Connect leadership to technology.</strong> Pixar’s leaders running Disney Animation (30) plus Pixar’s pipeline flowing into Disney (25) cost 55. The pipeline loses no retention only under that leadership choice.</li><li><strong>Reserve room for the brand.</strong> Keeping the brands separate costs 15 and loses no retention. It leaves exactly 55 for integration and the pipeline; buyback cash adds nothing to the budget.</li></ul></div><p class="small">Simulation assumptions: planning units, retention percentages, the board’s test and the pipeline dependency.</p>
+</section>
+
+<section class="question-slide dense">
+<h3>Stage 2 — Make Executive Decisions</h3><h2>Chief Financial Officer (CFO)</h2><p class="q">The price was $7.5 billion, paid in 279 million Disney shares. About $1.1 billion was Pixar’s own cash and investments, only about $1.0 billion landed on identifiable assets — film costs, buildings, intangibles — and about $5.5 billion became goodwill. In the same year Disney repurchased 243 million of its own shares for $6,898 million. Was this paid the right way, and what test tells you next year whether it was worth it?</p><ul class="options"><li><span class="k">A.</span><span>Pay in stock, offset the dilution with buybacks, and judge it in year one on whether animation earnings cover the cost of the shares issued.</span></li><li><span class="k">B.</span><span>Go back and negotiate the price down toward the roughly $1.0 billion of identifiable assets.</span></li><li><span class="k">C.</span><span>Borrow and pay cash; it is cheaper than issuing equity at this price if we are confident.</span></li><li><span class="k">D.</span><span>Pay in stock so Pixar’s own people carry the risk with us, and judge it in year one on whether the key film-makers are still here and still producing.</span></li></ul>
+</section>
+
+<section class="question-slide">
+<h3>Stage 2 — Make Executive Decisions</h3><h2>Chief Marketing Officer (CMO)</h2><p class="q">You now own two of the most trusted brands in family entertainment. One is eighty years old; the other has not made a flop. Before the deal both names were already on the films. The filing notes the company “now produces feature animation films under both the Disney and Pixar banners.” What do you do with the two names?</p><ul class="options"><li><span class="k">A.</span><span>Put both names on every film so the trust runs in both directions.</span></li><li><span class="k">B.</span><span>Keep them separate and distinct — Pixar films stay Pixar films, and the name keeps meaning what it means.</span></li><li><span class="k">C.</span><span>Fold Pixar into the Disney brand now — we paid for it, so our name goes on it.</span></li><li><span class="k">D.</span><span>Keep Pixar prominent for now and merge it into Disney over several years.</span></li></ul>
+</section>
+
+<section class="question-slide">
+<h3>Stage 2 — Make Executive Decisions</h3><h2>Chief Operating Officer (COO)</h2><p class="q">Pixar is now “a wholly-owned subsidiary.” It sits in Emeryville, four hundred miles from Burbank, with its own building, its own processes and its own leadership. Disney’s own animation studio is struggling. Disney has just abandoned its own Pixar sequel projects and taken a $26 million impairment. How do you integrate?</p><ul class="options"><li><span class="k">A.</span><span>Keep the studios separate but share technology and some practices in both directions.</span></li><li><span class="k">B.</span><span>Keep Emeryville, but have Pixar report through our existing studio management like any other unit.</span></li><li><span class="k">C.</span><span>Move Pixar down to Burbank under our animation leadership — that is how you get the savings we promised.</span></li><li><span class="k">D.</span><span>Leave Pixar exactly where it is and put its leaders in charge of Disney Animation as well — we bought the way they work, so let it spread.</span></li></ul>
+</section>
+
+<section class="question-slide">
+<h3>Stage 2 — Make Executive Decisions</h3><h2>Chief Technology Officer (CTO)</h2><p class="q">Both studios have a complete animation production pipeline — rendering, tools, workflow. The filing says the acquisition supports “embracing leading-edge technologies”, yet intangibles were valued at only $233 million. Neither pipeline is obviously worse, and running two is expensive. What happens?</p><ul class="options"><li><span class="k">A.</span><span>Migrate Pixar onto our existing systems — two pipelines is a duplication we pay for twice.</span></li><li><span class="k">B.</span><span>Run both pipelines and share tools deliberately where each is genuinely better.</span></li><li><span class="k">C.</span><span>Leave Pixar’s pipeline alone and move its good parts into Disney Animation — not the other way round — under Pixar’s leaders.</span></li><li><span class="k">D.</span><span>Pick one standard and move everyone onto it over about three years.</span></li></ul>
+</section>
+
+<section class="takeaway-slide">
+<h3>Stage 2 — Key takeaways</h3><h2>Preserve the creative capability</h2><p class="concept-link">Acquiring Enterprises: Match the integration approach to the source of value.</p><div class="box"><ul><li><strong>Make the three choices together.</strong> Pixar’s leaders run both studios (30) + separate brands (15) + Pixar’s pipeline into Disney (25) = 70 units at 95% retention.</li><li><strong>Judge the deal on the relevant horizon.</strong> The template favors stock payment and a year-one test of whether key film-makers stay and keep producing. The animation-earnings test is not readable until year three.</li><li><strong>Check the tempting alternatives.</strong> Using both names raises the coordinated plan to 80 units. Sharing practices both ways starts at only 85% retention and also breaks the pipeline’s leadership dependency.</li></ul></div><p class="small">Simulation assumptions: planning units, retention percentages, the board’s test and the pipeline dependency.</p>
+</section>
+
+<section class="question-slide ceo-slide">
+<h3>Stage 3 — CEO: Set Company Priorities</h3><h2>Chief Executive Officer (CEO)</h2><p class="q">As CEO, rank the four questions from the one that has to be resolved first for this $7.5 billion to have been worth spending, down to the one that can wait longest. Discuss your executives’ recommendations before setting the company’s priorities. Ask each executive: “What is your recommendation, which colleague’s constraint does it depend on, and why is your question important for the company to resolve?” You receive their answers through team chat, not automatic summaries.</p><ul class="ranking-options"><li>The price — what we paid and how we judge it</li><li>Brands — Disney, Pixar, or both</li><li>Integration — where Pixar sits and who runs it</li><li>The pipeline — whose technology survives</li></ul><p class="callout">Use each question once. Why should your first-ranked question take priority? Refer to information two executives shared, place the deal on the integration ladder (preserve, symbiosis or absorb), and say what in the numbers tells you so.</p>
+</section>
+
+<section class="takeaway-slide">
+<h3>Stage 3 — Key takeaways</h3><h2>Protect what justified the price</h2><p class="concept-link">Acquiring Enterprises: Use the integration ladder to explain the priorities.</p><div class="box"><ul><li><strong>Put Integration and Price first.</strong> Either order fits the template: integration protects the creative organization, while the price question establishes how the board judges whether the deal was worthwhile.</li><li><strong>Place Brands third and Pipeline fourth.</strong> The Pixar name is part of the acquired value. The pipeline choice follows the leadership decision and must preserve the way the artists work.</li><li><strong>Explain the preserve rung.</strong> About $5.5 billion of the $7.5 billion price is goodwill in the case. Use evidence from two executives to explain why protecting creative capabilities matters more than forcing uniform systems.</li></ul></div><p class="small">These priorities follow the template’s scenario assumptions; explain the dependencies behind your ranking.</p>
+</section>
 
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
     <script>
-      Reveal.initialize({ hash: true, slideNumber: true });
+      Reveal.initialize({
+        hash: true,
+        slideNumber: 'c/t',
+        width: 1120,
+        height: 760,
+        margin: 0.06,
+        transition: 'none',
+        controlsTutorial: false,
+        progress: true
+      });
     </script>
   </body>
 </html>
