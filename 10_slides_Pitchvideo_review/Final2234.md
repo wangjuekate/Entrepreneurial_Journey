@@ -6,7 +6,7 @@
 
 | Item | Requirement |
 | --- | --- |
-| Participation | Continue with your existing five-person team (four members and one Team Leader). Team participation is recommended; an individual option is available for students without a team. |
+| Participation | Continue with your existing five-person team (four members and one Team Leader). Team participation is recommended; students in **Group 36** complete the individual version. |
 | Project | Propose a new product or service inspired by your midterm company, or develop an original venture idea. |
 | Report | One standalone venture proposal PDF following the selected participation option, worth **100 points**. |
 | Pitch video | One pitch video: **10–20 minutes for teams** or **8–10 minutes for individuals**, worth **100 points**. |
@@ -15,14 +15,26 @@
 | Course weight | The final project retains its existing **20% course weight**. The report and video are equally weighted within the final project. |
 | Length | Teams: no fixed page or word minimum. Individuals: aim for **6–8 pages** of main text, plus title page and references; see the individual option below. |
 
+## Find your group in Blackboard
+
+Open **Blackboard → Group** to find your assigned group and teammates.
+
+- **Students in a team:** Complete the team version of the final project with your assigned teammates.
+- **Students in Group 36:** Complete the **individual version** of the final project. Group 36 identifies students working individually; it is not a project team. Submit your own report and pitch video.
+
 ## Class schedule and communication
 
-| Date | Class arrangement and required work |
-| --- | --- |
-| **November 17, 8:00–9:15 a.m.** | Attend the remote class meeting. The instructor will summarize the course and review the final project requirements. |
-| **November 19–December 15** | No class meetings. Use the class time to work individually or with your team on the final report and pitch video. |
+Join the scheduled remote sessions through **Microsoft Teams**. All sessions run from **8:00–9:15 a.m.**
 
-Book office hours through Blackboard for individual or team mentoring, feedback, or project questions.
+| Date | Session | Join link | Meeting ID | Passcode |
+| --- | --- | --- | --- | --- |
+| November 17 | Remote coaching | [Join Teams meeting](https://teams.microsoft.com/meet/2765171523540618?p=VYh9lWR9RaX0IryktL) | 276 517 152 354 061 8 | eP3QV9v7 |
+| December 1 | Remote session | [Join Teams meeting](https://teams.microsoft.com/meet/2759147853623758?p=KTYzFik37cdkOJYlbg) | 275 914 785 362 375 8 | Ry6sM7kb |
+| December 3 | Remote session | [Join Teams meeting](https://teams.microsoft.com/meet/2765171523540618?p=VYh9lWR9RaX0IryktL) | 276 517 152 354 061 8 | eP3QV9v7 |
+| December 8 | Remote session | [Join Teams meeting](https://teams.microsoft.com/meet/2759147853623758?p=KTYzFik37cdkOJYlbg) | 275 914 785 362 375 8 | Ry6sM7kb |
+| December 10 | Remote session | [Join Teams meeting](https://teams.microsoft.com/meet/2765171523540618?p=VYh9lWR9RaX0IryktL) | 276 517 152 354 061 8 | eP3QV9v7 |
+
+**Additional office hours:** Book through Blackboard for individual or team mentoring, feedback, or project questions.
 
 ## What to submit and where
 
@@ -31,13 +43,19 @@ Book office hours through Blackboard for individual or team mentoring, feedback,
 | Final venture report | PDF containing the proposal and references; include the full team or concise individual application preparation appendix | **Blackboard final report assignment** | Team Leader, once for the team, or individual student |
 | Final pitch video | Video file (10–20 minutes for teams; 8–10 minutes for individuals) or accessible video link, using the field provided | **Blackboard final video assignment** | Team Leader, once for the team, or individual student |
 
+**Team submissions:** Only the **Team Leader** submits the report and video on behalf of the team. Include **all team members’ full names** on the report title page and in the video’s opening slide or credits.
+
+**Other team members:** Submit a short note to **each final assignment in Blackboard** identifying your team and Team Leader. For example: “I am in Group [number]. Our Team Leader, [full name], has submitted the report and video on behalf of our team.” Submit these notes by the posted deadlines to avoid a temporary zero for missing submissions.
+
+**Individual submissions (Group 36):** Submit **both your own report and your own video** to their respective Blackboard assignments. A team-identification note does not replace either deliverable.
+
 Before the deadline, verify that both Blackboard submissions are complete, the PDF opens, and the instructor can play the video without requesting access.
 
-## Individual option for students without a team
+## Individual option for students in Group 36
 
 **Team participation is recommended.** A team can divide the five report sections, research, calculations, and presentation preparation among five members, then review and integrate the work together. An individual student is responsible for all five areas and the entire recording. The individual deliverables are shorter, but the work per student is greater because the core analysis is completed independently.
 
-Students without a team may use this option with either venture path in Section 1. **Use the individual rubric and checklist below; the requirements in Sections 2–4 and the checklist in Section 6 apply to teams.** Section 5's source and citation guidance applies to both options. Both options have the same deadlines, maximum points, and course weight.
+Students in **Group 36** must complete this individual version and may choose either venture path in Section 1. **Use the individual rubric and checklist below; the requirements in Sections 2–4 and the checklist in Section 6 apply to teams.** Section 5's source and citation guidance applies to both options. Both options have the same deadlines, maximum points, and course weight.
 
 - **Report:** Aim for **6–8 pages of main text**, plus a title page, references, and the concise application appendix described below. This is a suggested length, not a separate grading criterion. Include a brief executive summary and all five rubric areas.
 - **Evidence:** Use at least **five credible sources**, including the selected program's official requirements and evidence about customers and competing alternatives. Cite claims, show calculations, and distinguish evidence from assumptions. Published research is sufficient; interviews, surveys, a working prototype, and an external application remain optional.
@@ -173,12 +191,12 @@ Make the final proposal self-contained so it can be exported for an external rea
 
 ### Team members
 
-Complete your assigned work, coordinate revisions with teammates, and help review the final report and pitch video. The Team Leader submits both deliverables once for the team through Blackboard.
+Complete your assigned work, coordinate revisions with teammates, and help review the final report and pitch video. Only the Team Leader submits both deliverables once for the team through Blackboard, with all members’ full names included. Every other member must submit a short note identifying their team and Team Leader to **both the final report and final video assignments** by the posted deadlines to avoid a temporary zero for missing submissions.
 
 ### Team Leader
 
 1. Review the complete final proposal, application appendix, and pitch video against both rubrics. Resolve inconsistent claims, numbers, and requests.
-2. Confirm that all revisions are complete and save the editable files and a local PDF.
+2. Confirm that all revisions are complete, include all team members’ full names on the report title page and in the video’s opening slide or credits, and save the editable files and a local PDF.
 3. **Submit the report to Blackboard:** Export the standalone final proposal, including references and appendix, as a PDF and upload it to the **final report assignment** by the posted deadline.
 4. **Submit the video to Blackboard:** Upload the 10–20-minute video file or its accessible link to the designated **Blackboard video assignment**, following its instructions and posted deadline.
 5. Open the submitted PDF, check video access and playback, and save the submission receipts for both deliverables.
@@ -241,7 +259,8 @@ Before the existing Blackboard final deadlines:
 - [ ] Check that the request, budget, milestones, and figures agree across the report and video.
 - [ ] Complete the **10–20-minute pitch video** and review it against the **100-point video rubric**.
 - [ ] Review the report against the **100-point report rubric**.
-- [ ] Submit the **report PDF to the Blackboard final report assignment**.
-- [ ] Submit the **video file or accessible link to the Blackboard final video assignment**.
+- [ ] **Team Leader:** Submit the **report PDF to the Blackboard final report assignment**, with all team members’ full names on the title page.
+- [ ] **Team Leader:** Submit the **video file or accessible link to the Blackboard final video assignment**, with all team members’ full names in the opening slide or credits.
+- [ ] **All other team members:** Submit a short note identifying your team and Team Leader to **each final assignment** to avoid a temporary zero for missing submissions.
 - [ ] Verify PDF access, video playback, and submission receipts for both deliverables.
 - [ ] Keep editable copies for any later external application, including the changes needed to meet that program's format.

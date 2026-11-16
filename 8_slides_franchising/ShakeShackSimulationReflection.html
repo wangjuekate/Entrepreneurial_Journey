@@ -1,69 +1,145 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Simulation Reflection: Fifty-Four Hundred to Forty-Six Hundred</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Reflection: Shake Shack: Fifty-Four Hundred to Forty-Six Hundred</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-      :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --accent: #0f766e; --soft: #f3f4f6; --warn: #b45309; }
-      .reveal { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: #fff; }
-      .reveal h1, .reveal h2, .reveal h3, .reveal h4 { text-transform: none; letter-spacing: 0; }
-      .reveal h2 { font-size: 1.15em; font-weight: 700; line-height: 1.15; margin-bottom: 0.4em; }
-      .reveal h3 { font-size: 0.7em; color: var(--accent); margin-bottom: 0.3em; }
-      .reveal h4 { font-size: 0.55em; color: var(--muted); margin-bottom: 0.4em; }
-      .reveal p, .reveal li { font-size: 0.46em; line-height: 1.45; color: var(--ink); }
-      .reveal ul { margin: 0.3em 0 0 1.1em; }
-      .reveal li { margin-bottom: 0.35em; }
-      .title-slide h2 { font-size: 1.3em; }
-      .subtitle { color: var(--muted); text-align: center; font-size: 0.5em; }
-      .box { background: var(--soft); border-left: 6px solid var(--accent); padding: 16px 20px; text-align: left; }
-      .small { font-size: 0.4em; color: var(--muted); }
-      /* role question slides */
-      .role-h { display: flex; align-items: center; gap: 12px; margin-bottom: 0.3em; }
-      .role-h .emoji { font-size: 1.1em; }
-      .role-h h2 { margin: 0; text-align: left; }
-      .q { font-weight: 600; text-align: left; margin-bottom: 0.4em; }
-      .reveal .options { list-style: none; margin: 0 0 0 0.2em; text-align: left; }
-      .reveal .options li { padding-left: 1.9em; text-indent: -1.9em; }
-      .reveal .role-h ~ p { text-align: left; }
-      .options li { margin-bottom: 0.35em; }
-      .options .k { display: inline-block; min-width: 1.7em; font-weight: 700; color: var(--accent); }
-      .reflect { background: #ecfdf5; border-left: 5px solid var(--accent); padding: 14px 18px; text-align: left; }
-      .reflect .tag { font-size: 0.4em; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
-      .reflect li { font-size: 0.44em; }
-      .quote { font-size: 0.6em; font-weight: 600; line-height: 1.3; }
+      :root { --ink: #182525; --muted: #526361; --line: #d7dfdb; --accent: #08695d; --soft: #eef3ef; --red: #b52b35; }
+      body { background: #f8f9f5; }
+      .reveal { font-family: "Avenir Next", "Segoe UI", Arial, sans-serif; color: var(--ink); font-size: 36px; }
+      .reveal .slides { text-align: left; }
+      .reveal .slides section { box-sizing: border-box; padding: 24px 32px; }
+      .reveal h1, .reveal h2, .reveal h3 { font-family: inherit; color: var(--ink); text-transform: none; letter-spacing: -.035em; }
+      .reveal h1 { font-size: 2.1em; line-height: 1.06; font-weight: 750; margin: 22px 0; }
+      .reveal h2 { font-size: 1.35em; line-height: 1.15; font-weight: 700; margin: 0 0 24px; }
+      .reveal h3, .reveal .eyebrow { color: var(--accent); font-size: .38em; line-height: 1.4; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; margin: 0 0 18px; }
+      .reveal p, .reveal li { font-size: .59em; line-height: 1.5; }
+      .reveal p { margin: 16px 0; }
+      .reveal strong { font-weight: 700; }
+      .reveal .subtitle { color: var(--muted); font-size: .66em; max-width: 760px; }
+      .reveal .small { font-size: .36em; color: var(--muted); line-height: 1.5; }
+      .title-slide::before { content: ""; display: block; width: 72px; height: 6px; background: var(--red); margin-bottom: 34px; }
+      .title-slide h1 span { color: var(--red); }
+      .title-slide .title-meta { border-top: 1px solid var(--line); padding-top: 20px; margin-top: 35px; color: var(--muted); font-size: .4em; }
+      .box { background: var(--soft); border-left: 4px solid var(--accent); padding: 22px 28px; border-radius: 0 12px 12px 0; }
+      .box p:first-child { margin-top: 0; }
+      .box p:last-child { margin-bottom: 0; }
+      .reveal .question-slide h2 { margin-bottom: 20px; }
+      .reveal .question-slide .q { font-size: .65em; line-height: 1.4; font-weight: 600; margin-bottom: 22px; max-width: 950px; }
+      .reveal .options { list-style: none; display: grid; gap: 10px; margin: 0; width: 100%; }
+      .reveal .options li { display: flex; align-items: baseline; gap: 14px; font-size: .53em; line-height: 1.42; background: #fff; border: 1px solid var(--line); border-radius: 9px; padding: 13px 18px; margin: 0; }
+      .options .k { color: var(--accent); font-weight: 750; flex: 0 0 24px; }
+      .reveal .takeaway-slide .concept-link { font-size: .48em; color: var(--accent); margin-bottom: 24px; }
+      .reveal .takeaway-slide ul { margin: 0 0 0 22px; }
+      .reveal .takeaway-slide li { font-size: .55em; line-height: 1.5; margin-bottom: 20px; padding-left: 6px; }
+      .reveal .takeaway-slide li:last-child { margin-bottom: 0; }
+      .reveal li::marker { color: var(--accent); }
+      .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 26px 0; }
+      .stat { padding: 22px 26px; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+      .reveal .stat .value { font-size: 1.12em; font-weight: 750; line-height: 1.1; letter-spacing: -.04em; margin: 0 0 10px; }
+      .reveal .stat .label { font-size: .46em; color: var(--muted); margin: 0; }
+      .reveal .stat .denominator { font-size: .48em; color: var(--muted); font-weight: 500; }
+      .reveal .stat .sample { font-size: .34em; color: var(--muted); margin: 8px 0 0; }
+      .stat.highlight { background: var(--soft); border-color: #b6d1c8; }
+      .reveal .callout { border-left: 4px solid var(--accent); padding: 8px 0 8px 20px; font-size: .57em; }
+      .reveal .award-mark { color: var(--accent); font-size: .4em; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 30px; }
+      .reveal .award-slide h2 { font-size: 1.9em; max-width: 800px; }
+      .reveal .ranking-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; list-style: none; margin: 24px 0; width: 100%; }
+      .reveal .ranking-options li { font-size: .57em; padding: 24px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+      .reveal .controls { color: var(--accent); }
+      .reveal .progress { color: var(--accent); height: 4px; }
+      .reveal .slide-number { background: transparent; color: var(--muted); font: 13px "Segoe UI", sans-serif; right: 20px; bottom: 15px; }
+      @media print { .reveal .stat, .reveal .options li { break-inside: avoid; } }
+      @media (prefers-reduced-motion: reduce) { .reveal *, .reveal *::before { transition: none !important; animation: none !important; } }
+    
+      .reveal .dense .q { font-size: .57em; }
+      .reveal .ceo-slide .q { font-size: .52em; }
+      .reveal .ceo-slide .callout { font-size: .46em; }
+      .reveal .ceo-slide .ranking-options { gap: 12px; margin: 18px 0; }
+      .reveal .ceo-slide .ranking-options li { font-size: .49em; padding: 18px; }
+      .reveal .course-adjustment li { margin-bottom: 16px; }
+      .reveal .reflect { background: var(--soft); border-left: 4px solid var(--accent); padding: 22px 28px; }
+      .reveal .reflect li { margin-bottom: 16px; }
+      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+      .reveal .two-col li, .reveal .two-col p { font-size: .49em; }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
 
-        <!-- Title -->
-        <section class="title-slide">
-          <h2>Fifty-Four Hundred to Forty-Six Hundred</h2>
-        </section>
+<section class="title-slide">
+<p class="eyebrow">Entrepreneurial Journey / Simulation reflection</p><h1>Shake Shack: Fifty-Four Hundred to Forty-Six Hundred</h1><p class="subtitle">Franchising: prove the unit, choose who operates it, and keep it visible.</p><p class="title-meta">Share information &nbsp; / &nbsp; Make a coordinated decision &nbsp; / &nbsp; Explain the priorities</p>
+</section>
 
-        <!-- The scenario / source -->
-        <section>
-          <h2>The case</h2>
-          <div class="box"><p>Early 2015. Shake Shack has just gone public. The growth is real: <strong>21 Shacks in 2012, 63 by the end of 2014</strong>, system-wide sales <strong>$81M &rarr; $217M</strong>. The filing also reports average unit volume and Shack-level margins; assess those alongside total growth. Source: FY2014 10-K.</p></div>
-        </section>
+<section class="question-slide">
+<h3>Stage 1 — Establish the Company’s Position</h3><h2>Chief Financial Officer (CFO)</h2><p class="q">If the COO’s operate-at-home plan and the systems it depends on are both funded, how many planning units remain for the brand? Consult the COO and the CTO before answering.</p><ul class="options"><li><span class="k">A.</span><span>60 units: licensees pay for reporting in their own Shacks, so only the COO’s plan counts.</span></li><li><span class="k">B.</span><span>25 units: the operate-at-home plan (40) and all-Shack reporting (35) use 75 of the 100-unit ceiling.</span></li><li><span class="k">C.</span><span>0 units: the operate-at-home plan alone uses the whole ceiling.</span></li><li><span class="k">D.</span><span>45 units: the plan uses 40 and off-the-shelf systems 15.</span></li></ul>
+</section>
 
-              <!-- Key takeaway -->
-        <section>
-          <h2>Key takeaway</h2>
-          <div class="box"><p>TBA</p>
-        </section>
+<section class="question-slide">
+<h3>Stage 1 — Establish the Company’s Position</h3><h2>Chief Marketing Officer (CMO)</h2><p class="q">What would the COO’s option of operating every Shack ourselves, including internationally, really use of the ceiling? Consult the COO and the CFO before answering.</p><ul class="options"><li><span class="k">A.</span><span>60 units: the stated cost; owning the Shacks only adds control.</span></li><li><span class="k">B.</span><span>0 units: licensing revenue from the 27 international Shacks pays for it.</span></li><li><span class="k">C.</span><span>30 units: the licensees who sell their Shacks back carry half the cost.</span></li><li><span class="k">D.</span><span>90 units: its 60 units open or take on Shacks before they clear the payback test, which counts 1.5 times.</span></li></ul>
+</section>
+
+<section class="question-slide">
+<h3>Stage 1 — Establish the Company’s Position</h3><h2>Chief Operating Officer (COO)</h2><p class="q">Which brand and systems pair fits beside your operate-at-home plan and keeps licensed Shacks within your control? Consult the CMO and the CTO before answering.</p><ul class="options"><li><span class="k">A.</span><span>Free press coverage plus off-the-shelf restaurant systems.</span></li><li><span class="k">B.</span><span>A national brand build plus leaving licensees to run their own systems.</span></li><li><span class="k">C.</span><span>Site-specific design and community work plus reporting that shows supply chain and unit economics in every Shack, licensed ones included.</span></li><li><span class="k">D.</span><span>A national advertising campaign plus our own systems first, extended to licensees at renewal.</span></li></ul>
+</section>
+
+<section class="question-slide">
+<h3>Stage 1 — Establish the Company’s Position</h3><h2>Chief Technology Officer (CTO)</h2><p class="q">How much of the ceiling remains for operations and systems once the CMO’s site-specific design work is funded, and how do options that open Shacks before they clear the payback test count? Consult the CFO and the CMO before answering.</p><ul class="options"><li><span class="k">A.</span><span>75 units remain; an option that opens or takes on Shacks before they clear the payback test counts 1.5 times its stated cost.</span></li><li><span class="k">B.</span><span>100 units remain; brand work is paid from licensing revenue outside the ceiling.</span></li><li><span class="k">C.</span><span>75 units remain; new Shacks count at their stated cost.</span></li><li><span class="k">D.</span><span>65 units remain; site-specific design costs 35 units.</span></li></ul>
+</section>
+
+<section class="takeaway-slide">
+<h3>Stage 1 — Key takeaways</h3><h2>Combine the evidence before scaling</h2><p class="concept-link">Franchising: Connect unit economics, ownership and control.</p><div class="box"><ul><li><strong>Calculate what remains.</strong> Operating at home with stronger licence terms (40) and all-Shack reporting (35) leave 25 of the 100 planning units for site-specific design.</li><li><strong>Apply the payback rule.</strong> Operating every Shack costs 60 × 1.5 = 90 because it takes on sites before they clear the payback test. Site-specific design alone leaves 75 for operations and systems.</li><li><strong>Trace the dependency.</strong> The COO’s licence terms need the CTO’s reporting in licensed Shacks. The CMO’s local design work fits the remaining budget; company-only systems leave the control gap open.</li></ul></div><p class="small">Simulation assumptions: planning units, the ceiling, the payback multiplier and the visibility dependency.</p>
+</section>
+
+<section class="question-slide">
+<h3>Stage 2 — Make Executive Decisions</h3><h2>Chief Financial Officer (CFO)</h2><p class="q">Average unit volume has fallen from $5,367 thousand to $5,017 to $4,611 over three years, and Shack-level operating profit margin from 25.6% to 24.0%, while the count went from 21 to 63. The filing warns that as you leave Manhattan, “we may not be able to maintain our current average unit volumes.” What test does a new Shack have to pass?</p><ul class="options"><li><span class="k">A.</span><span>Company-operate only where the unit test passes, and license everywhere else so somebody else carries the capital.</span></li><li><span class="k">B.</span><span>Open as fast as we can while the brand is hot; the falling average is just a mix effect and it’ll settle.</span></li><li><span class="k">C.</span><span>Every site has to clear our return and payback test on its own before we sign the lease — and if that means opening fewer, we open fewer.</span></li><li><span class="k">D.</span><span>Accept the lower average as the price of scale — total profit dollars are still going up.</span></li></ul>
+</section>
+
+<section class="question-slide">
+<h3>Stage 2 — Make Executive Decisions</h3><h2>Chief Marketing Officer (CMO)</h2><p class="q">The brand was built on a single kiosk in Madison Square Park, no traditional advertising, and enough free product placement that the company “has been able to charge fees for these location shoots.” Same-Shack sales growth has slowed from 7.1% to 4.1%. How do you handle the brand as the footprint leaves New York?</p><ul class="options"><li><span class="k">A.</span><span>Keep leaning on the free coverage and product placement — it’s worked so far and it costs us nothing.</span></li><li><span class="k">B.</span><span>Build a deliberate national brand now, because most people outside New York have never heard of us.</span></li><li><span class="k">C.</span><span>Start advertising nationally to push traffic and get same-Shack sales back up.</span></li><li><span class="k">D.</span><span>Keep every Shack designed for its own location and community — the moment they all look the same we’re just another burger chain.</span></li></ul>
+</section>
+
+<section class="question-slide">
+<h3>Stage 2 — Make Executive Decisions</h3><h2>Chief Operating Officer (COO)</h2><p class="q">You operate 31 Shacks yourself at home and license 27 internationally. In the Middle East your licensee “delegates the supply function to its own third-party logistics providers… with which we have limited and restricted communication, preventing us from exercising control.” Where should the dial sit?</p><ul class="options"><li><span class="k">A.</span><span>Start licensing domestically too — it’s the quickest way to add units without spending our own capital.</span></li><li><span class="k">B.</span><span>Operate them ourselves at home where we control the experience, license only where we genuinely can’t operate — and fix the supply-chain control in the licence terms.</span></li><li><span class="k">C.</span><span>Operate everything ourselves, including internationally, now that we have the money to do it.</span></li><li><span class="k">D.</span><span>License harder to grow faster on somebody else’s capital, but tighten the standards and audit them properly.</span></li></ul>
+</section>
+
+<section class="question-slide">
+<h3>Stage 2 — Make Executive Decisions</h3><h2>Chief Technology Officer (CTO)</h2><p class="q">You have a supply chain in the Middle East you cannot see into, you measure success by “Shack-level operating profit margins, cash-on-cash returns and payback periods”, and 32 of your 63 Shacks are run by other companies. What do you build?</p><ul class="options"><li><span class="k">A.</span><span>Build the reporting so we can see supply chain and unit economics in every Shack — including the ones we don’t own. You can’t hold anyone to a standard you can’t see.</span></li><li><span class="k">B.</span><span>Build it properly for our own Shacks first, then extend it to licensees as contracts come up for renewal.</span></li><li><span class="k">C.</span><span>Buy standard restaurant systems off the shelf — this isn’t where we should be spending engineering effort.</span></li><li><span class="k">D.</span><span>Leave licensees to run their own systems — they’re independent operators and that’s the point of licensing.</span></li></ul>
+</section>
+
+<section class="takeaway-slide">
+<h3>Stage 2 — Key takeaways</h3><h2>Prove the unit before copying it</h2><p class="concept-link">Franchising: Make the operating model profitable and monitorable.</p><div class="box"><ul><li><strong>Require a site-level test.</strong> Every site must clear its return and payback test before the lease is signed. A growing Shack count does not establish that the next unit will earn enough.</li><li><strong>Fund one complete plan.</strong> Operate at home and strengthen licence terms (40) + site-specific design (25) + all-Shack reporting (35) = 100 units. IPO proceeds and licensing revenue add no extra units.</li><li><strong>Make standards observable.</strong> License where the company cannot operate, with supply-chain control and reporting that covers every Shack. Local design protects the brand while shared reporting makes standards enforceable.</li></ul></div><p class="small">Simulation assumptions: planning units, the ceiling, the payback multiplier and the visibility dependency.</p>
+</section>
+
+<section class="question-slide ceo-slide">
+<h3>Stage 3 — CEO: Set Company Priorities</h3><h2>Chief Executive Officer (CEO)</h2><p class="q">As CEO, rank the four questions from most to least important for this company to still be worth eating at when it has 300 Shacks. Discuss your executives’ recommendations before setting the company’s priorities. Ask each executive: “What is your recommendation, which colleague’s constraint does it depend on, and why is your question important for the company to resolve?” You receive their answers through team chat, not automatic summaries.</p><ul class="ranking-options"><li>Unit economics — what a new Shack must earn</li><li>The brand — staying special while scaling</li><li>The dial — what we operate vs. what we license</li><li>Visibility — the systems that let us see every Shack</li></ul><p class="callout">Use each question once. Why should your first-ranked question take priority? Refer to information two executives shared, say where the company should sit on the dial (what it operates and what it licenses), and name one thing a Shack must be able to do before someone else is allowed to run one.</p>
+</section>
+
+<section class="takeaway-slide">
+<h3>Stage 3 — Key takeaways</h3><h2>Rank what must work before expansion</h2><p class="concept-link">Franchising: Explain where the company belongs on the operate–license dial.</p><div class="box"><ul><li><strong>Put Unit economics and The dial first.</strong> Either order fits the template: what each Shack earns and who runs it determine what the company becomes as it expands.</li><li><strong>Place Visibility third and The brand fourth.</strong> Reporting makes licence terms enforceable. Ranking the brand last does not remove the 25-unit design commitment from the plan.</li><li><strong>State the condition for replication.</strong> Use evidence from two executives. Operate at home and license abroad under the scenario’s constraints; require a repeatable, profitable operation whose supply chain and unit economics can be monitored.</li></ul></div><p class="small">These priorities follow the template’s scenario assumptions; explain the dependencies behind your ranking.</p>
+</section>
+
+
 
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
     <script>
-      Reveal.initialize({ hash: true, slideNumber: true });
+      Reveal.initialize({
+        hash: true,
+        slideNumber: 'c/t',
+        width: 1120,
+        height: 760,
+        margin: 0.06,
+        transition: 'none',
+        controlsTutorial: false,
+        progress: true
+      });
     </script>
   </body>
 </html>
